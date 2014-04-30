@@ -3,7 +3,8 @@ class PainelController < ApplicationController
   
   def index
     
-    #Redireciona direto para a paginas de dados gerais do site
-    #redirect_to paginas_index_path
+    #Redireciona direto para a paginas de novo cliente
+    #render "index"
+    
   end
 end

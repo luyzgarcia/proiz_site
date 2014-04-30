@@ -1,0 +1,28 @@
+<h1>Formulario de cadastro de novo cliente</h1>
+<%= form_for(@cliente,remote:true) do |c| %>
+	<% if @cliente.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+			<ul>
+				<% for message in @cliente.errors.full_messages %>
+					<li><%= message %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= c.label :nome %><br />
+		<%= c.text_field :nome %>
+	</p>
+	<p>
+		<%= c.label :descricao %><br />
+		<%= c.text_field :descricao %>
+	</p>
+	<p>
+		<%= c.label :url_site %><br />
+		<%= c.text_field :url_site %>
+	</p>
+	
+	<p class="button"><%= c.submit %></p>
+
+<% end %>

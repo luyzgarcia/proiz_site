@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       redirect_to painel_index_path, :notice => "Cadastrado"
     else
       render "new"
-    end        
+    end
   end
   
   
