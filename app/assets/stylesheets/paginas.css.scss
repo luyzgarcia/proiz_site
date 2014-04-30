@@ -1,0 +1,43 @@
+// Place all the styles related to the Paginas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#wrapper_admin {
+  .lista_paginas {
+    width: 24%;
+    float: left;
+    margin-right: 1%;
+    ul {
+      margin: 0;
+      padding: 0;
+      
+      li {
+        background: #e5e6e6;
+        list-style: none;
+        padding: 10px 20px;
+        margin-bottom: 1px;
+        a {
+            @extend .font_padrao_1;
+            font-size: 14pt;
+        }
+      }
+    }
+    
+  }
+  .detalhe_pagina {
+    display: inline-block;
+    width: 75%;
+  }
+}
+
+
+.font_padrao_1 {
+  font-family: "nexa_bold", Times;
+  line-height: 1.3em;
+  font-weight: normal;
+  color: #004961;
+}
+.font_padrao_2 {
+  font-family: "droid_serif", Times;
+  line-height: 1.3em;
+  font-weight: normal;
+}

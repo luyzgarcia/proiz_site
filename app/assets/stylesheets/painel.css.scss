@@ -1,0 +1,122 @@
+// Place all the styles related to the painel controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: #d1d3d4;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
+  display: inline;
+}
+
+#painel_administrativo {
+  background: #8dc63f;
+  text-align: center;
+  padding: 25px 0;
+  display: inline-table;
+  width: 100%;
+
+  .wrapper_itens {
+    width: 1024px;
+  }
+  div {
+    display: inline-block;
+  }
+  
+  .titulo_gerenciador {
+    img {
+      width: 95px;
+      height: auto;
+      margin-bottom: -7px;
+    }
+    p {
+      display: inline;
+      @extend .font_padrao_1;
+      font-size: 10pt;
+      margin: 0px 100px 0 20px;
+    }
+    
+  }
+  .empresa_titulo {
+    h5 {
+      @extend .font_padrao_1;
+      font-size: 12pt;
+    }
+    h3 {
+      @extend .font_padrao_1;
+      font-size: 16pt;
+      color: #fff !important;
+      margin: 0 25px 0 10px;
+    }
+  }
+  .dados_conta {
+    border-left: 2px solid #7daa33;
+    border-right: 2px solid #7daa33;
+    padding: 0 20px;
+    h2 {
+      @extend .font_padrao_1;
+      font-size: 12pt;
+    }
+  }
+  .sair {
+    p {
+      margin-left: 15px;
+      display: inline;
+      font-size: 10pt;
+      @extend .font_padrao_2;
+      color: #fff;
+    }
+    a { 
+      margin-left: 10px;
+      @extend .font_padrao_1;
+      font-size: 12pt;
+    }
+  }
+  
+}
+
+#wrapper_admin {
+  width: 1024px;
+  margin: 0 auto;
+  .areas_site {
+    padding: 10px 10px;
+    height: 60px;
+    position: relative;
+    margin: 10px 0;
+    background: #f1f2f2;
+    h1 {
+        @extend .font_padrao_1;
+        font-size: 22pt;
+        margin: 14px 0 0 20px;
+        display: inline-block;
+      }
+    .botoes {
+      float: right;
+      margin: 20px 0;
+      h4 {
+        background: #004961;
+        padding: 20px 20px;
+        margin: 0 5px;
+        a {
+          @extend .font_padrao_1;
+          color: #fff !important;  
+        }
+        
+      }
+    }
+  }
+
+}
+
+.font_padrao_1 {
+  font-family: "nexa_bold", Times;
+  line-height: 1.3em;
+  font-weight: normal;
+  color: #004961;
+}
+.font_padrao_2 {
+  font-family: "droid_serif", Times;
+  line-height: 1.3em;
+  font-weight: normal;
+}
