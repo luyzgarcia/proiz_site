@@ -11,3 +11,27 @@
  *= require_self
  *= require_tree .
  */
+body {
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	text-decoration: none;
+}
+
+
+@font-face {
+  font-family: 'droid_serif';
+  src:url('droidserif.eot');
+  src:url('droidserif.eot?#iefix') format('embedded-opentype'),
+    url('droidserif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa_bold';
+    src: url('nexa_bold?#iefix') format('embedded-opentype'), 
+         url('nexa_bold.woff') format('woff'), 
+         url('nexa_bold.ttf')  format('truetype');
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <title>ProizAdmin</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="painel_administrativo">
+	<div class="wrapper_itens">
+		<div class="titulo_gerenciador">
+			<a href="#"><%= image_tag "logo_proiz.png" %></a>
+			<p>Gerenciador de conteúdo</p>
+		</div>
+		<div class="empresa_titulo">
+			<h5>Site</h5>
+			<h3>Empresa Nome LTDA</h3>	
+		</div>
+		<div class="dados_conta">
+			<a href="#"><h2>Dados da conta</h2></a>
+		</div>
+		<div class="sair">
+		<% if current_user %>
+	    	<p><%= current_user.email %></p>
+		    <%= link_to "Sair", log_out_path %>
+	  	<% end %>
+	  	</div>
+	</div>
+</div>
+<div id="wrapper_admin">
+	<div class="areas_site">
+		<h1>
+			Áreas do site
+		</h1>	
+		<div class="botoes">
+			<h4>
+				<%= link_to "Administração do site", paginas_path %>
+			</h4>
+			<h4>
+				<%= link_to "Dados gerais do site", paginas_path %>
+			</h4>
+			<h4>
+				<%= link_to "Banco de dados", painel_index_path %>
+			</h4>
+		</div>
+	</div>
+</div>
+
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
