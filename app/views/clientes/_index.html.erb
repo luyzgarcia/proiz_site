@@ -1,0 +1,8 @@
+<div class="lista_clientes">
+	<h1>Lista de clientes cadastrados</h1>
+	<ul>
+		<% @clientes.each do |cliente|%>
+			<li id="cliente_<%= cliente.id %>"><%= cliente.nome %><%= link_to "Excluir", cliente, :remote => true, :confirm => 'Voce tem certeza?', :method => :delete, :success => "alert('adsfasdfas');" %></li>
+		<% end %>	
+	</ul>
+</div>
