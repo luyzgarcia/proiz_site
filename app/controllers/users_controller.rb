@@ -19,7 +19,9 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to painel_index_path, :notice => "Cadastrado"
     else
-      render "new"
+      respond_to do |format|
+        format.js {render action: 'new'} # resposta em formato JS para atualizar apenas a DIV= "detalhe_tabela"
+      end     
     end        
   end
   
@@ -27,6 +29,6 @@ class UsersController < ApplicationController
   private 
   
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation, :status, :name)
   end
 end
