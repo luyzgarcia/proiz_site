@@ -1,4 +1,10 @@
 ProizAdmin::Application.routes.draw do
+  get "clientes/show"
+  get "clientes/index"
+  get "clientes/edit"
+  get "clientes/delete"
+  get "clientes/update"
+  get "clientes/new"
   get "paginas/index"
   get "painel/index"
   get "sessions/new"
@@ -13,6 +19,7 @@ ProizAdmin::Application.routes.draw do
   resources :sessions
   resources :painel
   resources :paginas
+  resources :clientes 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
