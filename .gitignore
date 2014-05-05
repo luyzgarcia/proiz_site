@@ -213,3 +213,4 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+db/migrate/20140430125625_create_clientes.rb
