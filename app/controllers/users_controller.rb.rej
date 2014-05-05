@@ -1,0 +1,12 @@
+diff a/app/controllers/users_controller.rb b/app/controllers/users_controller.rb	(rejected hunks)
+@@ -24,6 +24,10 @@
+         format.js {render action: 'new'} # resposta em formato JS para atualizar apenas a DIV= "detalhe_tabela"
+       end     
+     end        
++=======
++      render "new"
++    end
++>>>>>>> origin/master
+   end
+   
+   

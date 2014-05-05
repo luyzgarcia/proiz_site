@@ -213,5 +213,10 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+<<<<<<< HEAD
+db/migrate/20140430125625_create_clientes.rb
+=======
 config/database.yml
 Gemfile.lock
+>>>>>>> bacf41e214e2b3569ce579d049a6ddc9314f9b54
+db/schema.rb

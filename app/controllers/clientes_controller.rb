@@ -1,9 +1,15 @@
 class ClientesController < ApplicationController
   
   def show
+    logger.info "ENtrou no show"
+    @clientes = Cliente.all
   end
 
   def index
+    @clientes = Cliente.all
+    respond_to do |format|
+      format.js
+    end
   end
   
   #Método chamando quando o usuario ira cadastras um novo cliente
@@ -25,7 +31,7 @@ class ClientesController < ApplicationController
     @cliente = Cliente.new(cliente_params)
     if(@cliente.save)
       respond_to do |format|
-        format.js { render action: "show"}
+        format.js { redirect_to clientes_show_path}
       end
     else          
       respond_to do |format|
@@ -37,7 +43,17 @@ class ClientesController < ApplicationController
   def edit
   end
 
-  def delete
+  def destroy
+    logger.info "Excluindo o cliente"
+    @cliente = Cliente.find(params[:id])
+    #@cliente.destroy
+    
+    @cliente_id = @cliente.id
+    respond_to do |format|
+      format.js { render action: 'destroy'}
+    end
+    
+    logger.info "terminou de excluir"
   end
 
   def update
@@ -47,6 +63,6 @@ class ClientesController < ApplicationController
   private 
   
   def cliente_params
-    params.require(:cliente).permit(:nome, :descricao, :url_site)
+    params.require(:cliente).permit(:id,:nome, :descricao, :url_site)
   end
 end
