@@ -19,15 +19,10 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to painel_index_path, :notice => "Cadastrado"
     else
-<<<<<<< HEAD
       respond_to do |format|
         format.js {render action: 'new'} # resposta em formato JS para atualizar apenas a DIV= "detalhe_tabela"
-      end     
-    end        
-=======
-      render "new"
+      end  
     end
->>>>>>> origin/master
   end
   
   
