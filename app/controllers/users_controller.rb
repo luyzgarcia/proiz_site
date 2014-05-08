@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       
     else
       respond_to do |format|
-        format.js {render action: 'new'} # resposta em formato JS para atualizar apenas a DIV= "detalhe_tabela"
+        format.js {render action: 'new'} #resposta em formato JS para atualizar apenas a DIV= "detalhe_tabela"
       end  
     end
   end

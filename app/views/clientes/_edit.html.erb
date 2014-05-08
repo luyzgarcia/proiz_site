@@ -1,0 +1,20 @@
+<%= form_for(@cliente,remote:true) do |c| %>
+	<div class="item_info_detalhe">
+		<h5><%= c.label :nome %></h5>
+		<h4><%= c.text_field :nome%></h4>
+	</div>
+	<div class="item_info_detalhe">
+		<h5><%= c.label :descricao %></h5>
+		<h4><%= c.text_field :descricao %></h4>
+	</div>
+	<div class="item_info_detalhe">
+		<h5><%= c.label :url_site %></h5>
+		<h4><%= c.text_field :url_site %></h4>
+	</div>
+
+<div class="item_info_botoes">
+	<%= link_to "Limpar alterações", clientes_path, :remote => true, :class => "link_limpar" %>
+	<a href="#" class="link_salvar">Salvar alterações</a>
+</div>
+
+<% end %>

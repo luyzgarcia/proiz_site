@@ -7,50 +7,65 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="painel_administrativo">
-	<div class="wrapper_itens">
-		<div class="titulo_gerenciador">
-			<a href="#"><%= image_tag "logo_proiz.png" %></a>
-			<p>Gerenciador de conteúdo</p>
-		</div>
-		<div class="empresa_titulo">
-			<h5>Site</h5>
-			<h3>Empresa Nome LTDA</h3>	
-		</div>
-		<div class="dados_conta">
-			<a href="#"><h2>Dados da conta</h2></a>
-		</div>
-		<div class="sair">
-		<% if current_user %>
-	    	<p><%= current_user.email %></p>
-		    <%= link_to "Sair", log_out_path %>
-	  	<% end %>
-	  	</div>
-	</div>
-</div>
-<div id="wrapper_admin">
-	<div class="areas_site">
-		<h1>
-			Áreas do site
-		</h1>	
-		<div class="botoes">
-			<h4>
-				<%= link_to "Administração do site", paginas_path %>
-			</h4>
-			<h4>
-				<%= link_to "Dados gerais do site", paginas_path %>
-			</h4>
-			<h4>
-				<%= link_to "Banco de dados", painel_index_path %>
-			</h4>
+<div class="wrapper">
+<% if current_user %>
+	<div id="painel_administrativo">
+		<div class="wrapper_itens">
+			<div class="titulo_gerenciador">
+				<a href="#"><%= image_tag "logo_proiz.png" %></a>
+				<p>Gerenciador de conteúdo</p>
+			</div>
+			<div class="empresa_titulo">
+				<h5>Site</h5>
+				<h3>Empresa Nome LTDA</h3>	
+			</div>
+			<div class="dados_conta">
+				<a href="#"><h2>Dados da conta</h2></a>
+			</div>
+			<div class="sair">	
+		    	<p><%= current_user.email %></p>
+			    <%= link_to "Sair", log_out_path %>
+		  	</div>
 		</div>
 	</div>
-</div>
+	<div id="wrapper_admin">
+		<div class="areas_site">
+			<h1>
+				Áreas do site
+			</h1>	
+			<div class="botoes">
+				<h4>
+					<%= link_to "Administração do site", paginas_path %>
+				</h4>
+				<h4>
+					<%= link_to "Dados gerais do site", paginas_path %>
+				</h4>
+				<h4>
+					<%= link_to "Banco de dados", painel_index_path %>
+				</h4>
+			</div>
+		</div>
+	</div>
+<% end %>
 
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
+
 <%= yield %>
 
+<div id="footer">
+	<p>Todos os direitos reservados - Proiz comunicação integrada EIRELI ME</p>
+	<div class="footer_canais">
+		<div class="wrapper_canais">
+			<h3>Canais de atendimento Proiz</h3>
+			<h4>(45) 3378-3676</h4>
+			<h4><%= link_to "skype: atendimento.proiz", 'skype: atendimento.proiz?add'%></h4>
+			<h4><%= mail_to "atendimento@proiz.com.br", "Contato - Proiz" %></h4>
+		</div>	
+	</div>
+	
+</div>
+</div>
 </body>
 </html>

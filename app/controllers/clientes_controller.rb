@@ -27,7 +27,7 @@ class ClientesController < ApplicationController
   #o Cliente sera validado, caso tudo esteja preenchido ele retorna uma mensagem com o usuario
   #cadastrado, mas caso o usuario nao tenha preenchido todos os campos ele ira dar uma 
   #mensagem mostrando os campos obrigatorios
-  def create    
+  def create
     @cliente = Cliente.new(cliente_params)
     if(@cliente.save)
       respond_to do |format|
@@ -41,10 +41,15 @@ class ClientesController < ApplicationController
   end
 
   def edit
+    logger.info "Editar o cliente"
+    @cliente = Cliente.find(params[:id])
+    @cliente_id = @cliente.id
+    respond_to do |format|
+      format.js { render action: 'edit'}
+    end
   end
 
   def destroy
-    logger.info "Excluindo o cliente"
     @cliente = Cliente.find(params[:id])
     #@cliente.destroy
     
@@ -52,11 +57,10 @@ class ClientesController < ApplicationController
     respond_to do |format|
       format.js { render action: 'destroy'}
     end
-    
-    logger.info "terminou de excluir"
   end
 
   def update
+    
   end
   
   

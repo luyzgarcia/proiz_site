@@ -1,3 +1,58 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.wrapper_login {
+  margin: 0 auto;
+  width: 600px;
+  background: #d1d3d4;
+  padding-top: 10%;
+  div {
+    display: inline-block;
+  }
+  .login_proiz {
+    background: #fdbf57;
+    float: left;
+    height: 200px;
+    width: 40%;
+    text-align: center;
+    img {
+      margin: 55px 0px 10px 0px;
+    }
+    h4 {
+      display: block;
+      font: normal 12pt/1.3em "nexa_bold", Times;
+      color: #004961;
+      padding: 0 30px;
+    }
+  }
+  .login_form {
+    background: #f1f2f2;
+    height: 200px;
+    width: 60%;
+    form {
+      margin: 25px 30px;
+      input {
+        border: none;
+        padding: 10px 15px;
+      }
+      .button {
+        text-align: right;
+        input {
+          border: 1px solid #dedede;
+          font: normal 12pt/1.3em "nexa_bold", Times;
+          color: #004961;
+          background: #ffffff;
+          padding: 10px 35px;
+          background: -moz-linear-gradient(top, #ffffff 0%, #e2e2e2 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e2e2e2));
+          background: -webkit-linear-gradient(top, #ffffff 0%,#e2e2e2 100%);
+          background: -o-linear-gradient(top, #ffffff 0%,#e2e2e2 100%);
+          background: -ms-linear-gradient(top, #ffffff 0%,#e2e2e2 100%);
+          background: linear-gradient(to bottom, #ffffff 0%,#e2e2e2 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2',GradientType=0 );
+        }
+      }
+      
+    }
+  }
+}

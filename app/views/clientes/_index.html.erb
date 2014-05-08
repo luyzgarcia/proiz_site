@@ -1,8 +1,51 @@
 <div class="lista_clientes">
-	<h1>Lista de clientes cadastrados</h1>
-	<ul>
-		<% @clientes.each do |cliente|%>
-			<li id="cliente_<%= cliente.id %>"><%= cliente.nome %><%= link_to "Excluir", cliente, :remote => true, :confirm => 'Voce tem certeza?', :method => :delete, :success => "alert('adsfasdfas');" %></li>
-		<% end %>	
-	</ul>
+	<!--
+		<div class="itens_cadastrados">
+		<div class="item">
+			<h3>Cliente Tal</h3>
+			<a href="#" class="link_excluir"></a>
+			<a href="#" class="link_editar"></a>
+			<div class="item_info" id="cliente_">
+				
+				<div class="item_info_detalhe">
+					<h5>Nome: </h5>
+					<h4>Cliente tal</h4>
+				</div>
+				<div class="item_info_detalhe">
+					<h5>Status: </h5>
+					<h4>Ativo</h4>
+				</div>
+				
+			</div>
+		</div>	
+	</div>
+-->
+	
+	<div class="itens_cadastrados">
+		<% @clientes.each do |cliente| %>
+			<div class="item" id="cliente_<%= cliente.id %>">
+				<h3><%= cliente.nome %></h3>
+				<%= link_to "", cliente, :remote => true, :confirm => 'Voce tem certeza?', :method => :delete, :class => 'link_excluir' %>
+				<%= link_to "", edit_cliente_path(cliente), :remote =>true, :class => 'link_editar' %>
+				
+				<div class="item_info" >
+					<div class="item_info_detalhe">
+						<h5>Nome</h5>
+						<h4><%= cliente.nome %></h4>
+					</div>
+					<div class="item_info_detalhe">
+						<h5>Descricao</h5>
+						<h4><%= cliente.descricao %></h4>
+					</div>
+					<div class="item_info_detalhe">
+						<h5>Url</h5>
+						<h4><%= cliente.url_site %></h4>
+					</div>
+				</div>
+			</div>			
+		<% end %>
+	</div>
+	
+	
+	
 </div>

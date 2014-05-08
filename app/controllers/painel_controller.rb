@@ -1,5 +1,5 @@
 class PainelController < ApplicationController
-  #before_action :authorize
+  before_action :authorize
   
   def index
     

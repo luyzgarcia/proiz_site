@@ -1,15 +1,20 @@
-<h1>Log in</h1>
-
-<%= form_tag sessions_path do %>
-	<p>
-		<%= label_tag :email %><br />
-		<%= text_field_tag :email, params[:email] %>
-	</p>
-	<p>
-		<%= label_tag :password %><br />
-		<%= password_field_tag :password%>
-	</p>
-	
-	<p class="button"><%= submit_tag "Log in" %></p>
-	
-<% end %>
+<div class="wrapper_login">
+	<div class="login_proiz">
+		<%= image_tag "logo_proiz.png" %>
+		<h4>Gerenciador de conteúdo</h4>
+	</div>
+	<div class="login_form">
+		<%= form_tag sessions_path do %>
+			
+			<p>
+				<%= text_field_tag :email, params[:email], :placeholder => 'Email', :size => "40" %>
+			</p>
+			
+			<p>
+				<%= password_field_tag :password, params[nil], :placeholder => 'Senha' , :size => "40" %>
+			</p>
+			
+			<p class="button"><%= submit_tag "Entrar" %></p>
+		<% end %>
+	</div>
+</div>
