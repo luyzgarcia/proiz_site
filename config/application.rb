@@ -23,8 +23,8 @@ module ProizAdmin
     
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
-    config.assets.precompile += %w( inicial.js
-    config.assets.precompile += %w( noticias.js ) )
+    config.assets.precompile += %w( inicial.js)
+    config.assets.precompile += %w( noticias.js )
     config.assets.precompile += %w( especialidades.js )
     config.assets.precompile += %w( trabalhos.js )
     config.assets.precompile += %w( sobre.js )
