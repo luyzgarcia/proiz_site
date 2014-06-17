@@ -22,11 +22,12 @@ development:
   #username: postgres
   #password: admin
   #host: localhost
-  database: d7vvilba93urjr
+  database: d7ruohdp0rrc81
   pool: 5
-  username: xhczjcajkmnnnu
-  password: ex2bS5x4waiq23_pBiytnBV_SE
-  host: ec2-54-83-201-54.compute-1.amazonaws.com
+  username: kkasqjpsohryba
+  password: oi8Ex3U5Rqpxy4xXr5JiL4TJaU
+  host: ec2-54-225-124-205.compute-1.amazonaws.com
+
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
