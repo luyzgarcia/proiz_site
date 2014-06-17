@@ -1,0 +1,245 @@
+// Place all the styles related to the Contato controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#contato .wrapper_topo {
+  width: 100%;
+  /*height: 379px;*/
+  height: auto;
+  //background: #004961 image-url("contato_back.png") 90% 10% no-repeat;
+  background: #243942;
+  position: relative;
+}
+#contato .wrapper_topo .mensagem{
+  width: 1024px;
+  margin: 0 auto;
+  padding: 100px 0;
+  /*position: relative;*/
+  overflow: hidden;
+  h2 {
+    font: normal 26pt/1.3em "nexa_bold", Times;
+    color: #fdba31;
+    width: 50%;
+    margin-bottom: 20px;
+    z-index: 2;
+  }
+  h3 {
+    font: normal 18pt/1.3em "nexa_bold", Times;
+    color: #fff;
+    width: 50%;
+    z-index: 2;
+  }
+  .parallax {
+    height: 100%;
+    width: 690px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    right: 0;
+      
+      
+    .fundo_globo {
+      position: relative;
+      top: -15% !important;
+      left: 15% !important;
+      -webkit-transition: 0.5s linear;
+      transition: 0.5s linear;
+      -webkit-transform: scale(0.8);
+    }
+    .circulo_contato {
+      position: relative;
+      top: -49% !important;
+      left: -21% !important;
+      height: 30px;
+      width: 30px;     
+      margin: -15px 0 0 -14px; 
+    }
+    span{
+      position: relative;
+      top: -49% !important;
+      left: -23% !important;
+      height: 30px;
+      width: 30px;     
+      margin: -15px 0 0 -14px; 
+    }
+    span{
+      font: normal 16pt/1em "nexa_bold", Times;
+      color: #fff;
+      margin-left: 15px;
+      display: inline;
+    }
+    span:before {
+      content: 'Toledo, Paraná, Brasil';
+      font: normal 10pt/1.3em "droid_serif", Times;
+      color: #fff;
+      position: absolute;
+      top: 24px;
+      left: 0;
+      width: 150px;
+    }
+    
+    /*.img_effect {
+      -webkit-transform: rotate(30deg) scale(1.3); 
+      top: 55px;
+    }*/
+    
+    
+  }
+}
+#contato .wrapper_contato {
+  width: 1024px;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: table;
+}
+#contato .wrapper_contato > div {
+  float: left;
+}
+#contato .wrapper_contato hr {
+  display: none;
+}
+#contato .wrapper_contato .contato_informacoes {
+  width: 32%;
+  margin-left: 3%;
+}
+#contato .wrapper_contato .contato_informacoes h2 {
+  font: normal 10pt/1.5em nexa_bold, Times;
+  color: #8dc63f;
+}
+#contato .wrapper_contato .contato_informacoes h3 {
+  font: normal 14pt/1.5em nexa_bold, Times;
+  color: #004961;
+}#contato .wrapper_contato .contato_informacoes .telefone {
+  font-size: 16pt;
+}
+
+#contato .wrapper_contato .contato_formulario { 
+  width: 65%;
+}
+#contato .wrapper_contato .contato_formulario h1 {
+  font: normal 26pt/1.5em nexa_bold, Times;
+  color: #8dc63f; 
+  margin-bottom: 25px;
+} 
+
+// ###################### Mensagem erro formulário contato #############################
+#contato label {  
+  background: #c30;
+  border-radius: 0px;
+  padding-right: 15px;
+  padding-left: 15px;   
+} 
+
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  #contato .wrapper_contato {
+    width: 100%;
+  }
+  #contato .wrapper_topo {
+    width: 100%;
+    height: 232px;
+    background: #004961 url("images/sobre_fundo.png") no-repeat 100% 100%;
+    background-size: contain;
+  }
+  #contato .wrapper_contato .contato_informacoes {
+    width: 90%;
+    margin: 0 auto 15px;
+    float: none;
+    text-align: center;
+  }
+  #contato .wrapper_contato .contato_informacoes div{ 
+    display: inline-block;
+    width: 32.7%;
+  }
+  #contato .wrapper_contato hr {
+    display: block;
+    border: 1px solid #e6e7e8;
+    margin: 25px 0 20px;
+  }
+  #contato .wrapper_contato .contato_formulario {
+    width: 90%;
+    margin: 0 auto;
+    float: none;
+  }
+  #contato .wrapper_topo .mensagem {
+    width: 60%;
+    padding: 70px 0px;
+    margin-left: 55px;
+  }
+  #contato .wrapper_topo .mensagem h2, #contato .wrapper_topo .mensagem h3 {
+    width: 70%;
+  }
+  #contato .wrapper_topo .mensagem h2 {
+    font-size: 24px;
+  }
+  #contato .wrapper_topo .mensagem h3 {
+    font-size: 16px;
+  }
+  
+  #contato .wrapper_contato .contato_informacoes h2 {
+    font-size: 11px;
+  }
+  #contato .wrapper_contato .contato_informacoes h3 {
+    font-size: 13px;
+  }#contato .wrapper_contato .contato_informacoes .telefone {
+    font-size: 15px;
+    color: #004961;
+  }
+  #contato .wrapper_contato .contato_formulario h1 {
+    font-size: 24pt;
+  }
+}
+
+@media screen and (max-width:480px),(max-device-width: 480px){
+  #contato .wrapper_topo {
+    background: #004961;
+    height: auto;
+  }
+  #contato .wrapper_topo .mensagem {
+    width: 100%;
+    padding: 25px 0;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #contato .wrapper_topo .mensagem h2 {
+    font-size: 22pt;
+    color: #fdba31;
+    width: 85%;
+    display: inline-block;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  #contato .wrapper_topo .mensagem h3 {
+    font-size: 16pt;
+    width: 85%;
+    display: inline-block;
+    text-align: left;
+  }
+  #contato .wrapper_contato {
+    width: 100%;
+    padding-bottom: 250px;
+    margin-bottom: 30px;
+    position: relative;
+    display: block;
+  }
+  
+  #contato .wrapper_contato .contato_formulario {
+    width: 90%;
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #contato .wrapper_contato .contato_formulario h1 {
+    font-size: 16pt;
+  }
+  #contato .wrapper_contato .contato_formulario p {
+    text-align: left; 
+  }
+  #contato .wrapper_contato .contato_informacoes {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    margin: 0;
+  }
+}

@@ -1,0 +1,38 @@
+<div class="menu_trabalhos">
+	<ul>
+		<li><%= link_to 'Todos', filtrar_trabalho_path(0), :title => 'Todos', :remote => true %></li></li>
+		<% @categorias.each do |cat| %>
+			<li><%= link_to cat.titulo, filtrar_trabalho_path(cat), :title => cat.titulo, :remote => true %></li>
+		<% end %>					
+	</ul>
+</div>
+<div class="corpo_trabalhos">
+	<div id="grid">
+		<% @trabalhos.each do |trab| %>
+			<%= render 'item_trabalho', :trab =>trab %>
+		<% end %>
+	</div>
+	<div id="detalhe_modal" style="display:none;"></div>
+	<div class="compartilhar">
+		<h3>Gostou?</h3>
+		<h4>Compartilhe essa página com seus amigos</h4>
+		
+		<div class="botoes_amarelos">
+			<div class="bt_facebook">
+				<a href="face"></a>
+			</div>
+			<div class="bt_facebook">
+				<a href="face"></a>
+			</div>
+			<div class="bt_google">
+				<a href="google"></a>
+			</div>
+			<div class="bt_instagram">
+				<a href="#"></a>
+			</div>
+			<div class="bt_twitter">
+				<a href="#"></a>
+			</div>
+		</div>
+	</div>
+</div>

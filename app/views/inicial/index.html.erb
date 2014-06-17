@@ -1,0 +1,232 @@
+<% content_for :header do %>
+  <%= javascript_include_tag 'inicial' %>  
+<% end %>
+<div id="home_intro" class="wrapper">
+	<div class="home_wrapper">
+		<h1>
+			<span><p class="amarelo">Criar</p><p class="cinza">,</p></span>
+			<span><p class="azul">evoluir</p></span> 
+			<span><p class="cinza">e&nbsp;</p><p class="verde"> transformar</p><p class="cinza">.</p></span>
+		</h1>
+		<div class="mensagem">
+			<div class="continue">
+				<div class="circulo">
+					<%= image_tag('home_seta.png')%>			
+				</div>
+			</div>
+			<div class="somos">
+				<h4>
+					Somos uma agência de comunicação integrada e pensamos o Branding como uma transformação holística de marcas.
+				</h4>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="intervalo1" class="intervalo">
+</div>
+
+
+<div id="home_trabalhos" class="">
+	<div class="trabalhos_recentes">
+		<div class="trabalhos_recentes_content">
+			<h2>Trabalhos recentes</h2>
+			<div class="mais_trabalhos">
+				<div class="bt_padrao1">
+					<a href=#>
+						<div class="circulo">
+							<span></span>
+						</div>
+						<div class="mensagem">
+							<p>Trabalhos</p>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="bt_esconder">
+			<a href="#">esconder</a>
+		</div>
+	</div>
+	<div class="projetos_slider" id="projetos_slider">
+		<div class="slider_imagens">
+			<ul>
+				<% @trabalhos.each do |trab| %>
+					<li>
+						<%= image_tag(trab.imagem_vitrine.url, :class => 'imagem_slide')%>
+						<div class="descricao_item">
+							<h2><%= trab.descricao_principal %></h2>
+						</div>
+						<a href=#><span><p><%= image_tag('ver_projeto.png')%></p></span></a>
+					</li>
+				<% end %>				
+			</ul>
+		</div>
+		<style>
+	      #home_trabalhos .projetos_slider .slider_menu {
+	       padding: 25px 0px;
+	      }
+	      .range {
+	       -webkit-appearance: none;
+	       background-color: #8DC63F;
+	       width: 17px;
+	       height: 17px;
+	       border-radius: 50%;
+	       box-shadow: 0px 0px 0px 7px #004961;
+	       position: absolute;
+	       margin: -5px 0px;
+	       cursor: pointer;
+	      }
+	      #home_trabalhos .projetos_slider .slider_menu span {
+	      	margin-left: 0px;
+	      	width: 100%;
+	      }
+	      #home_trabalhos .projetos_slider .slider_imagens ul {
+	      	-webkit-transition: none;
+	      }
+	      #container_range {
+	      	width: 95%;
+	      	position: relative;
+			margin: 0 auto;
+	      }
+     	</style>
+		<div class="slider_menu">
+			<div id="container_range">
+		       <span></span>
+		       <div class="range"></div>
+		    </div>
+		</div>
+	</div>
+</div>
+<div id="intervalo2" class="intervalo">
+</div>
+
+<div id="home_comotrabalhamos" class="">
+	
+	<div class="trabalhamos_2 mostrar">
+		<div class="trabalho-item">
+			<div class="tb-info">
+				<div class="tb-info-frente">
+					<span class="circulo">
+					</span>
+					<span class="texto">
+						<h4>Design gráfico<br/> e digital</h4>
+						<hr>
+					</span>	
+				</div>
+				<div class="tb-info-tras">
+					<span class="titulo">
+						<h4>Design gráfico<br/> e digital</h4>
+					</span>
+					<span class="texto">
+						<p>Utilizada para divulgar valores de um marca, a propaganda é capaz 
+							de mudar comportamentos e transformar culturas. </p>
+					</span>
+					<span class="voltar">
+						  <%= image_tag('home_seta.png') %>
+						</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="trabalhamos_3 mostrar">
+		<div class="trabalho-item">
+			<div class="tb-info">
+				<div class="tb-info-frente">
+					<span class="circulo">
+					</span>
+					<span class="texto">
+						<h4>Marketing</h4>
+						<hr>
+					</span>	
+				</div>
+				<div class="tb-info-tras">
+					<span class="titulo">
+						<h4>Marketing</h4>
+					</span>
+					<span class="texto">
+						<p>Utilizada para divulgar valores de um marca, a propaganda é capaz 
+							de mudar comportamentos e transformar culturas. </p>
+					</span>
+					<span class="voltar">
+					  <%= image_tag('home_seta.png') %>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="trabalhamos_4 mostrar">
+		<div class="trabalho-item">
+			<div class="tb-info">
+				<div class="tb-info-frente">
+					<span class="circulo">
+					</span>
+					<span class="texto">
+						<h4>Publicidade </h4>
+						<hr>
+					</span>	
+				</div>
+				<div class="tb-info-tras">
+					<span class="titulo">
+						<h4>Publicidade</h4>
+					</span>
+					<span class="texto">
+						<p>Utilizada para divulgar valores de um marca, a propaganda é capaz 
+							de mudar comportamentos e transformar culturas. </p>
+					</span>
+					<span class="voltar">
+					  <%= image_tag('home_seta.png') %>
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="trabalhamos_1">
+		<div class="inner">
+			<h3>Os serviços</h3>
+			<p>Aliados aos objetivos de nossos clientes,
+				 unimos três grandes especialidades na realização de nossos serviços.</p>
+			 
+            <div class="botao">
+				<a href='#' class="botao_padrao2">
+					Saiba mais
+				</a>
+			</div>
+		</div>
+	</div>		
+</div>
+<div id="intervalo3" class="intervalo">
+</div>
+
+<div id="home_noticias" class="wrapper__">
+	<div class="noticias">
+		<h1>Fique por dentro do que temos feito</h1>
+		<% @noticias.each do |item| %>
+			<div class="item_noticia">
+				<hr class="linha_verde"/>
+				<h5>01 jan</h5>
+				<p><a href="" class="link_noticia"><%= item.titulo %></a></p>
+				<div class="wrapper_icon_noticias">
+		            <a class="continue_lendo" href='#continuelendo'></a>
+					<div class="compartilhar_noticia">
+						<a class="compartilhar_face rede_social" href='#continuelendo'></a>
+						<a class="compartilhar_google rede_social" href='#continuelendo'></a>
+						<a class="compartilhar_twitter rede_social" href='#continuelendo'></a>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		
+		<div class="bt_padrao1">
+			<a href=#>
+				<div class="circulo">
+					<span></span>
+				</div>
+				<div class="mensagem">
+					<p>Notícias</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+<div id="intervalo4" class="intervalo">
+</div>

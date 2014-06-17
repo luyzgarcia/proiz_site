@@ -1,0 +1,26 @@
+<%= form_for(@noticiacategoria, remote: true) do |f| %>
+	<div class="item_info_detalhe">
+		<h5><%= f.label :titulo %></h5>
+		<h4><%= f.text_field :titulo %></h4>
+	</div>
+	
+	<div class="item_info_detalhe">
+		<h5><%= f.label :descricao %></h5>
+		<h4><%= f.text_field :descricao %></h4>
+	</div>
+	
+	<div class="item_info_detalhe">
+		<h5><%= f.label :status %></h5>
+		<h4><%= f.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+	</div>
+	
+	<% if @editando == true %>
+		<div class="item_info_botoes">
+			<%= link_to "Limpar alterações", noticiacategoria_path, :remote => true, :class => "link_limpar" %>
+			<%= f.submit %>
+		</div>
+	<% else %>
+		<p class="button"><%= f.submit %></p>
+	<% end %>
+
+<% end %>

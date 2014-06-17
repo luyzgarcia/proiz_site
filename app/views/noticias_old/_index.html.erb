@@ -1,0 +1,28 @@
+<div class="lista_noticias">
+	<div class="itens_cadastrados">
+		<% if @noticias %>
+			<% @noticias.each do |noticia| %>
+				<div class="item" id="noticia_<%= noticia.id %>">
+					<h3><%= noticia.titulo %></h3>
+					<%= link_to "", noticia, :remote => true, :confirm => 'Você tem certeza?', :method => :delete, :class => 'link_excluir'%>
+					<%= link_to"", edit_noticia_path(noticia), :remote => true, :class => 'link_editar' %>
+					
+					<div class="item_info">
+						<div class="item_info_detalhe">
+							<h5>Título</h5>
+							<h4><%= noticia.titulo %></h4>>
+						</div>
+						<div class="item_info_detalhe">
+							<h5>Conteúdo</h5>
+							<h4><%= noticia.conteudo %></h4>>
+						</div>
+	<!--					<div class="item_info_detalhe">
+							<h5>Imagem</h5>
+							<h4><%= noticia.imagem %></h4> -->
+						</div>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>

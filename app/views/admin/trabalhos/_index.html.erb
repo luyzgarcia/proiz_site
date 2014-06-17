@@ -1,0 +1,53 @@
+
+<div class="lista_cadastrados">
+	<div class="icones_superior">
+		<a href="#" class="fechar"></a>
+		<a href="#" class="esconder"></a>
+	</div>
+	<h4 class="titulo">
+		Trabalhos Cadastrados
+	</h4>
+	<table>
+		<tr>
+			<th>Titulo</th>
+			<th>Data de edição</th>
+			<th>Estado</th>
+			<th>Ordem</th>
+			<th>Ação</th>
+		</tr>
+		<% if @trabalhos %>
+			<% @trabalhos.each do |trabalho| %>
+				<tr class="item" id="trabalho_<%= trabalho.id %>">
+					<td>
+						<%= trabalho.titulo%>
+					</td>
+					<td>
+						<%= trabalho.updated_at.to_s(:create) %>
+					</td>
+					<td>
+						<%= link_to '', 
+						mudarstatus_admin_trabalho_path(trabalho),
+						:class => trabalho.status == 1 ? 'status_ativo' : 'status_inativo', 
+						:confirm => 'Alterar status',
+						:method => 'get',
+						:data => {:'message' => "Você está prestes a altear o status deste cliente."} %>
+					</td>
+					<td>
+						<% cat = Categoriatrabalho.find(trabalho.categoria_id)	%>						
+						<%= cat.titulo%>
+					</td>
+					
+					<td>
+						<%= link_to "", edit_admin_trabalho_path(trabalho), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
+						<%= link_to "", [:admin,trabalho], :remote => true, 
+						:confirm => 'Excluir',
+						:data => {:'message' => "Você está prestes a excluir este trabalho?"},
+						:method => :delete,
+						:class => 'bt_excluir_1 tooltips',
+						:title => 'Excluir item'%>
+					</td>
+				</tr>
+			<% end %>
+		<% end %>
+	</table>
+</div>

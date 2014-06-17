@@ -1,0 +1,170 @@
+// Place all the styles related to the noticias controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#noticias .wrapper_noticia_destaque {
+  background: #fff;    
+}
+#noticias .wrapper_noticia_destaque .noticia_destaque {
+  margin: 0px auto;
+  padding: 60px 0;
+  width: 1024px;
+}
+#noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info {
+  display: inline-block;
+  width: 75%;
+  margin-left: 5%;
+}
+
+#noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info img {
+  float: left;
+  width: 60%;
+  margin-left: 2.5%;
+  height: auto;
+  max-height: 270px;
+}
+#noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info p {
+  font: normal 18pt/1.2em nexa_bold, Times;
+  color: #004961;
+  width: 35%;
+  float: right;
+}
+#noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info .ultimas_leiamais {
+  width: 34%;
+  float: right;
+}
+#noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info .ultimas_leiamais .link_noticias {
+  /*position: relative;
+  top: 300px;
+  left: 78px;
+  display: inline;*/
+  margin-left: 0px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+
+.buscar_noticia {
+  border-top: 1px solid #e6e7e8;
+  border-bottom: 1px solid #e6e7e8;
+  form {
+    margin: 25px auto;
+    width: 1024px;
+  }
+  input {
+    font: normal 22pt/1.3em "nexa_bold", times;
+    padding-left: 40px;
+    border: none;
+    background: transparent;
+    color: #bdbdbd;
+    background: image-url('icon_pesquisar.png') no-repeat left center;
+  }
+}
+
+
+@media only screen and (max-width: 1024px) and (min-width: 481px) {
+  #noticias {
+    display: inline-block;
+    padding-bottom: 100;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque {
+    width: 100%;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info img {
+    width: 95%;
+    margin: 0 0 20px 0;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info p {
+    float: none;
+    width: 95%;
+    display: inline-block;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info .ultimas_leiamais {
+    width: 100%;
+    float: none;  
+  } 
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info .ultimas_leiamais .link_noticias {
+    margin-top: 10px;
+  }
+  
+  #noticias .wrapper_noticia_destaque .noticia_destaque .categorias{
+    margin-left: 2.5%;  
+  }
+  #noticias .noticias_ultimas .wrapper_ultimas {
+    display: inline-block;
+    margin: 0px;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info{
+    margin-left: 3%;
+  }
+  
+  .buscar_noticia form {
+    margin: 0;
+    width: 100%;
+    input {
+      margin: 25px 50px;
+    }
+   }
+  
+  
+}
+@media screen and (max-width:480px),(max-device-width: 480px){ 
+  #noticias {
+    padding-bottom: 100;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque {
+    width: 100%;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info {
+    width: 95%;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info img {
+    width: 95%;
+    margin-bottom:15px;
+    margin-left: 0;
+  }
+  
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info p {
+    
+    font-size: 16pt;
+    width: 95%%;
+    float: none;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info .ultimas_leiamais {
+    text-align: center;
+    margin-top: 15px;
+    float: none;
+    width: 100%;
+  }
+  #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info .ultimas_leiamais .link_noticias{
+    margin: 0;  
+  } 
+  #noticias .noticias_ultimas .wrapper_ultimas {
+    width: 100%;
+    margin: 0px 20px 0 0 ;
+  }
+  
+  .categorias {
+    width: 100%;
+  }
+  
+  .categorias .wrapper_categorias {
+    position: relative;
+    display: block;
+    height: 100px;
+    width: 90%;
+    overflow: scroll;
+    margin-left: 25px;
+  }
+  .categorias h5 {
+    margin-left: 25px;
+  }
+  .categorias .wrapper_categorias ul {
+    width: 100%;
+    /*position: absolute;*/
+    display: table;
+  }
+  .categorias ul li, .categorias ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+}

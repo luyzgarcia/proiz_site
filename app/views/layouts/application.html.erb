@@ -1,28 +1,164 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="format-detection" content="telephone=no">
 <html>
 <head>
-  <title>ProizAdmin</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-</head>
-<body>
+  <%= content_for :header %>
+  
+    
 
-<!--<div id="user_nav">
-  <% if current_user %>
-    Logged in as <%= current_user.email %>.
-    <%= link_to "Log out", log_out_path %>
-  <% else %>
-    <%= link_to "Sign up", sign_up_path %> or
-    <%= link_to "log in", log_in_path %>
-  <% end %>
+  <%= display_meta_tags :site => 'Proiz' %>
+  
+</head>
+<body class="corpo">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1501616463400377&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="wrapper_carregando">
+	<style>
+		#carregando span:before {
+			content: '\e406';
+			font-family: 'icons';
+			position: absolute;
+			top: 10px;
+			left: 45px;
+			font-size: 25pt;
+			color: #fdba31;
+			-webkit-animation: rodando 2.5s;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-timing-function: linear;
+		    /*
+		    
+		    -webkit-animation-duration: 6000s;*/
+		}
+		@-webkit-keyframes rodando {
+		    0% { 
+		    	-webkit-transform: rotate(0deg);    
+		    	}
+		    100%   { 
+		    	-webkit-transform: rotate(360deg); 
+		    	}
+	  	}
+
+	</style>
+	<div id="carregando">
+		<span></span>
+	</div>
 </div>
--->
+<div id="esconde">
+			
+</div>
+<div id="header">
+	<span></span>
+	<div id="logo">
+		<%= image_tag('logo_proiz.png')%>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><%= link_to 'SOBRE', sobre_path, :data => { :'hover' => 'SOBRE' }  %></a></li>
+			<li><a href="#especialidades" data-hover="ESPECIALIDADES">ESPECIALIDADES</a></li>
+			<li><a href="trabalhos.html" data-hover="TRABALHOS">TRABALHOS</a></li>
+			<li><a href="/contato" data-hover="NOTÍCIAS">NOTÍCIAS</a></li>
+			<li><%= link_to 'CONTATO', contato_path, :data => { :'hover' => 'CONTATO' }%></li>
+		</ul>
+		
+	</div>
+	<a href="#" id="pull"></a>
+	<div id="redes">
+		<a href="#" class="facebook"></a>
+		<a href="#" class="twitter"></a>
+		<a href="#" class="google"></a>
+	</div>
+	<div id="idiomas">
+		<a href="#" class="idioma_ativo">PT</a>
+		<a href="#">EN</a>		
+	</div>
+</div>
+
+
 	
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
-<%= yield %>
-teste
+<div id="content">
+	<%= yield %>
+</div>
+
+<div id="home_rodape">
+	<div class="midias_sociais">
+        <div class="mensagem" style="opacity: 1">
+            <h4>Para quem não gosta de ficar sabendo das coisas por último</h4>
+            <p>Conecte-se à Proiz através das mídias sociais</p>
+        </div>
+        
+        <div class="midias_sociais_botoes">
+	        <a href="#">Siga-nos no facebook</a>
+	        <a href="#">Siga-nos no twitter</a>
+	        <a href="#">Siga-nos no google</a>
+        </div>
+	</div>
+    <style>
+		.newsletter form {
+			height: 39px;	
+		}
+	</style>
+	<div class="newsletter" id="newsletter">
+		<h4>Insira seu e-mail para receber atualizações</h4>
+		
+        <form action="#" id="form_newsletter">
+			<input type="text" placeholder="" value="" size="30" />
+			<div class="bt_enviar">
+				<input type="submit" value="Cadastrar" />
+			</div>
+		</form>
+	</div>
+	<div class="rodape">
+		<div class="mensagem_wrapper">
+			<div class="mensagem">
+				<%= image_tag('logo_proiz_branco.png')%>
+				<p>Agência de comunicação integrada. Publicidade e propaganda, 
+					design gráfico e marketing digital. Soluções completas para a 
+					construção de marcas fortes.</p>
+			</div>
+		</div>
+		<div class="endereco">
+			<h3>+55 (45) 3378-3676</h3>
+			<h5>Rua Guarani, 2216.</h5>
+			<h5>Jardim La Salle.</h5>
+			<h5>Toledo - Paraná</h5>
+		</div>
+		
+	</div>
+	<footer>
+		<ul id="menu_inferior">
+			<li><a href="#contato">Contato</a></li>
+			<li><a href="#carreiras">Carreiras</a></li>
+			<li><a href="#Lab proiz">Lab</a></li>			
+		</ul>
+		<p>Proiz comunicação integrada - Todos os direitos reservados.</p>
+	</footer>
+</div>
+<style>
+.scrollbar{
+    cursor:n-resize;
+    position:absolute;
+    top:0px;
+    right:0px;
+    z-index:2;
+    background:#444;
+    width:17px;
+    border-radius:8px;
+}
+</style>
+
+<div class="scrollbar">a</div>
 </body>
 </html>

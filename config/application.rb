@@ -23,7 +23,18 @@ module ProizAdmin
     
     # add app/assets/fonts to the asset path
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.assets.precompile += %w( inicial.js
+    config.assets.precompile += %w( noticias.js ) )
+    config.assets.precompile += %w( especialidades.js )
+    config.assets.precompile += %w( trabalhos.js )
+    config.assets.precompile += %w( sobre.js )
+    config.assets.precompile += %w( administrativo.js )
+    config.assets.precompile += %w( contato.js )
     
     ActiveSupport::Deprecation.silenced = true
+    #config.action_dispatch.default_headers['X-Frame-Options'] = "ALLOW-FROM https://apps.facebook.com"
+    config.action_dispatch.default_headers = {
+        'X-Frame-Options' => 'ALLOWALL'
+    }
   end
 end

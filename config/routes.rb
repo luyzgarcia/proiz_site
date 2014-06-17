@@ -1,25 +1,147 @@
 ProizAdmin::Application.routes.draw do
-  get "clientes/show"
-  get "clientes/index"
+
+  get "inicial/index"
+  get "index/index"
+  get "sobre/index"
+  get "contato/index"
+  get "trabalhos/index"
+  get "trabalhos/new"
+  get "trabalhos/edit"
+  get "trabalhos/update"
+  get "trabalhos/delete"
+  get "artigos/index"
+  get "artigos/new"
+  get "artigos/edit"
+  get "artigos/update"
+  get "artigos/delete"
+  get "artigos/destroy"
+  get "noticias/update"
+  get "noticias/delete"
+  get "categoriatrabalhos/index"
+  get "categoriatrabalhos/new"
+  get "categoriatrabalhos/edit"
+  get "categoriatrabalhos/update"
+  get "categoriatrabalhos/delete"
+  get "categoriatrabalhos/destroy"
+  get "recursos/show"
+  get "recursos/index"
+  get "recursos/new"
+  get "recursos/create"
+  get "recursos/edit"
+  get "recursos/destroy"
+  get "recursos/update"  
+  get "noticia/new"
+  get "noticia/show"
+  get "noticia/edit"
+  get "noticia/destroy"
+  get "noticia/index"  
+  get "noticiacategs/new"
+  get "noticiacategs/index"
+  get "noticiacategs/show"
+  get "noticiacategs/edit"
+  get "noticiacategs/destroy"
+  get "noticiacategs/update"
+  #get "clientes/show"
+  #get "clientes/index"
   get "clientes/edit"
   get "clientes/delete"
   get "clientes/update"
-  get "clientes/new"
+ #get "clientes/new"
   get "paginas/index"
   get "painel/index"
   get "sessions/new"
   get "users/new"
+  get "users/show"
+  get "users/index"
   
-  get "log_in" => "sessions#new", :as => "log_in"
-  get "log_out" => "sessions#destroy", :as => "log_out"
+  get "contato/index"
+  get "contato/sobre"
+   
+  #get "log_in" => "sessions#new", :as => "log_in"
+  #get "log_out" => "sessions#destroy", :as => "log_out"
+  
+  #get "contato" => "contato#index", :as => "contato"
+  get "sobre" => "sobre#index", :as => "sobre"
   
   get "sign_up" => "users#new", :as => "sign_up"
-  root :to => "sessions#new"
+  root :to => "inicial#index"
+ 
+  namespace :admin do
+    root :to => "sessions#new"
+    get "log_in" => "sessions#new", :as => "log_in"
+    get "log_out" => "sessions#destroy", :as => "log_out"
+    
+    resources :sessions
+    resources :clientes do
+      member do 
+        get :mudarstatus
+      end
+    end
+    get "/trabalhos/new_midia" => "trabalhos#new_midia", :as => "trabalhos_new_midia"
+    get "/trabalhos/midias" => "trabalhos#midias", :as => "trabalhos_midias"
+    resources :trabalhos do
+      member do
+        get :mudarstatus
+      end
+    end
+    resources :noticias do
+      member do 
+        get :mudarstatus
+      end
+    end
+    resources :especialidades do
+      member do 
+        get :mudarstatus
+      end
+    end
+  end
+  
   resources :users
-  resources :sessions
+  #resources :sessions
   resources :painel
   resources :paginas
-  resources :clientes 
+  resources :clientes do
+    member do
+      get :mudarstatus
+    end
+  end
+  
+  resources :artigos
+  resources :categoriatrabalhos do
+    member do
+      get :mudarstatus
+    end
+  end
+  
+  resources :trabalhos do
+    member do
+      get :detalhe
+      get :filtrar
+      get :filtrarmidia
+    end
+  end
+  get "midias_trabalhos" => "trabalhos#midias_sociais", :as => "midias_trabalhos"
+  
+  get "buscar_noticia" => "noticias#buscar", :as => "buscar_noticia"
+  resources :noticias do
+    
+    member do
+      get :detalhe_noticia, :as => 'detalhe'
+      get :filtrar
+    end
+  end
+  resources :noticiacategs
+  resources :especialidades
+  resources :inicials do
+    
+  end
+  
+  get "contato" => "contato#index", :as => "contato"
+  post "enviado" => "contato#enviado", :as => "enviado"
+  
+  #resources :noticia
+  #resources :noticias
+  #resources :recursos
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,12 @@
+<% lista.each do |f| %>
+<h4 class="form_imagens">
+	<div class="imagem_upload">
+		<div class="imagem">
+			<%= image_tag f.image.url %>
+		</div>
+		<div class="descricao">
+			<%= f.descricao %>
+		</div>
+	</div>
+</h4>
+<% end %>

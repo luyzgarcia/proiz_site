@@ -1,0 +1,37 @@
+<div class="lista_cadastrados">
+	<h4 class="titulo">
+		Especialidades Cadastradas
+	</h4>
+	<table>
+		<tr>
+			<th>Titulo</th>						
+			<th>Data de criação</th>
+			<th>Estado</th>
+			<th>Ação</th>
+		</tr>
+		<% @especialidades.each do |esp| %>
+			<tr class="item" id="especialidade_<%= esp.id %>">
+				<td>
+					<%= esp.titulo %>
+				</td>				
+				<td>
+					<%= esp.created_at.to_s(:create) %>
+				</td>
+				<td>
+					<% if esp.status == 1 %>
+						<%= link_to "A", mudarstatus_especialidade_path(esp), remote: true %>
+					<% else %>
+						<%= link_to "I", mudarstatus_especialidade_path(esp), remote: true %>
+					<% end %>		
+				</td>
+				<td>
+					<%= link_to "T", edit_especialidade_path(esp), :remote => true, :class => 'link_editar'%>
+					<%= link_to "X", esp, :remote => true, :confirm => 'Você tem certeza?', :method => :delete, :class => 'link_excluir'%>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>
+	
+
+

@@ -35,6 +35,33 @@ end
 
 gem "bcrypt-ruby", :require => "bcrypt"
 
+
+#paperclick - upload de imagens
+gem "paperclip", "~> 3.5.0"
+
+gem "remotipart", "~> 1.0"
+
+
+#tinymce - Rich text editor 
+gem 'tinymce-rails'
+
+#Simple navitagion 
+gem "simple-navigation"
+
+#adicionar metatags nas paginas
+gem 'meta-tags'
+
+#Para Validação do formulário contato
+gem 'jquery-validation-rails'
+
+#Mascara para o campo telefone do contato
+gem 'maskedinput-rails'
+
+#bootstrap
+#gem "therubyracer"
+#gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
+#gem "twitter-bootstrap-rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

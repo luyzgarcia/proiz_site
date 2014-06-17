@@ -1,0 +1,8 @@
+<div class="titulo_padrao_1">
+		<h1>Notícias</h1>
+	</div>
+	<div class="buscar_noticia">
+		<%= form_tag buscar_noticia_path,:id => 'noticias_buscar', :method => 'get' do %>
+			<%= text_field_tag :search, params[:search] , :placeholder => 'Encontre facil' %>
+		<% end %>
+	</div>

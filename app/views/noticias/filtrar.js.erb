@@ -1,0 +1,18 @@
+$('#items_noticias').html('');
+
+<% @noticias.each do |noticia| %>
+	$conteudo = "<%= escape_javascript(render 'item_noticia', :noticia => noticia) %>";
+	$('#items_noticias').append($conteudo);
+	
+<% end %>
+$('#items_noticias').children('.ultima_adicionada').css('opacity',0);
+
+$('html, body').animate({
+    scrollTop: $("#items_noticias").offset().top - 250
+}, 1000);
+
+$('#items_noticias').children('.ultima_adicionada').each(function(e) {
+	$(this).delay(800 * e).animate({
+		opacity: 1
+	},500);
+});

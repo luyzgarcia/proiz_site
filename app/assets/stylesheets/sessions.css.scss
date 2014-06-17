@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .wrapper_login {
   margin: 0 auto;
-  width: 600px;
+  width: 650px;
+  height: 225px;
   background: #d1d3d4;
   padding-top: 10%;
   div {
@@ -12,37 +13,52 @@
   .login_proiz {
     background: #fdbf57;
     float: left;
-    height: 200px;
+    height: 100%;
     width: 40%;
     text-align: center;
+    box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
     img {
-      margin: 55px 0px 10px 0px;
+      width: 100px;
+      margin: 80px 0px 10px 0px;
     }
     h4 {
       display: block;
-      font: normal 12pt/1.3em "nexa_bold", Times;
+      font: normal 10pt/1.3em "nexa_bold", Times;
       color: #004961;
-      padding: 0 30px;
+      padding: 0 60px;
     }
   }
   .login_form {
     background: #f1f2f2;
-    height: 200px;
+    height: 100%;
     width: 60%;
+    box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.1);
     form {
       margin: 25px 30px;
       input {
         border: none;
         padding: 10px 15px;
       }
+      input:-webkit-autofill {
+        color: #fff !important;
+      }
+      input[type=text], input[type=password] {
+        width: 300px;
+      }
+      input[type=text]:focus, input[type=password]:focus  {
+       background: #fdbf57; 
+      }
       .button {
         text-align: right;
         input {
+          letter-spacing: 0.5px;
+          height: 35px;
+          cursor: pointer;
           border: 1px solid #dedede;
           font: normal 12pt/1.3em "nexa_bold", Times;
           color: #004961;
           background: #ffffff;
-          padding: 10px 35px;
+          padding: 8px 35px;
           background: -moz-linear-gradient(top, #ffffff 0%, #e2e2e2 100%);
           background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e2e2e2));
           background: -webkit-linear-gradient(top, #ffffff 0%,#e2e2e2 100%);
@@ -50,6 +66,10 @@
           background: -ms-linear-gradient(top, #ffffff 0%,#e2e2e2 100%);
           background: linear-gradient(to bottom, #ffffff 0%,#e2e2e2 100%);
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e2e2e2',GradientType=0 );
+        }
+        input:hover {
+          color: #fdbf57;
+          background: #fff;
         }
       }
       

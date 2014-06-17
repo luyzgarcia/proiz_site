@@ -1,0 +1,30 @@
+<div id="noticias">
+	
+	<%= render 'noticia_topo' %>
+	<div class="wrapper_noticia_destaque">
+	<div class="noticia_destaque">
+		<div class="categorias">
+			<h5>Categorias</h5>
+			<div class="wrapper_categorias">
+			<ul>
+				<li class=""><%= link_to 'Todas', filtrar_noticia_path(0), :remote => true %></li>
+				<% @categorias.each do |cat| %>					
+					<li><%= link_to cat.titulo, filtrar_noticia_path(cat),  :remote => true %></li>
+				<% end %>
+			</ul>
+			</div>
+		</div>
+		<div class="noticia_destaque_info">
+			<%= render 'detalhe_noticia' %>		
+		</div>
+	</div>
+	</div>
+	<div id="detalhe_modal" style="display:none;"></div>
+	<div class="noticias_ultimas">
+		<div class="wrapper_noticias">
+			<%= render 'ultimas' %>
+		</div>
+	</div>
+</div>
+<div id="intervalo4" class="intervalo">
+</div>	

@@ -14,3 +14,9 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+ActiveSupport::Inflector.inflections do |inflect|  
+  inflect.irregular 'noticia', 'noticias'
+  #inflect.plural 'noticia', 'noticias'
+  #inflect.singular 'noticia', 'noticia'
+  #inflect.irregular 'noticiacateg', 'noticiacategs'
+end 

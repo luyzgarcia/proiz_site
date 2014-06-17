@@ -1,0 +1,22 @@
+$('.wrapper_noticia_destaque').slideUp();
+
+$('.wrapper_ultimas').html('');
+
+
+$conteudo = '';
+<% if !@noticias.empty? %>
+	<%	@noticias.each do |noticia| %>
+		$conteudo += "<%= escape_javascript(render 'item_noticia', :noticia => noticia) %>";
+	<% end %>	
+<% else %>
+	$conteudo = "Nenhuma noticia encontrada";
+<% end %>
+	$('.wrapper_ultimas').append($conteudo);
+	
+$('.wrapper_ultimas').children('.ultima_adicionada').css('opacity',0);
+$('.wrapper_ultimas').children('.ultima_adicionada').each(function(e) {
+	$(this).delay(500 * e).animate({
+		opacity: 1
+	},500);
+});
+

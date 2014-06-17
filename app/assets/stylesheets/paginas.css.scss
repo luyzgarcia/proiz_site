@@ -9,7 +9,12 @@
     ul {
       margin: 0;
       padding: 0;
-      
+      .menu_ativo a{
+          color: #8dc63f;
+      }
+      .menu_ativo .sub_menu {
+        display: block;
+      }
       li {
         background: #e5e6e6;
         list-style: none;
@@ -19,6 +24,34 @@
             @extend .font_padrao_1;
             font-size: 14pt;
         }
+        
+       .sub_menu {
+         display: none;
+         .submenu_ativo a{
+           color: #8dc63f;
+         }
+         li {
+           background: transparent;
+           padding: 5px 10px;
+         }
+         a {
+           font: normal 12pt/1.5em "droid_serif",Times;
+           color: #504e4e;
+         }
+         a.menu_ativo {
+          color: #8dc63f;
+         }
+         a:before {
+           content: '';
+           width: 16px;
+           height: 16px;
+           background: #cdcdcd;
+           display: inline-block;
+           margin: -2px 10px 0px 0px;
+           vertical-align: middle;
+           box-shadow: -1px -1px 0px 0px #e3e3e3;
+         }
+       }
       }
     }
     

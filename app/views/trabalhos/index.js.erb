@@ -1,0 +1,8 @@
+$(document).ready(function() {
+	recarregar();
+});
+$('.wrapper_carregando').addClass('la-animate');
+alert('chamou mestre?');
+$("#wrapper_corpo_trabalhos").html("<%= escape_javascript(render partial: 'trabalhos')%>");
+recarregar();
+$('.wrapper_carregando').removeClass('la-animate');

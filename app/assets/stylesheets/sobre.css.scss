@@ -1,0 +1,229 @@
+// Place all the styles related to the sobre controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#sobre {
+  background: #f1f2f2;  
+}
+#sobre .wrapper_sobre {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid #e6e7e8;
+}
+#sobre .wrapper_sobre .sobre_info {
+  padding: 70px 0;
+  background: #FFF;
+  text-align: center;
+}
+#sobre .wrapper_sobre .sobre_info h2{
+  margin: 30px auto;
+  font: normal 28pt/1.5em nexa_bold, Times;
+  color: #fdba31;
+  letter-spacing: 1px;
+}
+#sobre .wrapper_sobre .sobre_info p{ 
+  width: 800px;
+  margin: 30px auto 0;
+  font: normal 12pt/2.2em droid_serif, Times;
+  color: #4f4e4e;
+}
+#sobre .wrapper_sobre .sobre_info_2 {
+  margin: 0 auto;
+  width: 85% /*1200px*/;
+  border-bottom: 1px solid #8dc63f;
+  padding: 100px 0;
+}
+#sobre .wrapper_sobre .sobre_info_2 .mensagem {
+  display: inline-block;
+  height: auto;
+  width: 29%;
+  overflow: hidden;
+}
+#sobre .wrapper_sobre .sobre_info_2 h1{
+  font: normal 38pt/1.3em nexa_bold, Times;
+  color: #004961;
+  width: 25%;
+  margin-right: 4%;
+  display: inline-block;
+  top: 400px;
+  position: relative;
+  width: 100%;
+}
+#sobre .sobre_info_2 .item {
+  width: 20%;
+  display: inline-block;
+  margin: 0 1%;
+  text-align: center;
+  opacity: 0;
+}
+#sobre .sobre_info_2 .item img {
+  width: 130px;
+}
+#sobre .sobre_info_2 .item h4 {
+  font: normal 22pt/1.3em nexa_bold, Times;
+  color: #004961;
+  margin: 30px 0 0;
+  min-height: 100px;
+  text-align: left;
+}
+#sobre .sobre_info_2 .item p {
+  text-align: left;
+  font: normal 11pt/2.1em droid_serif, Times;
+  color: #4f4e4e;
+}
+#sobre .wrapper_sobre .sobre_clientes {
+  margin: 100px 0 200px;
+  text-align: center;
+  
+  img {
+    width: 175px;
+    height: 100px;
+  }
+  
+}
+#sobre .wrapper_sobre .sobre_clientes h4 {
+  font: normal 28pt/1.5em nexa_bold, Times;
+  color: #8dc63f;
+  margin-bottom: 20px;
+  
+}
+#sobre .wrapper_sobre .sobre_clientes h5 {
+  font: normal 12pt/1.5em droid_serif,Times;
+  color: #4f4e4e;
+  margin-bottom: 75px;        
+}
+#sobre .wrapper_sobre .sobre_clientes .wrapper_itens {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+#sobre .wrapper_sobre .sobre_clientes .item {
+  display: inline-block;
+  margin: 0 30px 50px 40px;
+  /* float: left; */
+}
+
+/*IPAD*/
+@media only screen and (min-width: 481px) and (max-width: 1024px) {
+  #sobre .wrapper_sobre .sobre_info {
+    padding: 65px 0;
+  }
+  #sobre .wrapper_sobre .sobre_info h2 {
+    font-size: 22pt; 
+    margin: 0 auto 30px;
+    width: 90%;
+  }
+  #sobre .wrapper_sobre .sobre_info p {
+    font-size: 10pt; 
+    width: 80%;
+  }
+  #sobre .sobre_info_2 .item {
+    width: 28%;
+    margin: 0 2%;
+  }
+  #sobre .wrapper_sobre .sobre_info_2 {
+    width:97%;
+    text-align: center;
+    padding: 50px 0;
+  }
+  #sobre .wrapper_sobre .sobre_info_2 h1 {
+    font-size: 22pt;
+    vertical-align: top;
+    margin-bottom: 50px;
+    width: 65%;
+  }
+  #sobre .sobre_info_2 .item h4 {
+    font-size: 18pt;
+    min-height: 80px;
+  }
+  #sobre .sobre_info_2 .item p {
+    font-size: 10pt;
+    line-height: 1.8em; 
+  }
+  #sobre .wrapper_sobre .sobre_clientes {
+    margin: 70px 0 200px;
+  }
+  #sobre .wrapper_sobre .sobre_clientes .wrapper_itens {
+    width:100%;
+  }
+  #sobre .wrapper_sobre .sobre_clientes .item {
+    margin: 0 20px 50px 30px;
+    /* float: left; */
+  } 
+}
+@media screen and (max-width:480px),(max-device-width: 480px){ 
+  #sobre .wrapper_sobre .sobre_info{
+    padding: 50px 10px 70px;
+  }
+  #sobre .wrapper_sobre .sobre_info h2 {
+    font-size: 18pt;
+    width: 85%;
+    margin: 0 auto;
+    text-align: left;
+  }
+  #sobre .wrapper_sobre .sobre_info p {
+    width: 85%;
+    font-size: 11pt;
+    text-align: left;
+    line-height: 1.8em;
+  }
+  #sobre .wrapper_sobre .sobre_info_2 {
+    padding: 0 0 30px 0;
+    width: 85%;
+    text-align: center;
+  }
+  #sobre .wrapper_sobre .sobre_info_2 .mensagem {
+    width: 100%;
+  }
+  #sobre .wrapper_sobre .sobre_info_2 h1 {
+    width: 95%;
+    font-size: 18pt;
+    text-align: left;
+    line-height: 1.5em;
+    margin: 25px 0;
+    top: 0;
+  }
+  #sobre .sobre_info_2 .item {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    text-align: left;
+    opacity: 1;
+  }
+  #sobre .sobre_info_2 .item img {
+    float: left;
+    margin-top: -25px;
+    width: 95px;
+    margin-right: 20px;
+  }
+  #sobre .sobre_info_2 .item h4 {
+    font-size: 18pt;
+    margin: 20px 0px 0px;
+  }
+  #sobre .sobre_info_2 .item p {
+    display: none;  
+    margin-bottom: 50px;
+  }
+  #sobre .wrapper_sobre .sobre_clientes {
+    margin: 50px 0 100px;
+  }
+  #sobre .wrapper_sobre .sobre_clientes h4 {
+    font-size: 22pt;  
+  }
+  #sobre .wrapper_sobre .sobre_clientes h5 {
+    font-size: 12pt;
+    padding: 0 10%;
+    margin-bottom: 25px;  
+  }
+  #sobre .wrapper_sobre .sobre_clientes .wrapper_itens {
+    width: 100%;
+    text-align: center;
+  }
+  #sobre .wrapper_sobre .sobre_clientes .wrapper_itens img{
+    width: 70%;
+  } 
+  #sobre .wrapper_sobre .sobre_clientes .item {
+    display: inline-block;
+    margin: 20px 0px;
+    width: 45%;
+  }
+}

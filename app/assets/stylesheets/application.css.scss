@@ -1,0 +1,186 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require tooltips
+ */
+body {
+	margin: 0px;
+	padding: 0px;
+}
+a {
+	text-decoration: none;
+}
+
+
+@font-face {
+  font-family: 'droid_serif';
+  src:url('droidserif.eot');
+  src:url('droidserif.eot?#iefix') format('embedded-opentype'),
+    url('droidserif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'nexa_bold';
+    src: url('nexa_bold?#iefix') format('embedded-opentype'), 
+         url('nexa_bold.woff') format('woff'), 
+         url('nexa_bold.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'nexa_light';
+    src: url('nexa_light?#iefix') format('embedded-opentype'), 
+         url('nexa_light.woff') format('woff'), 
+         url('nexa_light.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'din_medium';
+    src: url('din_medium?#iefix') format('embedded-opentype'), 
+         url('din_medium.eot') format('eot'), 
+         url('din_medium.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'icones';
+    src: url('icones?#iefix') format('embedded-opentype'), 
+         url('icones.eot') format('eot'), 
+         url('icones.ttf')  format('truetype');
+}
+@font-face {
+    font-family: 'icons';
+    src: url('icons?#iefix') format('embedded-opentype'), 
+         url('icons.eot') format('eot'), 
+         url('icons.ttf')  format('truetype');
+}
+
+
+
+input:focus{
+	outline: none;
+}
+
+
+/*Efeito carregando*/
+.wrapper_carregando {
+	position: fixed;
+	height: 86px;
+	width: 100%;
+	z-index: 99999;
+	background: image-url('intervalo_1.png');
+	pointer-events: none;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+	
+}
+.wrapper_carregando:before {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	background: #fdba31;
+	opacity: 1;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+	-webkit-transition: opacity 0.3s, -webkit-transform 0s 0.3s;
+	transition: opacity 0.3s, transform 0s 0.3s;
+}
+.la-animate::before {
+	opacity: 1;
+	-webkit-transition: -webkit-transform 2.4s linear 0.3s;
+	transition: transform 2.4s linear 0.3s;
+}
+.la-animate {
+	box-shadow: inset 0px -15px 0px 0px rgba(0,0,0,0.2);
+}
+.la-animate,
+.la-animate::before {
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+#header {
+	top: -200px;
+}
+#home_intro .mensagem {
+	opacity: 0;
+}
+#esconde {
+	height: 100%;
+	position: fixed;
+	background: #f1f2f2;
+	width: 100%;
+	z-index: 999;
+}
+
+
+
+
+
+/**********************************************/
+/****************SCROLL EFFECT ****************/
+/**********************************************/
+body {
+  /*overflow-y: hidden;*/
+}
+.mCSB_scrollTools {
+  height: 250px !important;
+  right: 50px !important;
+  top: 200px !important;
+}
+.mCSB_scrollTools .mCSB_dragger {
+  padding-top: 5px  !important; 
+}
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px  !important;
+}
+.mCSB_scrollTools .mCSB_draggerRail {
+  width: 17px  !important;
+  border: 2px solid #afc098 !important;
+  background: rgba(255,255,255,0) !important;
+  padding-bottom: 5px !important;
+}
+.mCSB_scrollTools:before {
+  content: 'X';
+  color: transparent;
+  text-indent: -99999;
+  width: 45px;
+  height: 110%;
+  margin: -10px 0 0 -15px;
+  display: -webkit-box;
+}
+.mCSB_scrollTools:before:hover {
+  -webkit-transform: scale(1.3) !important;
+}
+.mCSB_scrollTools:hover .mCSB_draggerRail, .mCSB_scrollTools:before:hover .mCSB_draggerRail {
+  background: #004961 !important;
+  border: none !important;
+  padding-bottom: 8px !important;
+  width: 16px  !important;
+}
+.mCSB_scrollTools:hover .mCSB_draggerContainer, .mCSB_scrollTools:before:hover .mCSB_draggerContainer  {
+  -webkit-transform: scale(1.3);
+  -webkit-transition: .2s ease-in-out;
+}
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  line-height: 30px !important;
+  background: #004961 !important;
+  width: 12px !important;
+  margin-left: 4px !important;
+}
+.mCSB_scrollTools:hover .mCSB_dragger_bar, .mCSB_scrollTools:before:hover .mCSB_dragger_bar {
+  background: #fdba31 !important;
+  margin: 0 auto !important;
+  width: 9px !important;
+}

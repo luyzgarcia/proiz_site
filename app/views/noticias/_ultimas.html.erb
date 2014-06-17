@@ -1,0 +1,11 @@
+<div class="noticias_ultimas">
+	<div class="wrapper_ultimas">
+		<h3>Últimas adicionadas</h3>
+		<div id="items_noticias">
+			
+			<% @noticias.each_with_index do |noticia, index| %>
+				<%= render 'item_noticia', :noticia => noticia %>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+
+<div class="lista_cadastrados">
+	<div class="icones_superior">
+		<a href="#" class="fechar"></a>
+		<a href="#" class="esconder"></a>
+	</div>
+	<h4 class="titulo">
+		Trabalhos Cadastrados
+	</h4>
+	<table>
+		<tr>
+			<th>Titulo</th>
+			<th>Data de edição</th>
+			<th>Estado</th>
+			<th>Ordem</th>
+			<th>Ação</th>
+		</tr>
+		<% if @noticias %>
+			<% @noticias.each do |noticia| %>
+				<tr class="item" id="noticia_<%= noticia.id %>">
+					<td><%= noticia.titulo %></td>
+					<td><%= noticia.updated_at.to_s(:create) %></td>
+					<td>
+						<%= link_to '', 
+						mudarstatus_admin_noticia_path(noticia),
+						:class => noticia.status == 1 ? 'status_ativo' : 'status_inativo', 
+						:confirm => 'Alterar status',
+						:method => 'get',
+						:data => {:'message' => "Você está prestes a altear o status deste cliente."} %>
+					</td>
+					<td>
+						<% cat = Noticiacateg.find(noticia.noticiacateg_id)	%>						
+						<%= cat.titulo%>
+					</td>
+					<td>
+						<%= link_to "", edit_admin_noticia_path(noticia), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
+						<%= link_to "", [:admin,noticia], :remote => true, 
+						:confirm => 'Excluir',
+						:data => {:'message' => "Você está prestes a excluir este trabalho?"},
+						:method => :delete,
+						:class => 'bt_excluir_1 tooltips',
+						:title => 'Excluir item'%>
+					</td>
+				</tr>
+			<% end %>
+		<% end %>
+	</table>
+</div>

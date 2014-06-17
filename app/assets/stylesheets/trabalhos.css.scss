@@ -1,0 +1,455 @@
+// Place all the styles related to the trabalhos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*****************************************************************/
+/************ Inicio Página Trabalhos - **************************/
+/*****************************************************************/
+
+
+/*****************************************************************/
+/************ Página Trabalhos - Menu ****************************/
+/*****************************************************************/
+#trabalhos .menu_trabalhos {
+  text-align: center;
+}
+#trabalhos .menu_trabalhos ul { 
+  margin: 10px 0px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e6e7e8;
+}
+#trabalhos .menu_trabalhos ul li{
+  display: inline-block;
+  margin: 10px 10px;
+  
+}
+#trabalhos .menu_trabalhos ul li:hover > a {
+  border-color: #a1cf63;
+  background: #fff;
+  transition: all 0.4s ease 0s;
+    -moz-transition: all 0.4s ease 0s;
+    -webkit-transition: all 0.4s ease 0s;
+}
+#trabalhos .menu_trabalhos ul .ativo {
+  border: 2px solid #a1cf63;
+  background: #FFF;
+}
+#trabalhos .menu_trabalhos ul li a{
+  font: normal 8pt/1em 'nexa_bold', Tahoma;
+  color: #bdbdbd;
+  margin: 2px 0px 10px 0px;
+  text-transform: uppercase;
+  padding: 15px 30px;
+  border: 2px solid transparent;
+  letter-spacing: 1px;
+}
+/*****************************************************************/
+/************ Página Trabalhos - FIM Menu ************************/
+/*****************************************************************/
+
+/*****************************************************************/
+/************ Página Trabalhos - TRABALHOS************************/
+/*****************************************************************/
+#trabalhos {
+  padding-top: 240px;
+}
+#trabalhos .titulo {
+  text-align: center;
+  margin-bottom: 65px;
+}
+#trabalhos .titulo h1, #trabalhos .titulo h1 a{
+  font: normal 48pt/1em "nexa_bold", Tahoma;
+  color: #bdbdbd;
+  display: inline;
+}
+#trabalhos .titulo .trab_ativo, #trabalhos .titulo .trab_ativo a {
+  color: #8dc63f;
+}
+#trabalhos .titulo h1 span{
+  color: #bdbdbd; 
+}
+
+/*#trabalhos .corpo_trabalhos .item {
+  height: 260px;
+  width: 360px;
+  /*width: 25%;
+  float: left;
+  position: relative;
+}*/
+#trabalhos .corpo_trabalhos .item img{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#trabalhos .corpo_trabalhos .item:hover > .hover{
+  opacity:1;  
+}
+#trabalhos .corpo_trabalhos .item .hover {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background: rgba(19,69,95,0.7);
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+#trabalhos .corpo_trabalhos .item .hover h4{
+  color: #fff;
+  font: normal 16pt/1.5em "nexa_bold", Tahoma;
+  margin: 25% auto;
+  letter-spacing: 1px;
+}
+/*****************************************************************/
+/************ Página Trabalhos - FCOMPARTILHAR *******************/
+/*****************************************************************/
+
+#trabalhos .compartilhar {
+  text-align: center;
+  margin: 0 auto;
+  width: 415px;
+  margin-bottom: 150px;
+}
+#trabalhos .compartilhar h3 { 
+  font: normal 28pt/1em "nexa_bold", Tahoma;
+  color: #12425c;
+  margin: 0px 0px 25px 0px; 
+}
+#trabalhos .compartilhar h4 {
+  font: normal 14pt/1.5em "droid_serif", Times;
+  color: #808285;
+  padding: 0px 80px;
+  margin-bottom: 50px;
+}
+
+#trabalhos .compartilhar .botoes_amarelos .bt_facebook {
+  margin: 0 10px;
+  display: inline-block;
+}
+#trabalhos .compartilhar .botoes_amarelos .bt_facebook a {
+  font-family: 'icones';
+  font-size:24pt;
+  height: 70px;
+  width: 70px;
+  background: #fdba31;
+  border-radius: 50%;
+  background-color: #fdba31;
+  -moz-transition:0.8s all;
+  -webkit-transition:0.8s all;
+  text-align:center;
+  display: block;
+}
+#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:hover {
+  background: rgba(255,255,255,1);
+  box-shadow: 0 0 0 8px rgba(36, 57, 66,1);
+}
+#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:before {
+  content: "\e600";
+  color: #fff;
+  speak: none;
+  line-height: 70px;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  display: block;
+}
+
+#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:hover:before {
+  color: #fdba31;
+}
+#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:hover:before {
+  -webkit-animation: toRightFromLeft 0.3s;
+  -moz-animation: toRightFromLeft 0.3s;
+  animation: toRightFromLeft 0.3s;
+}
+@-moz-keyframes toRightFromLeft {
+  49% {
+    -webkit-transform: translate(100%);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translate(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes toRightFromLeft {
+  49% {
+    -webkit-transform: translate(100%);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translate(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+/*****************************************************************/
+/************ Página Trabalhos - FIM COMPARTILHAR *****************/
+/*****************************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.corpo_trabalhos {
+  padding: 100px 30px;
+  margin: 0 auto;
+  position: relative;
+}
+#grid {
+  position: absolute;
+  /*min-height: 1300px;*/
+}
+#grid .item a {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 9;
+  color: transparent;
+}
+#trabalhos .corpo_trabalhos .item .hover .descricao_trabalho {
+  position: relative;
+  margin: 25% auto;
+  -webkit-backface-visibility: hidden;
+}
+#trabalhos .corpo_trabalhos .compartilhar {
+  margin-top: 250px;
+}
+#trabalhos .corpo_trabalhos .item .hover h4 {
+  width: 60%;
+}
+/*#trabalhos .corpo_trabalhos .item:hover > .hover h4 {
+  border-bottom: 3px solid #fff;
+  border-top: 3px solid #fff;
+  -webkit-animation: bordasurgirtrabalhos 0.6s;
+  
+  display: inline-block;
+  padding: 15px 0;
+  margin: 0;
+  display: initial;
+}*/
+#trabalhos .tam1 .descricao_trabalho {
+  margin: 25% auto !important;
+}
+#trabalhos .tam2 .descricao_trabalho {
+  margin: 200px auto !important;
+}
+#trabalhos .corpo_trabalhos .item:hover > .hover h4:before {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #FFF;
+  -webkit-animation: bordadescertrabalhos 0.6s;
+  /* padding-top: 0; */
+  top: -20;
+  position: relative; 
+}
+#trabalhos .corpo_trabalhos .item .hover h4:after, #trabalhos .corpo_trabalhos .item .hover h4:before  {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: transparent;
+  position: relative;
+}
+
+#trabalhos .corpo_trabalhos .item:hover > .hover h4:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #FFF;
+  /* padding-top: 0; */
+  bottom: -20;
+  position: relative; 
+  -webkit-animation: bordasubirtrabalhos 0.6s;
+}
+#detalhe_modal {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: #f1f2f2;
+  left: 0;
+}
+#detalhe_modal > div {
+  padding-top: 50px;
+} 
+#detalhe_modal .fechar_detalhetrabalho {
+  position: absolute;
+  top: -100px;
+  right: 20px;
+  background: #fdba31;
+  width: 30px;
+  height: 30px;
+  border-top: 1px solid #f6dca5;
+  border-bottom: 1px solid #f6dca5;
+  line-height: 1.5em;
+  font-family: nexa_light;
+  font-size: 16pt;
+  color: #004961;
+
+}
+
+@-webkit-keyframes bordasubirtrabalhos {
+  0% {
+    bottom: -60;
+    border-color: rgba(255,255,255,0);
+  }
+  100% {
+    bottom: -20;
+    border-color: rgba(255,255,255,1);
+  }
+}
+@-webkit-keyframes bordadescertrabalhos {
+  0% {
+    top: -60;
+    border-color: rgba(255,255,255,0);
+  }
+  100% {
+    top: -20;
+    border-color: rgba(255,255,255,1);
+  }
+}
+
+@-moz-keyframes bordasurgirtrabalhos {
+  0% {
+    padding:60px 0;
+    border-color: rgba(255,255,255,0);
+  }
+  100% {
+    padding: 15px 0;
+    border-color: rgba(255,255,255,1);
+  }
+}
+@-webkit-keyframes bordasurgirtrabalhos {
+  0% {
+    padding:60px 0;
+    border-color: rgba(255,255,255,0);
+  }
+  100% {
+    padding: 15px 0;
+    border-color: rgba(255,255,255,1);
+  }
+}
+
+#trabalhos .corpo_trabalhos .item {
+  /*height: 260px;*/
+  width: 19%;
+  /*float: left;*/
+  margin: 5px;
+
+  -webkit-perspective: 1300px;
+  -moz-perspective: 1300px;
+  -o-perspective: 1300px;
+  -ms-perspective: 1300px;
+  opacity: 0;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  transition: all 0.2s linear;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d; 
+}
+#trabalhos .corpo_trabalhos .tam1 {
+  height: auto;
+  background: blue;
+}
+#trabalhos .corpo_trabalhos .tam2 {
+  height: 400px;
+  background: red;
+}
+#trabalhos .corpo_trabalhos .tam2 img{
+  height: 100% !important;  
+}
+#trabalhos .corpo_trabalhos .item img{
+  height: auto; 
+}
+.corpo_trabalhos .item.animate {
+  transform: translateZ(400px) translateY(300px) rotateX(0deg);
+  -webkit-transform: translateZ(-400px) translateY(-200px) rotateX(90deg);
+  -moz-transform: translateZ(-400px) translateY(-200px) rotateX(0deg);
+  -o-transform: translateZ(-400px) translateY(-200px) rotateX(0deg);
+  -ms-transform: translateZ(-400px) translateY(-200px) rotateX(0deg);
+  
+  -webkit-animation: fallPerspective .8s ease-in-out forwards;
+  animation: fallPerspective .8s ease-in-out forwards;
+}
+@-webkit-keyframes fallPerspective {
+    100% { 
+        transform: translateZ(0px) translateY(0px) rotateX(0deg); 
+      -webkit-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+      -moz-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+      -o-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+      -ms-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+        opacity: 1; 
+      
+      }
+}
+@keyframes fallPerspective {
+    100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+}
+
+
+@media only screen and (min-width: 725px) and (max-width: 1024px) { 
+  .corpo_trabalhos {
+    padding: 100px 10px;
+  }
+  #trabalhos .corpo_trabalhos .item {
+    width: 24%;
+    margin: 2px;
+  }
+  #trabalhos .corpo_trabalhos .tam2 {
+    height: 250px;  
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 724px) {
+  .corpo_trabalhos {
+    padding: 100px 10px;
+  }
+  #trabalhos .corpo_trabalhos .item {
+    width: 32%;
+    margin: 2px;
+  } 
+  #trabalhos .corpo_trabalhos .tam2 {
+    height: 200px;  
+  }
+  
+}
+@media screen and (max-device-width: 360px) , (max-width: 480px){
+  .corpo_trabalhos {
+    padding: 100px 5px;
+  }
+  #trabalhos .corpo_trabalhos .item {
+    width: 48%;
+    margin: 2px;
+  } 
+}
+
+
+

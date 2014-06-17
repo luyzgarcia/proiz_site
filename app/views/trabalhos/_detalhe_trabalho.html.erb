@@ -1,0 +1,59 @@
+<div id="trabalho">
+	<div class="detalhe_trabalho">
+		<div class="detalhe">
+			<%= link_to_function 'X', 'esconder_detalhetrabalho(this)', :class => 'fechar_detalhetrabalho'%>
+			<div class="descricao">
+				<div class="intro">
+					<h2><%= trab.titulo %></h2>
+					<ul id="trabalho_detalhe_menu">
+						<li>
+							<a href="#intro">Ficha técnica</a>
+						</li>
+						<li>
+							<a href="#info">Descrição</a>
+						</li>
+					</ul>
+					<div id="intro" class="intro-info">
+						<% trab.fichatecnicas.each do |ficha| %>
+							<p><b><%= ficha.chave %></b> <%= ficha.valor %></p>	
+						<% end %>								
+					</div>
+				</div>
+				<div id="info" class="info intro-info">
+					<p>
+						<%= trab.introducao.html_safe %>
+					</p>
+				</div>							
+			</div>
+			<div class="full-info">
+				<% trab.imagems.each do |imagem| %>
+					<div class="image-info">
+						<%= image_tag(imagem.image.url) %>
+						<span class="span"> </span>
+						<span class="span"> </span>	
+						<p>
+							<%= imagem.descricao.html_safe %>
+						</p>
+					</div>
+				<% end %>
+				
+			</div>
+		</div>
+	</div>
+	<div class="compartilhar">
+		<h3>Gostou?</h3>
+		<h4>Compartilhe essa página com seus amigos</h4>
+		
+		<div class="botoes_amarelos">
+			<div class="bt_facebook">
+				<a href="face"></a>
+			</div>
+            <div class="bt_facebook">
+				<a href="face"></a>
+			</div>
+             <div class="bt_facebook">
+				<a href="face"></a>
+			</div>
+		</div>
+	</div>
+</div>

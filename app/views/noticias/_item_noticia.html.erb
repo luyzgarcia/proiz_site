@@ -1,0 +1,11 @@
+
+<div class="ultima_adicionada">
+	<h4><%= noticia.created_at.to_s(:create) %></h4>
+	
+	<%= image_tag(noticia.imagem_miniatura.url) %>
+	<h5><%= noticia.titulo %></h5>
+	<p><%= truncate(noticia.conteudo, :length => 150)%></p>
+	<div class="ultimas_leiamais">
+		<%= link_to '', detalhe_noticia_path(noticia), :class => 'link_noticias', :remote => true %>
+	</div>
+</div>

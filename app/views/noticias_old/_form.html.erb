@@ -1,0 +1,13 @@
+<%= form_for(@noticia, remote: true) do |n| %>
+
+	<div class="item_info_detalhe">
+		<h5><%= n.label :titulo %></h5>
+		<h4><%= n.text_field :titulo %></h4>
+	</div>
+	
+	
+	
+		<p class="button"><%= n.submit %></p>
+
+	
+<% end %>

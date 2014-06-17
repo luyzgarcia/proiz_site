@@ -1,0 +1,70 @@
+<div class="formulario lista_cadastrados">
+	<div class="item">
+		<%= form_for([:admin,@trabalho], :html => { :multipart => true }, :multiple => true ) do |c| %>
+			<h3 class="titulo">Novo trabalho de midia social
+			<% if @editando == true %>
+				<p class="editando">Editando... Não esqueça de salvar as alterações no fim do box</p>
+			<% end %>
+			</h3>
+			<% if @trabalho.errors.any? %>
+				<div id="erros">
+					<div class="erros_info">
+						<h2>Atenção</h2><br/>
+						<h4>Você não preencheu todas as informações necessárias.</h4>
+						<ul>
+							<% for message in @trabalho.errors.full_messages %>
+								<li><%= message %></li>
+							<% end %>
+						</ul>
+						<div class="item_info_botoes">
+							<h3>O que você gostaria de fazer? </h3>
+							<%= link_to "Cancelar e sair", admin_trabalhos_midias_path, :remote => true, :class => "link_limpar" %>
+							<a id="fechar" href="#" class="link_salvar fechar">Voltar e preencher</a>
+						</div>
+					</div>
+				</div>
+			<% end %>
+			<a href="#" class="fechar"></a>
+			<a href="#" class="esconder"></a>
+			<div class="item_info" id="trabalho_">
+				
+				<div class="item_info_detalhe" id="1">
+					<h5><%= c.label 'Link' %></h5>
+					<h4 class='bloqueado'><%= c.text_field :introducao, disabled: 'disabled'%></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') %>
+				</div>
+				
+				<div class="item_info_detalhe wrapper_imagem imagem">
+					<h5><%= c.label 'Imagem de exibição vitrine' %></h5>
+					<div class="imagem_logo preview_image">
+						<%= image_tag(@trabalho.imagem_vitrine.url) if @trabalho.imagem_vitrine %>
+					</div>
+					<h3><%= c.text_field :descricao_vitrine, :class => 'bloqueado'%></h3>
+					<h4><%= c.file_field :imagem_vitrine,:onchange => "preview_image(this)", :class => 'bloqueado'%></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') %>
+				</div>
+				<div class="item_info_detalhe">
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') %>
+					<h5><%= c.label :status %></h5>
+					<h4 style="width: 150px"><%= c.select(:status,[["Ativo","1"],["Inativo","0"]], :class => 'bloqueado') %></h4>
+				</div>
+				
+				<div class="item_info_botoes">
+					<% if @editando == true %>
+						<%= link_to "Limpar alterações", admin_trabalhos_midias_path, 
+						:method => 'get',
+						:confirm => 'Descartar alterações',
+						:data => {:'message' => "Você está prestes a descartas as informações aditadas, tem certeza?"},
+						:class => "link_limpar" %>
+						<%= c.submit 'Salvar alterações', 
+						:confirm => 'Salvando alterações',
+						:data => {:'message' => "Você está prestes a alterar as informações aditadas."},
+						:class =>'link_salvar link_editando'%>
+					<% else %>
+						<%= c.submit 'Salvar', :class =>'link_salvar' %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

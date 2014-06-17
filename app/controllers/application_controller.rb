@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   protected
     def authorize
       unless User.find_by_id(session[:user_id])
-        redirect_to log_in_path, alert: "Para acessar essa pagina eh necessario estar logado"
+        redirect_to admin_log_in_path, alert: "Para acessar essa pagina eh necessario estar logado"
       end
     end
 end

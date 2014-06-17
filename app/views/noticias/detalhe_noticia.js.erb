@@ -1,0 +1,16 @@
+$('.wrapper_carregando').addClass('la-animate');
+
+$('html, body').animate({
+    scrollTop: $(".wrapper_noticia_destaque").offset().top - 250
+}, 600);
+
+$('.noticia_destaque_info').css('opacity',0);
+$('.wrapper_noticia_destaque').slideUp(800, function(){
+	$('.noticia_destaque_info').html("<%= escape_javascript(render 'detalhe_noticia') %>")
+	$('.noticia_destaque_info').delay(800).animate({
+		opacity:1
+	},500);	
+});
+
+$('.wrapper_noticia_destaque').slideDown(800);
+$('.wrapper_carregando').removeClass('la-animate');

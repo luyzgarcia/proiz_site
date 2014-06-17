@@ -1,0 +1,15 @@
+<% content_for :header do %>
+  <%= javascript_include_tag 'noticias' %>  
+<% end %>
+<div id="noticias">
+	
+	<%= render 'noticia_topo' %>
+	
+	<div class="wrapper_noticias">
+		<%= render 'index' %>
+		<%= render 'ultimas' %>
+	</div>
+</div>
+	
+<div id="intervalo4" class="intervalo">
+</div>	

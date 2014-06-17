@@ -1,0 +1,36 @@
+<div class="form_many form_ficha <%= novo == false ? 'item_many' : ''	 %>">
+	<%= f.hidden_field :ordem, :class => 'ordem_imagem' %>
+	<%= f.hidden_field(:id) %>
+	<div class="ficha_upload">
+		<div class="chave">
+			<%= 
+				if novo == true
+					f.text_field :chave 
+				else
+					f.text_field :chave, disabled: 'disabled', :class => 'bloqueado'
+				end 
+			%>
+		</div>
+		<div class="valor">
+			<%=
+				if novo == true
+					f.text_field :valor
+				else
+			 		f.text_field :valor, disabled: 'disabled', :class => 'bloqueado'
+			 	end 
+			 %>
+		</div>
+		<div class="ordem  <%= 'escondido ' if novo %><%= 'bloqueado' if !novo %>">
+			<%= link_to_function('','subir_nivel(this)', :class => 'up') %>
+			<%= link_to_function('','descer_nivel(this)', :class => 'down') %>
+			<%= link_to_remove_fields '', f if !novo %>	
+		</div>
+	</div>
+	<%= 
+	#if novo == true
+		link_to_adicionar_ficha "Adicionar", f if novo
+	#else
+	#	link_to_remove_fields "remove", f
+	#end
+	%>
+</div>

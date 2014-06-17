@@ -1,0 +1,44 @@
+<div id="noticia">
+	<div class="noticia-info">
+		<div class="wrapper_noticia">
+			<div class="noticia">
+				<div class="titulo_noticia">
+					<h2><%= @noticia.titulo %></h2>
+					
+					<div class="recursos_download">
+						<h4>Recursos para download</h4>
+						<ul>
+							<li><a href=#>Logotipo do artigo de teste da proiz</a></li>
+							<li><a href=#>Mockup produto</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="data_publicacao">
+					<h3><%= @noticia.created_at.to_s(:create) %></h3>
+				</div>
+				<style>
+					
+				</style>
+				<div class="noticia_detalhe">
+					<div class="share_noticia">
+						<div class="share_mobile">
+							<h3>Gostou?</h3>
+							<h4>Compartilhe essa página com seus amigos</h4>
+						</div>
+						<div class="compartilhar_noticia_integra">
+							<a href="#" class="continue_lendo"></a>
+						
+							<a class="compartilhar_face" href="#continuelendo1"></a>
+							<a class="compartilhar_google" href="#continuelendo2"></a>
+							<a class="compartilhar_twitter" href="#continuelendo3"></a>
+						</div>
+					</div>
+					<div class="texto_noticia">
+						<%= @noticia.conteudo.html_safe %>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
