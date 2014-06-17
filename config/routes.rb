@@ -1,5 +1,6 @@
 ProizAdmin::Application.routes.draw do
 
+  get "teste/index"
   get "inicial/index"
   get "index/index"
   get "sobre/index"
@@ -57,6 +58,8 @@ ProizAdmin::Application.routes.draw do
   get "contato/index"
   get "contato/sobre"
    
+   
+  resources :teste
   #get "log_in" => "sessions#new", :as => "log_in"
   #get "log_out" => "sessions#destroy", :as => "log_out"
   
