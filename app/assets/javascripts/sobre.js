@@ -1,4 +1,3 @@
-alert('trabalhos')
 $(document).ready( function(){
   (function() {
     function mostrardetalhessobre() {
