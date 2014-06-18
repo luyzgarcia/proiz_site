@@ -31,14 +31,14 @@ ProizAdmin::Application.configure do
   
   #$config['link_vault_aws_endpoint'] = "http://imagens.proiz.s3.amazonaws.com";
   #upload para amazon s3 buckets usando paperclip - para testes locais deve-se descomentar abaixo
-  config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => 'imagens.proiz',
-      :access_key_id => 'AKIAIYZHJEVMTZYNYQKQ',
-      :secret_access_key => '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',
-      :url => "http://imagens.proiz.s3.amazonaws.com",
-      :path => "images/:class/:id.:style.:extension"
-    }
-  }
+  #config.paperclip_defaults = {
+  #  :storage => :s3,
+  #  :s3_credentials => {
+  #    :bucket => 'imagens.proiz',
+  #    :access_key_id => 'AKIAIYZHJEVMTZYNYQKQ',
+  #    :secret_access_key => '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',
+  #    :url => "http://imagens.proiz.s3.amazonaws.com",
+  #    :path => "images/:class/:id.:style.:extension"
+  #  }
+  #}
 end

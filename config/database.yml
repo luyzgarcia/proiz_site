@@ -17,16 +17,16 @@
 development:
   adapter: postgresql
   encoding: unicode
-  #database: Proiz_admin_development
-  #pool: 5
-  #username: postgres
-  #password: admin
-  #host: localhost
-  database: d7ruohdp0rrc81
+  database: Proiz_admin_development
   pool: 5
-  username: kkasqjpsohryba
-  password: oi8Ex3U5Rqpxy4xXr5JiL4TJaU
-  host: ec2-54-225-124-205.compute-1.amazonaws.com
+  username: postgres
+  password: admin
+  host: localhost
+  #database: d7ruohdp0rrc81
+  #pool: 5
+  #username: kkasqjpsohryba
+  #password: oi8Ex3U5Rqpxy4xXr5JiL4TJaU
+  #host: ec2-54-225-124-205.compute-1.amazonaws.com
 
 
   # Connect on a TCP socket. Omitted by default since the client uses a

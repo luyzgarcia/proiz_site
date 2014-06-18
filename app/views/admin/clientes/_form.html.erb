@@ -47,11 +47,9 @@
 				<div class="item_info_detalhe wrapper_imagem">
 					<h5><%= c.label 'Logo do cliente' %></h5>
 					<div class="imagem_logo">
-						<%= image_tag(@cliente.logo.url) if @cliente.logo %>
+						<%= image_tag(@cliente.logo.url[:thumb]) if @cliente.logo %>
 					</div>
 					<h4><%= c.file_field :logo %></h4>
-					
-					
 				</div>
 				
 				<div class="item_info_botoes">

@@ -1,0 +1,9 @@
+$('#area_1').html("<%= escape_javascript(render partial: 'form') %>");
+
+$('#cliente_logo').change(function(){
+    var oFReader = new FileReader();
+    oFReader.readAsDataURL(this.files[0]);
+    oFReader.onload = function (oFREvent) {
+        $('.imagem_logo').html('<img src="'+oFREvent.target.result+'">');
+    };
+});

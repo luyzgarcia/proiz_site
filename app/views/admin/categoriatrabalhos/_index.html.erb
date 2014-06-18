@@ -1,0 +1,43 @@
+<div class="lista_cadastrados">
+	<h4 class="titulo">
+		Categorias de trabalhos Cadastrados
+	</h4>
+	<table>
+		<tr>
+			<th>Titulo</th>
+			<th>Data de criacao</th>
+			<th>Estatus</th>
+			<th>Ação</th>
+		</tr>
+		<% if @categorias %>
+			<% @categorias.each do |categoria| %>
+				<tr class="item" id="categoriatrabalho_<%= categoria.id %>">
+					<td>
+						<%= categoria.titulo %>
+					</td>
+					<td>
+						<%= categoria.created_at.to_s(:create) %>
+					</td>
+					<td>
+						<%= link_to '',
+						mudarstatus_admin_categoriatrabalho_path(categoria),
+						:class => categoria.status == 1 ? 'status_ativo' : 'status_inativo', 
+						:confirm => 'Alterar status',
+						:method => 'get',
+						:data => {:'message' => "Você está prestes a altear o status desta categoria."}%>
+					</td>
+					<td>
+						<%= link_to "", edit_admin_categoriatrabalho_path(categoria), 
+						:class => 'bt_editar_1 tooltips', :title => "Editar item"%>
+						<%= link_to "", [:admin,categoria], :remote => true, 
+						:confirm => 'Excluir categoria',
+						:data => {:'message' => "Você está prestes a excluir esta categoria."},
+						:method => :delete,
+						:class => 'bt_excluir_1 tooltips',
+						:title => 'Excluir item'%>
+					</td>
+				</tr>
+			<% end %>
+		<% end %>
+	</table>
+</div>

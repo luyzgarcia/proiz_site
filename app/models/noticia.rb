@@ -1,6 +1,11 @@
 class Noticia < ActiveRecord::Base
   
+  validates :titulo, presence: true
+  #validates_associated :noticiacateg
+ # validates_presence_of :noticiacateg, :message => ":Selecione uma categoria de noticia." 
+  validates :noticiacateg_id, presence: true
   has_one :noticiacateg
+  #accepts_nested_attributes_for :noticiacateg
   
   has_attached_file :imagem_miniatura,
   #:path => ":rails_root/public/system/trabalhos/:attachment/:id/:basename_:style.:extension",

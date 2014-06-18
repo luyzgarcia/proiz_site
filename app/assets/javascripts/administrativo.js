@@ -4,6 +4,7 @@
 //= require_tree ./admin
 
 function enable_field(elemento) {
+	$(elemento).css('background',"#004961");
 	$(elemento).parents('.item_info_detalhe').css("background","#fff");
 	$(elemento).parent().find(".bloqueado, .bloqueado input, .bloqueado textarea").prop('disabled', false);
 	$(elemento).parent().find(".bloqueado").css('pointer-events', 'all');

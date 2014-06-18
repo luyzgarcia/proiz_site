@@ -12,3 +12,55 @@
     }
   }
 }
+
+body {
+  height: 100%;
+  .wrapper {
+    height: auto;
+    min-height: 100%;
+    margin-bottom: 150px;
+  }
+  #footer {
+    clear: both;
+    position: relative;
+    z-index: 10;
+    height: 3em;
+    margin-top: -3em;
+    h3, h4 {
+      display: inline-block;
+    }
+    width: 100%;
+    position: absolute;
+    left: 0;
+    //bottom: 0;
+    text-align: center;
+    p {
+      @extend .font_padrao_1;
+      color: #636363 !important;
+      font-size: 10pt;
+      margin: 30px 0px;
+    }
+    .footer_canais {
+      height: 100px;
+      background: #8dc63f;
+      .wrapper_canais {
+        padding: 35px 0px;
+        h3 {
+          margin: 0px 45px;
+          @extend .font_padrao_1;
+          color: #004961 !important;
+          font-size: 16pt;
+        }
+        h4, a {
+          margin: 0 20px;
+          @extend .font_padrao_1;
+          color: #fff !important;
+          font-size: 12pt;
+        }
+      }
+    }
+  }
+  #footer {
+    
+  }
+}

@@ -88,13 +88,14 @@ body {
   
 }
 .menu_admin {
-  min-height: 1024px;
+  //min-height: 1024px;
 }
 #wrapper_admin {
   width: 1024px;
   margin: 0 auto;
+  //text-align: center;
   .detalhe_pagina {
-    padding-bottom: 200px;
+    //padding-bottom: 200px;
   }
   .areas_site {
     padding: 10px 10px;
@@ -127,39 +128,7 @@ body {
 
 }
 
-#footer {
-  
-  width: 100%;
-  position: absolute;
-  left: 0;
-  //bottom: 0;
-  text-align: center;
-  p {
-    @extend .font_padrao_1;
-    color: #636363 !important;
-    font-size: 10pt;
-    margin: 30px 0px;
-  }
-  .footer_canais {
-    height: 100px;
-    background: #8dc63f;
-    .wrapper_canais {
-      padding: 35px 0px;
-      h3 {
-        margin: 0px 45px;
-        @extend .font_padrao_1;
-        color: #004961 !important;
-        font-size: 16pt;
-      }
-      h4, a {
-        margin: 0 20px;
-        @extend .font_padrao_1;
-        color: #fff !important;
-        font-size: 12pt;
-      }
-    }
-  }
-}
+
 
 
 #erros {

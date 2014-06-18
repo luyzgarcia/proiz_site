@@ -31,17 +31,18 @@ ProizAdmin::Application.routes.draw do
   get "recursos/edit"
   get "recursos/destroy"
   get "recursos/update"  
-  get "noticia/new"
-  get "noticia/show"
-  get "noticia/edit"
-  get "noticia/destroy"
-  get "noticia/index"  
-  get "noticiacategs/new"
-  get "noticiacategs/index"
-  get "noticiacategs/show"
-  get "noticiacategs/edit"
-  get "noticiacategs/destroy"
-  get "noticiacategs/update"
+  #get "noticia/new"
+  #get "noticia/show"
+  #get "noticia/edit"
+  #get "noticia/destroy"
+  #get "noticia/index"  
+  #get "noticiacategs/new"
+  #get "noticiacategs/index"
+  #get "noticiacategs/show"
+  #get "noticiacategs/edit"
+  #get "noticiacategs/destroy"
+  #get "noticiacategs/update"
+  
   #get "clientes/show"
   #get "clientes/index"
   get "clientes/edit"
@@ -87,7 +88,17 @@ ProizAdmin::Application.routes.draw do
         get :mudarstatus
       end
     end
+    resources :categoriatrabalhos do
+      member do
+        get :mudarstatus
+      end
+    end
     resources :noticias do
+      member do 
+        get :mudarstatus
+      end
+    end
+    resources :noticiacategs do
       member do 
         get :mudarstatus
       end
@@ -110,11 +121,7 @@ ProizAdmin::Application.routes.draw do
   end
   
   resources :artigos
-  resources :categoriatrabalhos do
-    member do
-      get :mudarstatus
-    end
-  end
+  
   
   resources :trabalhos do
     member do
@@ -133,7 +140,6 @@ ProizAdmin::Application.routes.draw do
       get :filtrar
     end
   end
-  resources :noticiacategs
   resources :especialidades
   resources :inicials do
     

@@ -71,12 +71,7 @@
 							<li><%= link_to "Novo cliente", new_admin_cliente_path %></li>
 						</ul>				
 					</li>
-					<li>
-						<%= link_to "Categoria Notícias", noticiacategs_path, :remote => true %>
-						<ul class="sub_menu">
-							<li><%= link_to "Nova categoria", noticiacategs_new_path, :remote => true %></li>
-						</ul>
-					</li>
+					
 					<li>
 						<%= link_to "Notícias", admin_noticias_path, :remote => true %>
 						<ul class="sub_menu">
@@ -88,8 +83,6 @@
 						<ul class="sub_menu">
 							<li><%= link_to "Lista trabalhos", trabalhos_path, :remote => true %></li>
 							<li><%= link_to "Novo trabalho", new_trabalho_path, :remote => true %></li>
-							<li><%= link_to "Lista de categorias", categoriatrabalhos_path, :remote => true %></li>
-							<li><%= link_to "Nova categoria de trabalho", new_categoriatrabalho_path, :remote => true %></li>
 						</ul>
 					</li>
 					<li><%= link_to "Teste", admin_clientes_path, :remote => true %></li>
@@ -102,7 +95,9 @@
 		</div>
 		
 		
-		<div id="footer">
+		
+	</div>
+	<div id="footer">
 			<p>Todos os direitos reservados - Proiz comunicação integrada EIRELI ME</p>
 			<div class="footer_canais">
 				<div class="wrapper_canais">
@@ -114,6 +109,5 @@
 			</div>
 			
 		</div>
-	</div>
 </body>
 </html>
