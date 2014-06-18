@@ -83,6 +83,6 @@ ProizAdmin::Application.configure do
   
   
   #Amazon S3 Buckets
-  config.action_controller.asset_host = "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
+  #config.action_controller.asset_host = "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
   
 end
