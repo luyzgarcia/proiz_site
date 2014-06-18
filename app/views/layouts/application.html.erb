@@ -3,11 +3,13 @@
 <meta name="format-detection" content="telephone=no">
 <html>
 <head>
-  <%= stylesheet_link_tag    "application"%>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
   <%= content_for :header %>
   
+    
+
   <%= display_meta_tags :site => 'Proiz' %>
   
 </head>
