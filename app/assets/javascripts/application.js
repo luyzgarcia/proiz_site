@@ -65,7 +65,7 @@ function loadingComplete() {
 			'z-index': -100
 		}, 200);
 		setTimeout( function() {
-			//mostrarIntro();
+			mostrarIntro();
 		}, 200);
 	});
 }
