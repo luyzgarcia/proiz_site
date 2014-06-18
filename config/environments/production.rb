@@ -93,7 +93,7 @@ ProizAdmin::Application.configure do
       :bucket => ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
-      :url => "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com",
+      :url => "http://imagens.proiz.s3.amazonaws.com",
       :path => "images/:class/:id.:style.:extension"
     }
   }
