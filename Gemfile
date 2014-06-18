@@ -65,6 +65,7 @@ gem 'maskedinput-rails'
 
 #para usar assets na amazon
 gem 'aws-s3'
+gem 'aws-sdk'
 
 #bootstrap
 #gem "therubyracer"

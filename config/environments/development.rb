@@ -29,4 +29,13 @@ ProizAdmin::Application.configure do
   
   #Paperclip.options[:command_path] = "C:/Program Files/ImageMagick-6.8.9-Q16"
   
+  #upload para amazon s3 buckets usando paperclip - para testes locais deve-se descomentar abaixo
+  #config.paperclip_defaults = {
+  #  :storage => :s3,
+  #  :s3_credentials => {
+  #    :bucket => 'assets.proiz',
+  #    :access_key_id => 'AKIAIYZHJEVMTZYNYQKQ',
+  #    :secret_access_key => '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'
+  #  }
+  #}
 end
