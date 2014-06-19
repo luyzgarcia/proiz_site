@@ -20,15 +20,10 @@
 //= require jquery.remotipart
 //= require tinymce
 //= require tooltips.js
-//= require_tree ./scroll  
+//= require_tree ./scroll 
 
 
 $(document).ready(function(){
-	$('#esconde').animate({
-		opacity: 1,
-		'z-index': 100
-	}, 200);
-	$('.wrapper_carregando').addClass('la-animate');
 	//$('#menu').click(function() {
 		//$('body').scrollTop();
 		//disable_scroll();
@@ -44,12 +39,11 @@ $(document).ready(function(){
 		// individual element tween examples
 		controller.addTween('#header', TweenMax.from( $('#header'), .5, {css:{opacity: 0}}));*/
 	//});
-	loadingComplete();
 });
 var inProgress = false;
 function carregando() {
 		///
-		/*$('html, body').animate({ scrollTop: 0 }, 0);
+		$('html, body').animate({ scrollTop: 0 }, 0);
 		if( inProgress ) return false;
 			inProgress = true;
 			$('.wrapper_carregando').addClass('la-animate');
@@ -60,7 +54,7 @@ function carregando() {
 				$('.wrapper_carregando').removeClass('la-animate');
 				inProgress = false;
 				loadingComplete();
-		}, 1000 );*/
+		}, 1000 );
 }
 function loadingComplete() {
 	$('html, body').animate({ scrollTop: 0 }, 0);
@@ -71,7 +65,6 @@ function loadingComplete() {
 			opacity: 0,
 			'z-index': -100
 		}, 200);
-		$('.wrapper_carregando').removeClass('la-animate');
 		setTimeout( function() {
 			mostrarIntro();
 		}, 200);
