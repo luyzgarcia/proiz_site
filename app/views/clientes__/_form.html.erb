@@ -1,6 +1,6 @@
 <div class="formulario">
 	<div class="item">
-		<%= form_for([:admin,@cliente], :html => { :multipart => true }, :path => "/admin/clientes") do |c| %>
+		<%= form_for(@cliente,remote:true, :html => { :multipart => true } ) do |c| %>
 			<h3 class="titulo">Novo cliente
 			<% if @editando == true %>
 				<p class="editando">Editando... Não esqueça de salvar as alterações no fim do box</p>
@@ -50,12 +50,13 @@
 						<%= image_tag(@cliente.logo.url) if @cliente.logo %>
 					</div>
 					<h4><%= c.file_field :logo %></h4>
+					
+					
 				</div>
 				
 				<div class="item_info_botoes">
 					<% if @editando == true %>
-						<%= link_to "Limpar alterações", admin_clientes_path,
-						:method => 'get',
+						<%= link_to "Limpar alterações", clientes_path, :remote => true, 
 						:confirm => 'Descartar alterações',
 						:data => {:'message' => "Você está prestes a descartas as informações aditadas, tem certeza?"},
 						:class => "link_limpar" %>

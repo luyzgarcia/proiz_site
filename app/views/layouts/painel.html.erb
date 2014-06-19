@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
 <head>
-  <title>ProizAdmin</title>
+  <title>Proiz - Administrativo</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "administrativo", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -54,40 +54,13 @@
 		<% end %>
 		
 		<div id="wrapper_admin" class="menu_admin">
-		
-			
-			
 			<% if current_user %>
-			<div class="lista_paginas">
-				<ul class="item">
-					<%= render_navigation %>
-					<br/></br/>
-					<li><%= link_to "Usuários", users_path, :remote => true %></li>
-					<li><%= link_to "Novo usuario", users_new_path, :remote => true %></li>
-					<li>
-						<%= link_to "Clientess", '', :onclick => 'return false' %>
-						<ul class="sub_menu">
-							<li><%= link_to "Listar cadastrados", admin_clientes_path %></li>
-							<li><%= link_to "Novo cliente", new_admin_cliente_path %></li>
-						</ul>				
-					</li>
-					
-					<li>
-						<%= link_to "Notícias", admin_noticias_path, :remote => true %>
-						<ul class="sub_menu">
-							<li><%= link_to "Nova notícia", new_admin_noticia_path, :remote => true %></li>
-						</ul>
-					</li>
-					<li>
-						<%= link_to "Trabalhos", '', :remote => true %>
-						<ul class="sub_menu">
-							<li><%= link_to "Lista trabalhos", trabalhos_path, :remote => true %></li>
-							<li><%= link_to "Novo trabalho", new_trabalho_path, :remote => true %></li>
-						</ul>
-					</li>
-					<li><%= link_to "Teste", admin_clientes_path, :remote => true %></li>
-				</ul>		
-			</div>
+				<div class="lista_paginas">
+					<ul class="item">
+						<%= render_navigation %>
+						<br/></br/>
+					</ul>		
+				</div>
 			<% end %>
 			<div class="detalhe_pagina" id="detalhe_tabela">
 				<%= yield %>

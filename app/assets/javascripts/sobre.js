@@ -1,6 +1,8 @@
+
 $(document).ready( function(){
   (function() {
     function mostrardetalhessobre() {
+    	console.log('mostrar detalhes sobre');
       if(jQuery(window).width() > 700) {
         if($('#sobre .sobre_info_2 .mensagem').visible(false, true)) {
           $('#sobre .sobre_info_2 .mensagem h1').animate({

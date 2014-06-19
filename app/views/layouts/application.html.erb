@@ -14,14 +14,6 @@
   
 </head>
 <body class="corpo">
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1501616463400377&version=v2.0";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
 <div class="wrapper_carregando">
 	<style>
 		#carregando span:before {
@@ -63,10 +55,10 @@
 	</div>
 	<div id="menu">
 		<ul>
-			<li><%= link_to 'SOBRE', sobre_path, :data => { :'hover' => 'SOBRE' }  %></a></li>
-			<li><a href="#especialidades" data-hover="ESPECIALIDADES">ESPECIALIDADES</a></li>
-			<li><a href="trabalhos.html" data-hover="TRABALHOS">TRABALHOS</a></li>
-			<li><a href="/contato" data-hover="NOTÍCIAS">NOTÍCIAS</a></li>
+			<li><%= link_to 'SOBRE', sobre_path, :data => { :'hover' => 'SOBRE' }, :remote => true  %></li>
+			<li><%= link_to 'ESPECIALIDADES', especialidades_path, :data => { :'hover' => 'ESPECIALIDADES' }  %></li>
+			<li><%= link_to 'TRABALHOS', trabalhos_path, :data => { :'hover' => 'TRABALHOS' }  %></li>
+			<li><%= link_to 'NOTÍCIAS', noticias_path, :data => { :'hover' => 'NOTÍCIAS' }  %></li>
 			<li><%= link_to 'CONTATO', contato_path, :data => { :'hover' => 'CONTATO' }%></li>
 		</ul>
 		

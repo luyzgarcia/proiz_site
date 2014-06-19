@@ -273,3 +273,32 @@ function detectmob() {
     return false;
   }
 }
+
+
+
+
+
+
+
+
+
+/*Carregar a pagina sem refresh*/
+$(document).ready(function(){
+	$('#menu li a').bind('ajax:before',function() {
+		$('#esconde').animate({
+			opacity: 1,
+			'z-index': 100
+		}, 200);
+		$('.wrapper_carregando').addClass('la-animate');
+		
+	});
+	$('#menu li a').bind('ajax:complete ',function() {
+		$('.wrapper_carregando').removeClass('la-animate');
+		$('#esconde').animate({
+			opacity: 0,
+			'z-index': -100
+		}, 200);
+	});
+	
+});
+

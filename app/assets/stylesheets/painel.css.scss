@@ -320,7 +320,8 @@ body {
           width: 115px;
         }
         select {
-          background: image-url("seta_option.png") no-repeat 90% 9px;
+          background: image-url("seta_option.png") no-repeat 90% 6px;
+          min-width: 120px;
           width: 100%;
           -webkit-appearance: none;
           -moz-appearance: none;
