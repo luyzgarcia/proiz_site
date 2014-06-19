@@ -20,7 +20,7 @@
 //= require jquery.remotipart
 //= require tinymce
 //= require tooltips.js
-//= require_tree ./scroll 
+//= require_tree ./scroll  
 
 $(document).ready(function(){
 	//$('#menu').click(function() {
