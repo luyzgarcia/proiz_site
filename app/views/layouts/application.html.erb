@@ -8,11 +8,12 @@
   <%= csrf_meta_tags %>
   <%= content_for :header %>
   
-    
 
   <%= display_meta_tags :site => 'Proiz' %>
   
 </head>
+<script>
+</script>
 <body class="corpo">
 <div class="wrapper_carregando">
 	<style>
@@ -51,7 +52,7 @@
 <div id="header">
 	<span></span>
 	<div id="logo">
-		<%= image_tag('logo_proiz.png')%>
+		<%= link_to image_tag('logo_proiz.png'), root_path %>
 	</div>
 	<div id="menu">
 		<ul>
