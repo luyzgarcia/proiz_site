@@ -297,7 +297,7 @@ $(document).ready(function(){
 				'z-index': 100
 			}, 200);
 			$('.wrapper_carregando').addClass('la-animate');
-		});		
+		});
 		$.getScript(this.href);
 		history.pushState(null, document.title, this.href);
 	});

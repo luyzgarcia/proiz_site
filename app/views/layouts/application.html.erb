@@ -52,12 +52,12 @@
 <div id="header">
 	<span></span>
 	<div id="logo">
-		<%= link_to image_tag('logo_proiz.png'), root_path %>
+		<%= link_to image_tag('logo_proiz.png'), root_path, :remote => true %>
 	</div>
 	<div id="menu">
 		<ul>
 			<li><%= link_to 'SOBRE', sobre_path, :data => { :'hover' => 'SOBRE' }, :remote => true  %></li>
-			<li><%= link_to 'ESPECIALIDADES', especialidades_path, :data => { :'hover' => 'ESPECIALIDADES' }  %></li>
+			<li><%= link_to 'ESPECIALIDADES', especialidades_path, :data => { :'hover' => 'ESPECIALIDADES' },:remote => true  %></li>
 			<li><%= link_to 'TRABALHOS', trabalhos_path, :data => { :'hover' => 'TRABALHOS' }  %></li>
 			<li><%= link_to 'NOTÍCIAS', noticias_path, :data => { :'hover' => 'NOTÍCIAS' }  %></li>
 			<li><%= link_to 'CONTATO', contato_path, :data => { :'hover' => 'CONTATO' }%></li>
