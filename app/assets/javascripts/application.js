@@ -25,6 +25,7 @@
 //= require tooltips.js
 //= require_tree ./scroll 
 //= require jquery-ui-scrollable
+//= require jquery.pjax
 
 $(document).ready(function(){
 	//$('#menu').click(function() {
@@ -68,9 +69,9 @@ function loadingComplete() {
 			opacity: 0,
 			'z-index': -100
 		}, 200);
-		setTimeout( function() {
+		/*setTimeout( function() {
 			mostrarIntro();
-		}, 200);
+		}, 200);*/
 	});
 }
 /*

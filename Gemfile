@@ -67,6 +67,10 @@ gem 'maskedinput-rails'
 gem 'aws-s3'
 gem 'aws-sdk'
 
+
+#pajax
+#gem 'pjax_rails'
+
 #bootstrap
 #gem "therubyracer"
 #gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

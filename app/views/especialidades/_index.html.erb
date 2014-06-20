@@ -1,37 +1,74 @@
-<div class="lista_cadastrados">
-	<h4 class="titulo">
-		Especialidades Cadastradas
-	</h4>
-	<table>
-		<tr>
-			<th>Titulo</th>						
-			<th>Data de criação</th>
-			<th>Estado</th>
-			<th>Ação</th>
-		</tr>
-		<% @especialidades.each do |esp| %>
-			<tr class="item" id="especialidade_<%= esp.id %>">
-				<td>
-					<%= esp.titulo %>
-				</td>				
-				<td>
-					<%= esp.created_at.to_s(:create) %>
-				</td>
-				<td>
-					<% if esp.status == 1 %>
-						<%= link_to "A", mudarstatus_especialidade_path(esp), remote: true %>
-					<% else %>
-						<%= link_to "I", mudarstatus_especialidade_path(esp), remote: true %>
-					<% end %>		
-				</td>
-				<td>
-					<%= link_to "T", edit_especialidade_path(esp), :remote => true, :class => 'link_editar'%>
-					<%= link_to "X", esp, :remote => true, :confirm => 'Você tem certeza?', :method => :delete, :class => 'link_excluir'%>
-				</td>
-			</tr>
-		<% end %>
-	</table>
-</div>
+<% content_for :header do %>
+  <%= javascript_include_tag 'especialidades' %>  
+<% end %>
+	<div id="especialidades">
+		<div class="titulo_padrao_1">
+			<h1>Especialidades</h1>
+		</div>
+		<div class="wrapper_especialidades">
+			<div class="especialidades_items">
+				<div class="wrapper_items">
+					
+					<% @especialidades.each do |e| %>						
+						<div class="item">
+							<div class="item-child">
+								<span class="item-child-span">
+									<%= image_tag(e.imagem_principal.url, :id => e.id, :data => { desc: e.titulo}) %>
+								</span>
+								<p><%= e.titulo %></p>
+								<div class="wrapper-descricao" data-id="<%= e.id %>">
+									<div class="descricao">
+										<a href="#" class="fechar">X</a>
+										<%= image_tag(e.imagem_principal.url, :id => e.id, :data => { :desc => e.titulo}) %>
+										<div class="descricao-texto">
+											<h3><%= e.titulo %> </h3>
+											<p> <%= e.conteudo %> </p>
+											<h4>Projetos em que já aplicamos a especialidades:</h4>
+											<a href="#">Traalho 1</a>
+											<a href="#">Traalho 1</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>													
+					<% end %>				
+							
+				</div>
+			</div>
+			
+			<div class="especialidades_drag_items_min">
+				<div class="wrapper_items"></div>
+			</div>
+			
+			<div id="drag_here" class="especialidades_drag_items">
+				<div class="wrapper_items"></div>
+			</div>
+			
+			<div class="especialidades_formulario">
+				<div class="especialidades_selecionadas">
+					<h3>Especialidades selecionadas</h3>
+					<ul>
+								
+					</ul>
+				</div>
+				
+				<div class="especialidades_formulario_envio">
+					<h3>Informações para contato</h3>
+					<form action="#" class="formulario_padrao_1">
+						<input type="text" placeholder="*Nome" />
+						<input type="text" placeholder="*Sobrenome" />
+						<input type="text" placeholder="*Email" />
+						<input type="text" placeholder="*Telefone" />
+						<p>*Campos obrigatorios</p>
+						<input type="submit" value="Enviar" class="botao_submit_2"/>
+					</form>
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
 	
-
-
+	<div id="intervalo4" class="intervalo"> </div>
+	
+	
