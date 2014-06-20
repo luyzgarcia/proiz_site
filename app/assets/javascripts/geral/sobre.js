@@ -16,16 +16,16 @@ $(document).ready( function(){
 	        		},2500);
 	      		}); 
 	    	})
-	    	.one('scrollout', function(e,ui) {
+	    	.on('scrollout', function(e,ui) {
 	    		console.log('saiu');
-				$('#sobre .sobre_info_2 .mensagem h1').animate({
+				/*$('#sobre .sobre_info_2 .mensagem h1').animate({
 	        		top:'400px'
 	      		},1000);
 	      		$('#sobre .sobre_info_2 .item').each(function(i) {
 	        		$(this).delay(500 * i).animate({
 	          		opacity:'0'
 	        		},2500);
-	      		});
+	      		});*/
 			});
 	  	}
 	}

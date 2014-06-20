@@ -25,7 +25,7 @@
 //= require tooltips.js
 //= require_tree ./scroll 
 //= require jquery-ui-scrollable
-//= require jquery.pjax
+//= require visibility
 
 $(document).ready(function(){
 	//$('#menu').click(function() {
@@ -289,29 +289,35 @@ function detectmob() {
 
 /*Carregar a pagina sem refresh*/
 $(document).ready(function(){
-	$('#menu li a').bind('ajax:before',function() {
-		$('#header').animate({
-			top: '-150px'
-		}, 400, function () {
-			$('#esconde').animate({
-				opacity: 1,
-				'z-index': 100
-			}, 200);
+	$('#menu li a, #logo a').bind('ajax:beforeSend',function() {
+		
+		$('html, body').animate({ scrollTop: 0 }, 0);
+		$('#esconde').animate({
+			opacity: 1,
+			'z-index': 100
+		}, 100, function () {
+			$('#header').animate({
+				top: '-150px'
+			}, 300);
 			$('.wrapper_carregando').addClass('la-animate');
 		});
-		$.getScript(this.href);
+		//$.getScript(this.href);
 		history.pushState(null, document.title, this.href);
+		
+		
 	});
 	$('#menu li a').bind('ajax:complete ',function() {
-		$('.wrapper_carregando').removeClass('la-animate');
-		$('#header').animate({
-			top: '0px'
-		}, 400, function () {
-			$('#esconde').animate({
-				opacity: 0,
-				'z-index': -100
-			}, 200);
+		
+		$('#esconde').animate({
+			opacity: 0,
+			'z-index': -100
+		}, 100, function () {
+			$('.wrapper_carregando').removeClass('la-animate');
+			$('#header').animate({
+				top: '0px'
+			}, 300);
 		});
+		
 	});
 	
 });
