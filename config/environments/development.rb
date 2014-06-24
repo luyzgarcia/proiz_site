@@ -15,6 +15,17 @@ ProizAdmin::Application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'mail.proiz.com.br',
+    port:                 25,
+    domain:               'proiz.com.br',
+    user_name:            'atendimento@proiz.com.br',
+    password:             'intproiz12',
+    authentication:       'plain',
+    enable_starttls_auto: true,  
+    openssl_verify_mode:  'none'
+    }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

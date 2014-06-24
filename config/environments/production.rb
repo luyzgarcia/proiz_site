@@ -72,8 +72,8 @@ ProizAdmin::Application.configure do
     address:              'mail.proiz.com.br',
     port:                 25,
     domain:               'proiz.com.br',
-    user_name:            'luiz@proiz.com.br',
-    password:             'Lui7724$fer',
+    user_name:            'atendimento@proiz.com.br',
+    password:             'intproiz12',
     authentication:       'plain',
     enable_starttls_auto: true,  
     openssl_verify_mode:  'none'
