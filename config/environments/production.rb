@@ -75,7 +75,9 @@ ProizAdmin::Application.configure do
     user_name:            'luiz@proiz.com.br',
     password:             'Lui7724$fer',
     authentication:       'plain',
-    enable_starttls_auto: true  }
+    enable_starttls_auto: true,  
+    openssl_verify_mode:  'none'
+    }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found).
