@@ -1,13 +1,9 @@
-<% content_for :header do %>
-  <!--<%= javascript_include_tag 'noticias' %> -->  
-<% end %>
-
 <script>
 	$(document).ready(function() {
 		recarregarNoticias();
+		
 	})
 </script>
-
 <div id="noticias">
 	
 	<%= render 'noticia_topo' %>
@@ -17,6 +13,6 @@
 		<%= render 'ultimas' %>
 	</div>
 </div>
-	
+
 <div id="intervalo4" class="intervalo">
 </div>

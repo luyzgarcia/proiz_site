@@ -68,6 +68,10 @@ gem 'aws-s3'
 gem 'aws-sdk'
 
 
+#url amigaveis
+gem 'friendly_id', '~> 5.0.0'
+
+
 #pajax
 #gem 'pjax_rails'
 

@@ -26,7 +26,7 @@ class Admin::NoticiasController < Admin::AdminController
   end
 
   def edit
-    @noticia = Noticia.find(params[:id])
+    @noticia = Noticia.friendly.find(params[:id])
     #@artigo_id = @artigo.id
     @editando = true
     respond_to do |format|
@@ -36,7 +36,7 @@ class Admin::NoticiasController < Admin::AdminController
   end
 
   def destroy
-    @noticia = Noticia.find_by_id(params[:id])
+    @noticia = Noticia.friendly.find(params[:id])
     #@noticia.destroy
     
     @noticia_id = @noticia.id
@@ -46,7 +46,7 @@ class Admin::NoticiasController < Admin::AdminController
   end
   
   def update
-    @noticia = Noticia.find(params[:id])
+    @noticia = Noticia.friendly.find(params[:id])
     
     @noticia_id = @noticia.id
     if(@noticia.update(noticia_params))
@@ -65,7 +65,7 @@ class Admin::NoticiasController < Admin::AdminController
   end
   
   def mudarstatus
-    @noticia = Noticia.find(params[:id])
+    @noticia = Noticia.friendly.find(params[:id])
     if(@noticia.status == 1)
       @noticia.update_attribute(:status, 0)
     else

@@ -1,6 +1,12 @@
 <% content_for :header do %>
-  <%= javascript_include_tag 'trabalhos' %>  
+ <!-- <%= javascript_include_tag 'trabalhos' %> -->  
 <% end %>
+<script>
+	$(document).ready(function() {
+		recarregar();	
+	});	
+</script>
+
 <div id="trabalhos">
 	<div class="titulo">
 		<h1 class="trab_ativo"><%= link_to 'Trabalhos', trabalhos_path, :title => 'Todos', :remote => true %></h1>

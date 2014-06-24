@@ -15,7 +15,7 @@
 			<%= image_tag(@destaque.imagem_miniatura.url)%>
 			<p><%= @destaque.titulo %></p>
 			<div class="ultimas_leiamais">
-				<%= link_to '', detalhe_noticia_path(@destaque), :class => 'link_noticias', :remote => true %>
+				<%= link_to '', noticia_path(@destaque), :class => 'link_noticias', :remote => true %>
 			</div>			
 		</div>
 	</div>

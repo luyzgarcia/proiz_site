@@ -1,4 +1,6 @@
 class Noticia < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :titulo, use: :slugged
   
   validates :titulo,:conteudo, presence: true
   #validates :titulo, uniqueness: true
@@ -23,5 +25,8 @@ class Noticia < ActiveRecord::Base
       find(:all).limit(5)
     end  
   end
+
+
+  #Url amigavez
 
 end

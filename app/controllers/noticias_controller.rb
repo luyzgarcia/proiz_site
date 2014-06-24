@@ -13,8 +13,8 @@ class NoticiasController < ApplicationController
     getcategorias
     respond_to do |format|
       format.html
+      format.js {render 'index_remote'}
     end
-    
   end
   
   def filtrar
@@ -28,7 +28,6 @@ class NoticiasController < ApplicationController
   
   def buscar
     buscando = params[:search]
-    
     @noticias = Noticia.buscar(buscando)
     respond_to do |format|
       if buscando == ''
@@ -44,7 +43,7 @@ class NoticiasController < ApplicationController
   
   def detalhe_noticia
     ultimasnoticias
-    @noticia = Noticia.find(params[:id])
+    @noticia = Noticia.friendly.find(params[:id])
   end
 
   private

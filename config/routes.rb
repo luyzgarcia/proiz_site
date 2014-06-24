@@ -133,6 +133,7 @@ ProizAdmin::Application.routes.draw do
   get "midias_trabalhos" => "trabalhos#midias_sociais", :as => "midias_trabalhos"
   
   get "buscar_noticia" => "noticias#buscar", :as => "buscar_noticia"
+  get "/noticias/:id" => "noticias#detalhe_noticia"
   resources :noticias do
     
     member do
