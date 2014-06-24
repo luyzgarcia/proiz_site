@@ -1,4 +1,4 @@
-//= require touch/jquery-ui.touch.js
+// require touch/jquery-ui.touch.js
 $(function() {
 	$("#especialidades .especialidades_items .item .wrapper-descricao .descricao .fechar ").click(function(e) {
 		e.preventDefault();
