@@ -197,6 +197,87 @@
 /*****************************************************************/
 
 
+/*****************************************************************/
+/************ Página Trabalhos - Detalhe do trabalho *************/
+/*****************************************************************/
+#trabalhos .detalhe_trabalho .detalhe {
+  text-align: center;
+  margin: 100px auto 240px;
+  width: 970px;
+  height:auto;
+  position: relative;
+}
+#trabalhos .detalhe_trabalho .detalhe .descricao {
+  margin: 0 auto;
+}
+#trabalho_detalhe_menu {
+  display:none;
+} 
+#trabalhos .detalhe_trabalho .detalhe .descricao .intro{
+  display: inline-block;
+  width: 35%;
+  text-align: left;
+  float: left;
+}
+#trabalhos .detalhe_trabalho .detalhe .descricao .intro h2 {
+  font: normal 26pt/1.4em "nexa_bold", Times;
+  color: #004961;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #8dc63f;
+  padding-bottom: 25px;
+}
+#trabalhos .detalhe_trabalho .detalhe .descricao .intro p {
+  font-family:"droid_serif", Times;
+  font-size: 10pt;
+  line-height: 1.4em;
+  color: #4f4e4e;
+  font-weight: normal;
+}
+#trabalhos .detalhe_trabalho .detalhe .descricao .info {
+  display: block;
+  width: 100%;  
+  text-align: left;
+  margin-left: 65px;
+}
+#trabalhos .detalhe_trabalho .detalhe .descricao .info p {
+  font: normal 12pt/1.9em "droid_serif", Times;
+  color: #4f4e4e;
+  -webkit-column-count:2; /* Chrome, Safari, Opera */
+  -moz-column-count:2; /* Firefox */
+  column-count:2;
+  column-gap: 50px;
+  -webkit-column-gap: 50px;
+  padding-left: 20px;
+}
+#trabalhos .detalhe_trabalho .detalhe .full-info {
+  margin: 80px auto;
+}
+#trabalhos .detalhe_trabalho .detalhe .full-info img {
+  margin: 0px auto 65px;
+  width: auto;
+  max-width: 100%;
+  display: block;
+}
+#trabalhos .detalhe_trabalho .detalhe .full-info p {
+  font: normal 12pt/1.9em "droid_serif", Times;
+  padding-left: 50px;
+  color: #4f4e4e;
+  text-align: justify;
+  display: block;
+  margin-bottom: 110px;
+}
+#trabalhos .detalhe_trabalho .detalhe .full-info span {
+  float: left;
+  background: #004961;
+  text-indent: -9999;
+  width: 5px;
+  height: 25px;
+  margin: 0 2px;
+}
+/*****************************************************************/
+/************ Página Trabalhos - FIM detalhes do trabalho ********/
+/*****************************************************************/
+
 
 
 

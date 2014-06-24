@@ -1,0 +1,302 @@
+
+/****************************************************************/
+/****************** Página Especialidades ***********************/
+/****************************************************************/
+#especialidades .wrapper_especialidades {
+  width: 100%;
+  background: #8dc63f;
+  min-height: 300px;
+  padding-bottom: 200px;
+}
+#especialidades .especialidades_items .wrapper_items {
+  display: block;
+  padding: 85px 0 125px;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+#especialidades .especialidades_items, #especialidades .especialidades_formulario {
+  width: 80%;
+  max-width: 1000px;
+  text-align: center;
+  margin: 0 auto;
+}
+#especialidades .especialidades_items .item {
+  width: 280px;
+  height: 280px;  
+  background-color: #e6e6e6;
+  border-radius: 50%;
+  position: relative;
+  display: inline-block;
+  margin: 20px 20px;
+  cursor: pointer;
+  -webkit-transition: 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+#especialidades .especialidades_items .item .item-child {
+  width: 100%;
+  height: 100%;
+}
+#especialidades .especialidades_items .item .item-child > p {
+  position: absolute;
+  bottom: 60px;
+  text-align: center;
+  width: 100%;
+  /*display: none;*/
+  opacity: 0;
+  font: normal 12pt/1.3em nexa_bold, Times;
+  color: #fff;
+  margin-left: 40px;
+  width: 200px;
+  letter-spacing: 1.5px;
+  -webkit-transition: 0.2s ease-in-out 1.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+#especialidades .especialidades_items .item:hover { 
+  background: #78a22f;      
+}
+#especialidades .especialidades_items .item:hover p{ 
+  opacity: 1;
+}
+#especialidades .especialidades_items .item .item-child-span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  margin: -90px auto 0 auto;
+  width: 160px;
+  height: 160px;
+  -webkit-transition: 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+@media only screen and (min-width: 1024)  {  
+  #especialidades .especialidades_items .item:hover .item-child-span {
+    top: 40%;
+  }
+}
+#especialidades .especialidades_items .item .item-child-span img {
+  position: absolute;
+  margin: -90px auto 0 auto;
+  right: 0;
+  bottom: 0;
+}
+#especialidades .especialidades_drag_items:before, #especialidades .especialidades_drag_items_min:before { 
+  content: 'Arraste até aqui as especialidades que você gostaria de conhecer melhor.';
+  font: normal 18pt/1.5em nexa_bold, Times;
+  color: #fff;
+  margin: 40px 0 0 205px;
+  text-align: center;
+  position: absolute;
+  line-height: 1.4;
+  width: 60%;
+  letter-spacing: 1px;
+  
+}
+#especialidades .especialidades_drag_items_min:before { 
+  font: normal 12pt/1.5em nexa_bold, Times;
+  color: #fff;
+  margin: 15px 0 0 100px;
+  width: 80%;
+  letter-spacing: 1px;
+}
+#especialidades .ocultar_frase:before {
+  content: '';  
+}
+#especialidades .especialidades_drag_items {
+  width: 85%;
+  max-width: 1024px;
+  height: 150px;
+  margin: 0 auto;
+  background: #97d346;
+  border-radius: 90px;
+  padding: 0 30px;
+  position: relative;
+  /*-webkit-transition: 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;*/
+}
+#especialidades .especialidades_drag_items .wrapper_items{
+  width: 95%;
+  margin: -45px 0 0 0;
+  top: 50%;
+  position: absolute;
+  
+}
+#especialidades .especialidades_drag_items img {
+  width: 90px;
+}
+#especialidades .especialidades_drag_items_min img {
+  width: 50px;
+  margin: 1 10px;
+}
+#especialidades .especialidades_drag_items img , #especialidades .especialidades_drag_items_min img {
+  
+  margin: 0 10px; 
+  -webkit-transition: 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;
+}
+
+#especialidades .especialidades_drag_items .wrapper_items span, .especialidades_drag_items_min .wrapper_items span {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+.especialidades_drag_items_min .wrapper_items span {
+  margin-left: -5px; 
+}
+#especialidades .especialidades_drag_items .wrapper_items span:before, .especialidades_drag_items_min .wrapper_items span:before {
+  content: '\e421';
+  font-family: 'icons';
+  color: #fdba31;
+}
+#especialidades .especialidades_drag_items .imagem_zero, #especialidades .especialidades_drag_items_min .imagem_zero {
+  -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+  -o-transform: scale(0);
+  -ms-transform: scale(0);
+  
+}
+
+
+#especialidades .especialidades_drag_items_min {
+  width: 100%;
+  position: fixed;
+  top: 70%;
+  z-index: 2;
+}
+#especialidades .especialidades_drag_items_min .wrapper_items{
+  width: 75%;
+  height: 50px;
+  max-width: 1024px;
+  margin: 0 auto;
+  background: #97d346;
+  border-radius: 90px;
+  padding: 0 10px;
+  box-shadow: 1px 9px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  /*-webkit-transition: 0.2s ease-in-out 0.2s;
+  -moz-transition: all 0.2s ease-in-out 0.2s;
+  -o-transition: all 0.2s ease-in-out 0.2s;
+  -ms-transition: all 0.2s ease-in-out 0.2s;
+  transition: all 0.2s ease-in-out 0.2s;*/
+}
+#especialidades .especialidades_drag_items_min .wrapper_items img:first-child{
+  margin-left: 50px;  
+}
+
+
+#especialidades .especialidades_items .item .wrapper-descricao {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  background: #e6e6e6;
+  z-index: -99;
+  cursor: auto;
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao {
+  margin: 100px auto;
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao .fechar {
+  color: #fdbb30;
+  position: absolute;
+  margin: -50px 0 0 -80px;
+  background: #004a61;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 1.5;
+  cursor: pointer;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 20pt;
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao > img {
+  position: relative;
+  margin: 0 50px 0 0;
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao .descricao-texto {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  text-align: left;
+  width: 600px;
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao .descricao-texto h3, .wrapper-descricao .descricao .descricao-texto h4 {
+  font: normal 34pt/1.5em nexa_bold, Times;
+  color: #fdba31;
+  padding: 0 0 20px 0;  
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao .descricao-texto p {
+  font: normal 16pt/1.5em droid_serif, Times;
+  color: #4f4e4e;
+  margin-bottom: 50px;
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao .descricao-texto h4 {
+  font-size: 22pt;  
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao .descricao-texto a {
+  display: block;
+  font: normal 12pt/1.8em droid_serif, Times;
+  color: #004961;
+  text-decoration: underline;
+}
+
+
+#especialidades .especialidades_formulario {
+  margin-top: 60px;
+} 
+#especialidades .especialidades_formulario > div {
+  display: inline-table;
+}
+#especialidades .especialidades_formulario .especialidades_selecionadas {
+  width: 29%; 
+  display: block;
+  float: left;
+}
+#especialidades .especialidades_formulario .especialidades_selecionadas ul li{
+  background: #e6e6e6;
+  border-radius: 20px;
+  padding: 7px 0;
+  width: 240;
+  font: normal 10pt/1em droid_serif, Times;
+  list-style: none;
+  margin: 10px 0;
+  position: relative;
+  cursor: pointer;
+}
+#especialidades .especialidades_formulario .especialidades_selecionadas ul li:before{ 
+  content: 'X';
+  position: absolute;
+  left: 10px;
+  font: bold 10pt/1em "droid_serif";
+  color: #7fa73b;
+    
+}
+#especialidades .especialidades_formulario .especialidades_formulario_envio {
+  width: 55%;
+  margin-left: 15%;
+  text-align: left;
+  position: relative;
+}
+#especialidades .especialidades_formulario h3 {
+  font: normal 16px/1em "nexa_bold", Times;
+  color: #004961;
+  margin-bottom: 30px;
+  padding: 0;
+}

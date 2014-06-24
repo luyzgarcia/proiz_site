@@ -205,9 +205,9 @@
 				<hr class="linha_verde"/>
 				<h5>01 jan</h5>
 				<p><a href="" class="link_noticia"><%= item.titulo %></a></p>
-				<div class="wrapper_icon_noticias">
-		            <a class="continue_lendo" href='#continuelendo'></a>
-					<div class="compartilhar_noticia">
+				<div class="wrapper_icon_noticias" data-no-turbolink>
+		            <%= link_to '', noticia_path(item), :class => 'continue_lendo'%>
+		            <div class="compartilhar_noticia">
 						<a class="compartilhar_face rede_social" href='#continuelendo'></a>
 						<a class="compartilhar_google rede_social" href='#continuelendo'></a>
 						<a class="compartilhar_twitter rede_social" href='#continuelendo'></a>

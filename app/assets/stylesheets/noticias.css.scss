@@ -1,6 +1,301 @@
 // Place all the styles related to the noticias controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*******************************************************************/
+/***************** PÁGINA NOTICIAS *********************************/
+/*******************************************************************/
+#noticia .titulo_padrao_1 h1{
+  border-bottom: 1px solid #e6e7e8;
+  padding-bottom: 60px;
+}
+#noticia .noticia-info {
+  background: #fff;
+  padding-top: 55px;
+  padding-bottom: 200px;
+}
+#noticia .noticia-info .wrapper_noticia {
+  width: 1024px;
+  margin: 0 auto;
+  
+}
+.categorias {
+  display: inline-block;
+  width: 19%/*200px*/;
+  float: left;
+}
+.categorias h5 {
+  font: normal 12pt/1.5em nexa_bold, Times;
+  color: #bdbdbd;
+  letter-spacing: 1.2px;
+  
+}
+.categorias ul {
+  padding: 0;
+} 
+.categorias ul li, .categorias ul li a {
+  list-style: none;
+  text-transform: uppercase;
+  font: normal 22pt/1.5em nexa_bold, Times;
+  color: #78a22f;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+}
+.categorias ul li a:hover, .categorias ul .ativo > a{
+  color: #fdba31;
+}
+#noticia .noticia-info .wrapper_noticia .noticia{
+  display: inline-block;
+  width: 77% /* 800px*/;
+  margin-left: 2.5%/*24px*/;
+}
+
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f2f2f2;
+  display: inline-block;
+  box-shadow: 0px 1px 0px 0px #cacaca;
+  width: 100%;
+}
+
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia h2 {
+  width: 62%/*500px*/;
+  font: normal 28pt/1.5em nexa_bold, Times;
+  color: #004961;
+  float: left;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download {
+  display: inline-block;
+  float: right;
+  width: 33%/*270px*/;
+  margin-left: 2.4%/*30px*/;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download h4{
+  font: normal 16pt/1.5em nexa_bold, Times;
+  color: #bdbdbd;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download ul {
+  padding: 0;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download ul li{
+  list-style: none;
+  font: normal 12pt/1.5em droid_serif, Times;
+  color: #6c6c6c;
+  text-align: right;
+  border-bottom: 1px solid #ebeced;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  position: relative;
+  margin-left: -10px;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download ul li a {
+  color: #6c6c6c;
+  width: 80%;
+  display: inline-block;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download ul li a:hover,
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download ul li a:hover:before   {
+  color: #8dc63f;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download ul {
+  padding-left: 15;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download ul li a:before {
+  content: 'V';
+  position: absolute;
+  left: 0;
+  color: #c1c1c1;
+}
+
+#noticia .noticia-info .wrapper_noticia .noticia .data_publicacao {
+  clear: both;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .data_publicacao h3 {
+  font: normal 16pt/1.5em nexa_bold, Times;
+  color: #78a22f;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+}
+
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia {
+  width: 100px;
+  position: absolute;
+  display: block;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .texto_noticia {
+  margin-left: 120px;
+  font: normal 12pt/1.8em droid_serif, Times;
+  color: #6c6c6c;
+  min-height: 2280px;
+}
+.noticias_ultimas .wrapper_ultimas {
+  width: 1024px;
+  margin: 30px auto;
+  display: table;
+  margin-bottom: 90px;
+  min-height: 400px;
+}
+.noticias_ultimas .wrapper_ultimas h3 {
+  font: normal 22pt/1.5em nexa_bold, Times;
+  color: #004961;
+  margin: 40px 0 50px;
+}
+.noticias_ultimas .wrapper_ultimas .ultima_adicionada {
+  width: 30%;
+  float: left;
+  margin-right: 3%;
+  margin-bottom: 50px;
+  height: 650px;
+  position: relative;
+}
+/*.noticias_ultimas .wrapper_ultimas .ultima_adicionada:nth-child(odd) {
+  margin: 0 4%; 
+}
+*/
+.noticias_ultimas .wrapper_ultimas .ultima_adicionada h4{
+  font: normal 14pt/1.5em nexa_bold, Times;
+  color: #78a22f;
+  margin-bottom: 15px;
+  letter-spacing: 1.2px;
+}
+.noticias_ultimas .wrapper_ultimas .ultima_adicionada img{
+  width: 100%;
+  //height: auto;
+  height: 180px;  
+}
+.noticias_ultimas .wrapper_ultimas .ultima_adicionada h5{
+  font: normal 16pt/1.5em nexa_bold, Times;
+  color: #004961;
+  margin: 45px 0 20px;    
+}
+.noticias_ultimas .wrapper_ultimas .ultima_adicionada p {
+  font: normal 12pt/1.5em droid_serif, Times;
+  color: #4f4e4e;
+  margin-bottom: 40px;    
+  height: 120px;
+}
+.noticias_ultimas .wrapper_ultimas .ultima_adicionada .ultimas_leiamais {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  right: 25%;
+}
+.link_noticias{
+  height: 15px;
+  width: 50px;
+  display: inline-block;
+  margin-left: -50px; 
+}
+.link_noticias:before {
+  content: "\e417";
+  font-family: 'icons';
+  color: #bdbdbd; 
+  font-size: 35pt;
+  line-height: 10px;
+}
+.link_noticias:hover:before {
+  color: #8dc63f;
+}
+
+
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .continue_lendo,
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra a {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  /*border: 9px solid #004961;*/
+  box-shadow: 0px 0px 0px 9px #004961;
+  border-radius: 50%;
+  text-align: center;     
+  -webkit-transition: 0.3s; 
+  margin-left: 5%;
+}
+/*#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .continue_lendo:before {
+  content: '\e418';
+  font-family: 'icons';
+  color: #fdba31;
+  line-height: 70px;
+  font-size: 25pt;
+  margin-left: -5px;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_face:before {
+  content: '\e413 ';
+  font-family: 'icons';
+  color: #fdba31;
+  line-height: 70px;
+  font-size: 25pt;
+margin-left: -5px;
+}*/
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia {
+  content: '\e413 ';
+  font-family: 'icons';
+  color: #fdba31;
+  line-height: 70px;
+  font-size: 28pt;
+  margin-left: 0px;
+  .continue_lendo:before {
+    content: '\e418';
+    font-family: 'icons';
+    color: #fdba31;
+    line-height: 70px;
+    font-size: 25pt;
+    margin-left: -5px;
+  }
+  
+  .compartilhar_face:before { 
+    content: '\e413 ';
+  }
+  .compartilhar_twitter:before { 
+    content: '\e416 ';
+  }
+  .compartilhar_google:before { 
+    content: '\e422 ';
+  }
+  
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra:hover .continue_lendo{
+  background: #004961;
+  box-shadow:none;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra .compartilhar_face,
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra .compartilhar_google,
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra .compartilhar_twitter {
+  opacity: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  -webkit-animation: 0.2s;
+  color: #fdba31;
+  line-height: 70px;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra:hover {
+  height: 400px;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra:hover .compartilhar_face {
+  opacity: 1;
+  top: 100px;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra:hover .compartilhar_google {
+  opacity: 1;
+  top: 200px;
+}
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .compartilhar_noticia_integra:hover .compartilhar_twitter {
+  opacity: 1;
+  top: 300px;
+} 
+#noticia .noticia-info .wrapper_noticia .noticia .noticia_detalhe .share_noticia .share_mobile {
+  display:none;
+}
+
+/*******************************************************************/
+/***************** FIM PÁGINA NOTICIAS *****************************/
+/*******************************************************************/
+
+
+
+
 #noticias .wrapper_noticia_destaque {
   background: #fff;    
 }

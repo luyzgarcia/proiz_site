@@ -18,7 +18,7 @@
 //= require turbolinks
 //= require jquery.scrollorama
 //= require_tree ./geral
-//= require_tree ./touch
+//= require_tree ./touch_js
 //= require_tree ./scrollrama
 //= require jquery.remotipart
 //= require tinymce
