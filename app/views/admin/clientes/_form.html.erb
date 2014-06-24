@@ -1,6 +1,6 @@
-<div class="formulario">
+<div class="formulario lista_cadastrados">
 	<div class="item">
-		<%= form_for([:admin,@cliente], :html => { :multipart => true }, :path => "/admin/clientes") do |c| %>
+		<%= form_for([:admin,@cliente], :html => { :multipart => true }, :multiple => true ) do |c| %>
 			<h3 class="titulo">Novo cliente
 			<% if @editando == true %>
 				<p class="editando">Editando... Não esqueça de salvar as alterações no fim do box</p>
@@ -18,38 +18,43 @@
 						</ul>
 						<div class="item_info_botoes">
 							<h3>O que você gostaria de fazer? </h3>
-							<%= link_to "Cancelar e sair", clientes_path, :remote => true, :class => "link_limpar" %>
+							<%= link_to "Cancelar e sair", admin_clientes_path, :class => "link_limpar" %>
 							<a id="fechar" href="#" class="link_salvar fechar">Voltar e preencher</a>
 						</div>
 					</div>
 				</div>
 			<% end %>
-			<a href="#" class="link_excluir"></a>
-			<a href="#" class="link_editar"></a>
-			<div class="item_info" id="cliente_">
+			<a href="#" class="fechar"></a>
+			<a href="#" class="esconder"></a>
+			<div class="item_info" id="clienteform">
 				
-				<div class="item_info_detalhe">
-					<h5><%= c.label :nome %></h5>
-					<h4><%= c.text_field :nome%></h4>
+				<div class="item_info_detalhe" id="1">
+					<h5><%= c.label :nome %></h5>					
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :nome, :disabled => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 				<div class="item_info_detalhe">
 					<h5><%= c.label :descricao %></h5>
-					<h4><%= c.text_field :descricao %></h4>
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :descricao, :disabled => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 				<div class="item_info_detalhe">
 					<h5><%= c.label :url_site %></h5>
-					<h4><%= c.text_field :url_site %></h4>
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :url_site, :disabled => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 				<div class="item_info_detalhe">
 					<h5><%= c.label :status %></h5>
-					<h4><%= c.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+					<h4 style="width: 150px"><%= c.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
-				<div class="item_info_detalhe wrapper_imagem">
-					<h5><%= c.label 'Logo do cliente' %></h5>
-					<div class="imagem_logo">
+				<div class="item_info_detalhe wrapper_imagem imagem">					
+					<h5><%= c.label 'Imagem de miniatura' %></h5>
+					<div class="imagem_logo preview_image img_selecionada">
 						<%= image_tag(@cliente.logo.url) if @cliente.logo %>
 					</div>
-					<h4><%= c.file_field :logo %></h4>
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.file_field :logo, :onchange => "preview_image(this)" %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 				
 				<div class="item_info_botoes">
@@ -71,33 +76,3 @@
 		<% end %>
 	</div>
 </div>
-
-<!--<h1>Formulario de cadastro de novo cliente</h1>
-<%= form_for(@cliente,remote:true) do |c| %>
-	<% if @cliente.errors.any? %>
-		<div class="error_messages">
-			<h2>Form is invalid</h2>
-			<ul>
-				<% for message in @cliente.errors.full_messages %>
-					<li><%= message %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
-	<div class="item_info_detalhe">
-		<h5><%= c.label :nome %></h5>
-		<h4><%= c.text_field :nome%></h4>
-	</div>
-	<div class="item_info_detalhe">
-		<h5><%= c.label :descricao %></h5>
-		<h4><%= c.text_field :descricao %></h4>
-	</div>
-	<div class="item_info_detalhe">
-		<h5><%= c.label :url_site %></h5>
-		<h4><%= c.text_field :url_site %></h4>
-	</div>
-	
-	<p class="button"><%= c.submit %></p>
-
-<% end %>
->

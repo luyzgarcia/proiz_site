@@ -1,6 +1,6 @@
 <div class="formulario">
 	<div class="item">
-		<%= form_for([:admin,@especialidade],:html => { :multipart => true } ) do |e| %>
+		<%= form_for([:admin,@especialidade],:html => { :multipart => true }, :multiple => true ) do |e| %>
 			<h3 class="titulo">Nova especialidade
 			<% if @editando == true %>
 				<p class="editando">Editando... Não esqueça de salvar as alterações no fim do box</p>
@@ -24,8 +24,8 @@
 					</div>
 				</div>
 			<% end %>
-			<a href="#" class="link_excluir"></a>
-			<a href="#" class="link_editar"></a>
+			<a href="#" class="fechar"></a>
+			<a href="#" class="esconder"></a>
 			
 			<div class="item_info" id="especialidade_">
 				

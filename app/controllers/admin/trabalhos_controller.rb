@@ -38,7 +38,7 @@ class Admin::TrabalhosController < Admin::AdminController
         format.js {
           #redirect_to trabalhos_path
           @trabalhos = Trabalho.all.order(:id)
-          format.js { render :index }
+          format.js { redirect_to admin_trabalhos_path }
           }
       end
     else          
@@ -66,7 +66,7 @@ class Admin::TrabalhosController < Admin::AdminController
     @trabalho = Trabalho.find(params[:id])
     
     @trabalho_id = @trabalho.id
-    if(@trabalho.update!(trabalho_params))
+    if(@trabalho.save(trabalho_params))
       respond_to do |format|
           @trabalhos = Trabalho.all.order(:id)
           format.js { render :index }
@@ -75,13 +75,25 @@ class Admin::TrabalhosController < Admin::AdminController
           else
             format.html { redirect_to admin_trabalhos_midias_path}
           end
+      end
+    else          
+        @editando = true
+        if @trabalho.categoria_id != nil
+          respond_to do |format|
+            format.html { render action: 'edit' }
+          end    
+          else
+          respond_to do |format|
+            format.html { render action: 'edit_midia' }
+          end
+          
         end
     end
   end
 
   def destroy
     @trabalho = Trabalho.find_by_id(params[:id])
-    #@trabalho.destroy
+    @trabalho.destroy
     
     @trabalho_id = @trabalho.id
     respond_to do |format|

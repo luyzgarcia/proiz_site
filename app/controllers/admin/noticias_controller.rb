@@ -49,12 +49,18 @@ class Admin::NoticiasController < Admin::AdminController
     @noticia = Noticia.find(params[:id])
     
     @noticia_id = @noticia.id
-    if(@noticia.update!(noticia_params))
+    if(@noticia.update(noticia_params))
       respond_to do |format|
           @noticias = Noticia.all.order(:id)
           format.js { render :index }
           format.html { redirect_to admin_noticias_path}
         end
+    else   
+      @editando = true
+      respond_to do |format|
+        format.html { render action: 'new' }
+      end
+      
     end
   end
   

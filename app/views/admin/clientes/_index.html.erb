@@ -13,7 +13,7 @@
 		</tr>
 		<% @clientes.each do |cliente| %>
 			<tr class="item" id="cliente_<%= cliente.id %>">
-				<td>
+				<td style="width: 30%;";>
 					<%= cliente.nome %>
 				</td>
 				<td>
@@ -27,51 +27,24 @@
 				</td>
 				<td>
 					<!--<%= (cliente.status == 1 ? "Ativo" : "Inativo") %>-->
-					<%= link_to cliente.status == 1 ? 'Ativo' : 'Inativo', 
+					<%= link_to '', 
 					mudarstatus_admin_cliente_path(cliente), 
+					:class => cliente.status == 1 ? 'status_ativo' : 'status_inativo', 
 					:confirm => 'Alterar status',
 					:method => 'get',
 					:data => {:'message' => "Você está prestes a altear o status deste cliente."}  %>
 				</td>
-				<td>
-					<%= link_to "T", edit_admin_cliente_path(cliente), :class => 'link_editar'%>
-					<%= link_to "X", [:admin,cliente], :remote => true,
-					:confirm => 'Excluir cliente',
-					:data => {:'message' => "Você está prestes a excluir este cliente."},
+				
+				<td>					
+					<%= link_to "", edit_admin_cliente_path(cliente), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
+					<%= link_to "", [:admin,cliente], :remote => true, 
+					:confirm => 'Excluir',
+					:data => {:'message' => "Você está prestes a excluir este cliente?"},
 					:method => :delete,
-					:class => 'link_excluir'%>
+					:class => 'bt_excluir_1 tooltips',
+					:title => 'Excluir item'%>
 				</td>
 			</tr>
 		<% end %>
 	</table>
 </div>
-<!--	
-	<div class="itens_cadastrados">
-		<% @clientes.each do |cliente| %>
-			<div class="item" id="cliente_<%= cliente.id %>">
-				<h3><%= cliente.nome %></h3>
-				<%= link_to "", cliente, :remote => true, :confirm => 'Voce tem certeza?', :method => :delete, :class => 'link_excluir' %>
-				<%= link_to "", edit_cliente_path(cliente), :remote =>true, :class => 'link_editar' %>
-				
-				<div class="item_info" >
-					<div class="item_info_detalhe">
-						<h5>Nome</h5>
-						<h4><%= cliente.nome %></h4>
-					</div>
-					<div class="item_info_detalhe">
-						<h5>Descricao</h5>
-						<h4><%= cliente.descricao %></h4>
-					</div>
-					<div class="item_info_detalhe">
-						<h5>Url</h5>
-						<h4><%= cliente.url_site %></h4>
-					</div>
-				</div>
-			</div>			
-		<% end %>
-	</div>
-	
-	
-	
-</div>
--->

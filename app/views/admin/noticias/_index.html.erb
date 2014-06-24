@@ -5,7 +5,7 @@
 		<a href="#" class="esconder"></a>
 	</div>
 	<h4 class="titulo">
-		Trabalhos Cadastrados
+		Noticias Cadastradas
 	</h4>
 	<table>
 		<tr>
@@ -18,7 +18,7 @@
 		<% if @noticias %>
 			<% @noticias.each do |noticia| %>
 				<tr class="item" id="noticia_<%= noticia.id %>">
-					<td><%= noticia.titulo %></td>
+					<td style="width: 30%;";><%= truncate(noticia.titulo, :length => 80) %></td>
 					<td><%= noticia.updated_at.to_s(:create) %></td>
 					<td>
 						<%= link_to '', 

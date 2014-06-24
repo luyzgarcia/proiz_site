@@ -18,7 +18,7 @@
 						</ul>
 						<div class="item_info_botoes">
 							<h3>O que você gostaria de fazer? </h3>
-							<%= link_to "Cancelar e sair", admin_trabalhos_midias_path, :remote => true, :class => "link_limpar" %>
+							<%= link_to "Cancelar e sair", admin_trabalhos_midias_path, :class => "link_limpar" %>
 							<a id="fechar" href="#" class="link_salvar fechar">Voltar e preencher</a>
 						</div>
 					</div>
@@ -30,23 +30,24 @@
 				
 				<div class="item_info_detalhe" id="1">
 					<h5><%= c.label 'Link' %></h5>
-					<h4 class='bloqueado'><%= c.text_field :introducao, disabled: 'disabled'%></h4>
-					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') %>
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :introducao, :disabled => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 				
-				<div class="item_info_detalhe wrapper_imagem imagem">
+				<div class="item_info_detalhe wrapper_imagem imagem">					
 					<h5><%= c.label 'Imagem de exibição vitrine' %></h5>
 					<div class="imagem_logo preview_image">
 						<%= image_tag(@trabalho.imagem_vitrine.url) if @trabalho.imagem_vitrine %>
-					</div>
-					<h3><%= c.text_field :descricao_vitrine, :class => 'bloqueado'%></h3>
-					<h4><%= c.file_field :imagem_vitrine,:onchange => "preview_image(this)", :class => 'bloqueado'%></h4>
-					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') %>
+					</div>							
+					<h3 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :descricao_vitrine, :disabled => @editando %></h3>
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.file_field :imagem_vitrine, :onchange => "preview_image(this)" %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
+					
 				</div>
 				<div class="item_info_detalhe">
-					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') %>
 					<h5><%= c.label :status %></h5>
-					<h4 style="width: 150px"><%= c.select(:status,[["Ativo","1"],["Inativo","0"]], :class => 'bloqueado') %></h4>
+					<h4 style="width: 150px"><%= c.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 				
 				<div class="item_info_botoes">

@@ -1,6 +1,6 @@
 class Especialidade < ActiveRecord::Base
   
-  validates :titulo, :conteudo, :status, presence: true
+  validates :titulo, :conteudo, :status, :imagem_principal, presence: true
   validates :titulo, uniqueness: true
   
   has_attached_file :imagem_principal,

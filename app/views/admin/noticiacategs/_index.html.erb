@@ -17,7 +17,7 @@
 		<% if @noticiacategs %>
 			<% @noticiacategs.each do |noticia| %>
 				<tr class="item" id="noticia_<%= noticia.id %>">
-					<td><%= noticia.titulo %></td>
+					<td style="width: 30%;";><%= noticia.titulo %></td>
 					<td><%= noticia.updated_at.to_s(:create) %></td>
 					<td>
 						<%= link_to '', 

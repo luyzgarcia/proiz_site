@@ -2,7 +2,7 @@
 <div class="formulario lista_cadastrados">
 	<div class="item">
 		<%= form_for([:admin,@noticia],:html => { :multipart => true }, :multiple => true ) do |c| %>
-			<h3 class="titulo">Novo trabalho
+			<h3 class="titulo">Nova notícia
 			<% if @editando == true %>
 				<p class="editando">Editando... Não esqueça de salvar as alterações no fim do box</p>
 			<% end %>

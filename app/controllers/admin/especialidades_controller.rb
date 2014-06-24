@@ -22,11 +22,13 @@ class Admin::EspecialidadesController < Admin::AdminController
     if @especialidade.save
       respond_to do |format|
         @especialidades = getEspecialidades        
-        format.js { render :index }        
+        format.html {redirect_to admin_especialidades_path}
+        format.js {redirect_to admin_especialidades_path}
       end
     else
       respond_to do |format|
-        format.js {render 'new'}
+         format.html {render action: 'new'}
+         format.js { render action: 'new'}
       end
     end
   end

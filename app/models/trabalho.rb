@@ -1,7 +1,12 @@
 class Trabalho < ActiveRecord::Base
+  
+  validates_presence_of :introducao, :imagem_vitrine, :descricao_vitrine
+  
   has_one :categoriatrabalho
   has_many :imagems, :dependent => :destroy, :order => 'ordem ASC'
   has_many :fichatecnicas, :dependent => :destroy, :order => 'ordem ASC'
+  
+  
   #has_one :imagem
   accepts_nested_attributes_for :imagems, :allow_destroy => true
   accepts_nested_attributes_for :fichatecnicas, :allow_destroy => true
@@ -21,6 +26,7 @@ class Trabalho < ActiveRecord::Base
   :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :imagem_vitrine, :content_type => /\Aimage\/.*\Z/
   
-  validates_presence_of :titulo
+  #validates_presence_of :titulo, :categoria_id, :imagem_principal, :descricao_principal, :imagem_vitrine, :descricao_vitrine, 
+  #                      :fichatecnicas, :introducao, :status, :orientacao, :imagems
   
 end

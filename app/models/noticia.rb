@@ -1,6 +1,7 @@
 class Noticia < ActiveRecord::Base
   
-  validates :titulo, presence: true
+  validates :titulo,:conteudo, presence: true
+  #validates :titulo, uniqueness: true
   #validates_associated :noticiacateg
  # validates_presence_of :noticiacateg, :message => ":Selecione uma categoria de noticia." 
   validates :noticiacateg_id, presence: true
