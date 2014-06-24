@@ -284,9 +284,6 @@ function detectmob() {
 
 
 
-
-
-
 /*Carregar a pagina sem refresh*/
 $(document).ready(function(){
 	$('#menu li a, #logo a').bind('ajax:beforeSend',function() {
@@ -301,7 +298,8 @@ $(document).ready(function(){
 			}, 300);
 			$('.wrapper_carregando').addClass('la-animate');
 		});
-		//$.getScript(this.href);
+		
+		//$.getScript('assets'+$(this).attr("href")+'.js');
 		history.pushState(null, document.title, this.href);
 		
 		

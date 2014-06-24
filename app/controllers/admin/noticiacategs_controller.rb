@@ -41,7 +41,7 @@ class Admin::NoticiacategsController < Admin::AdminController
 
   def destroy
     @noticiacateg = Noticiacateg.find(params[:id])
-    #@noticiacateg.destroy
+    @noticiacateg.destroy
     
     @noticiacateg_id = @noticiacateg.id
     respond_to do |format|
@@ -67,7 +67,7 @@ class Admin::NoticiacategsController < Admin::AdminController
   end
   
   def mudarstatus
-    @noticiacateg = Noticia.find(params[:id])
+    @noticiacateg = Noticiacateg.find(params[:id])
     if(@noticiacateg.status == 1)
       @noticiacateg.update_attribute(:status, 0)
     else

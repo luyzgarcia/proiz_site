@@ -51,10 +51,6 @@
 
 $(document).ready( function () {
 	
-	
-	
-	
-	
 		// Declare parallax on layers
 		$('.parallax').each(function(index) {
 		  $('img',this).parallax(

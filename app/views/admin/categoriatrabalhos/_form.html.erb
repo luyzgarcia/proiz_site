@@ -1,7 +1,7 @@
 <div class="formulario">
 	<div class="item">
-		<%= form_for(@categoria,remote:true, :html => { :multipart => true } ) do |c| %>
-			<h3 class="titulo">Novo cliente
+		<%= form_for([:admin, @categoria], :html => { :multipart => true }, :multiple => true ) do |c| %>
+			<h3 class="titulo">Nova categoria de trabalho
 			<% if @editando == true %>
 				<p class="editando">Editando... Não esqueça de salvar as alterações no fim do box</p>
 			<% end %>
@@ -18,28 +18,30 @@
 						</ul>
 						<div class="item_info_botoes">
 							<h3>O que você gostaria de fazer? </h3>
-							<%= link_to "Cancelar e sair", categoriatrabalhos_path, :remote => true, :class => "link_limpar" %>
+							<%= link_to "Cancelar e sair", admin_categoriatrabalhos_path, :class => "link_limpar" %>
 							<a id="fechar" href="#" class="link_salvar fechar">Voltar e preencher</a>
 						</div>
 					</div>
 				</div>
 			<% end %>
-			<a href="#" class="link_excluir"></a>
-			<a href="#" class="link_editar"></a>
+			<a href="#" class="fechar"></a>
+			<a href="#" class="esconder"></a>
 			<div class="item_info" id="cliente_">
 				
 				<div class="item_info_detalhe">
 					<h5><%= c.label :titulo %></h5>
-					<h4><%= c.text_field :titulo %></h4>
+					<h4 class="<%= 'bloqueado' if @editando %>"><%= c.text_field :titulo, :disable => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)", :class => 'bt_libera_editar') if @editando %>
 				</div>
 				<div class="item_info_detalhe">
 					<h5><%= c.label :status %></h5>
-					<h4><%= c.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+					<h4 style="width: 150px"><%= c.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+					<%= link_to_function("", "enable_field(this)", :class => 'bt_libera_editar') if @editando %>
 				</div>
 				
 				<div class="item_info_botoes">
 					<% if @editando == true %>
-						<%= link_to "Limpar alterações", categoriatrabalhos_path, :remote => true, 
+						<%= link_to "Limpar alterações", admin_categoriatrabalhos_path, 
 						:confirm => 'Descartar alterações',
 						:data => {:'message' => "Você está prestes a descartas as informações aditadas, tem certeza?"},
 						:class => "link_limpar" %>

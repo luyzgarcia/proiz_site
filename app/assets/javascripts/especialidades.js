@@ -1,4 +1,16 @@
-//= require touch/jquery-ui.touch.js
+// require touch/jquery-ui.touch.js
+
+//alert('iniciando...');
+
+
+$(document).ready(function() {
+	
+	adicionaCheckInputs();
+	defineTamanhoDescricaoItem();
+	mostrarBoxEspecialidadesMin();
+	
+});
+
 $(function() {
 	$("#especialidades .especialidades_items .item .wrapper-descricao .descricao .fechar ").click(function(e) {
 		e.preventDefault();
@@ -26,7 +38,18 @@ $(function() {
 				$("html, body").animate({ scrollTop: 150 }, "slow");				
 			}
 		});
-		
+		$('#especialidades .especialidades_items .item')
+			.hover(function() {
+				console.log('over');
+				$(this).find('img').animate({
+					bottom: '30px'
+				}, 200);
+			},function() {
+				console.log('out');
+				$(this).find('img').animate({
+					bottom: '0px'
+				}, 200);
+			});
 		$( "#especialidades .especialidades_items .item img" ).draggable({
 			 						
 			 start: function() {
@@ -95,18 +118,20 @@ $(function() {
 		});
 	}
 });
-(function() {
+//(function() {
 	function adicionaCheckInputs() {
+		//alert('adicionaCheckInputs');
 		$('.formulario_padrao_1 input').each(function(index) {
 		  $(this).keyup(function() {
 			  checkFilled(this);
 			  });
 		});
 	}
-	jQuery(document).on("ready", adicionaCheckInputs);
-})();
+//	jQuery(document).on("ready", adicionaCheckInputs);
+//})();
 //Define o tamanho da descricao
-(function() {
+//(function() {
+	
 	function defineTamanhoDescricaoItem() {
 		if($(window).width() > 480) {
 			setTimeout(function() {
@@ -165,28 +190,36 @@ $(function() {
 			});
 		}
 	}
-	jQuery(document).on("ready", defineTamanhoDescricaoItem);
-	jQuery(window).on("resize", defineTamanhoDescricaoItem);
+//	jQuery(document).on("ready", defineTamanhoDescricaoItem);
+//	jQuery(window).on("resize", defineTamanhoDescricaoItem);
 	
-})();
+//})();
 
 
 //Verifica se o box grande esta visivel pra mostrar o box menor 
-(function(){
+//(function(){
 	function mostrarBoxEspecialidadesMin() {		
 		//if($(window).width() > 480) {
-			if($('#especialidades .especialidades_drag_items').visible(true) || $(window).width() <= 480) {
-				console.log("visivel");
+			if($(window).width() <= 480) {
 				$('#especialidades .especialidades_drag_items_min').fadeOut('slow');
 			}else if(window.pageYOffset < 1000){
 				$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
-			}			
+			}
+			$('#especialidades .especialidades_drag_items').scrollable({ offset: { y: '20%'} })
+			.on('scrollin', function (e,ui) {
+				console.log('in');
+				$('#especialidades .especialidades_drag_items_min').fadeOut('slow');
+			})
+			.on('scrollout', function(e,ui) {
+				console.log('out');
+	    		$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
+			});		
 		//}
 	}
-	jQuery(document).on("ready", mostrarBoxEspecialidadesMin);
-	jQuery(window).on("resize", mostrarBoxEspecialidadesMin);
-	jQuery(window).scroll(mostrarBoxEspecialidadesMin);
-})();
+//	jQuery(document).on("ready", mostrarBoxEspecialidadesMin);
+//	jQuery(window).on("resize", mostrarBoxEspecialidadesMin);
+	//jQuery(window).scroll(mostrarBoxEspecialidadesMin);
+//})();
 
 function adicionarClick() {
 	//Adiciona o click no item da caixa, este click ira remover o item;
@@ -209,7 +242,7 @@ function removeItemSelecionado(idItem) {
 		}
 	});
 	$('.wrapper_items span').each(function() {
-		console.log("entrou");
+		//console.log("entrou");
 		var idspan = parseInt($(this).data('id'));
 		if(idspan == iditem) {
 			$(this).remove();

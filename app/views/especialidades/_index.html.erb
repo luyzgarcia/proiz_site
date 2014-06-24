@@ -1,6 +1,6 @@
-<!--<% content_for :header do %>
+<% content_for :header do %>
   <%= javascript_include_tag 'especialidades' %>  
-<% end %>-->
+<% end %>
 	<div id="especialidades">
 		<div class="titulo_padrao_1">
 			<h1>Especialidades</h1>
@@ -54,14 +54,15 @@
 				
 				<div class="especialidades_formulario_envio">
 					<h3>Informações para contato</h3>
-					<form action="#" class="formulario_padrao_1">
-						<input type="text" placeholder="*Nome" />
-						<input type="text" placeholder="*Sobrenome" />
-						<input type="text" placeholder="*Email" />
-						<input type="text" placeholder="*Telefone" />
+					<%= form_tag({controller: 'especialidades', action: 'contato'}, 
+						method: "get", class: 'formulario_padrao_1', :remote => true) do %>
+						<%= text_field_tag :nome, params[:nome] , :placeholder => '*Nome' %>
+						<%= text_field_tag :sobrenome, params[:sobrenome] , :placeholder => '*Sobrenome' %>
+						<%= text_field_tag :email, params[:email] , :placeholder => '*Email' %>
+						<%= text_field_tag :telefone, params[:telefone] , :placeholder => '*Telefone' %>
 						<p>*Campos obrigatorios</p>
-						<input type="submit" value="Enviar" class="botao_submit_2"/>
-					</form>
+						<%= submit_tag("Enviar", :class => 'botao_submit_2') %>
+					<% end %>
 				</div>
 				
 			</div>

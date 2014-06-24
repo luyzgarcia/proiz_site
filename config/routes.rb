@@ -141,7 +141,17 @@ ProizAdmin::Application.routes.draw do
       get :filtrar
     end
   end
-  resources :especialidades
+  
+  get "especialidade/contato"
+  #get "especialidade_contato" => "especialidade#contato", :as => "especialidade_contato"
+  resources :especialidades do
+    collection do
+      get 'contato'
+    end
+    member do
+      
+    end
+  end
   resources :inicials do
     
   end

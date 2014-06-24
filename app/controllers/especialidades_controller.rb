@@ -3,5 +3,14 @@ class EspecialidadesController < ApplicationController
 
   def index
     @especialidades = Especialidade.all.where('status = 1')
-  end  
+  end
+  
+  def contato
+    logger.info 'entrou em contato'
+    @nome = params[:nome]
+    @sobrenome = params[:sobrenome]
+    @email = params[:email]
+    @telefone = params[:email]
+    
+  end
 end

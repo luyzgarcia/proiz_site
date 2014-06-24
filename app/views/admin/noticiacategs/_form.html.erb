@@ -1,10 +1,11 @@
 <div class="formulario">
 	<div class="item">
-		<%= form_for(@noticiacateg,remote:true) do |f| %>
-			<h3 class="titulo">Novo cliente</h3>
+		<%= form_for([:admin,@noticiacateg], :html => { :multipart => true}, :multiple => true) do |f| %>
+			<h3 class="titulo"> Nova categoria de notícia
 			<% if @editando == true %>
 				<p class="editando">Editando... Não esqueça de salvar as alterações no fim do box</p>
 			<% end %>
+			</h3>
 			<% if @noticiacateg.errors.any? %>
 				<div id="erros">
 					<div class="erros_info">
@@ -17,7 +18,7 @@
 						</ul>
 						<div class="item_info_botoes">
 							<h3>O que você gostaria de fazer? </h3>
-							<%= link_to "Cancelar e sair", noticiacategs_path, :remote => true, :class => "link_limpar" %>
+							<%= link_to "Cancelar e sair", admin_noticiacategs_path, :class => "link_limpar" %>
 							<a id="fechar" href="#" class="link_salvar fechar">Voltar e preencher</a>
 						</div>
 					</div>
@@ -25,60 +26,38 @@
 			<% end %>
 			<div class="item_info" id="categoria_">
 				<div class="item_info_detalhe">
-					<h5><%= f.label :titulo %></h5>
-					<h4><%= f.text_field :titulo %></h4>
+					<h5><%= f.label :titulo %></h5>					
+					<h4 class="<%= 'bloqueado' if @editando %>"><%= f.text_field :titulo, :disable => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)", :class => 'bt_libera_editar') if @editando %>
 				</div>
 				
 				<div class="item_info_detalhe">
-					<h5><%= f.label :descricao %></h5>
-					<h4><%= f.text_field :descricao %></h4>
+					<h5><%= f.label :descricao %></h5>					
+					<h4 class="<%= 'bloqueado' if @editando %>"><%= f.text_field :descricao, :disable => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)", :class => 'bt_libera_editar') if @editando %>
 				</div>
 				
 				<div class="item_info_detalhe">
 					<h5><%= f.label :status %></h5>
-					<h4><%= f.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+					<h4 style="width: 150px"><%= f.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
+					<%= link_to_function("", "enable_field(this)", :class => 'bt_libera_editar') if @editando %>
 				</div>
 				
 				<div class="item_info_botoes">
 					<% if @editando == true %>
-						<%= link_to "Limpar alterações", noticiacategs_path, :remote => true, :class => "link_limpar" %>
-						<%= f.submit %>
+						<%= link_to "Limpar alterações", admin_noticiacategs_path, 
+						:confirm => 'Descartar alterações',
+						:data => {:'message' => "Você está prestes a descartas as informações aditadas, tem certeza?"},
+						:class => "link_limpar" %>
+						<%= f.submit 'Salvar alterações', 
+						:confirm => 'Salvando alterações',
+						:data => {:'message' => "Você está prestes a alterar as informações aditadas."},
+						:class =>'link_salvar link_editando'%>
 					<% else %>
 						<%= f.submit 'Salvar', :class =>'link_salvar' %>
 					<% end %>
 				</div>
 			</div>
-			<% end %>
+		<% end %>
 	</div>	
 </div>
-<!--<%= form_for(@noticiacateg, remote: true) do |f| %>
-	<div class="item_info_detalhe">
-		<h5><%= f.label :titulo %></h5>
-		<h4><%= f.text_field :titulo %></h4>
-	</div>
-	
-	<div class="item_info_detalhe">
-		<h5><%= f.label :descricao %></h5>
-		<h4><%= f.text_field :descricao %></h4>
-	</div>
-	
-	<div class="item_info_detalhe">
-		<h5><%= f.label :status %></h5>
-		<h4><%= f.select(:status,[["Ativo","1"],["Inativo","0"]]) %></h4>
-	</div>
-	
-	<% if @editando == true %>
-		<div class="item_info_botoes">
-			<%= link_to "Limpar alterações", noticiacategs_path, :remote => true, :class => "link_limpar" %>
-			<%= f.submit %>
-		</div>
-	<% else %>
-		<p class="button"><%= f.submit %></p>
-	<% end %>
-
-<% end %>
-
--->
-
-
-
