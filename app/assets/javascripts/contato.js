@@ -1,5 +1,15 @@
-/*$(document).ready( function () {
-		$("#form_contato").validate({
+$(document).ready( function () {
+	configuraFormulario();
+});
+
+function configuraFormulario() {
+	$('.formulario_padrao_1 input[type="text"], .formulario_padrao_1 textarea').each(function(index) {
+		$(this).keyup(function() {
+			checkFilled(this);
+			});
+	});
+		
+	$("#form_contato").validate({
 		rules:{
 			nome:{ required: true },
 			email:{ required: true, email: true },
@@ -17,10 +27,9 @@
 			mensagem:{
 				required: "Digite sua mensagem"
 			},								
-		}		
-		
+		}
 	});
-	
+
 	$('#telefone').mask("(99) 9999-9999?9").ready(function(event) {
 	    var target, phone, element;
 	    target = (event.currentTarget) ? event.currentTarget : event.srcElement;
@@ -33,21 +42,15 @@
 	        element.mask("(99) 9999-9999?9");  
 	    }
 	});
-});
+}
 
-*/
-
-(function() {
+/*(function() {
 	function adicionaCheckInputs() {
-		$('.formulario_padrao_1 input[type="text"], .formulario_padrao_1 textarea').each(function(index) {
-			$(this).keyup(function() {
-				checkFilled(this);
-				});
-		});
+		
 	}
 	jQuery(document).on("ready", adicionaCheckInputs);	
 })();
-
+*/
 
 $(document).ready( function () {
 	
@@ -69,12 +72,6 @@ $(document).ready( function () {
 	    $(this).css('left',amountMovedX + 'px');
 	});
 	*/
-	
-	
-	
-	
-	
-	
 	
 	setTimeout( function() {
 		$('.mensagem img').removeClass('img_effect');

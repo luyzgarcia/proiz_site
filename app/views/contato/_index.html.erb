@@ -32,7 +32,7 @@
 		<hr />
 		<div class="contato_formulario formulario_padrao_1">
 			<h1>Envie-nos sua mensagem</h1>			
-			<%= form_tag(enviado_path, :id => "form_contato") do |f| %>
+			<%= form_tag(enviado_path, :id => "form_contato", :remote => true) do |f| %>
 				<div class="form_item">										
 					<%= text_field_tag "nome", nil, placeholder: "Nome*" %>							
 				</div>

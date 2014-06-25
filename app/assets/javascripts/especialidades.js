@@ -5,7 +5,7 @@
 
 $(document).ready(function() {
 	//alert('especialidades');
-	adicionaCheckInputs();
+	configuraFormulario();
 	defineTamanhoDescricaoItem();
 	mostrarBoxEspecialidadesMin();
 	
@@ -136,7 +136,7 @@ $(function() {
 	}
 });
 //(function() {
-	function adicionaCheckInputs() {
+	function configuraFormulario() {
 		//alert('adicionaCheckInputs');
 		$('.formulario_padrao_1 input').each(function(index) {
 		  $(this).keyup(function() {
@@ -144,7 +144,30 @@ $(function() {
 			  });
 		});
 		$("#telefone").mask("(999) 9999-9999?9");
-		
+		$(".formulario_padrao_1").validate({
+			rules:{
+				nome:{ required: true },
+				email:{ required: true, email: true },
+				sobrenome:{ required: true },
+				telefone:{required: true}			
+			},
+			
+			messages:{
+				nome:{
+					required: "Digite seu nome"
+				},
+				sobrenome:{
+					required: "Digite seu sobrenome"
+				},
+				email:{
+					required: "Digite seu e-mail",
+					email: "Digite um e-mail válido"
+				},
+				telefone:{
+					required: "Digite seu telefone"
+				},								
+			}
+		});
 	}
 //	jQuery(document).on("ready", adicionaCheckInputs);
 //})();

@@ -662,19 +662,23 @@ a {
 .formulario_padrao_1 input[type="text"]:focus, .formulario_padrao_1 textarea:focus {
 	background: #004961;
 }
-.formulario_padrao_1 input[type="text"]::-webkit-input-placeholder { /* WebKit browsers */
+.formulario_padrao_1 input[type="text"]::-webkit-input-placeholder,
+.formulario_padrao_1 textarea::-webkit-input-placeholder { /* WebKit browsers */
     color: #8dc63f;
     font-family: nexa_bold;
 }
-.formulario_padrao_1 input[type="text"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+.formulario_padrao_1 input[type="text"]:-moz-placeholder,
+.formulario_padrao_1 textarea:-moz-placeholder  { /* Mozilla Firefox 4 to 18 */
     color: #8dc63f;
     font-family: nexa_bold;
 }
-.formulario_padrao_1 input[type="text"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+.formulario_padrao_1 input[type="text"]::-moz-placeholder,
+.formulario_padrao_1 textarea::-moz-placeholder { /* Mozilla Firefox 19+ */
     color: #8dc63f;
     font-family: nexa_bold;
 }
-.formulario_padrao_1 input[type="text"]:-ms-input-placeholder { /* Internet Explorer 10+ */
+.formulario_padrao_1 input[type="text"]:-ms-input-placeholder,
+.formulario_padrao_1 textarea:-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #8dc63f;
     font-family: nexa_bold;
 }
@@ -704,14 +708,38 @@ a {
 .formulario_padrao_1 .botao_submit_2:hover {
 	background: #fdba31 !important;
 }
+.formulario_padrao_1 .form_item {
+  position:relative;
+}
+/****************************************************************/
+/************** Mensagem erro formulário contato ****************/
+/****************************************************************/
 
-
-
-
-
-
-
-
+.formulario_padrao_1 .form_item label {
+  background:#8dc63f;
+  border-radius: 4px;
+  color: #004961;
+  font: normal 12pt/1.5em nexa_bold, Times;
+  padding-right: 15px;
+  padding-left: 15px;  
+  position: absolute;
+  top: -25px;
+  right: 10%;
+} 
+.formulario_padrao_1 .form_item label:after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 15px;
+  border-width: 15px 8px 0;
+  border-style: solid;
+  border-color: #8dc63f transparent;
+  display: block;
+  width: 0;
+}
+/****************************************************************/
+/************** FIM Mensagem erro formulário contato ************/
+/****************************************************************/
 
 
 

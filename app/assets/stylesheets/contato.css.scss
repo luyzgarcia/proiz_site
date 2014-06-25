@@ -30,7 +30,7 @@
   }
   .parallax {
     height: 100%;
-    width: 690px;
+    width: 710px;
     position: absolute;
     overflow: hidden;
     top: 0;
@@ -41,24 +41,24 @@
       
     .fundo_globo {
       position: relative;
-      top: -15% !important;
-      left: 15% !important;
+      /*top: -15% !important;
+      left: 15% !important;*/
       -webkit-transition: 0.5s linear;
       transition: 0.5s linear;
       -webkit-transform: scale(0.8);
     }
     .circulo_contato {
       position: relative;
-      top: -49% !important;
-      left: -21% !important;
+      top: 15% !important;
+      left: 14% !important;
       height: 30px;
       width: 30px;     
       margin: -15px 0 0 -14px; 
     }
     span{
       position: relative;
-      top: -49% !important;
-      left: -23% !important;
+      top: 14% !important;
+      left: 12% !important;
       height: 30px;
       width: 30px;     
       margin: -15px 0 0 -14px; 
@@ -121,14 +121,6 @@
   font: normal 26pt/1.5em nexa_bold, Times;
   color: #8dc63f; 
   margin-bottom: 25px;
-} 
-
-// ###################### Mensagem erro formulário contato #############################
-#contato label {  
-  background: #c30;
-  border-radius: 0px;
-  padding-right: 15px;
-  padding-left: 15px;   
 } 
 
 @media only screen and (min-width: 481px) and (max-width: 1024px) {

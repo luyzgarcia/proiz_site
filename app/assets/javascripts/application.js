@@ -27,6 +27,9 @@
 //= require jquery-ui-scrollable
 //= require visibility
 //= require maskedinput
+//= require jquery.validate
+//= require jquery.validate.additional-methods
+// require mercury
 
 $(document).ready(function(){
 	//$('#menu').click(function() {

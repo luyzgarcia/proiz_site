@@ -1,5 +1,7 @@
 ProizAdmin::Application.routes.draw do
 
+  #mount Mercury::Engine => '/'
+  #Mercury::Engine.routes
   get "teste/index"
   get "inicial/index"
   get "index/index"

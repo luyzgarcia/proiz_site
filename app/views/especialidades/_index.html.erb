@@ -56,10 +56,18 @@
 					<h3>Informações para contato</h3>
 					<%= form_tag({controller: 'especialidades', action: 'contato'}, 
 						method: "get", class: 'formulario_padrao_1', :remote => true) do %>
-						<%= text_field_tag :nome, params[:nome] , :placeholder => '*Nome' %>
-						<%= text_field_tag :sobrenome, params[:sobrenome] , :placeholder => '*Sobrenome' %>
-						<%= text_field_tag :email, params[:email] , :placeholder => '*Email' %>
-						<%= text_field_tag :telefone, params[:telefone] , :placeholder => '*Telefone' %>
+						<div class="form_item">	
+							<%= text_field_tag :nome, params[:nome] , :placeholder => '*Nome' %>
+						</div>
+						<div class="form_item">	
+							<%= text_field_tag :sobrenome, params[:sobrenome] , :placeholder => '*Sobrenome' %>
+						</div>
+						<div class="form_item">
+							<%= text_field_tag :email, params[:email] , :placeholder => '*Email' %>
+						</div>
+						<div class="form_item">
+							<%= text_field_tag :telefone, params[:telefone] , :placeholder => '*Telefone' %>
+						</div>						
 						<p>*Campos obrigatorios</p>
 						<%= submit_tag("Enviar", :class => 'botao_submit_2') %>
 					<% end %>
