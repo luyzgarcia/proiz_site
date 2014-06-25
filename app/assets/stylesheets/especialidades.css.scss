@@ -260,6 +260,17 @@
 
 #especialidades .especialidades_formulario {
   margin-top: 60px;
+  position: relative;
+  .mensagem_envio {
+    position: absolute;
+    background: #000;
+    opacity: 0.5;
+    height: 110%;
+    width: 105%;
+    left: 0;
+    display: block;
+    top: -5%;
+  }
 } 
 #especialidades .especialidades_formulario > div {
   display: inline-table;

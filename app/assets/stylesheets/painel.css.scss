@@ -354,6 +354,9 @@ body {
             position: relative;
             top: -15px;
             width: 100px;
+            div {
+              display: inline;
+            }
           }
         }
         .imagem_logo {

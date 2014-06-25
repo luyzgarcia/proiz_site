@@ -4,10 +4,27 @@
 
 
 $(document).ready(function() {
-	
+	//alert('especialidades');
 	adicionaCheckInputs();
 	defineTamanhoDescricaoItem();
 	mostrarBoxEspecialidadesMin();
+	
+	
+	$('.formulario_padrao_1').submit(function() {
+		
+		//Pega as especialidades 
+		var esp = "";
+		$('.especialidades_selecionadas ul li').each(function(index) {
+		  esp = esp+''+$(this).html()+' - ';
+		});
+		
+		$('<input />').attr('type', 'hidden')
+			.attr('name', "especialidades")
+          	.attr('value', esp)
+          	.appendTo('.formulario_padrao_1');
+		loading();
+	});
+	
 	
 });
 
@@ -126,6 +143,8 @@ $(function() {
 			  checkFilled(this);
 			  });
 		});
+		$("#telefone").mask("(999) 9999-9999?9");
+		
 	}
 //	jQuery(document).on("ready", adicionaCheckInputs);
 //})();
@@ -207,18 +226,28 @@ $(function() {
 			}
 			$('#especialidades .especialidades_drag_items').scrollable({ offset: { y: '20%'} })
 			.on('scrollin', function (e,ui) {
-				console.log('in');
-				$('#especialidades .especialidades_drag_items_min').fadeOut('slow');
+				//if( window.pageYOffset < $('#especialidades .especialidades_drag_items').offset().top) {
+					$('#especialidades .especialidades_drag_items_min').fadeOut('slow');
+				//}
 			})
 			.on('scrollout', function(e,ui) {
-				console.log('out');
-	    		$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
+				//if( window.pageYOffset > $('#especialidades .especialidades_drag_items').offset().top) {
+					$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
+				//}
 			});		
 		//}
+		/*jQuery(window).scroll(function() {
+			console.log('window Y: '+window.pageYOffset);
+			console.log($('#especialidades .especialidades_drag_items').offset().top);
+			
+			if( window.pageYOffset > $('#especialidades .especialidades_drag_items').offset().top) {
+				$('#especialidades .especialidades_drag_items_min').fadeOut('slow');
+			}
+		});*/
 	}
 //	jQuery(document).on("ready", mostrarBoxEspecialidadesMin);
 //	jQuery(window).on("resize", mostrarBoxEspecialidadesMin);
-	//jQuery(window).scroll(mostrarBoxEspecialidadesMin);
+	
 //})();
 
 function adicionarClick() {
@@ -230,9 +259,9 @@ function adicionarClick() {
 
 function removeItemSelecionado(idItem) {
 	var iditem = idItem;
-	console.log(idItem);
+	//console.log(idItem);
 	$('.especialidades_drag_items > div img, .especialidades_drag_items_min > div img').each(function() {
-		if(iditem == this.id) {
+		if(iditem == -1 || iditem == this.id) {
 			var itemremover = this;
 			setTimeout(function(){
 				$(itemremover).remove();
@@ -241,15 +270,15 @@ function removeItemSelecionado(idItem) {
 			$(this).addClass('imagem_zero');
 		}
 	});
-	$('.wrapper_items span').each(function() {
+	$('.especialidades_drag_items > div span, .especialidades_drag_items_min > div span').each(function() {
 		//console.log("entrou");
 		var idspan = parseInt($(this).data('id'));
-		if(idspan == iditem) {
+		if(iditem == -1 || idspan == iditem) {
 			$(this).remove();
 		}
 	});
 	$("#especialidades .especialidades_formulario .especialidades_selecionadas ul li" ).each(function(index) {
-		if(iditem == this.id) {
+		if(iditem == -1 || iditem == this.id) {
 			$(this).hide('fade',function() {$(this).remove();});
 		}
 	});				
@@ -260,4 +289,22 @@ function verificaItemLista() {
 		$('#especialidades .especialidades_drag_items, .especialidades_drag_items_min').removeClass('ocultar_frase');
 		$('#especialidades .especialidades_drag_items, #especialidades .especialidades_drag_items_min .wrapper_items').css('background','#97d346');
 	}
+}
+
+function removerTodos() {
+	removeItemSelecionado(-1);
+	/*$('.especialidades_drag_items > div img, .especialidades_drag_items_min > div img').each(function() {
+		var itemremover = this;
+		setTimeout(function(){
+			$(itemremover).remove();
+				verificaItemLista();
+		}, 400);
+		$(this).addClass('imagem_zero');
+	});
+	$('.wrapper_items span').each(function() {
+		$(this).remove();
+	});
+	$("#especialidades .especialidades_formulario .especialidades_selecionadas ul li" ).each(function(index) {
+		$(this).hide('fade',function() {$(this).remove();});
+	});*/
 }

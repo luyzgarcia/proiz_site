@@ -17,8 +17,8 @@
 		<% if @trabalhos %>
 			<% @trabalhos.each do |trabalho| %>
 				<tr class="item" id="trabalho_<%= trabalho.id %>">
-					<td>
-						<%= trabalho.titulo%>
+					<td style="width:30%;">
+						<%= truncate(trabalho.introducao, :length => 35) %>
 					</td>
 					<td>
 						<%= trabalho.updated_at.to_s(:create) %>

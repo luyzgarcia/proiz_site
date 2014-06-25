@@ -3,7 +3,7 @@ class TrabalhosController < ApplicationController
   before_action :allow_facebook_iframe
   
   def index
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL")
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1')
     @categorias = Categoriatrabalho.all
   end
   
@@ -24,12 +24,12 @@ class TrabalhosController < ApplicationController
     if cat_id > '0'
       @trabalhos = Trabalho.all.where(categoria_id: cat_id)
     else
-      @trabalhos = Trabalho.all.where("categoria_id IS NOT NULL")
+      @trabalhos = Trabalho.all.where("tipo != 'M'")
     end
   end
   
   def midias_sociais
-    @trabalhosmidias = getTrabalhos.where("categoria_id IS NULL")
+    @trabalhosmidias = getTrabalhos.where("tipo = 'M'")
   end
   
 

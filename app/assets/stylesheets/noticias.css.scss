@@ -15,7 +15,8 @@
   padding-bottom: 200px;
 }
 #noticia .noticia-info .wrapper_noticia {
-  width: 1024px;
+  /*width: 1024px;*/
+  width: 100%;
   margin: 0 auto;
   
 }
@@ -302,7 +303,8 @@ margin-left: -5px;
 #noticias .wrapper_noticia_destaque .noticia_destaque {
   margin: 0px auto;
   padding: 60px 0;
-  width: 1024px;
+  /*width: 1024px;*/
+  width: 1224px;
 }
 #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info {
   display: inline-block;

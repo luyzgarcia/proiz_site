@@ -26,6 +26,7 @@
 //= require_tree ./scroll 
 //= require jquery-ui-scrollable
 //= require visibility
+//= require maskedinput
 
 $(document).ready(function(){
 	//$('#menu').click(function() {
@@ -44,6 +45,15 @@ $(document).ready(function(){
 		controller.addTween('#header', TweenMax.from( $('#header'), .5, {css:{opacity: 0}}));*/
 	//});
 });
+
+
+function loading(){
+	$('.wrapper_carregando').addClass('la-animate');
+}
+function stoploading() {
+	$('.wrapper_carregando').removeClass('la-animate');
+}
+
 var inProgress = false;
 function carregando() {
 		///
@@ -74,6 +84,10 @@ function loadingComplete() {
 		}, 200);*/
 	});
 }
+
+
+
+
 /*
  $('.item_info_detalhe').click(function(elemento) {
 	elemento = this;
@@ -315,7 +329,7 @@ $(document).ready(function(){
 				top: '0px'
 			}, 300);
 		});
-		
+		$.getScript('assets'+$(this).attr("href")+'.js');
 	});
 	
 });

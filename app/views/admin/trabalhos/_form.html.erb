@@ -116,6 +116,9 @@
 					</div>
 					<p class="bt_adicionar_nova bt_adicionar_nova_foto"><%= link_to_add_fields "", c, :imagems %></p>	
 				</div>
+				
+				<%= c.hidden_field :tipo %>
+				
 				<div class="item_info_botoes">
 					<% if @editando == true %>
 						<%= link_to "Limpar alterações", trabalhos_path, :remote => true, 

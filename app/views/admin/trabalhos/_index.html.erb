@@ -18,8 +18,8 @@
 		<% if @trabalhos %>
 			<% @trabalhos.each do |trabalho| %>
 				<tr class="item" id="trabalho_<%= trabalho.id %>">
-					<td>
-						<%= trabalho.titulo%>
+					<td >
+						<%= trabalho.titulo %>
 					</td>
 					<td>
 						<%= trabalho.updated_at.to_s(:create) %>
@@ -30,7 +30,7 @@
 						:class => trabalho.status == 1 ? 'status_ativo' : 'status_inativo', 
 						:confirm => 'Alterar status',
 						:method => 'get',
-						:data => {:'message' => "Você está prestes a altear o status deste cliente."} %>
+						:data => {:'message' => "Você está prestes a altear o status deste trabalho."} %>
 					</td>
 					<td>
 						<% cat = Categoriatrabalho.find(trabalho.categoria_id)	%>						
@@ -41,7 +41,7 @@
 						<%= link_to "", edit_admin_trabalho_path(trabalho), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
 						<%= link_to "", [:admin,trabalho], :remote => true, 
 						:confirm => 'Excluir',
-						:data => {:'message' => "Você está prestes a excluir este trabalho?"},
+						:data => {:'message' => "Você está prestes a excluir este trabalho!"},
 						:method => :delete,
 						:class => 'bt_excluir_1 tooltips',
 						:title => 'Excluir item'%>

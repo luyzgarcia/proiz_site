@@ -50,6 +50,8 @@
 					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 				
+				<%= c.hidden_field :tipo %>
+				
 				<div class="item_info_botoes">
 					<% if @editando == true %>
 						<%= link_to "Limpar alterações", admin_trabalhos_midias_path, 

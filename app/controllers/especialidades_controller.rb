@@ -6,11 +6,13 @@ class EspecialidadesController < ApplicationController
   end
   
   def contato
-    logger.info 'entrou em contato'
-    @nome = params[:nome]
-    @sobrenome = params[:sobrenome]
-    @email = params[:email]
-    @telefone = params[:email]
+    dados = {nome: params[:nome], 
+             sobrenome: params[:sobrenome],
+             email: params[:email],
+             telefone: params[:telefone],
+             especialidades: params[:especialidades]}
+             
+    ProizMailer.contato_especialidades(dados).deliver
     
   end
 end

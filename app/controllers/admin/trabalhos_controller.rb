@@ -12,19 +12,18 @@ class Admin::TrabalhosController < Admin::AdminController
 
   def new
     @trabalho = Trabalho.new
+    @trabalho.tipo = 'T'
     @imagem = Imagem.new
-    #1.times {
-    #  @trabalho.imagems.build
-    #}
     
   end
+  
   def new_midia
+    #logger.info 'nova midia'
     @trabalho = Trabalho.new
-    @imagem = Imagem.new
-    #1.times {
-    #  @trabalho.imagems.build
-    #}
+    @trabalho.tipo = 'M'
     
+    #logger.info @trabalho.tipo
+    @imagem = Imagem.new    
   end
 
   def create
@@ -32,19 +31,29 @@ class Admin::TrabalhosController < Admin::AdminController
     
     if(@trabalho.save)
       respond_to do |format|
-        format.html {
-          redirect_to admin_trabalhos_path
-        }
-        format.js {
+        if @trabalho.tipo != 'M'
+          format.html { redirect_to admin_trabalhos_path}
+        else
+          format.html { redirect_to admin_trabalhos_midias_path}
+        end
+        #format.html {
+        #  redirect_to admin_trabalhos_path
+        #}
+        #format.js {
           #redirect_to trabalhos_path
-          @trabalhos = Trabalho.all.order(:id)
-          format.js { redirect_to admin_trabalhos_path }
-          }
+        #  @trabalhos = Trabalho.all.order(:id)
+        #  format.js { redirect_to admin_trabalhos_path }
+        #}
       end
-    else          
-      respond_to do |format|
-        format.html { render action: 'new' }
-        format.js { render action: 'new'}
+    else  
+      if @trabalho.tipo != 'M'
+        respond_to do |format|
+          format.html { render action: 'new' }
+        end
+      else
+        respond_to do |format|
+          format.html { render action: 'new_midia'}
+        end   
       end
     end
   end
@@ -54,7 +63,7 @@ class Admin::TrabalhosController < Admin::AdminController
     @imagem = Imagem.new
     @editando = true
     respond_to do |format|
-      if @trabalho.categoria_id != nil
+      if @trabalho.tipo != 'M'
         format.html { render action: 'edit'}
       else
         format.html { render action: 'edit_midia'}
@@ -70,7 +79,7 @@ class Admin::TrabalhosController < Admin::AdminController
       respond_to do |format|
           @trabalhos = Trabalho.all.order(:id)
           format.js { render :index }
-          if @trabalho.categoria_id != nil
+          if @trabalho.tipo != 'M'
             format.html { redirect_to admin_trabalhos_path}
           else
             format.html { redirect_to admin_trabalhos_midias_path}
@@ -78,7 +87,7 @@ class Admin::TrabalhosController < Admin::AdminController
       end
     else          
         @editando = true
-        if @trabalho.categoria_id != nil
+        if @trabalho.tipo != 'M'
           respond_to do |format|
             format.html { render action: 'edit' }
           end    
@@ -86,7 +95,6 @@ class Admin::TrabalhosController < Admin::AdminController
           respond_to do |format|
             format.html { render action: 'edit_midia' }
           end
-          
         end
     end
   end
@@ -132,7 +140,7 @@ class Admin::TrabalhosController < Admin::AdminController
   private
   
   def trabalho_params
-    params.require(:trabalho).permit(:id, :titulo, :ficha, :introducao, :status, :categoria_id, :imagem_principal, :imagem_vitrine,
+    params.require(:trabalho).permit(:id, :titulo, :ficha, :introducao, :status, :tipo, :categoria_id, :imagem_principal, :imagem_vitrine,
       :imagems,:orientacao, :descricao_principal, :descricao_vitrine,
       {:imagems_attributes => [:id, :image, :descricao, :_destroy, :trabalho_id, :ordem]},
       {:fichatecnicas_attributes => [:id, :chave, :valor, :_destroy, :trabalho_id, :ordem]}
