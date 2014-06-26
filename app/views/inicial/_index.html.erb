@@ -52,7 +52,7 @@
 			<ul>
 				<% @trabalhos.each do |trab| %>
 					<li>
-						<%= image_tag(trab.imagem_vitrine.url, :class => 'imagem_slide')%>
+						<%= image_tag(trab.imagem_principal.url, :class => 'imagem_slide')%>
 						<div class="descricao_item">
 							<h2><%= trab.descricao_principal %></h2>
 						</div>

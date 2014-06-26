@@ -5,11 +5,7 @@ class Trabalho < ActiveRecord::Base
   validates_presence_of :introducao, :imagem_vitrine, :descricao_vitrine, :if => 'tipo == "M"'
   
   validates_presence_of :titulo, :categoria_id, :introducao, :imagem_vitrine, :descricao_vitrine, :if => 'tipo == "T"'
-  
-  def trabalho_midia?
-    tipo == "M"
-  end
-  
+
   has_one :categoriatrabalho
   has_many :imagems, :dependent => :destroy, :order => 'ordem ASC'
   has_many :fichatecnicas, :dependent => :destroy, :order => 'ordem ASC'

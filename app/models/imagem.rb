@@ -1,4 +1,5 @@
 class Imagem < ActiveRecord::Base
+  
   belongs_to :trabalho
   
   has_attached_file :image,

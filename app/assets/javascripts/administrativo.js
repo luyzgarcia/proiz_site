@@ -105,7 +105,7 @@ function adicionar_foto(link) {
 	//$(link).parent(".form_imagens").append('<a href="#" onclick="enable_field(this); return false;">EDIT</a>');
 	
 	$(link).parent(".form_imagens").appendTo(".lista_imagens ");
-	alert('hei');
+	//alert('hei');
 	atualizar_ordem($('.lista_imagens'));
 }
 

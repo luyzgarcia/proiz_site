@@ -75,7 +75,7 @@ class Admin::TrabalhosController < Admin::AdminController
     @trabalho = Trabalho.find(params[:id])
     
     @trabalho_id = @trabalho.id
-    if(@trabalho.save(trabalho_params))
+    if(@trabalho.update(trabalho_params))
       respond_to do |format|
           @trabalhos = Trabalho.all.order(:id)
           format.js { render :index }
