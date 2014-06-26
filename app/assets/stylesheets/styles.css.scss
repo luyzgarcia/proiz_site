@@ -723,10 +723,11 @@ a {
 #especialidades {
  .formulario_padrao_1 {
   .form_item label {
-    background: #fdba31;
+    background: #004961;
+    color: #fff;
   }
   .form_item label:after {
-    border-color: #fdba31 transparent;  
+    border-color: #004961 transparent;  
   }
  }
  
@@ -752,6 +753,12 @@ a {
   border-color: #8dc63f transparent;
   display: block;
   width: 0;
+}
+
+
+.input_preenchido {
+  background: #fdba31 !important;
+  color: #004961 !important;
 }
 /****************************************************************/
 /************** FIM Mensagem erro formulário contato ************/

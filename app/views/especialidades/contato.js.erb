@@ -6,7 +6,7 @@ removerTodos();
 
 //limpa o formulario
 $('.formulario_padrao_1').find("input[type=text], textarea").val("");
-$('.formulario_padrao_1').find("input[type=text], textarea").css('background','#fff');
+$('.formulario_padrao_1').find("input[type=text], textarea").removeClass('input_preenchido');
 
 $('.especialidades_formulario').append('<div class="mensagem_envio"><h2>Sua mensagem foi enviada com sucesso</h2><a href="#">Fechar</a></div>');
 

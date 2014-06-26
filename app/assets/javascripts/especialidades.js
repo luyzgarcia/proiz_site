@@ -10,20 +10,7 @@ $(document).ready(function() {
 	mostrarBoxEspecialidadesMin();
 	
 	
-	$('.formulario_padrao_1').submit(function() {
-		
-		//Pega as especialidades 
-		var esp = "";
-		$('.especialidades_selecionadas ul li').each(function(index) {
-		  esp = esp+''+$(this).html()+' - ';
-		});
-		
-		$('<input />').attr('type', 'hidden')
-			.attr('name', "especialidades")
-          	.attr('value', esp)
-          	.appendTo('.formulario_padrao_1');
-		loading();
-	});
+	
 	
 	
 });
@@ -143,7 +130,9 @@ $(function() {
 			  checkFilled(this);
 			  });
 		});
-		$("#telefone").mask("(999) 9999-9999?9");
+		//$("#telefone").mask("(999) 9999-9999?9");
+		$('#telefone').mask("(999) 9999-9999?9");
+		
 		$(".formulario_padrao_1").validate({
 			rules:{
 				nome:{ required: true },
@@ -166,6 +155,19 @@ $(function() {
 				telefone:{
 					required: "Digite seu telefone"
 				},								
+			},
+			submitHandler: function(form) {
+				var esp = "";
+				$('.especialidades_selecionadas ul li').each(function(index) {
+				  esp = esp+''+$(this).html()+' - ';
+				});
+				
+				$('<input />').attr('type', 'hidden')
+					.attr('name', "especialidades")
+		          	.attr('value', esp)
+		          	.appendTo('.formulario_padrao_1');
+				loading();
+				(form).ajaxSubmit();
 			}
 		});
 	}

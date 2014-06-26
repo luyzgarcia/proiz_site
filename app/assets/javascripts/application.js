@@ -282,11 +282,13 @@ $(document).ajaxComplete(function() {
 function checkFilled(element) {
     var inputVal = element.value;
     if (inputVal!= "") {
-    	element.style.backgroundColor = "#fdba31";
-        element.style.color = "#004961";
+    	$(element).addClass('input_preenchido');
+    	//element.style.backgroundColor = "#fdba31";
+        //element.style.color = "#004961";
     }else {
-    	element.style.backgroundColor = "#fff";
-    	element.style.color = "#8dc63f";
+    	$(element).removeClass('input_preenchido');
+    	//element.style.backgroundColor = "#fff";
+    	//element.style.color = "#8dc63f";
     }
 }
 

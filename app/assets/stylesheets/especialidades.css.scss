@@ -270,7 +270,14 @@
     left: 0;
     display: block;
     top: -5%;
+    h2 {
+      font: normal 22pt/1em nexa_bold, Times;
+      color: #004961;
+      margin: 70px;
+      z-index: 9999999999;
+    }
   }
+  
 } 
 #especialidades .especialidades_formulario > div {
   display: inline-table;
