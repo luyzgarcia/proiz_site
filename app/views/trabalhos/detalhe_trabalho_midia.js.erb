@@ -1,4 +1,10 @@
+
+
 $('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho_midia', :trab => @trabalho) %>")
+
+if (typeof(FB) != 'undefined') {
+	window.fbAsyncInit();
+}
 
 $('#detalhe_modal').fadeIn('slow',function(){
 	//Ao terminar de mostrar a janela, ele aumenta o tamanho da div interna para nao explodir a altura
@@ -9,3 +15,4 @@ $('#detalhe_modal').fadeIn('slow',function(){
 		$('.corpo_trabalhos').css('height',alturamodal +10+'px');	
 	}	
 });
+

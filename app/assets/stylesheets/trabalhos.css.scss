@@ -250,7 +250,7 @@
   column-gap: 50px;
   -webkit-column-gap: 50px;
   padding-left: 20px;
-  min-height: 200px;
+  //min-height: 200px;
 }
 #trabalhos .detalhe_trabalho .detalhe .full-info {
   margin: 80px auto;
@@ -548,5 +548,14 @@
   } 
 }
 
+.fb-post span,
+.fb-post iframe {
+    width: 520px! important;
+    //height: 331px! important;
+}
+#trabalhos .detalhe_trabalho .detalhe {
+  min-height: 630px;
+margin: 100px auto 0;
+}
 
 

@@ -23,25 +23,42 @@ class TrabalhosController < ApplicationController
     cat_id = params[:id]
     if cat_id > '0'
       @trabalhos = Trabalho.all.where(categoria_id: cat_id)
-    else
-      @trabalhos = Trabalho.all.where("tipo != 'M'")
+    #else
+    #  @trabalhos = Trabalho.all.where("tipo != 'M'")
     end
   end
   
-  def filtrar_midia
+  def filtrarmidia
+    cat_id = params[:id]
+    if cat_id == '0'
+      @trabalhos = getTrabalhos.where("tipo = 'M'")
+    elsif cat_id == '1'
+      #Pega titulos facebook
+      #@trabalhos = Trabalho.all.where("introducao LIKE?", /facebook.com(.*)/)
+      @trabalhos = Trabalho.all.where("introducao LIKE ?" , '%facebook.com%')
+    elsif cat_id == '2'
+      #Pega titulos instagram
+      @trabalhos = Trabalho.all.where("introducao LIKE ?" , '%instagram.com%')
+    end
     
+    respond_to do |format|
+      format.js { render 'filtrar' }
+    end
   end
   
   def midias_sociais
+    #@trabalhosmidias = Trabalho.all.where("introducao LIKE ?" , '%facebook.com%')
     @trabalhosmidias = getTrabalhos.where("tipo = 'M'")
+    
   end
   
 
   private
 
   def allow_facebook_iframe
-    logger.info 'entoru'
+    #logger.info 'entoru'
     response.headers.except! 'X-Frame-Options'
+    response.headers['HEADER NAME'] = 'HEADER VALUE'
   end
   
   def getTrabalhos

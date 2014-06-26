@@ -39,6 +39,26 @@ $(document).ready(function(){
 
 	});
 	
+	window.fbAsyncInit = function() {
+		// Wait until FB object is loaded and initialized to refresh the embeds.
+		//FB.init();
+		FB.init({
+		    appId      : '1501616463400377',
+		    status     : true,
+		    cookie     : true,
+		    xfbml      : true
+		});
+		FB.XFBML.parse();
+		$(document).trigger("facebook:ready");
+	};
+	window.fbReady = function(func){
+    	alert('fbReady');
+    };
+    
+	
+});
+$(document).live("facebook:ready", function(){
+  alert('acebook:ready');
 });
 
 /*$(document).ready(function() {
