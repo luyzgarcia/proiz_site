@@ -83,6 +83,7 @@
 }
 #trabalhos .corpo_trabalhos .item:hover > .hover{
   opacity:1;  
+  //display: table;
 }
 #trabalhos .corpo_trabalhos .item .hover {
   position: absolute;
@@ -209,6 +210,7 @@
 }
 #trabalhos .detalhe_trabalho .detalhe .descricao {
   margin: 0 auto;
+  min-height: 200px;
 }
 #trabalho_detalhe_menu {
   display:none;
@@ -248,6 +250,7 @@
   column-gap: 50px;
   -webkit-column-gap: 50px;
   padding-left: 20px;
+  min-height: 200px;
 }
 #trabalhos .detalhe_trabalho .detalhe .full-info {
   margin: 80px auto;
@@ -309,14 +312,26 @@
 }
 #trabalhos .corpo_trabalhos .item .hover .descricao_trabalho {
   position: relative;
-  margin: 25% auto;
+  /*margin: 25% auto;*/
+  margin: 0 auto;
   -webkit-backface-visibility: hidden;
+  //display: table-cell;
+  //vertical-align: middle;
 }
 #trabalhos .corpo_trabalhos .compartilhar {
   margin-top: 250px;
 }
 #trabalhos .corpo_trabalhos .item .hover h4 {
-  width: 60%;
+  /*width: 60%;
+  padding: 25% 20px;*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 50%;
+  height: 30%;
+  margin: auto;
 }
 /*#trabalhos .corpo_trabalhos .item:hover > .hover h4 {
   border-bottom: 3px solid #fff;
@@ -332,7 +347,8 @@
   margin: 25% auto !important;
 }
 #trabalhos .tam2 .descricao_trabalho {
-  margin: 200px auto !important;
+  /*margin: 200px auto !important;*/
+ height: 100%;
 }
 #trabalhos .corpo_trabalhos .item:hover > .hover h4:before {
   content: '';

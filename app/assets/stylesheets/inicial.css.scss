@@ -366,14 +366,17 @@ text-align: center;*/
 } 
 #home_trabalhos .projetos_slider .slider_imagens ul li:hover > img {
   -webkit-transform: scale(1.5);
+  transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -moz-transform: scale(1.5);
   /*margin-left: 25%;*/
   -webkit-filter: blur(3.3px);
   -moz-filter: blur(3.3px);
   -o-filter: blur(3.3px);
   -ms-filter: blur(3.3px);
   filter: blur(3.3px);
-  filter: url(blur.svg#blur);
-  filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3.3');
+  //filter: url(blur.svg#blur);
+  //filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3.3');
   
 }
 
@@ -890,6 +893,7 @@ text-align: center;*/
     .mostra_noticia {
       hr {
         width: 100%;
+        margin-left: 0;
       }
       h5, p {
         opacity: 1;

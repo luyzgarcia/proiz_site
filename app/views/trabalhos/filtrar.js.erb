@@ -1,12 +1,18 @@
+loading();
+
 $('#grid').html('');
+
 $('#detalhe_modal').hide();
+
 <% @trabalhos.each do |trab| %>
 	$conteudo = "<%= escape_javascript(render 'item_trabalho', :trab => trab )%>";
 	$('#grid').append($conteudo);	
 <% end %>
+
 new AnimOnScroll(document.getElementById('grid'), {
 	minDuration :0.4,
 	maxDuration : 1,
 	viewportFactor : 0.5
 });
 
+stoploading();

@@ -56,6 +56,29 @@ function loading(){
 function stoploading() {
 	$('.wrapper_carregando').removeClass('la-animate');
 }
+function fullloading() {
+	$('html, body').animate({ scrollTop: 0 }, 0);
+	$('#esconde').animate({
+		opacity: 1,
+		'z-index': 100
+	}, 100, function () {
+		$('#header').animate({
+			top: '-150px'
+		}, 300);
+		$('.wrapper_carregando').addClass('la-animate');
+	});
+}
+function stopfullloading() {
+	$('#esconde').animate({
+		opacity: 0,
+		'z-index': -100
+	}, 100, function () {
+		$('.wrapper_carregando').removeClass('la-animate');
+		$('#header').animate({
+			top: '0px'
+		}, 300);
+	});
+}
 
 var inProgress = false;
 function carregando() {
@@ -305,7 +328,7 @@ function detectmob() {
 $(document).ready(function(){
 	$('#menu li a, #logo a').bind('ajax:beforeSend',function() {
 		
-		$('html, body').animate({ scrollTop: 0 }, 0);
+		/*$('html, body').animate({ scrollTop: 0 }, 0);
 		$('#esconde').animate({
 			opacity: 1,
 			'z-index': 100
@@ -314,7 +337,8 @@ $(document).ready(function(){
 				top: '-150px'
 			}, 300);
 			$('.wrapper_carregando').addClass('la-animate');
-		});
+		});*/
+		fullloading();
 		
 		//$.getScript('assets'+$(this).attr("href")+'.js');
 		history.pushState(null, document.title, this.href);
@@ -323,7 +347,7 @@ $(document).ready(function(){
 	});
 	$('#menu li a').bind('ajax:complete ',function() {
 		
-		$('#esconde').animate({
+		/*$('#esconde').animate({
 			opacity: 0,
 			'z-index': -100
 		}, 100, function () {
@@ -331,7 +355,9 @@ $(document).ready(function(){
 			$('#header').animate({
 				top: '0px'
 			}, 300);
-		});
+		});*/
+		stopfullloading();
+		
 		$.getScript('assets'+$(this).attr("href")+'.js');
 	});
 	

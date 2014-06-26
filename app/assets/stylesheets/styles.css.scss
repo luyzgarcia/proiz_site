@@ -99,6 +99,12 @@ a {
 	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
 	pointer-events: none;
+	
+}
+@-moz-document url-prefix() { 
+  #menu ul li a::before {
+    margin: 2px 0;
+  }
 }
 #menu ul li a:hover::before, #menu ul li a:focus::before {
 	opacity: 0;
@@ -714,7 +720,17 @@ a {
 /****************************************************************/
 /************** Mensagem erro formulário contato ****************/
 /****************************************************************/
-
+#especialidades {
+ .formulario_padrao_1 {
+  .form_item label {
+    background: #fdba31;
+  }
+  .form_item label:after {
+    border-color: #fdba31 transparent;  
+  }
+ }
+ 
+}
 .formulario_padrao_1 .form_item label {
   background:#8dc63f;
   border-radius: 4px;

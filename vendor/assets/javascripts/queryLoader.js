@@ -144,6 +144,7 @@ var QueryLoader = {
 			$(QueryLoader.loadBar).stop().animate({
 				width: perc + "%"
 			}, 500, "linear", function() { });
+			console.log(Math.floor(perc)+"%");
 		}
 	},
 	

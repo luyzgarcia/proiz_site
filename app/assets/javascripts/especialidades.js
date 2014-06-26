@@ -247,16 +247,21 @@ $(function() {
 			}else if(window.pageYOffset < 1000){
 				$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
 			}
+			
 			$('#especialidades .especialidades_drag_items').scrollable({ offset: { y: '20%'} })
 			.on('scrollin', function (e,ui) {
+				
 				//if( window.pageYOffset < $('#especialidades .especialidades_drag_items').offset().top) {
 					$('#especialidades .especialidades_drag_items_min').fadeOut('slow');
 				//}
 			})
+			
 			.on('scrollout', function(e,ui) {
-				//if( window.pageYOffset > $('#especialidades .especialidades_drag_items').offset().top) {
+				console.log('window Y: '+window.pageYOffset);
+				console.log($('#especialidades .especialidades_drag_items').offset().top);
+				if( window.pageYOffset < $('#especialidades .especialidades_drag_items').offset().top) {
 					$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
-				//}
+				}
 			});		
 		//}
 		/*jQuery(window).scroll(function() {
