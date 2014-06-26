@@ -61,7 +61,7 @@ var QueryLoader = {
 			
 			if ($(this).css("background-image") != "none") {
 				var url = $(this).css("background-image");
-			} else if (typeof($(this).attr("src")) != "undefined" && $(this).attr("tagName").toLowerCase() == "img") {
+			} else if (typeof($(this).attr("src")) != "undefined" && $(this).attr("tagName") == "img") {
 				var url = $(this).attr("src");
 			}
 			
@@ -134,6 +134,7 @@ var QueryLoader = {
 	animateLoader: function() {
 		var perc = (100 / QueryLoader.doneStatus) * QueryLoader.doneNow;
 		if (perc > 99) {
+			console.log(perc+'%');
 			$(QueryLoader.loadBar).stop().animate({
 				width: perc + "%"
 			}, 500, "linear", function() { 
@@ -166,4 +167,4 @@ var QueryLoader = {
 			$(QueryLoader.preloader).remove();
 		});
 	}
-}
+};

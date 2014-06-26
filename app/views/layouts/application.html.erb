@@ -16,7 +16,7 @@
 <script>
 </script>
 <body class="corpo">
-<div class="wrapper_carregando">
+<div id="container_carregando" class="wrapper_carregando">
 	<style>
 		#carregando span:before {
 			content: '\e406';
@@ -140,5 +140,9 @@
 		<p>Proiz comunicação integrada - Todos os direitos reservados.</p>
 	</footer>
 </div>
+<script type='text/javascript'>
+	//QueryLoader.selectorPreload = "#container_carregando";
+	QueryLoader.init();
+</script>
 </body>
 </html>

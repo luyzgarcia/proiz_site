@@ -29,7 +29,7 @@
 //= require maskedinput
 //= require jquery.validate
 //= require jquery.validate.additional-methods
-// require mercury
+//= require queryLoader
 
 $(document).ready(function(){
 	//$('#menu').click(function() {
