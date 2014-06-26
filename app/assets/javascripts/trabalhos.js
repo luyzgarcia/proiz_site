@@ -31,10 +31,10 @@ function recarregar() {
 }
 
 $(document).ready(function(){
-	$('#trabalhos .menu_trabalhos a, .titulo h1 a').bind('ajax:beforeSend',function() {
+	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a').bind('ajax:beforeSend',function() {
 		loading();
 	});
-	$('#trabalhos .menu_trabalhos a, .titulo h1 a').bind('ajax:complete ',function() {
+	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a').bind('ajax:complete ',function() {
 		stoploading();
 
 	});

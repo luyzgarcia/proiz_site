@@ -4,7 +4,8 @@
 		<div class="detalhe">
 			<%= link_to_function 'X', 'esconder_detalhetrabalho(this)', :class => 'fechar_detalhetrabalho'%>
 			
-			<div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" data-width="500"></div>
+			<div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" 
+			data-width="500"></div>
 		</div>
 	</div>
 	
@@ -25,3 +26,11 @@
 		</div>
 	</div>
 </div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1501616463400377&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
