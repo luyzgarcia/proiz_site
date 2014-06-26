@@ -29,6 +29,18 @@ function recarregar() {
 	});
 	//stopfullloading();
 }
+
+$(document).ready(function(){
+	$('#trabalhos .menu_trabalhos a, .titulo h1 a').bind('ajax:beforeSend',function() {
+		loading();
+	});
+	$('#trabalhos .menu_trabalhos a, .titulo h1 a').bind('ajax:complete ',function() {
+		stoploading();
+
+	});
+	
+});
+
 /*$(document).ready(function() {
 	recarregar();
 });*/

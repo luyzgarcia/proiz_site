@@ -28,6 +28,10 @@ class TrabalhosController < ApplicationController
     end
   end
   
+  def filtrar_midia
+    
+  end
+  
   def midias_sociais
     @trabalhosmidias = getTrabalhos.where("tipo = 'M'")
   end
