@@ -58,7 +58,6 @@ class TrabalhosController < ApplicationController
   def allow_facebook_iframe
     #logger.info 'entoru'
     response.headers.except! 'X-Frame-Options'
-    response.headers['HEADER NAME'] = 'HEADER VALUE'
   end
   
   def getTrabalhos
