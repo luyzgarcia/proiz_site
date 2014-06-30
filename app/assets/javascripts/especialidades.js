@@ -7,12 +7,7 @@ $(document).ready(function() {
 	//alert('especialidades');
 	configuraFormulario();
 	defineTamanhoDescricaoItem();
-	mostrarBoxEspecialidadesMin();
-	
-	
-	
-	
-	
+	mostrarBoxEspecialidadesMin();	
 });
 
 $(function() {

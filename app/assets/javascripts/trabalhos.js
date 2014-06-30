@@ -1,7 +1,6 @@
-//= require grid/efeito_grid
-//= require grid/imagesloaded.pkgd
-//= require grid/masonry.pkgd.min
-
+// require grid/efeito_grid
+// require grid/imagesloaded.pkgd
+// require grid/masonry.pkgd.min
 function esconder_detalhetrabalho(link) {
   $('.corpo_trabalhos').css('height','auto');
   $('#detalhe_modal').fadeOut();
@@ -36,7 +35,6 @@ $(document).ready(function(){
 	});
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a').bind('ajax:complete ',function() {
 		stoploading();
-
 	});
 	
 	window.fbAsyncInit = function() {
@@ -54,12 +52,13 @@ $(document).ready(function(){
 	window.fbReady = function(func){
     	alert('fbReady');
     };
-    
+    //recarregar();
 	
 });
-$(document).live("facebook:ready", function(){
+/*$(document).live("facebook:ready", function(){
   alert('acebook:ready');
 });
+*/
 
 /*$(document).ready(function() {
 	recarregar();

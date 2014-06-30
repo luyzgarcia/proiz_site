@@ -31,6 +31,12 @@
 //= require jquery.validate.additional-methods
 //= require queryLoader
 
+
+//= require trabalhos
+//= require grid/efeito_grid
+//= require grid/imagesloaded.pkgd
+//= require grid/masonry.pkgd.min
+
 $(document).ready(function(){
 	//$('#menu').click(function() {
 		//$('body').scrollTop();
