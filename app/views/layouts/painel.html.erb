@@ -23,6 +23,10 @@
 				<div class="dados_conta">
 					<a class="hover_highlight" href="#"><h2>Dados da conta</h2></a>
 				</div>
+				<div id="idiomas" data-no-turbolink>
+					<%= link_to 'PT', define_idioma_portugues_path, :class => I18n.locale == :'pt-BR' ? 'idioma_ativo' : '' %>
+					<%= link_to 'EN', define_idioma_ingles_path, :class => I18n.locale == :en ? 'idioma_ativo' : '' %>		
+				</div>
 				<div class="sair">	
 			    	<p><%= current_user.email %></p>
 				    <%= link_to "Sair", admin_log_out_path, :class => 'hover_highlight' %>

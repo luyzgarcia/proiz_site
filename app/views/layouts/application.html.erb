@@ -53,9 +53,9 @@
 		<a href="#" class="twitter"></a>
 		<a href="#" class="google"></a>
 	</div>
-	<div id="idiomas">
-		<a href="#" class="idioma_ativo">PT</a>
-		<a href="#">EN</a>		
+	<div id="idiomas" data-no-turbolink>
+		<%= link_to 'PT', define_idioma_portugues_path, :class => I18n.locale == :'pt-BR' ? 'idioma_ativo' : '' %>
+		<%= link_to 'EN', define_idioma_ingles_path, :class => I18n.locale == :en ? 'idioma_ativo' : '' %>		
 	</div>
 </div>
 
@@ -71,8 +71,8 @@
 <div id="home_rodape">
 	<div class="midias_sociais">
         <div class="mensagem" style="opacity: 1">
-            <h4>Para quem não gosta de ficar sabendo das coisas por último</h4>
-            <p>Conecte-se à Proiz através das mídias sociais</p>
+            <h4><%= t 'inicial.newsletter.titulo' %></h4>
+            <p><%= t 'inicial.newsletter.subtitulo' %></p>
         </div>
         
         <div class="midias_sociais_botoes">
@@ -87,7 +87,7 @@
 		}
 	</style>
 	<div class="newsletter" id="newsletter">
-		<h4>Insira seu e-mail para receber atualizações</h4>
+		<h4><%= t 'inicial.newsletter.placeholder' %></h4>
 		
         <form action="#" id="form_newsletter">
 			<input type="text" placeholder="" value="" size="30" />
@@ -100,9 +100,7 @@
 		<div class="mensagem_wrapper">
 			<div class="mensagem">
 				<%= image_tag('logo_proiz_branco.png')%>
-				<p>Agência de comunicação integrada. Publicidade e propaganda, 
-					design gráfico e marketing digital. Soluções completas para a 
-					construção de marcas fortes.</p>
+				<p><%= t 'inicial.rodape.mensagem' %></p>
 			</div>
 		</div>
 		<div class="endereco">
@@ -119,7 +117,7 @@
 			<li><a href="#carreiras">Carreiras</a></li>
 			<li><a href="#Lab proiz">Lab</a></li>			
 		</ul>
-		<p>Proiz comunicação integrada - Todos os direitos reservados.</p>
+		<p><%= t 'inicial.rodape.copyright' %></p>
 	</footer>
 </div>
 <script type='text/javascript'>

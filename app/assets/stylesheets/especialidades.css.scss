@@ -258,27 +258,7 @@
 }
 
 
-#especialidades .especialidades_formulario {
-  margin-top: 60px;
-  position: relative;
-  .mensagem_envio {
-    position: absolute;
-    background: #000;
-    opacity: 0.5;
-    height: 110%;
-    width: 105%;
-    left: 0;
-    display: block;
-    top: -5%;
-    h2 {
-      font: normal 22pt/1em nexa_bold, Times;
-      color: #004961;
-      margin: 70px;
-      z-index: 9999999999;
-    }
-  }
-  
-} 
+
 #especialidades .especialidades_formulario > div {
   display: inline-table;
 }
@@ -311,6 +291,7 @@
   margin-left: 15%;
   text-align: left;
   position: relative;
+  min-height: 350px;
 }
 #especialidades .especialidades_formulario h3 {
   font: normal 16px/1em "nexa_bold", Times;

@@ -1,5 +1,9 @@
 ProizAdmin::Application.routes.draw do
+  
+ 
 
+  get "define_idioma/portugues"
+  get "define_idioma/ingles"
   #mount Mercury::Engine => '/'
   #Mercury::Engine.routes
   get "teste/index"
@@ -67,13 +71,17 @@ ProizAdmin::Application.routes.draw do
   #get "log_out" => "sessions#destroy", :as => "log_out"
   
   #get "contato" => "contato#index", :as => "contato"
-  get "sobre" => "sobre#index", :as => "sobre"
+  
   
   get "sign_up" => "users#new", :as => "sign_up"
-  root :to => "inicial#index"
+  #root :to => "inicial#index"
  
   namespace :admin do
     root :to => "sessions#new"
+    
+    #get "define_idioma/portugues"
+    #get "define_idioma/ingles"
+    
     get "log_in" => "sessions#new", :as => "log_in"
     get "log_out" => "sessions#destroy", :as => "log_out"
     
@@ -110,7 +118,7 @@ ProizAdmin::Application.routes.draw do
         get :mudarstatus
       end
     end
-  end
+  end 
   
   resources :users
   #resources :sessions
@@ -122,7 +130,7 @@ ProizAdmin::Application.routes.draw do
     end
   end
   
-  resources :artigos
+  #resources :artigos
   
   
   resources :trabalhos do
@@ -146,16 +154,27 @@ ProizAdmin::Application.routes.draw do
   
   get "especialidade/contato"
   #get "especialidade_contato" => "especialidade#contato", :as => "especialidade_contato"
-  resources :especialidades do
-    collection do
-      get 'contato'
-    end
-    member do
-      
-    end
-  end
+  
+  #scope '(:locale)', :locale => /pt-BR|en|/ do
+  
   resources :inicials do
+  #end
     
+  end
+  
+  scope "(:locale)", :locale => /pt-BR|en/ do
+   root :to => "inicial#index"
+   get "sobre" => "sobre#index", :as => "sobre"
+   
+   resources :especialidades do
+      collection do
+        get 'contato'
+      end
+      member do
+        
+      end
+    end
+   
   end
   
   get "contato" => "contato#index", :as => "contato"

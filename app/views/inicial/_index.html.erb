@@ -4,9 +4,10 @@
 <div id="home_intro" class="wrapper">
 	<div class="home_wrapper">
 		<h1>
-			<span><p class="amarelo">Criar</p><p class="cinza">,</p></span>
-			<span><p class="azul">evoluir</p></span> 
-			<span><p class="cinza">e&nbsp;</p><p class="verde"> transformar</p><p class="cinza">.</p></span>
+			
+			<span><p class="amarelo"><%= t 'inicial.topo.criar' %></p><p class="cinza">,</p></span>
+			<span><p class="azul"><%= t 'inicial.topo.evoluir' %></p></span> 
+			<span><p class="cinza"><%= t 'inicial.topo.e' %>&nbsp;</p><p class="verde"> <%= t 'inicial.topo.transformar' %></p><p class="cinza">.</p></span>
 		</h1>
 		<div class="mensagem">
 			<div class="continue">
@@ -16,7 +17,7 @@
 			</div>
 			<div class="somos">
 				<h4>
-					Somos uma agência de comunicação integrada e pensamos o Branding como uma transformação holística de marcas.
+					<%= t 'inicial.topo.mensagem' %>
 				</h4>
 			</div>
 		</div>
@@ -25,11 +26,10 @@
 <div id="intervalo1" class="intervalo">
 </div>
 
-
 <div id="home_trabalhos" class="">
 	<div class="trabalhos_recentes">
 		<div class="trabalhos_recentes_content">
-			<h2>Trabalhos recentes</h2>
+			<h2><%= t 'inicial.trabalhos.titulo' %></h2>
 			<div class="mais_trabalhos">
 				<div class="bt_padrao1">
 					<a href=#>
@@ -37,7 +37,7 @@
 							<span></span>
 						</div>
 						<div class="mensagem">
-							<p>Trabalhos</p>
+							<p><%= t 'inicial.trabalhos.botao' %></p>
 						</div>
 					</a>
 				</div>
@@ -109,17 +109,16 @@
 					<span class="circulo">
 					</span>
 					<span class="texto">
-						<h4>Design gráfico<br/> e digital</h4>
+						<h4><%= t 'inicial.servicos.design_titulo' %></h4>
 						<hr>
 					</span>	
 				</div>
 				<div class="tb-info-tras">
 					<span class="titulo">
-						<h4>Design gráfico<br/> e digital</h4>
+						<h4><%= t 'inicial.servicos.design_titulo' %></h4>
 					</span>
 					<span class="texto">
-						<p>Utilizada para divulgar valores de um marca, a propaganda é capaz 
-							de mudar comportamentos e transformar culturas. </p>
+						<p><%= t 'inicial.servicos.design_texto' %> </p>
 					</span>
 					<span class="voltar">
 						  <%= image_tag('home_seta.png') %>
@@ -135,17 +134,16 @@
 					<span class="circulo">
 					</span>
 					<span class="texto">
-						<h4>Marketing</h4>
+						<h4><%= t 'inicial.servicos.marketing_titulo' %></h4>
 						<hr>
 					</span>	
 				</div>
 				<div class="tb-info-tras">
 					<span class="titulo">
-						<h4>Marketing</h4>
+						<h4><%= t 'inicial.servicos.marketing_titulo' %></h4>
 					</span>
 					<span class="texto">
-						<p>Utilizada para divulgar valores de um marca, a propaganda é capaz 
-							de mudar comportamentos e transformar culturas. </p>
+						<p><%= t 'inicial.servicos.marketing_texto' %> </p>
 					</span>
 					<span class="voltar">
 					  <%= image_tag('home_seta.png') %>
@@ -161,17 +159,16 @@
 					<span class="circulo">
 					</span>
 					<span class="texto">
-						<h4>Publicidade </h4>
+						<h4><%= t 'inicial.servicos.publicidade_titulo' %></h4>
 						<hr>
 					</span>	
 				</div>
 				<div class="tb-info-tras">
 					<span class="titulo">
-						<h4>Publicidade</h4>
+						<h4><%= t 'inicial.servicos.publicidade_titulo' %></h4>
 					</span>
 					<span class="texto">
-						<p>Utilizada para divulgar valores de um marca, a propaganda é capaz 
-							de mudar comportamentos e transformar culturas. </p>
+						<p><%= t 'inicial.servicos.publicidade_texto' %></p>
 					</span>
 					<span class="voltar">
 					  <%= image_tag('home_seta.png') %>
@@ -182,13 +179,12 @@
 	</div>	
 	<div class="trabalhamos_1">
 		<div class="inner">
-			<h3>Os serviços</h3>
-			<p>Aliados aos objetivos de nossos clientes,
-				 unimos três grandes especialidades na realização de nossos serviços.</p>
+			<h3><%= t 'inicial.servicos.titulo' %></h3>
+			<p><%= t 'inicial.servicos.subtitulo' %></p>
 			 
             <div  class="botao">
 				<a href='#' class="botao_padrao2">
-					Saiba mais
+					<%= t 'inicial.servicos.botao' %>
 				</a>
 			</div>
 		</div>
@@ -199,7 +195,7 @@
 
 <div id="home_noticias" class="wrapper__">
 	<div class="noticias">
-		<h1>Fique por dentro do que temos feito</h1>
+		<h1><%= t 'inicial.noticias.titulo' %></h1>
 		<% @noticias.each do |item| %>
 			<div class="item_noticia">
 				<hr class="linha_verde"/>
@@ -222,7 +218,7 @@
 					<span></span>
 				</div>
 				<div class="mensagem">
-					<p>Notícias</p>
+					<p><%= t 'inicial.noticias.botao' %></p>
 				</div>
 			</a>
 		</div>

@@ -36,7 +36,8 @@ ProizAdmin::Application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
+  config.assets.logger = false
   
   #Paperclip.options[:command_path] = "C:/Program Files/ImageMagick-6.8.9-Q16"
   

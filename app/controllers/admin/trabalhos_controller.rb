@@ -3,11 +3,11 @@ class Admin::TrabalhosController < Admin::AdminController
   #layout "painel"
   
   def index
-    @trabalhos = Trabalho.all.order(:id).where("categoria_id IS NOT NULL")
+    @trabalhos = getTrabalhos.order(:id).where("categoria_id IS NOT NULL")
   end
   
   def midias
-    @trabalhos = Trabalho.all.order(:id).where("categoria_id IS NULL")
+    @trabalhos = getTrabalhos.order(:id).where("categoria_id IS NULL")
   end
 
   def new
@@ -77,7 +77,7 @@ class Admin::TrabalhosController < Admin::AdminController
     @trabalho_id = @trabalho.id
     if(@trabalho.update(trabalho_params))
       respond_to do |format|
-          @trabalhos = Trabalho.all.order(:id)
+          @trabalhos = getTrabalhos.order(:id)
           format.js { render :index }
           if @trabalho.tipo != 'M'
             format.html { redirect_to admin_trabalhos_path}
@@ -134,10 +134,14 @@ class Admin::TrabalhosController < Admin::AdminController
   end
   
   def lista_trabalhos
-    @trabalhos = Trabalho.all
+    @trabalhos = getTrabalhos
   end
   
   private
+  
+  def getTrabalhos
+    @trabalhos = Trabalho.all.where(:idioma => I18n.locale )
+  end
   
   def trabalho_params
     params.require(:trabalho).permit(:id, :titulo, :ficha, :introducao, :status, :tipo, :categoria_id, :imagem_principal, :imagem_vitrine,

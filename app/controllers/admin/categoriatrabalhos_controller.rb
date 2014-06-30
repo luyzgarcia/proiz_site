@@ -2,7 +2,7 @@ class Admin::CategoriatrabalhosController < Admin::AdminController
   respond_to :json
   
   def index
-    @categorias = Categoriatrabalho.all.order(:id)
+    @categorias = getCategoriatrabalhos.order(:id)
   end
 
   def new
@@ -38,7 +38,7 @@ class Admin::CategoriatrabalhosController < Admin::AdminController
     #begin
       if(@categoria.update!(categoriatrabalho_params))
         respond_to do |format|
-            @categorias = Categoriatrabalho.all.order(:id)
+            @categorias = getCategoriatrabalhos.order(:id)
             format.js { render :index }
             format.html { redirect_to admin_categoriatrabalhos_path}
           end         
@@ -72,6 +72,10 @@ class Admin::CategoriatrabalhosController < Admin::AdminController
   end
   
   private 
+  
+  def getCategoriatrabalhos
+    @categorias = Categoriatrabalho.all.where(:idioma => I18n.locale )
+  end
   
   def categoriatrabalho_params
     params.require(:categoriatrabalho).permit(:id,:titulo,:status)

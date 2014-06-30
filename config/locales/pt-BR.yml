@@ -1,4 +1,76 @@
 pt-BR:
+  inicial:
+    topo:
+      criar: Criar
+      evoluir: evoluir
+      e: e
+      transformar: transformar
+      mensagem: Somos uma agência de comunicação integrada e pensamos o Branding como uma transformação holística de marcas.
+    trabalhos:
+      titulo: Trabalhos recentes
+      botao: trabalhos
+    servicos: 
+      titulo: Os serviços
+      subtitulo: Aliados aos objetivos de nossos clientes, unimos três grandes especialidades na realização de nossos serviços.
+      botao: Saiba mais
+      design_titulo: Design gráfico e digital
+      design_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+      marketing_titulo: Marketing
+      marketing_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+      publicidade_titulo: publicidade
+      publicidade_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+    noticias:
+      titulo: Fique por dentro do que temos feito
+      botao: Notícias
+    newsletter:
+      titulo: Para quem não gosta de ficar sabendo das coisas por último
+      subtitulo: Conecte-se à Proiz através das mídias sociais
+      placeholder: Insira seu e-mail para receber atualizações
+    rodape:
+      mensagem: Agência de comunicação integrada. Publicidade e propaganda, design gráfico e marketing digital. Soluções completas para a construção de marcas fortes.
+      copyright: Proiz comunicação integrada - Todos os direitos reservados.
+  sobre:
+    topo:
+      titulo: Sobre a Proiz
+    introducao:
+      titulo: Um organismo vivo feito para transformar
+      mensagem: Somos uma agência nova, moderna e que reconhece o potencial de cada cliente. Com o trabalho de comunicação integrada, os mecanismos e orgãos operam todos juntos. Manuseados por profissionais abastecidos de dedicação e inteligência que sempre trabalham para solucionar problemas de uma forma inovadora e criativa. Procuramos ser mecanicamente perfeitos para se ter como recompensa a satisfação de todos os envolvidos. Equipada de muita força de vontade e conhecimento, a Proiz procura navegar muito além do que a vista alcança. Trabalhamos com transformação de marcas. Um tipo de transformação que você procura.
+    sobre:
+      titulo: Comunicação integrada e eficiente do jeito que acreditamos
+      design_titulo: Design gráfico e digital
+      design_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
+      marketing_titulo: Marketing
+      marketing_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
+      publicidade_titulo: Publicidade e propaganda
+      publicidade_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
+    clientes:
+      titulo: Clientes
+      mensagem: Eles acreditaram em nosso potencial transformador
+  especialidades:
+    titulo: Especialidades
+  trabalhos:
+    trabalhos: Trabalhos
+    midias: Em mídias sociais
+    compartilhar: Gostou?
+    compartilhar_mensagem: Compartilhe essa página com seus amigos
+  noticias:
+    titulo: Notícias
+    encontre: Encontre facil
+    categorias: Categorias
+    ultimas: Últimas adicionadas
+  contato:
+    titulo: Sinta-se à vontade para entrar em contato conosco.
+    subtitulo: Não importa onde está o seu negócio, nós queremos ajudar a construir sua marca.
+    form_titulo: Envie-nos sua mensagem
+    skype: Skype
+    email: Email
+    telefone: Telefone    
+    form_nome: Nome*
+    form_email: E-mail*
+    form_telefone: Telefone
+    form_mensagem: Mensagem*
+    form_botao: Enviar mensagem
+  
   date:
     abbr_day_names:
     - Dom

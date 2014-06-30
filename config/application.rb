@@ -22,6 +22,7 @@ module ProizAdmin
     # config.i18n.default_locale = :de
     config.i18n.available_locales = [:en, :"pt-BR"]
     config.i18n.default_locale = :"pt-BR"
+    #config.i18n.default_locale = :"en"
     
     config.encoding = "utf-8"
     
@@ -31,6 +32,8 @@ module ProizAdmin
     config.assets.precompile += %w( inicial.js noticias.js especialidades.js trabalhos.js sobre.js admninistrativo.js contato.js)
     #config.assets.enabled = true
     
+    #config.assets.logger = false
+    config.assets.debug = false
     config.assets.logger = false
     
    # config.assets.precompile += %w( inicial.js)

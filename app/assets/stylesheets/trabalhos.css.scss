@@ -20,7 +20,7 @@
 }
 #trabalhos .menu_trabalhos ul li{
   display: inline-block;
-  margin: 10px 10px;
+  margin: 10px 10px 40px;
   
 }
 #trabalhos .menu_trabalhos ul li:hover > a {
@@ -547,6 +547,178 @@
     margin: 2px;
   } 
 }
+
+
+
+
+
+/*****************************************************************/
+/************ Página Trabalhos - Detalhe trabalho ****************/
+/*****************************************************************/
+/*iPAD Portrait*/
+/*@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {*/
+/* iPhone */
+/*@media only screen and (max-device-width: 480px) {*/
+@media only screen and (min-width: 481px) and (max-width: 1024px) { 
+  #trabalhos .titulo h1 {
+    font-size:36pt;
+  }
+  #trabalhos .menu_trabalhos ul li {
+    margin: 10px 0px; 
+  }
+  #trabalhos .detalhe_trabalho .detalhe {
+    width: 85%;
+  } 
+ 
+  #trabalhos .detalhe_trabalho .detalhe .descricao .info p {
+    column-gap: 30px;
+    -webkit-column-gap: 30px;
+  }
+  #trabalhos .detalhe_trabalho .detalhe {
+    width: 80%;
+  } 
+}
+
+/*@media only screen and (max-device-width: 480px) , (max-width: 482px){*/
+@media screen and (max-width:480px),(max-device-width: 480px){
+  #trabalhos {
+    padding-top: 140px;
+  }
+  #trabalhos .menu_trabalhos {
+    display: none;  
+  }
+  #trabalhos .detalhe_trabalho .detalhe {
+    width: 80%;
+    margin: 40px auto 100px;
+  }
+  
+  
+  #trabalhos .titulo {
+    width: 100%;
+    margin: 50px auto 0px;
+    border-bottom: 1px solid #e6e7e8;
+    padding-bottom: 50px;
+  }
+  #trabalhos .titulo h1 {
+    font-size: 23pt;
+  }
+  #trabalhos .titulo h1 span {
+    display: block;
+  }
+  
+  #trabalhos .detalhe_trabalho .detalhe .descricao .intro {
+    display: block;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  #trabalhos .detalhe_trabalho .detalhe .descricao .intro h2 {
+    font-size: 18pt;  
+  }
+  
+  #trabalho_detalhe_menu {
+    display:block;
+    padding: 0;
+    list-style: none;
+  }
+  #trabalho_detalhe_menu li{
+    display: inline-block;
+    margin: 0 2.5px;
+    padding: 5px 6px;
+  }
+  #trabalho_detalhe_menu .ativo{
+    background-color: #e3e4e4;  
+  }
+  #trabalho_detalhe_menu li a{
+    font: normal 10pt/1em "droid_serif", Tahoma;
+    text-transform: uppercase;
+    color: #004961;
+  } 
+  #trabalhos .detalhe_trabalho .detalhe .descricao .intro-info {
+    overflow: hidden;
+    display: none;
+  } 
+  #trabalhos .detalhe_trabalho .detalhe .descricao .info {
+    width: 100%;
+  }
+  #trabalhos .detalhe_trabalho .detalhe .descricao .info p {
+    font: normal 12pt/1.5em "droid_serif", Tahoma;
+    color: #4f4e4e;
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  #trabalhos .detalhe_trabalho .detalhe .full-info {
+    margin: 50px auto 0px;
+  }
+  #trabalhos .detalhe_trabalho .detalhe .full-info .span {
+    display: none;
+  }
+  #trabalhos .detalhe_trabalho .detalhe .full-info p {
+    margin: -65px 0;
+    padding-left: 0px;
+    display:none;
+  }
+  
+  .mobile-image-fundo {
+    background: #004961;
+    height: 3000px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 99999;
+    -moz-transition: 0.4s all;
+    -webkit-transition: 0.4s all;
+    transition: 0.4s all;
+  }
+  .mobile-image {
+    position: fixed;
+    top: 50%;
+  }
+  .mobile-image-legenda-icon {
+    /*display: block;
+    
+    background: #fff;*/
+    text-indent: -9999;
+    width: 100%;
+    margin: -65px 0;
+    position: absolute;
+    height: 25px;
+    background: #fdba31 url('../images/legenda_detalhes.png') center center no-repeat;
+  }
+  .mobile-image-legenda {
+    background: #fff url('../images/legenda_detalhes.png') top center no-repeat;
+    text-indent: 0;
+    margin-top: -321px;
+    height: auto;
+    padding: 20px 0px;
+    -webkit-transition: all 0.4s ease-in-out 0.2s;
+    -moz-transition: all 0.4s ease-in-out 0.2s;
+    -o-transition: all 0.4s ease-in-out 0.2s;
+    -ms-transition: all 0.4s ease-in-out 0.2s;
+    transition: all 0.4s ease-in-out 0.2s;
+  }
+  
+  #trabalhos .compartilhar {
+    width: 90%;
+  }
+  #trabalhos .compartilhar h4 {
+    font-size: 14pt;
+    padding: 0 10px;
+  }
+  #trabalhos .compartilhar .botoes_amarelos .bt_facebook {
+    margin: 0 5px;
+  }
+  #trabalhos .compartilhar .botoes_amarelos .bt_facebook a {
+    height: 50px;
+    width: 50px;
+    font-size: 20pt;
+  }
+  #trabalhos .compartilhar .botoes_amarelos .bt_facebook a:before {
+    line-height: 50px;
+  }
+  
+}
+
 
 .fb-post span,
 .fb-post iframe {

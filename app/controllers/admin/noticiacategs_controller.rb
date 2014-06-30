@@ -1,7 +1,7 @@
 class Admin::NoticiacategsController < Admin::AdminController
   
   def index
-    @noticiacategs = Noticiacateg.all.order(:id)
+    @noticiacategs = getNoticiacategs.order(:id)
   end
   
   def new
@@ -83,6 +83,10 @@ class Admin::NoticiacategsController < Admin::AdminController
   end
   
   private
+  
+  def getNoticiacategs
+    @noticiacategs = Noticiacategs.all.where(:idioma => I18n.locale )
+  end
   
   def noticiacateg_params
     params.require(:noticiacateg).permit(:id,:titulo,:status,:descricao)

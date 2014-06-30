@@ -1,6 +1,7 @@
 class Noticia < ActiveRecord::Base
   extend FriendlyId
   friendly_id :titulo, use: :slugged
+  before_create :define_idioma
   
   validates :titulo,:conteudo, presence: true
   #validates :titulo, uniqueness: true
@@ -27,6 +28,10 @@ class Noticia < ActiveRecord::Base
   end
 
 
-  #Url amigavez
+  private
+  
+  def define_idioma
+    self.idioma = I18n.locale
+  end
 
 end

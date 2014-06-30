@@ -4,9 +4,7 @@ class Admin::EspecialidadesController < Admin::AdminController
   
   respond_to :json, :html  
   
-  def getEspecialidades
-    @especialidades = Especialidade.all.order(:id) 
-  end
+  
   
   def index
     #@especialidades = Especialidade.all.order(:id)    
@@ -78,6 +76,10 @@ class Admin::EspecialidadesController < Admin::AdminController
   end
   
   private
+  
+  def getEspecialidades
+    @especialidades = Especialidade.all.where(:idioma => I18n.locale ).order(:id)
+  end
   
   def especialidade_params
     params.require(:especialidade).permit(:id, :titulo, :conteudo, :status, :imagem_principal)

@@ -22,9 +22,9 @@ class TrabalhosController < ApplicationController
   def filtrar
     cat_id = params[:id]
     if cat_id > '0'
-      @trabalhos = Trabalho.all.where(categoria_id: cat_id)
-    #else
-    #  @trabalhos = Trabalho.all.where("tipo != 'M'")
+      @trabalhos = getTrabalhos.where(categoria_id: cat_id)
+    else
+      @trabalhos = getTrabalhos.where("tipo != 'M'")
     end
   end
   
@@ -35,10 +35,10 @@ class TrabalhosController < ApplicationController
     elsif cat_id == '1'
       #Pega titulos facebook
       #@trabalhos = Trabalho.all.where("introducao LIKE?", /facebook.com(.*)/)
-      @trabalhos = Trabalho.all.where("introducao LIKE ?" , '%facebook.com%')
+      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%facebook.com%')
     elsif cat_id == '2'
       #Pega titulos instagram
-      @trabalhos = Trabalho.all.where("introducao LIKE ?" , '%instagram.com%')
+      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%instagram.com%')
     end
     
     respond_to do |format|
@@ -61,6 +61,6 @@ class TrabalhosController < ApplicationController
   end
   
   def getTrabalhos
-    @trabalhos = Trabalho.all
+    @trabalhos = Trabalho.all.where(:idioma => I18n.locale )
   end
 end

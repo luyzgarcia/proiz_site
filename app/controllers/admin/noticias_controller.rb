@@ -2,7 +2,7 @@ class Admin::NoticiasController < Admin::AdminController
   respond_to :json, :html
   
   def index
-    @noticias = Noticia.all.order(:id)
+    @noticias = getNoticias.order(:id)
   end
 
   def new
@@ -51,7 +51,7 @@ class Admin::NoticiasController < Admin::AdminController
     @noticia_id = @noticia.id
     if(@noticia.update(noticia_params))
       respond_to do |format|
-          @noticias = Noticia.all.order(:id)
+          @noticias = getNoticias.order(:id)
           format.js { render :index }
           format.html { redirect_to admin_noticias_path}
         end
@@ -69,7 +69,7 @@ class Admin::NoticiasController < Admin::AdminController
     if(@noticia.status == 1)
       @noticia.update_attribute(:status, 0)
     else
-      @noticia.update_attribute(:status, 1)             
+      @noticia.update_attribute(:status, 1)
     end
     
     @noticia.save
@@ -78,6 +78,12 @@ class Admin::NoticiasController < Admin::AdminController
       format.html { redirect_to admin_noticias_path}
       format.js { redirect_to admin_noticias_path}
      end     
+  end
+  
+  private
+  
+  def getNoticias
+    @noticias = Noticia.all.where(:idioma => I18n.locale )
   end
   
   def noticia_params

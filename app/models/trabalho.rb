@@ -1,5 +1,5 @@
 class Trabalho < ActiveRecord::Base
-  
+  before_create :define_idioma
   #validates_presence_of :introducao, :imagem_vitrine, :descricao_vitrine
   
   validates_presence_of :introducao, :imagem_vitrine, :descricao_vitrine, :if => 'tipo == "M"'
@@ -33,4 +33,14 @@ class Trabalho < ActiveRecord::Base
   #validates_presence_of :titulo, :categoria_id, :imagem_principal, :descricao_principal, :imagem_vitrine, :descricao_vitrine, 
   #                      :fichatecnicas, :introducao, :status, :orientacao, :imagems
   
+  
+  #logger.info "Locale=>#{I18n.locale}\n"
+  #default_scope self.where(:idioma => I18n.locale )
+  
+  private
+  
+  def define_idioma
+    self.idioma = I18n.locale
+  end
+
 end
