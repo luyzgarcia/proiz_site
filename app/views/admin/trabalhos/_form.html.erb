@@ -106,8 +106,6 @@
 						<%= c.fields_for :imagems do |imagem| %>
 							<%= render 'imagem_fields', :f => imagem, :novo => false %>
 						<% end %>
-					
-					
 				</div>
 				
 				<div class="item_info_detalhe ">
@@ -121,10 +119,11 @@
 				
 				<div class="item_info_botoes">
 					<% if @editando == true %>
-						<%= link_to "Limpar alterações", trabalhos_path, :remote => true, 
+						<%= link_to "Limpar alterações", admin_trabalhos_path,
 						:confirm => 'Descartar alterações',
 						:data => {:'message' => "Você está prestes a descartas as informações aditadas, tem certeza?"},
-						:class => "link_limpar" %>
+						:class => "link_limpar", 
+						:method => 'get' %>
 						<%= c.submit 'Salvar alterações', 
 						:confirm => 'Salvando alterações',
 						:data => {:'message' => "Você está prestes a alterar as informações aditadas."},

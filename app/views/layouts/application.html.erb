@@ -34,16 +34,16 @@
 </div>
 <div id="header">
 	<span></span>
-	<div id="logo" >
-		<%= link_to image_tag('logo_proiz.png'), root_path, :remote => true %>
+	<div id="logo" data-no-turbolink>
+		<%= link_to image_tag('logo_proiz.png'), root_path %>
 	</div>
 	<div id="menu">
 		<ul>
-			<li><%= link_to 'SOBRE', sobre_path, :data => { :'hover' => 'SOBRE' }, :remote => true  %></li>
-			<li><%= link_to 'ESPECIALIDADES', especialidades_path, :data => { :'hover' => 'ESPECIALIDADES' },:remote => true  %></li>
-			<li><%= link_to 'TRABALHOS', trabalhos_path, :data => { :'hover' => 'TRABALHOS' } ,:remote => true %></li>
-			<li><%= link_to 'NOTÍCIAS', noticias_path, :data => { :'hover' => 'NOTÍCIAS' } ,:remote => true %></li>
-			<li><%= link_to 'CONTATO', contato_path, :data => { :'hover' => 'CONTATO' },:remote => true %></li>
+			<li><%= link_to t('menu.sobre'), sobre_path, :data => { :'hover' => t('menu.sobre') }, :remote => true  %></li>
+			<li><%= link_to t('menu.especialidades'), especialidades_path, :data => { :'hover' => t('menu.especialidades') },:remote => true  %></li>
+			<li><%= link_to t('menu.trabalhos'), trabalhos_path, :data => { :'hover' => t('menu.trabalhos') } ,:remote => true %></li>
+			<li><%= link_to t('menu.noticias'), noticias_path, :data => { :'hover' => t('menu.noticias') } ,:remote => true %></li>
+			<li><%= link_to t('menu.contato'), contato_path, :data => { :'hover' => t('menu.contato') },:remote => true %></li>
 		</ul>
 		
 	</div>
@@ -124,6 +124,38 @@
 	//QueryLoader.selectorPreload = "#container_carregando";
 	QueryLoader.init();
 </script>
+<div id="fb-root"></div>
+<script>
+//FAcebook
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1501616463400377&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
 
+
+//Google +
+window.___gcfg = {
+lang: 'pt-BR'
+  };
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+po.src = 'https://apis.google.com/js/plusone.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+  
+//Twitter
+!function(d,s,id){
+	var js,fjs=d.getElementsByTagName(s)[0];
+	if(!d.getElementById(id)){js=d.createElement(s);
+		js.id=id;js.src="https://platform.twitter.com/widgets.js";
+		fjs.parentNode.insertBefore(js,fjs);
+	}
+}(document,"script","twitter-wjs");
+  
+</script>
 </body>
 </html>

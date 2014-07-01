@@ -1,6 +1,11 @@
 class Recurso < ActiveRecord::Base
   
-  belongs_to :artigo
+  belongs_to :noticia
   
-  validates :dir, :tipo, presence: true 
+  has_attached_file :arquivo,
+  :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
+  :url => "/system/:attachment/:id/:basename_:style.:extension"
+  #:styles => { :medium => "300x300>", :thumb => "100x100>" }
+  #validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
+  
 end

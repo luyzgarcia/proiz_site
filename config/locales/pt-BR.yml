@@ -1,4 +1,10 @@
 pt-BR:
+  menu:
+    sobre: SOBRE
+    especialidades: Especialidades
+    trabalhos: Trabalhos
+    noticias: Notícias
+    contato: Contato
   inicial:
     topo:
       criar: Criar
@@ -273,4 +279,7 @@ pt-BR:
       default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
       long: ! '%d de %B de %Y, %H:%M'
       short: ! '%d de %B, %H:%M'
+      padrao: ! '%d %b %Y'
+      longo: ! '%d de %b de %Y'
+      curto: ! '%d %b'
     pm: ''

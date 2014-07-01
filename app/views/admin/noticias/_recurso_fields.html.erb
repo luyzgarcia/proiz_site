@@ -1,0 +1,39 @@
+<div class="form_imagens item_many form_many">
+	<%= f.hidden_field :ordem, :class => 'ordem_imagem' %>
+	<%= f.hidden_field(:id) %>
+	<div class="arquivo_upload">
+		<div class="arquivo ">
+			<h4><%= 
+			if novo
+				f.file_field :arquivo, :onchange => 'preview_imagem(this)'
+			else
+				f.file_field :arquivo, disabled: 'disabled', :class => 'bloqueado', :onchange => 'preview_imagem(this)'
+			end 
+			%>
+			</h4>
+			<p class="caminho"><%= f.object.arquivo_file_name %></p>
+			
+		</div>
+		<div class="descricao <%= novo == false ? 'bloqueado' : '' %>">
+			<%=
+				if novo == true
+					f.text_area :descricao
+				else
+			 		f.text_area :descricao, disabled: 'disabled'
+			 	end 
+			 %>
+		</div>
+		<div class="ordem <%= 'escondido' if novo %> <%= 'bloqueado' if !novo %>">
+			<%= link_to_function('','subir_nivel(this)', :class => 'up') %>
+			<%= link_to_function('','descer_nivel(this)', :class => 'down') %>
+			<%= link_to_remove_fields '', f if !novo %>	
+		</div>
+	</div>
+	<%= 
+	#if novo == true
+		link_to_adicionar_foto "Adicionar", f if novo 
+	#else
+		
+	#end
+	%>	
+</div>

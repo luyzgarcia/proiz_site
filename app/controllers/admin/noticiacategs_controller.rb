@@ -85,7 +85,7 @@ class Admin::NoticiacategsController < Admin::AdminController
   private
   
   def getNoticiacategs
-    @noticiacategs = Noticiacategs.all.where(:idioma => I18n.locale )
+    @noticiacategs = Noticiacateg.all.where(:idioma => I18n.locale )
   end
   
   def noticiacateg_params

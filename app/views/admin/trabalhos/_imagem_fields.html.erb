@@ -19,12 +19,12 @@
 				<p class="caminho"></p>
 			
 		</div>
-		<div class="descricao">
+		<div class="descricao <%= novo == false ? 'bloqueado' : '' %>">
 			<%=
 				if novo == true
 					f.text_area :descricao
 				else
-			 		f.text_area :descricao, disabled: 'disabled',:class => 'bloqueado'
+			 		f.text_area :descricao, disabled: 'disabled'
 			 	end 
 			 %>
 		</div>

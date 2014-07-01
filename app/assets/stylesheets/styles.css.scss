@@ -1048,6 +1048,9 @@ $desktop-large: 1824px;
   .trabalho-item .tb-info .tb-info-tras h4 {
     margin-top: 45%;
   }
+  .tb-info-frente .texto h4 {
+    padding: 0 40px 5px; 
+  }
   #home_comotrabalhamos > div {
     height: 580px;
     margin: 0;
@@ -1149,6 +1152,9 @@ $desktop-large: 1824px;
    margin: 130px auto 110px;
     padding: 0px;
   }
+  #home_noticias .bt_padrao1 {
+    opacity: 1;
+  }
   #home_noticias .noticias {
       .item_noticia {
         margin-left: 5%;
@@ -1158,7 +1164,14 @@ $desktop-large: 1824px;
         overflow: hidden;
         margin: 10px auto 20px;
         width: 70%;
-    }
+        hr {
+          width: 100%;
+        }
+        h5, p {
+          opacity: 1;
+        }
+      }
+      
   }
   
   #home_noticias .noticias .item_noticia p {
@@ -1347,7 +1360,7 @@ $desktop-large: 1824px;
   /***************** PÁGINA NOTICIAS *********************************/
   /*******************************************************************/
   #noticia .noticia-info {
-    width: 100%;
+    width: 95%;
     padding: 55px 0px 100px 0px;
   }
   
@@ -1812,11 +1825,13 @@ $desktop-large: 1824px;
         left: 120px;
         display: table;
         height: 160px;
+        width: 190px;
         h4 {
           display: table-cell;
           vertical-align: middle;
           font-size: 14pt;
           text-align: left;
+          padding: 0;
         }
         hr {
           display: none;
@@ -1900,6 +1915,21 @@ $desktop-large: 1824px;
     margin-top: 25%;
     border: none;
   }*/
+  
+  #home_noticias .bt_padrao1 {
+    opacity: 1;
+  }
+  #home_noticias .noticias {
+      .item_noticia {
+        hr {
+          width: 100%;
+        }
+        h5, p {
+          opacity: 1;
+        }
+      }
+      
+  }
   
   #home_noticias { 
     .noticias h1 {
@@ -2356,7 +2386,7 @@ $desktop-large: 1824px;
   .noticias_ultimas .wrapper_ultimas .ultima_adicionada, .noticias_ultimas .wrapper_ultimas .ultima_adicionada:nth-child(odd) {
     float: none !important;
     width: 95% !important;
-    padding-left:20px !important;
+    padding-left:8px !important;
     margin: 0 0 20px 0 !important;
   }
   .noticias_ultimas {

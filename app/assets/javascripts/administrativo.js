@@ -130,10 +130,19 @@ function preview_imagem2(e) {
 
 
 function preview_imagem(e) {
+	
+	var filename = $(e).val();
+    var lastIndex = filename.lastIndexOf("\\");
+    if (lastIndex >= 0) {
+       filename = filename.substring(lastIndex + 1);
+    }
+    
+	
 	var oFReader = new FileReader();
     oFReader.readAsDataURL(e.files[0]);
+    
     oFReader.onload = function (oFREvent) {
-    	$(e).parents('.imagem').find('.caminho').html($(e).val());
+    	$(e).closest('div').find('.caminho').html(filename);
         $(e).parents('.imagem').find('.img_selecionada').html('<img src="'+oFREvent.target.result+'">');
     };
 }
@@ -152,6 +161,8 @@ function add_fields(link, association, content) {
 	//	content.replace(regexp, new_id)
 	//);
 }
+
+
 $(document).mouseup(function (e)
 {
     var container = $(".lista_cadastrados");

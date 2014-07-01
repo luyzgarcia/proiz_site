@@ -83,6 +83,11 @@
         }
       }
       
+      
+      
+      //upload de arquivos
+      
+      
     }
 }
 .bt_adicionar_nova {
@@ -197,7 +202,7 @@
     font-family: 'icons';
     content: '\e402';
     position: relative;
-    top: -2px;
+    top: -4px;
     left: -4px;
     color: #004961;
     font-weight: bold;
@@ -208,7 +213,7 @@
     font-family: 'icons';
     content: '\e401';
     position: relative;
-    top: -2px;
+    top: -4px;
     left: -3px;
     color: #004961;
     font-weight: bold;
@@ -216,8 +221,8 @@
     display: -webkit-box;
   }
   .bt_excluir_1:before { 
-    top: -9px !important;
-    margin: 8px 7px !important;
+    top: -12px !important;
+    margin: 11px 7px !important;
   }
   
 }

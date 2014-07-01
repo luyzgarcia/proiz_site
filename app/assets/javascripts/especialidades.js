@@ -1,4 +1,4 @@
-// require touch/jquery-ui.touch.js
+//= require touch_js/jquery-ui.touch.js
 
 //alert('iniciando...');
 

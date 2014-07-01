@@ -7,7 +7,7 @@ ProizAdmin::Application.routes.draw do
   #mount Mercury::Engine => '/'
   #Mercury::Engine.routes
   get "teste/index"
-  get "inicial/index"
+  #get "inicial/index"
   get "index/index"
   get "sobre/index"
   get "contato/index"
@@ -157,14 +157,15 @@ ProizAdmin::Application.routes.draw do
   
   #scope '(:locale)', :locale => /pt-BR|en|/ do
   
-  resources :inicials do
-  #end
+  #resources :inicials do
+    get "inicial" => "inicial#index", :as => "inicial"
     
-  end
+  #end
   
-  scope "(:locale)", :locale => /pt-BR|en/ do
-   root :to => "inicial#index"
-   get "sobre" => "sobre#index", :as => "sobre"
+  #scope "(:locale)", :locale => /pt-BR|en/ do
+  root :to => "inicial#index"
+  get "sobre" => "sobre#index", :as => "sobre"
+  
    
    resources :especialidades do
       collection do
@@ -175,7 +176,7 @@ ProizAdmin::Application.routes.draw do
       end
     end
    
-  end
+  #end
   
   get "contato" => "contato#index", :as => "contato"
   post "enviado" => "contato#enviado", :as => "enviado"

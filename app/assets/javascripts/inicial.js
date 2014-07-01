@@ -1,3 +1,5 @@
+//= require touch_js/jquery-ui.touch.js
+
 (function() {
 	function mostrarIntro() {
 		//Efeito na introdução inicial onde aparece palavra por palavra
@@ -184,7 +186,8 @@ var mostroutrabalhos = false;
 	function mostrarNoticias() {
 		//if(!noticias) {
 		//if(!inProgress) {
-			console.log("mostrar noticias...");
+		if(!detectmob()) {
+			
 			function checkbotao() {
 				if($('.botao_noticias').visible()) {
 					console.log('achou.');
@@ -214,7 +217,12 @@ var mostroutrabalhos = false;
 					window.removeEventListener('scroll', checkbotao ,false);
 				}
 			});
-		//}
+		}else {
+			//Caso seja mobile
+			$('#home_noticias .noticias .item_noticia .link_noticia').click(function(e) {
+				e.preventDefault();
+			});
+		}
 	}
 	//window.addEventListener('scroll', mostrarNoticias ,false);
 	jQuery(document).on("ready", mostrarNoticias);

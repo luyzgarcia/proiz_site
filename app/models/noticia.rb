@@ -18,6 +18,8 @@ class Noticia < ActiveRecord::Base
   :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :imagem_miniatura, :content_type => /\Aimage\/.*\Z/
   
+  has_many :recursos, :dependent => :destroy
+  accepts_nested_attributes_for :recursos, :allow_destroy => true
   
   def self.buscar(search)  
     if search  

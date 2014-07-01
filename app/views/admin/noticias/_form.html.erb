@@ -62,6 +62,22 @@
 				</div>
 				
 				
+				<!------------------------------------------------------------->
+				<div class="item_info_detalhe lista_imagens wrapper_imagem lista_dependentes">
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if c.object.recursos.size > 0 && @editando %>
+					<h5>Recursos</h5>
+					
+						<%= c.fields_for :recursos do |recurso| %>
+							<%= render 'recurso_fields', :f => recurso, :novo => false %>
+						<% end %>
+				</div>
+				<div class="item_info_detalhe ">
+					<div class="adicionar_imagem nova">
+						
+					</div>
+					<p class="bt_adicionar_nova bt_adicionar_nova_foto"><%= link_to_add_fields "", c, :recursos %></p>	
+				</div>
+				<!------------------------------------------------------------->
 				<div class="item_info_botoes">
 					<% if @editando == true %>
 						<%= link_to "Limpar alterações", admin_noticias_path,

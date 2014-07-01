@@ -33,7 +33,7 @@ module ProizAdmin
     #config.assets.enabled = true
     
     #config.assets.logger = false
-    config.assets.debug = false
+    config.assets.debug = true
     config.assets.logger = false
     
    # config.assets.precompile += %w( inicial.js)

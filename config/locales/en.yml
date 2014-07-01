@@ -20,6 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  menu:
+    sobre: SOBRE
+    especialidades: Especialidades
+    trabalhos: Trabalhos
+    noticias: Notícias
+    contato: Contato
   inicial:
     topo:
       criar: 'Create'
@@ -91,4 +97,17 @@ en:
     form_telefone: Telefone
     form_mensagem: Mensagem*
     form_botao: Enviar mensagem
+    
+    
+    
+  time:
+    am: ''
+    formats:
+      default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
+      long: ! '%d de %B de %Y, %H:%M'
+      short: ! '%d de %B, %H:%M'
+      padrao: ! '%d %b %Y'
+      longo: ! '%d de %b de %Y'
+      curto: ! '%d %b'
+    pm: ''
   

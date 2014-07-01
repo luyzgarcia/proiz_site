@@ -6,15 +6,18 @@
 					<h2><%= @noticia.titulo %></h2>
 					
 					<div class="recursos_download">
+						<% if @noticia.recursos.size > 0 %>
 						<h4>Recursos para download</h4>
 						<ul>
-							<li><a href=#>Logotipo do artigo de teste da proiz</a></li>
-							<li><a href=#>Mockup produto</a></li>
+							<% @noticia.recursos.each do |recurso| %>
+								<li><%= link_to recurso.descricao, recurso.arquivo.url(:original, false),  :target => "_blank" %></li>	
+							<% end %>
 						</ul>
+						<% end %>
 					</div>
 				</div>
 				<div class="data_publicacao">
-					<h3><%= @noticia.created_at.to_s(:create) %></h3>
+					<h3><%= I18n.l @noticia.created_at, :format => :longo %></h3>
 				</div>
 				<style>
 					
@@ -27,10 +30,13 @@
 						</div>
 						<div class="compartilhar_noticia_integra">
 							<a href="#" class="continue_lendo"></a>
-						
-							<a class="compartilhar_face" href="#continuelendo1"></a>
-							<a class="compartilhar_google" href="#continuelendo2"></a>
-							<a class="compartilhar_twitter" href="#continuelendo3"></a>
+							<%= fb_share('1501616463400377', 
+									noticia_url(@noticia), 
+									'compartilhar_face',{}) %>
+                                  
+							<%= google_share(noticia_url(@noticia),'compartilhar_google') %>
+							
+							<%= twitter_share(noticia_url(@noticia), 'compartilhar_twitter') %>
 						</div>
 					</div>
 					<div class="texto_noticia">

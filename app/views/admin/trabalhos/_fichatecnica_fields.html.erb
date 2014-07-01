@@ -2,21 +2,21 @@
 	<%= f.hidden_field :ordem, :class => 'ordem_imagem' %>
 	<%= f.hidden_field(:id) %>
 	<div class="ficha_upload">
-		<div class="chave">
+		<div class="chave <%= novo == false ? 'bloqueado' : '' %>">
 			<%= 
 				if novo == true
 					f.text_field :chave 
 				else
-					f.text_field :chave, disabled: 'disabled', :class => 'bloqueado'
+					f.text_field :chave, disabled: 'disabled'
 				end 
 			%>
 		</div>
-		<div class="valor">
+		<div class="valor <%= novo == false ? 'bloqueado' : '' %>">
 			<%=
 				if novo == true
 					f.text_field :valor
 				else
-			 		f.text_field :valor, disabled: 'disabled', :class => 'bloqueado'
+			 		f.text_field :valor, disabled: 'disabled'
 			 	end 
 			 %>
 		</div>

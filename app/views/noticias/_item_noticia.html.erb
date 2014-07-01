@@ -1,6 +1,6 @@
 
 <div class="ultima_adicionada">
-	<h4><%= noticia.created_at.to_s(:create) %></h4>
+	<h4><%= I18n.l noticia.created_at, :format => :padrao %></h4>
 	
 	<%= image_tag(noticia.imagem_miniatura.url) %>
 	<h5><%= noticia.titulo %></h5>

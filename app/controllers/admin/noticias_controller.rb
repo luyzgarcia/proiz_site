@@ -87,8 +87,9 @@ class Admin::NoticiasController < Admin::AdminController
   end
   
   def noticia_params
-    params.require(:noticia).permit(:id,:titulo,:conteudo,:status,:noticiacateg_id,:imagem_miniatura,
-    {:recurso_attributes => [:id, :artigo_id, :descricao]})
+    params.require(:noticia).permit(:id,:titulo,:conteudo,:status,:noticiacateg_id,
+    :imagem_miniatura, :recursos,
+    {:recursos_attributes => [:id, :arquivo, :descricao, :_destroy, :noticia_id, :ordem]})
   end
   
 end
