@@ -1,4 +1,5 @@
 class NoticiasController < ApplicationController
+  include ActionView::Helpers::TextHelper
   before_action :getcategorias, :setmetaTags
   
   def setmetaTags
@@ -13,7 +14,8 @@ class NoticiasController < ApplicationController
                   :og => {
                     :site_name => ["Proiz"],
                     :url => [noticia_url(noticia)],
-                    :title => [noticia.titulo]
+                    :title => [noticia.titulo],
+                    :description => [truncate(noticia.conteudo.html_safe,:ommision => "... Leia mais", :length => 200)]
                   }
   end
   
@@ -54,7 +56,7 @@ class NoticiasController < ApplicationController
   def detalhe_noticia
     ultimasnoticias
     @noticia = Noticia.friendly.find(params[:id])
-    #set_metatags_facebook(@noticia)
+    set_metatags_facebook(@noticia)
   end
 
   private

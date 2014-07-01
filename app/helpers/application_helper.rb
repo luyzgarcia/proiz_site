@@ -43,7 +43,7 @@ module ApplicationHelper
 
 
     #url = "http://www.facebook.com/sharer/sharer.php?app_id=#{app_id}&sdk=joey&u=#{redirect_uri}&#{opts_array.join("&")}&properties=#{@prop}&actions=#{@action}"
-    url = "http://www.facebook.com/sharer.php?s=100&p[url]=#{redirect_uri}&p[title]=the title you want to share&p[summary]=the description/summary you want to share"
+    url = "http://www.facebook.com/sharer.php?s=100&p[url]=http://proiz.heroku.com.br&p[title]=the title you want to share&p[summary]=the description/summary you want to share"
     # => http://www.facebook.com/sharer.php?s=100&p[url]=http://www.google.com&p[title]=the title you want to share&p[summary]=the description/summary you want to share
     #     https://www.facebook.com/sharer/sharer.php?app_id=1501616463400377&sdk=joey&u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&display=popup
 
