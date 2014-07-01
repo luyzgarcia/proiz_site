@@ -15,7 +15,7 @@ class NoticiasController < ApplicationController
                     :site_name => ["Proiz"],
                     :url => [noticia_url(noticia)],
                     :title => [noticia.titulo],
-                    :imagem => [noticia.imagem_miniatura(:original)],
+                    :image => [noticia.imagem_miniatura(:original)],
                     :description => [truncate(noticia.conteudo.html_safe,:ommision => "... Leia mais", :length => 200)]
                   }
   end
