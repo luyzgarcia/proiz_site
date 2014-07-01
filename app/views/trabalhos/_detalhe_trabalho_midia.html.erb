@@ -15,13 +15,15 @@
 		
 		<div class="botoes_amarelos">
 			<div class="bt_facebook">
-				<a href="face"></a>
+				<%= fb_share('1501616463400377', 
+				trabalho_url(@trabalho),
+				'',{}) %>
 			</div>
-            <div class="bt_facebook">
-				<a href="face"></a>
+            <div class="bt_google">
+				<%= google_share(trabalho_url(@trabalho),'') %>
 			</div>
-             <div class="bt_facebook">
-				<a href="face"></a>
+             <div class="bt_twitter"> 
+				<%= twitter_share(trabalho_url(@trabalho), '') %>
 			</div>
 		</div>
 	</div>

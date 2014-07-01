@@ -26,21 +26,25 @@ function recarregar() {
 		maxDuration : 1,
 		viewportFactor : 0.5
 	});
-	//stopfullloading();
-}
-
-$(document).ready(function(){
-	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a').bind('ajax:beforeSend',function() {
+	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
 		loading();
+	});
+	$('.titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
+		loading();
+		history.pushState(null, document.title, this.href);
 	});
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a').bind('ajax:complete ',function() {
 		stoploading();
 	});
+	//stopfullloading();
+}
+
+$(document).ready(function(){
+	recarregar();
 	
 	window.fbAsyncInit = function() {
 		// Wait until FB object is loaded and initialized to refresh the embeds.
 		//FB.init();
-		alert('init');
 		FB.init({
 		    appId      : '1501616463400377',
 		    status     : true,

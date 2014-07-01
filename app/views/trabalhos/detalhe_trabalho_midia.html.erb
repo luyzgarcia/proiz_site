@@ -1,0 +1,10 @@
+<%= render partial: 'index' %>
+<script>
+	$('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho_midia', :trab => @trabalho) %>");
+	if (typeof(FB) != 'undefined') {
+		window.fbAsyncInit();
+	}
+	
+	$('#detalhe_modal').show();
+	
+</script>

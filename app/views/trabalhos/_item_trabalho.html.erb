@@ -1,6 +1,6 @@
 
 <div class="item <%= trab.orientacao == '0' ? 'tam2' : 'tam1' %>">
-	<%= link_to "AAA", detalhe_trabalho_path(trab), :title => "Detalhe trabalho", :remote => true %>	
+	<%= link_to "AAA", trabalho_path(trab), :title => "Detalhe trabalho", :remote => true %>	
 	<%= image_tag(trab.imagem_vitrine.url) %>
 	<div class="hover">
 		<div class="descricao_trabalho">

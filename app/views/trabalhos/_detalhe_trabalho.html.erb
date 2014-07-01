@@ -44,15 +44,23 @@
 		<h3>Gostou?</h3>
 		<h4>Compartilhe essa página com seus amigos</h4>
 		
+		
+              
+		
+		
+		
+		
 		<div class="botoes_amarelos">
 			<div class="bt_facebook">
-				<a href="face"></a>
+				<%= fb_share('1501616463400377', 
+				trabalho_url(trab),
+				'',{}) %>
 			</div>
-            <div class="bt_facebook">
-				<a href="face"></a>
+            <div class="bt_google">
+				<%= google_share(trabalho_url(trab),'') %>
 			</div>
-             <div class="bt_facebook">
-				<a href="face"></a>
+             <div class="bt_twitter"> 
+				<%= twitter_share(trabalho_url(trab), '') %>
 			</div>
 		</div>
 	</div>

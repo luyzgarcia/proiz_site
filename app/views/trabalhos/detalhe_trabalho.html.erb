@@ -1,1 +1,5 @@
-detalhe do trabalho <%= @trabalho.id %>
+<%= render partial: 'index' %>
+<script>
+	$('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho', :trab => @trabalho) %>");
+	$('#detalhe_modal').show();
+</script>

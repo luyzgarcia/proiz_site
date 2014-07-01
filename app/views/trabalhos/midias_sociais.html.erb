@@ -1,0 +1,9 @@
+
+<%= render partial: 'index' %>
+<script>
+	$('#wrapper_corpo_trabalhos').html("<%= escape_javascript(render 'midias_sociais') %>");
+	recarregar();
+	$('#grid .item a').click(function() {alert("atencao")});
+	$('#trabalhos .titulo h1:first-child').removeClass('trab_ativo');
+	$('#trabalhos .titulo h1:nth-child(2)').addClass('trab_ativo');
+</script>

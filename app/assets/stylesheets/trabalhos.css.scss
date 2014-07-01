@@ -128,12 +128,12 @@
   margin-bottom: 50px;
 }
 
-#trabalhos .compartilhar .botoes_amarelos .bt_facebook {
+#trabalhos .compartilhar .botoes_amarelos > div {
   margin: 0 10px;
   display: inline-block;
 }
-#trabalhos .compartilhar .botoes_amarelos .bt_facebook a {
-  font-family: 'icones';
+#trabalhos .compartilhar .botoes_amarelos a {
+  font-family: 'icons';
   font-size:24pt;
   height: 70px;
   width: 70px;
@@ -145,12 +145,12 @@
   text-align:center;
   display: block;
 }
-#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:hover {
+#trabalhos .compartilhar .botoes_amarelos a:hover {
   background: rgba(255,255,255,1);
   box-shadow: 0 0 0 8px rgba(36, 57, 66,1);
 }
-#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:before {
-  content: "\e600";
+#trabalhos .compartilhar .botoes_amarelos a:before {
+  
   color: #fff;
   speak: none;
   line-height: 70px;
@@ -161,13 +161,22 @@
   display: block;
 }
 
-#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:hover:before {
+#trabalhos .compartilhar .botoes_amarelos a:hover:before {
   color: #fdba31;
 }
-#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:hover:before {
+#trabalhos .compartilhar .botoes_amarelos a:hover:before {
   -webkit-animation: toRightFromLeft 0.3s;
   -moz-animation: toRightFromLeft 0.3s;
   animation: toRightFromLeft 0.3s;
+}
+#trabalhos .compartilhar .botoes_amarelos .bt_facebook a:before {
+  content: "\e413";
+}
+#trabalhos .compartilhar .botoes_amarelos .bt_google a:before {
+  content: "\e422";
+}
+#trabalhos .compartilhar .botoes_amarelos .bt_twitter a:before {
+  content: "\e416";
 }
 @-moz-keyframes toRightFromLeft {
   49% {
