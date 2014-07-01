@@ -4,7 +4,17 @@ class NoticiasController < ApplicationController
   def setmetaTags
     logger.info 'set metatags'
     set_meta_tags :title => 'Noticias',
-                  :description => "All text about keywords, other keywords"
+                  :description => "All text about keywords, other keywords" 
+  end
+  
+  def set_metatags_facebook(noticia)
+    logger.info 'set metatags facebook'
+    set_meta_tags :title => noticia.titulo,
+                  :og => {
+                    :site_name => ["Proiz"],
+                    :url => [noticia_url(noticia)],
+                    :title => [noticia.titulo]
+                  }
   end
   
   def index
@@ -44,6 +54,7 @@ class NoticiasController < ApplicationController
   def detalhe_noticia
     ultimasnoticias
     @noticia = Noticia.friendly.find(params[:id])
+    #set_metatags_facebook(@noticia)
   end
 
   private

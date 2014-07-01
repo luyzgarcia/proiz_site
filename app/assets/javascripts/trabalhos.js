@@ -40,6 +40,7 @@ $(document).ready(function(){
 	window.fbAsyncInit = function() {
 		// Wait until FB object is loaded and initialized to refresh the embeds.
 		//FB.init();
+		alert('init');
 		FB.init({
 		    appId      : '1501616463400377',
 		    status     : true,
@@ -47,11 +48,11 @@ $(document).ready(function(){
 		    xfbml      : true
 		});
 		FB.XFBML.parse();
-		$(document).trigger("facebook:ready");
+		//$(document).trigger("facebook:ready");
 	};
-	window.fbReady = function(func){
-    	alert('fbReady');
-    };
+	//window.fbReady = function(func){
+   // 	alert('fbReady');
+   // };
     //recarregar();
 	
 });

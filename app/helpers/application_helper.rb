@@ -1,4 +1,5 @@
 module ApplicationHelper
+  
   def valida_form(model, attribute)
     if model.errors.has_key? attribute
       content_tag :div, model.errors[attribute].first, :class => 'mensagem_erro'
@@ -6,6 +7,7 @@ module ApplicationHelper
   end
   
   def default_meta_tags
+    logger.debug 'default meta tags'
     {
       :title       => 'Proiz',
       :separator   => "&mdash;".html_safe,
@@ -14,13 +16,13 @@ module ApplicationHelper
   
   def fb_share(app_id, redirect_uri, classe, opts={})
     o = {:text => '',
-      :name => '',
+      :name => 'Proiz testes',
       :display => '',
       :caption => '',
-      :description => '',
-      :link => '',
+      :description => 'Conteudo de teste',
+      :link => 'http://www.google.com',
       :picture => '',
-      :source => '',
+      :source => 'Proiz',
       :properties => {},
       :actions => {}}.merge!(opts)
     
@@ -40,7 +42,9 @@ module ApplicationHelper
     end   
 
 
-    url = "http://www.facebook.com/sharer/sharer.php?app_id=#{app_id}&sdk=joey&u=#{redirect_uri}&#{opts_array.join("&")}&properties=#{@prop}&actions=#{@action}"
+    #url = "http://www.facebook.com/sharer/sharer.php?app_id=#{app_id}&sdk=joey&u=#{redirect_uri}&#{opts_array.join("&")}&properties=#{@prop}&actions=#{@action}"
+    url = "http://www.facebook.com/sharer.php?s=100&p[url]=#{redirect_uri}&p[title]=the title you want to share&p[summary]=the description/summary you want to share"
+    # => http://www.facebook.com/sharer.php?s=100&p[url]=http://www.google.com&p[title]=the title you want to share&p[summary]=the description/summary you want to share
     #     https://www.facebook.com/sharer/sharer.php?app_id=1501616463400377&sdk=joey&u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&display=popup
 
     link_to("#{o[:text]}", url, :onclick => 'return fbs_click(550, 300, this)', :class => classe)
