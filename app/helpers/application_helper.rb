@@ -65,7 +65,7 @@ module ApplicationHelper
     
     #<a href="#" onclick="popUp=window.open('https://twitter.com/intent/tweet?url=www.google.com&text=Olhe isso &count=none','popupwindow','scrollbars=yes,width=500,height=400');popUp.focus();return false" data-related="jasoncosta" data-lang="en" data-size="large" data-count="none">Tweet</a>
     
-    link_to('', '#', :onclick => "popUp=window.open('https://twitter.com/intent/tweet?url=#{redirect_uri}&text=Olhe isso #{redirect_uri} &count=none','popupwindow','scrollbars=yes,width=500,height=400');popUp.focus();return false", :class => classe)
+    link_to('', '#', :onclick => "popUp=window.open('https://twitter.com/intent/tweet?url=#{redirect_uri}&text=Olhe isso &count=none','popupwindow','scrollbars=yes,width=500,height=400');popUp.focus();return false", :class => classe)
     
   end
   

@@ -1,9 +1,6 @@
-alert('he');
-
 $('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho_midia', :trab => @trabalho) %>")
 
 if (typeof(FB) != 'undefined') {
-	//alert('sim');
 	window.fbAsyncInit();
 }
 
