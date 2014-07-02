@@ -27,6 +27,7 @@ function recarregar() {
 		viewportFactor : 0.5
 	});
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
+		console.log('vai chamar os grupos....');
 		loading();
 	});
 	$('.titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
@@ -34,6 +35,7 @@ function recarregar() {
 		history.pushState(null, document.title, this.href);
 	});
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a').bind('ajax:complete ',function() {
+		console.log('terminou a requisicao....');
 		stoploading();
 	});
 	//stopfullloading();
