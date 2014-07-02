@@ -21,11 +21,14 @@ function recarregar() {
 		$('#trabalhos .titulo h1').removeClass('trab_ativo');
 		$(this).closest('h1').addClass('trab_ativo');
 	});
-	new AnimOnScroll(document.getElementById('grid'), {
-		minDuration :0.4,
-		maxDuration : 1,
-		viewportFactor : 0.5
-	});
+	var grid = document.getElementById('grid');
+	if(grid != null) {
+		new AnimOnScroll(grid, {
+			minDuration :0.4,
+			maxDuration : 1,
+			viewportFactor : 0.5
+		});
+	}
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
 		console.log('vai chamar os grupos....');
 		loading();
