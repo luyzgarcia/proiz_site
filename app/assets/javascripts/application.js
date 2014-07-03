@@ -419,7 +419,6 @@ $(document).ready(function(){
 		
 	});
 	$('#logo a, #menu li a, .bt_padrao1 a').bind('ajax:success',function() {
-		alert('hei');
 		stopfullloading();
 		window.addEventListener('scroll', divisao_4 ,false);
 		$.getScript('assets'+$(this).attr("href")+'.js');
