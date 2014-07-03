@@ -33,13 +33,7 @@ function recarregar() {
 		loading();
 		$('.wrapper_carregando > span').css('width', '0');
 		
-		/*$("body").queryLoader2({
-	        barColor: "transparent",
-	        backgroundColor: "transparent",
-	        percentage: true,
-	        //barHeight: 30,
-	        //completeAnimation: "grow"
-	    });*/
+		
 	});
 	$('.titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
 		loading();

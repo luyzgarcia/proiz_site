@@ -60,10 +60,10 @@ $(document).ready(function(){
 
 
 function loading(){
-	$('.wrapper_carregando').addClass('la-animate');
+	$('.wrapper_carregando').addClass('la-animate-parcial');
 }
 function stoploading() {
-	$('.wrapper_carregando').removeClass('la-animate');
+	$('.wrapper_carregando').removeClass('la-animate-parcial');
 }
 function fullloading() {
 	$('html, body').animate({ scrollTop: 0 }, 0);

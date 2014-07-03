@@ -632,6 +632,9 @@ a {
 	border-style: solid;
 	border-width: 0 86px 86px 0;
 	border-color: transparent #004961 transparent transparent;
+	-webkit-transition: all 0.4s;
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
 }
 #carregando img{
 	position: absolute;
