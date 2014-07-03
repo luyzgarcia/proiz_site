@@ -995,6 +995,8 @@ PreloadContainer.prototype.create = function () {
 
     //process the image queue
     this.processQueue();
+    
+    $('.wrapper_carregando > span').css('width', '0');
 };
 
 PreloadContainer.prototype.processQueue = function () {
