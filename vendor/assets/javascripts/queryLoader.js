@@ -132,6 +132,7 @@ var QueryLoader = {
 	},
 	
 	animateLoader: function() {
+		$('.wrapper_carregando > span').css('width', '0');
 		var perc = (100 / QueryLoader.doneStatus) * QueryLoader.doneNow;
 		if (perc > 99) {
 			console.log(perc+'% carregando já');

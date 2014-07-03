@@ -116,7 +116,22 @@
 </div>
 <script type='text/javascript'>
 	//QueryLoader.selectorPreload = "#container_carregando";
-	QueryLoader.init();
+	//QueryLoader.init();
+	$(document).ready(function () {
+	   $("body").queryLoader2({
+	        barColor: "transparent",
+	        backgroundColor: "transparent",
+	        //percentage: false,
+	        //barHeight: 30,
+	        //completeAnimation: "grow"
+	    });
+	});
+	//window.load = function(){ 
+	//	console.log('novo método de loading');
+	//    var loader = document.getElementById('container_carregando');
+	//    loader.style.display = 'none';
+	//}
+	
 </script>
 <div id="fb-root"></div>
 <script>

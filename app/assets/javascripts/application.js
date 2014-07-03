@@ -37,6 +37,9 @@
 //= require grid/imagesloaded.pkgd
 //= require grid/masonry.pkgd.min
 
+//Loader images
+//= require jquery.queryloader2
+
 $(document).ready(function(){
 	//$('#menu').click(function() {
 		//$('body').scrollTop();
@@ -57,10 +60,10 @@ $(document).ready(function(){
 
 
 function loading(){
-	$('.wrapper_carregando').addClass('la-animate');
+	$('.wrapper_carregando').addClass('la-animate-parcial');
 }
 function stoploading() {
-	$('.wrapper_carregando').removeClass('la-animate');
+	$('.wrapper_carregando').removeClass('la-animate-parcial');
 }
 function fullloading() {
 	$('html, body').animate({ scrollTop: 0 }, 0);
@@ -71,7 +74,7 @@ function fullloading() {
 		$('#header').animate({
 			top: '-160px'
 		}, 300);
-		$('.wrapper_carregando').addClass('la-animate');
+		$('.wrapper_carregando').addClass('la-animate-parcial');
 	});
 }
 function stopfullloading() {
@@ -89,7 +92,7 @@ function stopfullloading() {
 				'z-index': -100
 			}, 100, function () {
 				//descomentar depois
-				$('.wrapper_carregando').removeClass('la-animate');
+				$('.wrapper_carregando').removeClass('la-animate-parcial');
 				$('#header').animate({
 					top: '0px'
 				}, 300);
@@ -415,6 +418,14 @@ $(document).ready(function(){
 		fullloading();
 		//$.getScript('assets'+$(this).attr("href")+'.js');
 		history.pushState(null, document.title, this.href);
+		
+		$("body").queryLoader2({
+	        //barColor: "#6e6d73",
+	        //backgroundColor: "#fff1b0",
+	        //percentage: true,
+	        //barHeight: 30,
+	        //completeAnimation: "grow"
+	    });
 		
 		
 	});

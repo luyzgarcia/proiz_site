@@ -119,7 +119,13 @@ input:focus{
 	-webkit-transform: translate3d(0, 0, 0);
 	transform: translate3d(0, 0, 0);
 }
-
+.la-animate-parcial {
+  background: none !important;
+  -webkit-transform: translate3d(0, 0%, 0);
+} 
+.la-animate-parcial::before,  .la-animate-parcial > span{
+ opacity: 0; 
+}
 #header {
 	top: -200px;
 }
