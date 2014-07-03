@@ -33,7 +33,7 @@ class NoticiasController < ApplicationController
   def filtrar
     cat_id = params[:id]
     if cat_id > '0'
-      @noticias = Noticia.all.where(noticiacateg_id: cat_id).limit(6)
+      @noticias = Noticia.all.where(noticiacateg_id: cat_id).ativo.limit(6)
     else
       @noticias = Noticia.all.order(:created_at).where('status = 1').limit(6)
     end
@@ -67,11 +67,11 @@ class NoticiasController < ApplicationController
   end
   
   def noticiadestaque
-    @destaque = Noticia.first
+    @destaque = Noticia.ativo.first
   end
   
   def ultimasnoticias
-    @noticias = Noticia.all.order(:created_at).limit(6).where('status = 1')
+    @noticias = Noticia.all.order(:created_at).limit(6).ativo
   end
   
 end

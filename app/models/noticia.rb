@@ -1,4 +1,6 @@
 class Noticia < ActiveRecord::Base
+  scope :ativo, -> { where(status: '1')}
+  
   extend FriendlyId
   friendly_id :titulo, use: :slugged
   before_create :define_idioma
@@ -28,8 +30,7 @@ class Noticia < ActiveRecord::Base
       find(:all).limit(5)
     end  
   end
-
-
+  
   private
   
   def define_idioma

@@ -31,7 +31,7 @@
 		<div class="trabalhos_recentes_content">
 			<h2><%= t 'inicial.trabalhos.titulo' %></h2>
 			<div class="mais_trabalhos">
-				<div class="bt_padrao1">
+				<div class="bt_padrao1" data-no-turbolink>
 					<%= link_to trabalhos_path do %>
 						<div class="circulo">
 							<span></span>
@@ -184,8 +184,8 @@
 			<h3><%= t 'inicial.servicos.titulo' %></h3>
 			<p><%= t 'inicial.servicos.subtitulo' %></p>
 			 
-            <div  class="botao">
-				<%= link_to especialidades_path, :title => '', :class => "botao_padrao2 bt_ajax", :remote => true do %>
+            <div  class="botao" data-no-turbolink>
+				<%= link_to especialidades_path, :title => '', :class => "botao_padrao2" do %>
 					<%= t('inicial.servicos.botao') %>
 				<% end %>
 			</div>
