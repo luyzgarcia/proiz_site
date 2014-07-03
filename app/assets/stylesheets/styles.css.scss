@@ -62,6 +62,7 @@ a {
 	background: image-url("icon_menu.png") no-repeat center center;
 	color: transparent;
 }
+
 #menu ul {
 	list-style: none;
 	margin: 0px 0px 0px 100px;
@@ -146,6 +147,32 @@ a {
 		border-color: rgba(253,186,48,1);
 	}
 }
+
+#menu {
+  transition: all 0.4s;
+  -webkit-transition: all 0.6s;
+  -moz-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  -ms-transition: all 0.6s;
+  width: 45%;
+  overflow: hidden;
+  position: relative;
+  height: 30px;
+  vertical-align: middle;
+  padding-top: 12px;
+  ul {
+    /*height: 20px;
+    overflow: hidden;
+    position: relative;*/
+  }
+}
+.menu_oculto {
+  width: 10px !important;
+  overflow: hidden;
+  position: relative;
+  height: 20px;
+}
+
 #redes {
 	display: inline-block;	
 }

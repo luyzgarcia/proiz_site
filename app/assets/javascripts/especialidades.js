@@ -7,7 +7,8 @@ $(document).ready(function() {
 	//alert('especialidades');
 	configuraFormulario();
 	defineTamanhoDescricaoItem();
-	mostrarBoxEspecialidadesMin();	
+	mostrarBoxEspecialidadesMin();
+
 });
 
 $(function() {
@@ -39,14 +40,14 @@ $(function() {
 		});
 		$('#especialidades .especialidades_items .item')
 			.hover(function() {
-				console.log('over');
+				console.log('passando por cima....');
 				$(this).find('img').animate({
-					bottom: '30px'
+					top: '35%'
 				}, 200);
 			},function() {
-				console.log('out');
+				//console.log('out');
 				$(this).find('img').animate({
-					bottom: '0px'
+					top: '50%'
 				}, 200);
 			});
 		$( "#especialidades .especialidades_items .item img" ).draggable({
@@ -61,7 +62,7 @@ $(function() {
 				$('#especialidades .especialidades_drag_items').remove('drag_over');
 				$(this).css('z-index','2');
 				$(this).animate({
-					top: '50%',
+					top : '50%',
 					left: 0
 				}, 500);
 				dragCheck = false;

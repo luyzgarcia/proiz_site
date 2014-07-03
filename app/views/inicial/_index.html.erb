@@ -32,14 +32,14 @@
 			<h2><%= t 'inicial.trabalhos.titulo' %></h2>
 			<div class="mais_trabalhos">
 				<div class="bt_padrao1">
-					<a href=#>
+					<%= link_to trabalhos_path do %>
 						<div class="circulo">
 							<span></span>
 						</div>
 						<div class="mensagem">
-							<p><%= t 'inicial.trabalhos.botao' %></p>
+							<p><%= t('inicial.trabalhos.botao') %></p>
 						</div>
-					</a>
+					<% end %>
 				</div>
 			</div>
 		</div>
@@ -51,13 +51,15 @@
 		<div class="slider_imagens">
 			<ul>
 				<% @trabalhos.each do |trab| %>
-					<li>
-						<%= image_tag(trab.imagem_principal.url, :class => 'imagem_slide')%>
-						<div class="descricao_item">
-							<h2><%= trab.descricao_principal %></h2>
-						</div>
-						<a href=#><span><p><%= image_tag('ver_projeto.png')%></p></span></a>
-					</li>
+					<% if trab.imagem_principal.file? %>
+						<li>
+							<%= image_tag(trab.imagem_principal.url, :class => 'imagem_slide')%>
+							<div class="descricao_item">
+								<h2><%= trab.descricao_principal %></h2>
+							</div>
+							<a href=#><span><p><%= image_tag('ver_projeto.png')%></p></span></a>
+						</li>
+					<% end %>
 				<% end %>				
 			</ul>
 		</div>
@@ -183,9 +185,9 @@
 			<p><%= t 'inicial.servicos.subtitulo' %></p>
 			 
             <div  class="botao">
-				<a href='#' class="botao_padrao2">
-					<%= t 'inicial.servicos.botao' %>
-				</a>
+				<%= link_to especialidades_path, :title => '', :class => "botao_padrao2 bt_ajax", :remote => true do %>
+					<%= t('inicial.servicos.botao') %>
+				<% end %>
 			</div>
 		</div>
 	</div>		

@@ -18,7 +18,7 @@
 					$('#home_intro .mensagem .circulo').addClass('mostrar');
 				});
 		//	});
-		},2000);
+		},1000);
 		
 	}
 	jQuery(document).on("ready", mostrarIntro);
@@ -71,15 +71,8 @@
 		window.addEventListener('scroll', divisao_3 ,false);
 })();
 (function() {
-		function divisao_4() {
-			$('#intervalo4').scrollable().on('scrollin', function (e,ui) {
-				var scrollorama = $.scrollorama({blocks: '.corpo'});
-				scrollorama.animate('#home_rodape',{delay:$(document).scrollTop(),duration:700, property:'margin-top',start:'0', end: '-300px'});
-				window.removeEventListener('scroll', divisao_4);
-			});			
-		}
-		jQuery(document).on("ready", divisao_4);
-		window.addEventListener('scroll', divisao_4 ,false);
+	jQuery(document).on("ready", divisao_4);
+	window.addEventListener('scroll', divisao_4 ,false);
 })();
 
 

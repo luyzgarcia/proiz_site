@@ -69,21 +69,34 @@ function fullloading() {
 		'z-index': 100
 	}, 100, function () {
 		$('#header').animate({
-			top: '-150px'
+			top: '-160px'
 		}, 300);
 		$('.wrapper_carregando').addClass('la-animate');
 	});
 }
 function stopfullloading() {
-	$('#esconde').animate({
-		opacity: 0,
-		'z-index': -100
-	}, 100, function () {
-		$('.wrapper_carregando').removeClass('la-animate');
-		$('#header').animate({
-			top: '0px'
-		}, 300);
+	
+	var img = $('#content img');
+	var length = img.length;
+	//alert(length);
+
+	img.load(function(){
+	    length--;
+	    if(length === 0){
+	    	console.log('*******todas imagens carregadas*******');
+			$('#esconde').animate({
+				opacity: 0,
+				'z-index': -100
+			}, 100, function () {
+				$('.wrapper_carregando').removeClass('la-animate');
+				$('#header').animate({
+					top: '0px'
+				}, 300);
+			});
+		}	
 	});
+	
+	
 }
 
 var inProgress = false;
@@ -153,20 +166,61 @@ $(document).scroll(function(e){
 			$('#header span').fadeIn(500);
 			$('#header').addClass('fundo_branco_wrapper');
 			$('#idiomas').addClass('fundo_branco');
+			
+			if(!$('#menu').hasClass('menu_oculto') && !$('#menu').hasClass('mostrou')) {
+				$('#menu ul li').animate({
+						opacity: 0
+					}, 300, function () {
+						$('#menu').addClass('menu_oculto');
+					});
+			}
+			/*$('#logo a').bind('click', function(e) { 
+				mostrarMenuOculto(e);
+			});
+			*/
 			//$('#idiomas a.idioma_ativo').css('color','#fdba31');
 			//$('#header span').css('opacity','1');
 		}else if(top < 300) {
 			$('#header span').fadeOut(500);
 			$('#idiomas').removeClass('fundo_branco');
 			$('#header').removeClass('fundo_branco_wrapper');
+			
+			$('#menu').removeClass('mostrou');
+			if($('#menu').hasClass('menu_oculto')) {
+				$('#menu').removeClass('menu_oculto');
+				
+				setTimeout(function () {
+					$('#menu ul li').animate({
+							opacity: 1
+						}, 300);
+				},450);
+			}
+			/*
+			$('#logo a').unbind('click', function(e) { 
+				mostrarMenuOculto(e);
+			});
+			*/
 			//$('#idiomas a.idioma_ativo').css('color','#bdbdbd');
 			//$('#header').css('background-color','f1f2f2');
 		}	
 	}
+	
 });
 
 
 $(document).ready(function(){
+	$('#logo a').bind('click', function (elemento) {
+		if($('#menu').hasClass('menu_oculto')){
+			elemento.preventDefault();
+			$('#menu').addClass('mostrou');
+			$('#menu').removeClass('menu_oculto');
+			setTimeout(function () {
+				$('#menu ul li').animate({
+						opacity: 1
+					}, 300);
+			},450);
+		}
+	});
 //var scrollorama = $.scrollorama({blocks: '.corpo'});
 	//if(detectmob() == true) {
 		/*scrollorama
@@ -343,42 +397,31 @@ function fbs_click(width, height, elemento) {
     return false;
 }
 
-
+//(function() {
+		function divisao_4() {
+			$('#intervalo4').scrollable().on('scrollin', function (e,ui) {
+				var scrollorama = $.scrollorama({blocks: '.corpo'});
+				scrollorama.animate('#home_rodape',{delay:$(document).scrollTop(),duration:700, property:'margin-top',start:'0', end: '-300px'});
+				window.removeEventListener('scroll', divisao_4);
+			});			
+		}
+		
+//})();
 
 /*Carregar a pagina sem refresh*/
 $(document).ready(function(){
-	$('#menu li a, #logo a').bind('ajax:beforeSend',function() {
-		
-		/*$('html, body').animate({ scrollTop: 0 }, 0);
-		$('#esconde').animate({
-			opacity: 1,
-			'z-index': 100
-		}, 100, function () {
-			$('#header').animate({
-				top: '-150px'
-			}, 300);
-			$('.wrapper_carregando').addClass('la-animate');
-		});*/
+	stopfullloading();
+	$('#menu li a, #logo a, .bt_ajax, .bt_padrao1 a').bind('ajax:beforeSend',function() {
 		fullloading();
-		
 		//$.getScript('assets'+$(this).attr("href")+'.js');
 		history.pushState(null, document.title, this.href);
 		
 		
 	});
-	$('#menu li a').bind('ajax:complete ',function() {
-		
-		/*$('#esconde').animate({
-			opacity: 0,
-			'z-index': -100
-		}, 100, function () {
-			$('.wrapper_carregando').removeClass('la-animate');
-			$('#header').animate({
-				top: '0px'
-			}, 300);
-		});*/
+	$('#logo a, #menu li a, .bt_padrao1 a').bind('ajax:success',function() {
+		alert('hei');
 		stopfullloading();
-		
+		window.addEventListener('scroll', divisao_4 ,false);
 		$.getScript('assets'+$(this).attr("href")+'.js');
 	});
 	

@@ -74,8 +74,8 @@
 			this.itemsRenderedCount = 0;
 			this.didScroll = false;
 			
-			console.log(this.items);
-			console.log('Possui :' + this.itemsCount);
+			//console.log(this.items);
+			//console.log('Possui :' + this.itemsCount);
 			
 			var self = this;
 			
@@ -130,7 +130,7 @@
 						
 						self._checkTotalRendered();
 						if(self.options.minDuration && self.options.maxDuration) {
-							console.log('entrou no duracao');
+							//console.log('entrou no duracao');
 							var randDuration = (Math.random() * 
 							(self.options.maxDuration - self.options.minDuration) + self.options.minDuration) + 's';
 							el.style.WebkitAnimationDuration = randDuration;

@@ -1,5 +1,32 @@
 <%= render partial: 'index' %>
 <script>
 	$('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho', :trab => @trabalho) %>");
-	$('#detalhe_modal').show();
+	loading();
+	var img = $('#detalhe_modal img');
+	var length = img.length;
+	//alert(length);
+	if(length > 0) {
+		img.load(function(){
+		    length--;
+			loading();
+		    if(length == 0){
+		        mostraTrabalho();
+		    };
+		});
+	}else {
+		mostraTrabalho();
+	}
+	
+	function mostraTrabalho() {
+		$('#detalhe_modal').show(100, function() {
+		
+			alturamodal = $('#trabalho').height();
+			alturaimagens = 0;
+			alturacontainer = $('.corpo_trabalhos').height();
+			if(alturamodal > alturacontainer) {
+				$('.corpo_trabalhos').css('height',alturamodal +10+'px');	
+			}
+		});
+	}
+	stoploading();
 </script>

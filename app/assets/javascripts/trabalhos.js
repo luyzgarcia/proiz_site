@@ -30,18 +30,50 @@ function recarregar() {
 		});
 	}
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
-		console.log('vai chamar os grupos....');
 		loading();
 	});
 	$('.titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
 		loading();
 		history.pushState(null, document.title, this.href);
 	});
-	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a').bind('ajax:complete ',function() {
-		console.log('terminou a requisicao....');
+	$('#trabalhos .menu_trabalhos a, .titulo h1 a').bind('ajax:complete ',function() {
 		stoploading();
 	});
+	
 	//stopfullloading();
+}
+
+function adicionaClickItemsGrid() {
+	$('#grid .item a').bind('click',function() {
+		loading();
+		history.pushState(null, document.title, this.href);
+	});
+}
+
+function adicionaEfeitoImagensTrabalho() {
+	
+	$('#detalhe_modal img').css('opacity','0');
+	//$('#detalhe_modal img').each(function(index) {
+	/*  $('#detalhe_modal .image-info img').scrollable({ offset: { y: '70%'} })
+		.on('scrollin', function (e,ui) {
+			//console.log(this);
+			$(this).css('opacity','1');
+    	})
+    	.on('scrollout', function(e,ui) {
+    		console.log('saiu');
+		});
+	//});
+	*/
+	window.addEventListener('scroll', function() {
+		$('#detalhe_modal img').each(function(index) {
+			if($(this).visible(true, false)) {
+				$(this).delay(500).animate({
+					opacity: 1	
+				}, 700);
+			}
+		});
+	} ,false);	
+	
 }
 
 $(document).ready(function(){
@@ -63,13 +95,7 @@ $(document).ready(function(){
    // 	alert('fbReady');
    // };
     //recarregar();
+    
+    
 	
 });
-/*$(document).live("facebook:ready", function(){
-  alert('acebook:ready');
-});
-*/
-
-/*$(document).ready(function() {
-	recarregar();
-});*/

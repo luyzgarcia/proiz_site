@@ -21,20 +21,22 @@
 				</div>
 				<div id="info" class="info intro-info">
 					<p>
-						<%= trab.introducao.html_safe %>
+						<%= trab.introducao.html_safe unless !trab.introducao.html_safe  %>
 					</p>
 				</div>							
 			</div>
 			<div class="full-info">
 				<% trab.imagems.each do |imagem| %>
+					<% if imagem.image.file? %>
 					<div class="image-info">
 						<%= image_tag(imagem.image.url) %>
 						<span class="span"> </span>
 						<span class="span"> </span>	
 						<p>
-							<%= imagem.descricao.html_safe %>
+							<%= imagem.descricao.html_safe if !imagem.descricao.nil? %>
 						</p>
 					</div>
+					<% end %>
 				<% end %>
 				
 			</div>

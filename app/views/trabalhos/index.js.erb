@@ -1,9 +1,12 @@
 $("#content").html("<%= escape_javascript(render partial: 'index') %>");
 
 $(document).ready(function() {
-	recarregar();
+	//recarregar();
 });
+
 loading();
+console.log('vai chamar a tela de trabalhos.....');
 $("#wrapper_corpo_trabalhos").html("<%= escape_javascript(render partial: 'trabalhos')%>");
 recarregar();
 stoploading();
+console.log('terminou de carregar os trabalhos.....');

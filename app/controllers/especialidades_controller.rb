@@ -1,8 +1,9 @@
 class EspecialidadesController < ApplicationController
+   before_action :getEspecialidades
    respond_to :json, :html  
 
   def index
-    @especialidades = Especialidade.all.where('status = 1')
+    #@especialidades = Especialidade.all.where('status = 1')
   end
   
   def contato
@@ -14,5 +15,11 @@ class EspecialidadesController < ApplicationController
              
     ProizMailer.contato_especialidades(dados).deliver
     
+  end
+  
+  private
+  
+  def getEspecialidades
+    @especialidades = Especialidade.all.where(:idioma => I18n.locale ).where('status = 1')
   end
 end

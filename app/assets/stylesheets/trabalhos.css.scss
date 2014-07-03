@@ -483,18 +483,20 @@
   transform-style: preserve-3d; 
 }
 #trabalhos .corpo_trabalhos .tam1 {
-  height: auto;
+  /*height: auto;*/
+  height: 200px;
   background: blue;
+  
 }
 #trabalhos .corpo_trabalhos .tam2 {
-  height: 400px;
+  height: 410px;
   background: red;
 }
 #trabalhos .corpo_trabalhos .tam2 img{
   height: 100% !important;  
 }
 #trabalhos .corpo_trabalhos .item img{
-  height: auto; 
+  height: 100%; 
 }
 .corpo_trabalhos .item.animate {
   transform: translateZ(400px) translateY(300px) rotateX(0deg);
