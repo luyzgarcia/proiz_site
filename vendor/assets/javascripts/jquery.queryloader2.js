@@ -970,12 +970,18 @@ OverlayLoader.prototype.updatePercentage = function (percentage) {
 		width: percentage + "%",
 		minWidth: percentage + "%"
 	}, 200);
-
+	$('.wrapper_carregando > span').animate({
+		width: percentage + "%",
+		minWidth: percentage + "%"
+	}, 200);
 	//update textual percentage
 	if (this.parent.options.percentage == true) {
-		console.log(Math.ceil(percentage) + '% carregando...');
-		$('.wrapper_carregando > span').css('width', Math.ceil(percentage)+'%');
+		//$('.wrapper_carregando > span').css('width', Math.ceil(percentage)+'%');
 		this.percentageContainer.text(Math.ceil(percentage) + "%");
+		//if(Math.ceil(percentage) == 100) {
+		//	console.log('vai zerar');
+			//$('.wrapper_carregando > span').css('width', '0');
+		//}
 	}
 };
 function PreloadContainer(parent) {
