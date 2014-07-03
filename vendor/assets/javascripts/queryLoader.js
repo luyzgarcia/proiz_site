@@ -134,7 +134,8 @@ var QueryLoader = {
 	animateLoader: function() {
 		var perc = (100 / QueryLoader.doneStatus) * QueryLoader.doneNow;
 		if (perc > 99) {
-			console.log(perc+'%');
+			console.log(perc+'% carregando já');
+			$('.wrapper_carregando > span').css('width', perc+'%');
 			$(QueryLoader.loadBar).stop().animate({
 				width: perc + "%"
 			}, 500, "linear", function() { 
@@ -144,7 +145,8 @@ var QueryLoader = {
 			$(QueryLoader.loadBar).stop().animate({
 				width: perc + "%"
 			}, 500, "linear", function() { });
-			console.log(Math.floor(perc)+"%");
+			$('.wrapper_carregando > span').css('width', Math.floor(perc)+'%');
+			console.log(Math.floor(perc)+"%, ta quase..");
 		}
 	},
 	

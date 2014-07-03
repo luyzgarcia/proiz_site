@@ -88,6 +88,7 @@ function stopfullloading() {
 				opacity: 0,
 				'z-index': -100
 			}, 100, function () {
+				//descomentar depois
 				$('.wrapper_carregando').removeClass('la-animate');
 				$('#header').animate({
 					top: '0px'
@@ -109,7 +110,6 @@ function carregando() {
 			//classie.add( animEl, 'la-animate' );
 
 			setTimeout( function() {
-				//classie.remove( animEl, 'la-animate' );
 				$('.wrapper_carregando').removeClass('la-animate');
 				inProgress = false;
 				loadingComplete();

@@ -76,8 +76,9 @@ input:focus{
 	height: 86px;
 	width: 100%;
 	z-index: 99999;
-	//background: image-url('intervalo_1.png');
+	background: image-url('intervalo_1.png');
 	pointer-events: none;
+	//abaixo é pra mostrar a barra
 	-webkit-transform: translate3d(0, -100%, 0);
 	transform: translate3d(0, -100%, 0);
 	-webkit-transition: -webkit-transform 0.3s;
@@ -89,20 +90,29 @@ input:focus{
 	content: '';
 	height: 100%;
 	width: 100%;
-	//background: #fdba31;
+	background: #fdba31;
 	opacity: 1;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
 	-webkit-transition: opacity 0.3s, -webkit-transform 0s 0.3s;
 	transition: opacity 0.3s, transform 0s 0.3s;
 }
+.wrapper_carregando > span {
+  position: absolute;
+  background: #fdba31;
+  width: 0;
+  height: 100%;
+}
 .la-animate::before {
 	//opacity: 1;
+	//-webkit-transform: translate3d(-10%, 0, 0);
 	//-webkit-transition: -webkit-transform 2.4s linear 0.3s;
 	//transition: transform 2.4s linear 0.3s;
+	//-webkit-transform: translate3d(-99%, 0, 0);
+  //transform: translate3d(-99%, 0, 0);
 }
 .la-animate {
-	//box-shadow: inset 0px -15px 0px 0px rgba(0,0,0,0.2);
+	box-shadow: inset 0px -15px 0px 0px rgba(0,0,0,0.2);
 }
 .la-animate,
 .la-animate::before {
