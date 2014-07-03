@@ -966,7 +966,6 @@ OverlayLoader.prototype.createOverlay = function () {
 };
 
 OverlayLoader.prototype.updatePercentage = function (percentage) {
-	//$('.wrapper_carregando > span').css('width', '0');
 	this.loadbar.stop().animate({
 		width: percentage + "%",
 		minWidth: percentage + "%"
