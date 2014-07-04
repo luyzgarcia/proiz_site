@@ -1,6 +1,7 @@
 //alert('clicou no detalhe trabalho');
 
 
+
 $('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho', :trab => @trabalho) %>")
 
 var img = $('#detalhe_modal img');
@@ -20,6 +21,14 @@ if(length > 0) {
 
 function mostraModal() {
 	//alert("All images loaded");
+	
+	//$('#carregando_trabalho').hide();
+	$('#carregando_trabalho').animate({
+		opacity: 0
+	}, 200, function() {
+		$(this).hide();
+		//$('#grid').css('opacity','1');
+	});
     $('#detalhe_modal').fadeIn('slow',function(){
 		//Ao terminar de mostrar a janela, ele aumenta o tamanho da div interna para nao explodir a altura
 		alturamodal = $('#trabalho').height();
@@ -27,7 +36,8 @@ function mostraModal() {
 		//alert(alturamodal);
 		if(alturamodal > alturacontainer) {
 			$('.corpo_trabalhos').css('height',alturamodal +10+'px');	
-		}	
+		}
+		$('#grid').css('opacity','1');		
 	});
 	stoploading();
 	adicionaEfeitoImagensTrabalho();

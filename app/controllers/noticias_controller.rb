@@ -11,7 +11,7 @@ class NoticiasController < ApplicationController
   def set_metatags_facebook(noticia)
     #logger.info 'set metatags facebook'
     set_meta_tags :title => noticia.titulo,
-                  :description => [truncate(noticia.conteudo.html_safe,:ommision => "... Leia mais", :length => 200)],
+                  :description => truncate(noticia.conteudo.html_safe,:ommision => "... Leia mais", :length => 200),
                   :og => {
                     :site_name => ["Proiz"],
                     :url => [noticia_url(noticia)],

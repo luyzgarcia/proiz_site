@@ -42,12 +42,18 @@ function recarregar() {
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a').bind('ajax:complete ',function() {
 		stoploading();
 	});
+	$('#grid .item a, #trabalhos .menu_trabalhos a').bind('click',function() {
+		$('#grid').css('opacity','0');
+		$('#carregando_trabalho').show();
+	});
 	
 	//stopfullloading();
 }
 
 function adicionaClickItemsGrid() {
 	$('#grid .item a').bind('click',function() {
+		$('#grid').css('opacity','0');
+		$('#carregando_trabalho').show();
 		loading();
 		history.pushState(null, document.title, this.href);
 	});

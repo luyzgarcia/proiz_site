@@ -307,6 +307,24 @@
   padding: 100px 30px;
   margin: 0 auto;
   position: relative;
+  #carregando_trabalho {
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    margin: 0 auto;
+    text-align: center;
+    display: none;
+    z-index: 999999;
+  }
+  #carregando_trabalho::before {
+    content: '\e406';
+    font-family: 'icons';
+    position: absolute;
+    top: 10px;
+    font-size: 25pt;
+    color: #fdba31;
+    -webkit-animation: rodando 2.5s infinite linear;
+  }
 }
 #grid {
   position: absolute;

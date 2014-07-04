@@ -29,6 +29,12 @@
 			<div class="item_info" id="trabalho_">
 				
 				<div class="item_info_detalhe" id="1">
+					<h5><%= c.label 'Titulo' %></h5>
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :titulo, :disabled => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
+				</div>
+				
+				<div class="item_info_detalhe" id="1">
 					<h5><%= c.label 'Link' %></h5>
 					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :introducao, :disabled => @editando %></h4>
 					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>

@@ -1,6 +1,11 @@
 ProizAdmin::Application.routes.draw do
   
- 
+  
+  #match '*a', :to => 'errors#routing'
+  get "/404", :to => "errors#routing"
+  get "/422", :to => "errors#routing"
+  get "/500", :to => "errors#routing"
+
 
   get "define_idioma/portugues"
   get "define_idioma/ingles"

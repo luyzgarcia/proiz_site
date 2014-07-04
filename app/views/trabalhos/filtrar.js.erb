@@ -16,3 +16,11 @@ new AnimOnScroll(document.getElementById('grid'), {
 });
 
 adicionaClickItemsGrid();
+
+$('#carregando_trabalho').animate({
+	opacity: 0
+}, 200, function() {
+	$(this).hide();
+	$(this).css('opacity','1');
+	$('#grid').css('opacity','1');
+});

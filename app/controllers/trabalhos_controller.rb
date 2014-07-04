@@ -2,7 +2,7 @@ class TrabalhosController < ApplicationController
   include ActionView::Helpers::TextHelper
   respond_to :json, :html
   before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
-  before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
+  #before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
   
   def index
     @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1')
@@ -92,9 +92,19 @@ class TrabalhosController < ApplicationController
                     :site_name => ["Proiz"],
                     :url => [trabalho_url(trabalho)],
                     :title => [trabalho.titulo],
-                    :image => [trabalho.imagem_vitrine(:original)],
-                    :description => [truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200)]
+                    :image => [trabalho.imagem_vitrine(:original)]
+                    #:description => [truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200)]
                   }
+    if trabalho.tipo != 'M'
+      set_meta_tags :og => {
+                      :description => [truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200)]
+                  }
+    else
+      set_meta_tags :og => {
+                      :description => ['Trabalho realizada pela agência PROIZ.']
+                  }
+    end
+              
   end
   def getCategorias 
     @categorias = Categoriatrabalho.all.where(:idioma => I18n.locale )

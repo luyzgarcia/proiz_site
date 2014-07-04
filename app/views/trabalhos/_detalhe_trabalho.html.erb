@@ -30,8 +30,6 @@
 					<% if imagem.image.file? %>
 					<div class="image-info">
 						<%= image_tag(imagem.image.url) %>
-						<span class="span"> </span>
-						<span class="span"> </span>	
 						<p>
 							<%= imagem.descricao.html_safe if !imagem.descricao.nil? %>
 						</p>

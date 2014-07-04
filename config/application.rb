@@ -36,6 +36,9 @@ module ProizAdmin
     config.assets.debug = true
     config.assets.logger = false
     
+    
+    config.exceptions_app = self.routes
+    
    # config.assets.precompile += %w( inicial.js)
    # config.assets.precompile += %w( noticias.js )
    # config.assets.precompile += %w( especialidades.js )

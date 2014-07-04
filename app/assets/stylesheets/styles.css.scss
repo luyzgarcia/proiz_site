@@ -154,13 +154,14 @@ a {
   -moz-transition: all 0.6s;
   -o-transition: all 0.6s;
   -ms-transition: all 0.6s;
-  width: 45%;
+  width: 60%;
   overflow: hidden;
   position: relative;
   height: 30px;
   vertical-align: middle;
   padding-top: 12px;
   ul {
+    float: right;
     /*height: 20px;
     overflow: hidden;
     position: relative;*/
@@ -569,8 +570,7 @@ a {
 	z-index: 1;
 }
 .midias_sociais a:before {
-	font-family: 'icones';
-	content: "\e600";
+	font-family: 'icons';
 	speak: none;
 	font-size: 48px;
 	line-height: 150px;
@@ -582,6 +582,17 @@ a {
 	-webkit-font-smoothing: antialiased;
 	color:#fdba31;
 }
+
+.facebook_padrao_2:before {
+  content: "\e413"; 
+}
+.twitter_padrao_2:before{
+  content: "\e416";
+}
+.google_padrao_2:before{
+  content: "\e422";
+}
+
 .midias_sociais a:after {
 	pointer-events: none;
 	position: absolute;
