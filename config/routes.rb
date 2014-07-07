@@ -159,6 +159,7 @@ ProizAdmin::Application.routes.draw do
   end
   
   get "especialidade/contato"
+  get "contato/contato"
   #get "especialidade_contato" => "especialidade#contato", :as => "especialidade_contato"
   
   #scope '(:locale)', :locale => /pt-BR|en|/ do

@@ -40,6 +40,12 @@ function recarregar() {
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a').bind('ajax:complete ',function() {
 		stoploading();
 	});
+	$('#grid .item a').bind('ajax:beforeSend',function() {
+		$('html,body').animate({
+	       scrollTop: $('#grid').offset().top-330},
+	    800);
+	    history.pushState(null, document.title, this.href);
+	});
 	$('#grid .item a, #trabalhos .menu_trabalhos a').bind('click',function() {
 		$('#detalhe_modal').html('');
 		$('#grid').css('opacity','0');
@@ -51,6 +57,9 @@ function recarregar() {
 
 function adicionaClickItemsGrid() {
 	$('#grid .item a').bind('click',function() {
+		//$('html,body').animate({
+	    //    scrollTop: $('#grid').offset().top-330},
+	    //800);
 		$('#grid').css('opacity','0');
 		$('#carregando_trabalho').show();
 		//loading();

@@ -92,6 +92,7 @@
   margin: 0 auto;
   padding: 50px 0;
   display: table;
+  min-height: 350px;
 }
 #contato .wrapper_contato > div {
   float: left;
@@ -107,9 +108,11 @@
   font: normal 10pt/1.5em nexa_bold, Times;
   color: #8dc63f;
 }
-#contato .wrapper_contato .contato_informacoes h3 {
-  font: normal 14pt/1.5em nexa_bold, Times;
-  color: #004961;
+#contato .wrapper_contato .contato_informacoes {
+  h3, a {
+    font: normal 14pt/1.5em nexa_bold, Times;
+    color: #004961;
+  }
 }#contato .wrapper_contato .contato_informacoes .telefone {
   font-size: 16pt;
 }

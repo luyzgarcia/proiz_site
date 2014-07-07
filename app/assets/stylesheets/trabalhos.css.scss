@@ -263,28 +263,30 @@
 }
 #trabalhos .detalhe_trabalho .detalhe .full-info {
   margin: 80px auto;
-}
-#trabalhos .detalhe_trabalho .detalhe .full-info img {
-  margin: 0px auto 65px;
-  width: auto;
-  max-width: 100%;
-  display: block;
-}
-#trabalhos .detalhe_trabalho .detalhe .full-info p {
-  font: normal 12pt/1.9em "droid_serif", Times;
-  padding-left: 50px;
-  color: #4f4e4e;
-  text-align: justify;
-  display: block;
-  margin-bottom: 110px;
-}
-#trabalhos .detalhe_trabalho .detalhe .full-info span {
-  float: left;
-  background: #004961;
-  text-indent: -9999;
-  width: 5px;
-  height: 25px;
-  margin: 0 2px;
+  .image-info {
+    margin-bottom: 100px;
+  }
+  img {
+    margin: 0px auto 65px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+  }
+  p {
+    font: normal 12pt/1.9em "droid_serif", Times;
+    padding-left: 50px;
+    color: #4f4e4e;
+    text-align: justify;
+    display: block;
+  }
+  span {
+    float: left;
+    background: #004961;
+    text-indent: -9999;
+    width: 5px;
+    height: 25px;
+    margin: 0 2px;
+  }
 }
 /*****************************************************************/
 /************ Página Trabalhos - FIM detalhes do trabalho ********/

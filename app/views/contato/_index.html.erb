@@ -18,7 +18,7 @@
 		<div class="contato_informacoes">
 			<div class="contato_info_desc">
 				<h2><%= t 'contato.skype' %></h2>
-				<h3>atendimento.proiz</h3>
+				<h3><a href="skype:atendimento.proiz?add">atendimento.proiz</a></h3>
 			</div>
 			<div class="contato_info_desc">
 				<h2><%= t 'contato.email' %></h2>
@@ -26,18 +26,19 @@
 			</div>
 			<div class="contato_info_desc">
 				<h2><%= t 'contato.telefone' %></h2>
-				<h3 class="telefone">+55 (45) 3378-3676</h3>
+				<h3 class="telefone"><a href="skype:+55 (45) 3378-3676?call">+55 (45) 3378-3676</a></h3>
 			</div>
 		</div>						
 		<hr />
 		<div class="contato_formulario formulario_padrao_1">
 			<h1><%= t 'contato.form_titulo' %></h1>			
-			<%= form_tag(enviado_path, :id => "form_contato", :remote => true) do |f| %>
+			<%= form_tag({controller: 'contato', action: 'contato'}, :id => 'form_contato',
+						method: "get", class: 'formulario_padrao_1', :remote => true) do %>
 				<div class="form_item">										
-					<%= text_field_tag "nome", nil, placeholder: t('contato.form_nome') %>							
+					<%= text_field_tag :nome, params[:nome], placeholder: t('contato.form_nome') %>							
 				</div>
-				<div class="form_item">					
-					<%= text_field_tag "email", nil, placeholder: t('contato.form_email') %>							
+				<div class="form_item">	
+					<%= text_field_tag :email, params[:email] , placeholder: t('contato.form_email')%>					
 				</div>
 				<div class="form_item">					
 					<%= text_field_tag "telefone", nil, placeholder: t('contato.form_telefone') %>												
@@ -45,26 +46,8 @@
 				<div class="form_item">					
 					<%= text_area_tag "mensagem", nil, placeholder: t('contato.form_mensagem') %>							
 				</div>				
-				<%= submit_tag t('contato.form_botao') %>
+				<%= submit_tag(t('contato.form_botao', :class => 'botao_submit')) %>
 			<% end %>
-<!--			<form action="contato.html" class="formulario_padrao_1">
-				<div class="form_item">
-					<input type="text" placeholder="*Nome" onkeyup="checkFilled(this)">								
-				</div>
-				<div class="form_item">
-					<input type="text" placeholder="*Seu e-mail" onkeyup="checkFilled(this)">
-				</div>
-				<div class="form_item">
-					<input type="text" placeholder="*Telefone" onkeyup="checkFilled(this)">
-				</div>
-				<div class="form_item">
-					<textarea onkeyup="checkFilled(this)"></textarea>
-				</div>
-				<p>*Campos obrigatorios</p>
-				<div class="form_item">
-					<input type="submit" value="Enviar">
-				</div>
-</form> -->
 		</div>
 	</div>
 </div>

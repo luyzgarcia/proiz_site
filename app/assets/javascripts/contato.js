@@ -8,12 +8,14 @@ function configuraFormulario() {
 			checkFilled(this);
 			});
 	});
+	
+	$('#telefone').mask("(999) 9999-9999?9");
 		
 	$("#form_contato").validate({
 		rules:{
 			nome:{ required: true },
 			email:{ required: true, email: true },
-			mensagem:{ required: true },			
+			mensagem:{ required: true }			
 		},
 		
 		messages:{
@@ -26,7 +28,7 @@ function configuraFormulario() {
 			},
 			mensagem:{
 				required: "Digite sua mensagem"
-			},								
+			}								
 		},
 		submitHandler: function(form) {
 			loading();
@@ -34,7 +36,7 @@ function configuraFormulario() {
 		}
 	});
 
-	$('#telefone').mask("(999) 9999-9999?9");
+	
 }
 
 /*(function() {
