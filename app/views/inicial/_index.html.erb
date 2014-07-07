@@ -52,12 +52,14 @@
 			<ul>
 				<% @trabalhos.each do |trab| %>
 					<% if trab.imagem_principal.file? %>
-						<li>
+						<li data-no-turbolink>
 							<%= image_tag(trab.imagem_principal.url, :class => 'imagem_slide')%>
 							<div class="descricao_item">
 								<h2><%= trab.descricao_principal %></h2>
 							</div>
-							<a href=#><span><p><%= image_tag('ver_projeto.png')%></p></span></a>
+							<%= link_to trabalho_path(trab), :title => '' do %>
+								<span><p><%= image_tag('ver_projeto.png')%></p></span>
+							<% end %>
 						</li>
 					<% end %>
 				<% end %>				

@@ -2,7 +2,7 @@ class InicialController < ApplicationController
   before_action :set_metatags_facebook
   
   def index
-    @trabalhos = Trabalho.last(5)
+    @trabalhos = Trabalho.where("tipo != 'M' and imagem_principal_file_name != ''").last(5)
     @noticias = Noticia.last(3)  
   end
   
