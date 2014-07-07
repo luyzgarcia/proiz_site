@@ -73,7 +73,7 @@ gem 'friendly_id', '~> 5.0.0'
 
 #Mercury editor, para modificar as paginas
 #gem 'mercury-rails'
-gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
+#gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'
 
 #pajax
 #gem 'pjax_rails'
