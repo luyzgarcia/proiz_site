@@ -2,6 +2,7 @@
 	<%= f.hidden_field :ordem, :class => 'ordem_imagem' %>
 	<%= f.hidden_field(:id) %>
 	<div class="ficha_upload">
+		<p>Campo</p>
 		<div class="chave <%= novo == false ? 'bloqueado' : '' %>">
 			<%= 
 				if novo == true
@@ -12,6 +13,7 @@
 			%>
 		</div>
 		<div class="valor <%= novo == false ? 'bloqueado' : '' %>">
+			<p>Valor</p>
 			<%=
 				if novo == true
 					f.text_field :valor

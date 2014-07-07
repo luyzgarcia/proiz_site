@@ -633,29 +633,6 @@ a {
 /*****************************************************************/
 
 
-/*****************************************************************/
-/******************** GERAL - CARREGANDO *************************/
-/*****************************************************************/
-#carregando {
-	position: fixed;
-	top: 0;
-	right: 0;
-	border-style: solid;
-	border-width: 0 86px 86px 0;
-	border-color: transparent #004961 transparent transparent;
-	-webkit-transition: all 0.4s;
-	transition: all 0.4s;
-	-moz-transition: all 0.4s;
-}
-#carregando img{
-	position: absolute;
-	top: 4px;
-	right: -90px;
-}
-/*****************************************************************/
-/******************** GERAL - CARREGANDO *************************/
-/*****************************************************************/
-
 
 /****************************************************************/
 /****************** Classes de tamanho padrao *******************/
@@ -735,7 +712,7 @@ a {
 	letter-spacing: 1px;
 	/*background: #78a22f;*/
 	background: transparent;
-	border: 6px solid #fdba31;
+	border: 3px solid #fdba31;
 	font: normal 12pt/1em nexa_bold, times;
 	color: #fdba31;
 	padding: 10px 30px 9px;
@@ -749,7 +726,7 @@ a {
 	background: #004961;
 }
 .formulario_padrao_1 .botao_submit_2 {
-	border: 6px solid #004961 !important;
+	border: 3px solid #004961 !important;
 	color: #004961 !important;
 }
 .formulario_padrao_1 .botao_submit_2:hover {

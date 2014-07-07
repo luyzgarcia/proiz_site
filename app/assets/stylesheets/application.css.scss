@@ -23,44 +23,45 @@ a {
 
 @font-face {
   font-family: 'droid_serif';
-  src:url('droidserif.eot');
-  src:url('droidserif.eot?#iefix') format('embedded-opentype'),
-    url('droidserif.ttf') format('truetype');
+  src: url('droidserif.eot?#iefix') format('embedded-opentype'),
+       url('droidserif.woff') format('woff'),
+       url('droidserif.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
     font-family: 'nexa_bold';
-    src: url('nexa_bold?#iefix') format('embedded-opentype'), 
+    src: url('nexa_bold.eot?#iefix') format('embedded-opentype'), 
          url('nexa_bold.woff') format('woff'), 
          url('nexa_bold.ttf')  format('truetype');
 }
 
 @font-face {
     font-family: 'nexa_light';
-    src: url('nexa_light?#iefix') format('embedded-opentype'), 
+    src: url('nexa_light.eot?#iefix') format('embedded-opentype'), 
          url('nexa_light.woff') format('woff'), 
          url('nexa_light.ttf')  format('truetype');
 }
 
 @font-face {
     font-family: 'din_medium';
-    src: url('din_medium?#iefix') format('embedded-opentype'), 
+    src: url('din_medium.eot?#iefix') format('embedded-opentype'), 
          url('din_medium.eot') format('eot'), 
          url('din_medium.ttf')  format('truetype');
 }
 @font-face {
     font-family: 'icones';
-    src: url('icones?#iefix') format('embedded-opentype'), 
+    src: url('icones.eot?#iefix') format('embedded-opentype'), 
          url('icones.eot') format('eot'), 
          url('icones.ttf')  format('truetype');
 }
 @font-face {
     font-family: 'icons';
-    src: url('icons?#iefix') format('embedded-opentype'), 
+    src: url('icons.eot?#iefix') format('embedded-opentype'), 
          url('icons.eot') format('eot'), 
-         url('icons.ttf')  format('truetype');
+         url('icons.ttf') format('truetype'),
+         url('icons.svg') format('svg');
 }
 
 
@@ -142,6 +143,25 @@ input:focus{
 }
 
 
+/*****************************************************************/
+/******************** GERAL - CARREGANDO *************************/
+/*****************************************************************/
+#carregando {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 86px 86px 0;
+  border-color: transparent #004961 transparent transparent;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+#carregando img{
+  position: absolute;
+  top: 4px;
+  right: -90px;
+}
 
 #carregando span:before {
   content: '\e406';
@@ -172,6 +192,10 @@ input:focus{
     100% {transform: rotate(360deg);}
   }
 
+
+/*****************************************************************/
+/******************** GERAL - CARREGANDO *************************/
+/*****************************************************************/
 
 
 /**********************************************/

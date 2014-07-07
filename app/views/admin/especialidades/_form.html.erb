@@ -38,8 +38,9 @@
 				<div class="item_info_detalhe">
 					<h5><%= e.label :conteudo %></h5>
 					<h4 class='<%= 'bloqueado' if @editando %>'>
-						<%= e.text_area :conteudo, :disabled => @editando, :style => 'width:550px;' %>
+						<%= e.text_area :conteudo, :disabled => @editando, :style => 'width:550px;', :class => 'tinymce' %>
 					</h4>
+					<%= tinymce %>
 					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
 					

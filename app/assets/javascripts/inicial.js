@@ -280,6 +280,7 @@ $(document).ready(function(){
 			});
 		}
 	});
+	
 	$("#home_noticias .noticias .item_noticia .compartilhar_noticia").each(function() {
 		Hammer(this).on("tap", function() {
 			$(this).addClass('mostrar_compartilhar');	
@@ -288,63 +289,9 @@ $(document).ready(function(){
 	
     
 	
-	Hammer(document.getElementById('newsletter')).on("tap", function(){
-		if(detectmob()) {
-			//$('#home_rodape .newsletter').css('height','230');
-			$('#home_rodape .newsletter h4').hide();
-			$("#home_rodape .newsletter form").show();
-			$("#home_rodape .newsletter form input[type='text']").focus();
-		}
-	});
 	
-	jQuery(window).on("resize", function() {
-		if(!detectmob()) {
-			$("#home_rodape .newsletter form").hide();
-			$('#home_rodape .newsletter h4').show();
-			$('#home_rodape .newsletter').css('height','auto');
-		}
-	});
 	
-	var efeitonews = false;
-	$('html').click(function(e) {
-		if( efeitonews ) {
-			return false;
-		} else {
-			efeitonews = true;
-			var target = $(e.target);    
-			if (target.parents('#home_rodape .newsletter').length) {			
-				$("#home_rodape .newsletter form input[type='text']").focus();
-				$('#home_rodape .newsletter h4').hide();
-				if($(window).width() > 500) {
-					$("#home_rodape .newsletter").animate({
-						height : '39px'
-					},500,function() {
-						$("#home_rodape .newsletter form").show();
-						$("#home_rodape .newsletter form input[type='text']").focus();
-					});
-				}else {
-					$("#home_rodape .newsletter form").show();
-					$("#home_rodape .newsletter form input[type='text']").focus();
-				}
-			}else {
-				$('#home_rodape .newsletter h4').focus();
-				$("#home_rodape .newsletter form").hide();
-				if($(window).width() > 500) {
-					$("#home_rodape .newsletter").animate({
-						height : '22px'
-					},500,function() {
-						$('#home_rodape .newsletter h4').show();
-					});
-				}else {
-					$('#home_rodape .newsletter h4').show();
-				}
-			}
-			setTimeout( function() {
-				efeitonews = false;
-			}, 800); 
-			
-		}
-	});
+	
 	
 	//Efeito para quado o circulo 'Continue' seja clicado a pagina desça até os trabalhos
 	$('#home_intro .mensagem .continue').click(function(e) {
@@ -383,6 +330,7 @@ $(document).ready(function(){
 	//Adiciona o efeito no range das imagens
 	(function(){
 		function rangeSlider() {
+			
 			$( ".slider_menu .range" ).draggable({
 	       		containment: "parent",
 	        	axis: "x",

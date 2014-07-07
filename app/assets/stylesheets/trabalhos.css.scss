@@ -304,7 +304,7 @@
 
 
 .corpo_trabalhos {
-  padding: 100px 30px;
+  padding: 100px 30px 0;
   margin: 0 auto;
   position: relative;
   #carregando_trabalho {
@@ -314,7 +314,8 @@
     margin: 0 auto;
     text-align: center;
     display: none;
-    z-index: 999999;
+    z-index: 2;
+    
   }
   #carregando_trabalho::before {
     content: '\e406';
@@ -322,7 +323,7 @@
     position: absolute;
     top: 10px;
     font-size: 25pt;
-    color: #fdba31;
+    color: #BDBDBD;
     -webkit-animation: rodando 2.5s infinite linear;
   }
 }

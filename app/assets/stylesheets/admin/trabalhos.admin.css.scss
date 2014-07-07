@@ -56,6 +56,9 @@
               opacity: 0;
             }
           }
+          h4:hover {
+            background: #fff;
+          }
           h4:before {
             content: "BROWSE";
             position: absolute;
@@ -234,15 +237,30 @@
   .ficha_upload {
     margin: 10px 0px;
     position: relative;
+    p {
+      display: inline-block;
+      font: normal 10pt/1.3em "nexa_bold", Times;
+      color: #004961;
+      margin-left: 10px;
+      width: 50px;
+
+    }
     .chave {
       margin-right: 18px !important;
       padding-right: 0 !important;
+      input {
+        display: inline-block;
+      }
     }
     .valor {
       margin-left: 0 !important;
       padding-left: 0 !important;
+      input {
+        
+      }
     }
     .chave, .valor {
+      
       display: inline;
       margin: 5px 15px 5px 10px;
       padding: 5px 15px;
@@ -262,6 +280,22 @@
       
     }
   }
+}
+.ficha_upload {
+    margin: 10px 0px;
+    position: relative;
+    p {
+      display: inline-block;
+      font: normal 10pt/1.3em "nexa_bold", Times;
+      color: #004961;
+      margin-left: 10px;
+      width: 60px;
+
+    }
+    .chave {
+      display: inline-block;
+      
+    }
 }
 
 .bt_excluir_1 {

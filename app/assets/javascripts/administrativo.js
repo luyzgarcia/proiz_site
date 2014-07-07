@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree ./admin
+//= require tinymce
 
 function enable_field(elemento) {
 	$(elemento).css('background',"#004961");

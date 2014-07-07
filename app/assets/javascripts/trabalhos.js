@@ -29,13 +29,11 @@ function recarregar() {
 			viewportFactor : 0.5
 		});
 	}
-	$('#trabalhos .menu_trabalhos a, .titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
+	$('#trabalhos .menu_trabalhos a, .titulo h1 a, .titulo a').bind('ajax:beforeSend',function() {
 		loading();
 		$('.wrapper_carregando > span').css('width', '0');
-		
-		
 	});
-	$('.titulo h1 a, #grid .item a, .titulo a').bind('ajax:beforeSend',function() {
+	$('.titulo h1 a, .titulo a').bind('ajax:beforeSend',function() {
 		loading();
 		history.pushState(null, document.title, this.href);
 	});
@@ -43,6 +41,7 @@ function recarregar() {
 		stoploading();
 	});
 	$('#grid .item a, #trabalhos .menu_trabalhos a').bind('click',function() {
+		$('#detalhe_modal').html('');
 		$('#grid').css('opacity','0');
 		$('#carregando_trabalho').show();
 	});
@@ -54,7 +53,7 @@ function adicionaClickItemsGrid() {
 	$('#grid .item a').bind('click',function() {
 		$('#grid').css('opacity','0');
 		$('#carregando_trabalho').show();
-		loading();
+		//loading();
 		history.pushState(null, document.title, this.href);
 	});
 }
