@@ -90,6 +90,10 @@ ProizAdmin::Application.routes.draw do
     get "log_in" => "sessions#new", :as => "log_in"
     get "log_out" => "sessions#destroy", :as => "log_out"
     
+    #Redireciona para a pagina de configurações do site
+    get "/siteinfo" => "admin#edit", :as => "siteinfo"
+    patch "/siteinfo" => "admin#update", :as => "update_info"    
+    
     resources :sessions
     resources :clientes do
       member do 

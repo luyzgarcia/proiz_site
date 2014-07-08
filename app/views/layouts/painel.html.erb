@@ -21,7 +21,9 @@
 					<h3>Empresa Nome LTDA</h3>	
 				</div>
 				<div class="dados_conta">
-					<a class="hover_highlight" href="#"><h2>Dados da conta</h2></a>
+					<%= link_to admin_siteinfo_path, :class => 'hover_highlight' do %>
+						<h2>Dados da conta</h2>
+					<% end %>
 				</div>
 				<div id="idiomas" data-no-turbolink>
 					<%= link_to 'PT', define_idioma_portugues_path, :class => I18n.locale == :'pt-BR' ? 'idioma_ativo' : '' %>

@@ -71,6 +71,10 @@ gem 'aws-sdk'
 #url amigaveis
 gem 'friendly_id', '~> 5.0.0'
 
+
+#heroku addon new relic
+gem 'newrelic_rpm'
+
 #Mercury editor, para modificar as paginas
 #gem 'mercury-rails'
 #gem 'mercury-rails', :git => 'git://github.com/jejacks0n/mercury.git'

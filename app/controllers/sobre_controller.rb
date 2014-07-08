@@ -3,7 +3,6 @@ class SobreController < ApplicationController
   before_action :setmetaTags
   
   def setmetaTags
-    logger.info 'set metatags'
     set_meta_tags :title => 'Sobre',
                   :description => "All text about keywords, other keywords"
   end

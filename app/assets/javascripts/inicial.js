@@ -1,4 +1,5 @@
 //= require touch_js/jquery-ui.touch.js
+//= require slider_trabalhos
 
 (function() {
 	function mostrarIntro() {
@@ -244,9 +245,9 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('.slider_menu input[type="range"]').on("change",moveSlider);
+	//$('.slider_menu input[type="range"]').on("change",moveSlider);
 	
-	function moveSlider() {
+	/*function moveSlider() {
 		//Pega a quantida de itens nop slide
 		var tamanhotela = $('#home_trabalhos .projetos_slider .slider_imagens').width();
 		var slideCount = $('#home_trabalhos .projetos_slider .slider_imagens ul li').length;
@@ -262,7 +263,7 @@ $(document).ready(function(){
 		
 		$('#home_trabalhos .projetos_slider .slider_imagens ul').css({left: - posleft});
 	}
-	
+	*/
 	
 	$("#home_noticias .noticias .item_noticia").each(function() {
 		if($(window).width() >= 480 && $(window).width() < 1024) {
