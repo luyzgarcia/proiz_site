@@ -38,7 +38,7 @@ ProizAdmin::Application.configure do
   # number of complex assets.
   config.assets.debug = true
   config.assets.logger = false
-  
+    
   #config.consider_all_requests_local = false
   
   #Paperclip.options[:command_path] = "C:/Program Files/ImageMagick-6.8.9-Q16"

@@ -1,6 +1,3 @@
-//alert('clicou no detalhe trabalho');
-
-
 
 $('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho', :trab => @trabalho) %>")
 
@@ -43,6 +40,5 @@ function mostraModal() {
 	stoploading();
 	adicionaEfeitoImagensTrabalho();
 }
-
 
 //alert('encerrou o js do detalhe trabalho');
