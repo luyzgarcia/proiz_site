@@ -93,7 +93,7 @@ ProizAdmin::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
   #mostrar pagina de erro
-  config.consider_all_requests_local = false
+  #config.consider_all_requests_local = false
   
   #Amazon S3 Buckets
   #config.action_controller.asset_host = "http://#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
