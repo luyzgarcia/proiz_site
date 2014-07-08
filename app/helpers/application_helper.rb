@@ -7,9 +7,8 @@ module ApplicationHelper
   end
   
   def default_meta_tags
-    logger.debug 'default meta tags'
     {
-      :title       => 'Proiz',
+      :title       => 'Proiz - Comunicação Integrada',
       :separator   => "&mdash;".html_safe,
     }
   end

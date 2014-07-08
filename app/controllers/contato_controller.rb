@@ -1,4 +1,5 @@
 class ContatoController < ApplicationController
+  before_action :setMetaTags
   
   def index
     
@@ -19,6 +20,11 @@ class ContatoController < ApplicationController
              telefone: params[:mensagem]}
              
     ProizMailer.contato(dados).deliver
+  end
+  
+  private 
+  def setMetaTags
+    set_meta_tags :title => 'Proiz - Comunicação integrada | Contato'
   end
   
 end

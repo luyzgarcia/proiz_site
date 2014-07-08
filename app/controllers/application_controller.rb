@@ -27,7 +27,6 @@ class ApplicationController < ActionController::Base
     #I18n.locale = params[:locale]
     I18n.locale = session[:locale] || I18n.default_locale
     session[:locale] = I18n.locale
-    logger.debug "I18n setado é #{I18n.locale}\n"
   end
   
   protected
