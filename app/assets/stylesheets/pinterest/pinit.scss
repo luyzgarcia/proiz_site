@@ -1,0 +1,37 @@
+.pinit {
+	position:relative;
+	display:inline-block;
+
+}
+
+/* pin it overlay style */
+.pinit .pinit-overlay {
+	position:absolute;
+	top: 15px;
+  left: 0px;
+	width:100%;
+	height:100%;
+	z-index:200;
+	background:transparent image-url('semi-white.png') repeat 0 0;
+	text-align:center;
+}
+
+/* button style, and center it */
+.pinit .pinit-overlay a {
+	position:relative;
+  left: 27px;
+	margin:-10px 0 0 -21px;
+	display:block;
+	width:43px;
+	height:20px;
+	background:transparent image-url('pinit-button.png') no-repeat 0 0;
+	text-indent:-9999em;
+}
+
+.pinit .pinit-overlay a:hover {
+	background-positon: 0 -21px;
+}
+
+.pinit .pinit-overlay a:active {
+	background-position: 0 -42px;
+}

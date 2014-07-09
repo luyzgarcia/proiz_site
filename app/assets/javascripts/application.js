@@ -40,6 +40,9 @@
 //Loader images
 //= require jquery.queryloader2
 
+//Pinterest
+//= require pinterest/pinit
+
 $(document).ready(function(){
 	//$('#menu').click(function() {
 		//$('body').scrollTop();

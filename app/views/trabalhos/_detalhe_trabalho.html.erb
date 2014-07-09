@@ -1,3 +1,11 @@
+<script type="text/javascript">
+$(function () {
+	$('.full-info img').pinit();
+});
+</script>
+<style>
+
+</style>
 <div id="trabalho">
 	<div class="detalhe_trabalho">
 		<div class="detalhe">
@@ -29,7 +37,7 @@
 				<% trab.imagems.each do |imagem| %>
 					<% if imagem.image.file? %>
 					<div class="image-info">
-						<%= image_tag(imagem.image.url) %>
+						<%= image_tag(imagem.image.url, :alt => imagem.descricao.html_safe) %>
 						<p>
 							<%= imagem.descricao.html_safe if !imagem.descricao.nil? %>
 						</p>
