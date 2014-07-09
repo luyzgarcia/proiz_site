@@ -84,6 +84,7 @@ function adicionaEfeitoImagensTrabalho() {
 	window.addEventListener('scroll', function() {
 		$('#detalhe_modal img').each(function(index) {
 			if($(this).visible(true, false)) {
+				$(this).closest('.pinit').find('.pinit-overlay').show(500);
 				$(this).delay(500).animate({
 					opacity: 1	
 				}, 700);
