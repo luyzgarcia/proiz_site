@@ -1223,7 +1223,10 @@ QueryLoader2.prototype.endLoader = function () {
 };
 
 QueryLoader2.prototype.onLoadComplete = function() {
-	$('.wrapper_carregando > span').css('width','0');
+	setTimeout(function() {
+		$('.wrapper_carregando > span').css('width','0');	
+	}, 1000);
+	
 	//fire the event before end animation
 	this.options.onLoadComplete();
 
