@@ -912,17 +912,20 @@ $desktop-large: 1824px;
     -ms-transition: 0.2s ease-in-out 0.2s;
     transition: 0.2s ease-in-out 0.2s;
     -webkit-transition: 0.2s ease-in-out 0.2s;
-    -webkit-transform: translate3d(0,0,0)
+    -webkit-transform: translate3d(0,0,0);
   }
   #menu {
    display:none;
    border-bottom: 1px solid #e6e7e8;
    padding: 30px 0px;
    margin: 0 auto;
+   height: initial;
    width: 90%;
   }
   #menu ul {
     margin: 0 auto;
+    float: none;
+    
   }
   #redes {
     position: absolute;
@@ -1550,6 +1553,7 @@ $desktop-large: 1824px;
     text-align: center;
   }
   #menu ul {
+    float: none;
     display: none;
     margin: 22px 0px;
     width: 100%;

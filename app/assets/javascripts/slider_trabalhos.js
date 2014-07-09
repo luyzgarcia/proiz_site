@@ -1,5 +1,8 @@
 $(document).ready(function(){
 //Efeito draggable Trabalhos Recentes (Imagens e Barra de rolagem)
+	var imagens = $('#home_trabalhos .projetos_slider .slider_imagens ul li').length;
+	$('#home_trabalhos .projetos_slider .slider_imagens ul').width(imagens * 890);
+	
 	(function (){					
 		var ul_width = $('#home_trabalhos .projetos_slider .slider_imagens ul').width();
 		var ul_left=0;

@@ -85,12 +85,12 @@ input:focus{
 	transition: transform 0.3s;
 	
 }
-.wrapper_carregando:before {
+.wrapper_carregando::before {
 	position: absolute;
 	content: '';
 	height: 100%;
 	width: 100%;
-	background: #fdba31;
+	//background: #fdba31;
 	opacity: 1;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);

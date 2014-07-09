@@ -308,7 +308,8 @@ $(document).ready(function(){
 
 		$('#pull').click(function(e) {
 			e.preventDefault();
-			$('#menu').slideToggle();
+			//$('#menu').slideToggle();
+			$('#menu').toggle();
 		});
 		
 		
