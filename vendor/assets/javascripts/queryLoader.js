@@ -154,7 +154,6 @@ var QueryLoader = {
 	doneLoad: function() {
 		//prevent IE from calling the fix
 		clearTimeout(QueryLoader.ieTimeout);
-		
 		//determine the height of the preloader for the effect
 		if (QueryLoader.selectorPreload == "body") {
 			var height = $(window).height();

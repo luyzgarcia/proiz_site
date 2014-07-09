@@ -768,6 +768,7 @@ function makeArray( obj ) {
   };
 
   ImagesLoaded.prototype.complete = function() {
+  	
     var eventName = this.hasAnyBroken ? 'fail' : 'done';
     this.isComplete = true;
     var _this = this;
@@ -970,10 +971,11 @@ OverlayLoader.prototype.updatePercentage = function (percentage) {
 		width: percentage + "%",
 		minWidth: percentage + "%"
 	}, 200);
-	$('.wrapper_carregando > span').animate({
-		width: percentage + "%",
-		minWidth: percentage + "%"
-	}, 200);
+	
+	//$('.wrapper_carregando > span').animate({
+	//	width: percentage + "%"
+	//}, 200);
+	$('.wrapper_carregando > span').css('width', Math.ceil(percentage)+'%');
 	//update textual percentage
 	if (this.parent.options.percentage == true) {
 		//$('.wrapper_carregando > span').css('width', Math.ceil(percentage)+'%');
@@ -1221,6 +1223,7 @@ QueryLoader2.prototype.endLoader = function () {
 };
 
 QueryLoader2.prototype.onLoadComplete = function() {
+	$('.wrapper_carregando > span').css('width','0');
 	//fire the event before end animation
 	this.options.onLoadComplete();
 

@@ -488,6 +488,7 @@ function fbs_click(width, height, elemento) {
 $(document).ready(function(){
 	stopfullloading();
 	$('#menu li a, #logo a, .bt_ajax, .bt_padrao1 a').bind('ajax:beforeSend',function() {
+
 		$('.wrapper_carregando > span').css('width', '0');
 		fullloading();
 		//$.getScript('assets'+$(this).attr("href")+'.js');
