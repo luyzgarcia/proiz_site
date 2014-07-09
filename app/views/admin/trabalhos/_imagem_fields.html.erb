@@ -22,9 +22,9 @@
 		<div class="descricao <%= novo == false ? 'bloqueado' : '' %>">
 			<%=
 				if novo == true
-					f.text_area :descricao, :class => ''					
+					f.text_area :descricao					
 				else
-			 		f.cktext_area :descricao, disabled: 'disabled', :class => ''	
+			 		f.text_area :descricao, disabled: 'disabled'
 			 	end 
 			 %>
 		</div>
@@ -40,5 +40,5 @@
 	#else
 		
 	#end
-	%>
+	%>	
 </div>
