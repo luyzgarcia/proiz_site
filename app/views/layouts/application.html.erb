@@ -21,7 +21,7 @@
 <div id="container_carregando" class="wrapper_carregando">
 <span></span>
 	<div id="carregando">
-		<span></span>
+		<p><span></span></p>
 	</div>
 </div>
 <div id="esconde">
@@ -86,12 +86,20 @@
 	<div class="newsletter" id="newsletter">
 		<h4><%= t 'inicial.newsletter.placeholder' %></h4>
 		
-        <form action="#" id="form_newsletter">
+		<%= form_tag({controller: 'newsletter', action: 'subscribe'}, :id => 'form_newsletter',
+			method: "get", :remote => true) do %>
+			<%= text_field(:newsletter,:email)%>
+			<div class="bt_enviar">
+				<%= submit_tag('Cadastrar') %>
+			</div>
+		<% end %>
+       <!-- <form action="#" id="form_newsletter">
 			<input type="text" placeholder="" value="" size="30" />
 			<div class="bt_enviar">
 				<input type="submit" value="Cadastrar" />
 			</div>
 		</form>
+	-->
 	</div>
 	<div class="rodape">
 		<div class="mensagem_wrapper">

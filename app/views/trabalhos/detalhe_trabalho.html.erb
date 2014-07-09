@@ -1,7 +1,7 @@
 <%= render partial: 'index' %>
 <script>
 	$('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho', :trab => @trabalho) %>");
-	loading();
+	//loading();
 	var img = $('#detalhe_modal img');
 	var length = img.length;
 	//alert(length);

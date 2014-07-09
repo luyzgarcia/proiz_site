@@ -22,8 +22,8 @@
 										<%= image_tag(e.imagem_principal.url, :id => e.id, :data => { :desc => e.titulo}) %>
 										<div class="descricao-texto">
 											<h3><%= e.titulo %> </h3>
-											<p> <%= e.conteudo %> </p>
-											<!--><h4>Projetos em que já aplicamos a especialidades:</h4>
+											<p> <%= e.conteudo.html_safe %> </p>
+											<!--<h4>Projetos em que já aplicamos a especialidades:</h4>
 											<a href="#">Traalho 1</a>
 											<a href="#">Traalho 1</a>-->
 										</div>

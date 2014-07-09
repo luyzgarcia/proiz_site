@@ -3,6 +3,16 @@
 //= require turbolinks
 //= require_tree ./admin
 //= require tinymce
+// require ckeditor/init
+
+function myNewDocumentHandler(ed) {
+    ed.on('BeforeExecCommand', function(e) {
+        if (e.command === 'mceNewDocument') {
+            alert(this.getContent());
+        }
+    });
+    
+}
 
 function enable_field(elemento) {
 	$(elemento).css('background',"#004961");
@@ -13,7 +23,6 @@ function enable_field(elemento) {
 }
 
 function subir_nivel(e) {
-	//alert($(e).parents('.form_many').prev().html());
 	mover = $(e).parents('.form_many');
 	anterior = $(e).parents('.form_many').prev();
 	if(anterior.hasClass('form_many')) {

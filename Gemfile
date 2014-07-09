@@ -50,6 +50,9 @@ gem "remotipart", "~> 1.0"
 #tinymce - Rich text editor 
 gem 'tinymce-rails'
 
+#alternativa
+#gem 'ckeditor'
+
 #Simple navitagion 
 gem "simple-navigation"
 

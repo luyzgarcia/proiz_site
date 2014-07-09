@@ -1,0 +1,9 @@
+stoploading();
+$('#newsletter h4').html('Email cadastrado com sucesso');
+$("#form_newsletter").remove();
+//$("#home_rodape .newsletter form input[type=text]").val('');
+$("#home_rodape .newsletter").animate({
+	height : '22px'
+},500,function() {
+	$('#home_rodape .newsletter h4').show();
+});

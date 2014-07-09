@@ -125,7 +125,7 @@ input:focus{
   top: 80px;
 } 
 .la-animate-parcial::before,  .la-animate-parcial > span{
-// opacity: 0; 
+ opacity: 0; 
 }
 #header {
 	top: -200px;
@@ -162,32 +162,30 @@ input:focus{
   right: -90px;
 }
 
-#carregando span:before {
+#carregando p::before {
   content: '\e406';
   font-family: 'icons';
   position: absolute;
-  top: 10px;
-  left: 45px;
+  //top: 10px;
+  //left: 45px;
   font-size: 25pt;
   color: #fdba31;
-  -webkit-animation: rodando 2.5s infinite linear;
+}
+#carregando p {
+  height: 35px;
+width: 35px;
+position: absolute;
+top: 10px;
+left: 45px; 
+  -webkit-animation: rodando 2.5s linear 0s infinite;
   animation: rodando 2.5s infinite linear;
-  
-  
-    /*
-    
-    -webkit-animation-duration: 6000s;*/
 }
 @-webkit-keyframes rodando {
-    0% { 
-      -webkit-transform: rotate(0deg);    
-      }
-    100%   { 
-      -webkit-transform: rotate(360deg); 
-      }
+    0%    { /*-webkit-transform: rotate(0deg);*/}
+    100%  {  -webkit-transform: rotate(360deg);}
   }
   @keyframes rodando {
-    0%   {transform: rotate(0deg);}
+    0%   {/*transform: rotate(0deg);*/}
     100% {transform: rotate(360deg);}
   }
 

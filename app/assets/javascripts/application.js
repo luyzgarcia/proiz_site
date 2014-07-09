@@ -21,7 +21,7 @@
 //  require_tree ./touch_js
 //= require_tree ./scrollrama
 //= require jquery.remotipart
-//= require tinymce
+
 //= require tooltips.js
 //= require_tree ./scroll 
 //= require jquery-ui-scrollable
@@ -157,7 +157,21 @@ $(document).ready(function(){
 		mouseWheelPixels: 400
 	});
 	*/
-	
+	$("#form_newsletter").validate({
+		rules:{
+			email:{ required: true, email: true }			
+		},		
+		messages:{
+			email:{
+				required: "Digite seu e-mail",
+				email: "Digite um e-mail válido"
+			}								
+		},
+		submitHandler: function(form) {
+			loading();
+			(form).ajaxSubmit();
+		}
+	});
 	Hammer(document.getElementById('newsletter')).on("tap", function(){
 		if(detectmob()) {
 			//$('#home_rodape .newsletter').css('height','230');

@@ -22,13 +22,12 @@
 		<div class="descricao <%= novo == false ? 'bloqueado' : '' %>">
 			<%=
 				if novo == true
-					f.text_area :descricao, :class => 'tinymce'					
+					f.text_area :descricao, :class => ''					
 				else
-			 		f.text_area :descricao, disabled: 'disabled', :class => 'tinymce'	
+			 		f.cktext_area :descricao, disabled: 'disabled', :class => ''	
 			 	end 
 			 %>
 		</div>
-		<%= tinymce %>
 		<div class="ordem <%= 'escondido' if novo %> <%= 'bloqueado' if !novo %>">
 			<%= link_to_function('','subir_nivel(this)', :class => 'up') %>
 			<%= link_to_function('','descer_nivel(this)', :class => 'down') %>
@@ -41,5 +40,5 @@
 	#else
 		
 	#end
-	%>	
+	%>
 </div>
