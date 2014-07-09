@@ -46,7 +46,7 @@
 	<div id="redes">
 		<%= link_to '', 'https://www.facebook.com/agenciaproiz', :target => "_blank", :class => 'facebook' %>
 		<%= link_to '', 'https://www.youtube.com/user/ProizAgencia', :target => "_blank", :class => 'twitter' %>
-		<%= link_to '', 'https://plus.google.com/117481572153276759686/posts', :target => "_blank", :class => 'google' %>
+		<%= link_to '', 'https://www.linkedin.com/company/proiz', :target => "_blank", :class => 'linkedin' %>
 	</div>
 	<div id="idiomas" data-no-turbolink>
 		<%= link_to 'PT', define_idioma_portugues_path, :class => I18n.locale == :'pt-BR' ? 'idioma_ativo' : '' %>
@@ -71,11 +71,9 @@
         </div>
         
         <div class="midias_sociais_botoes">
-        	<%= fb_share('1501616463400377', 
-				root_url,
-				'facebook_padrao_2',{}) %>
-	        <%= google_share(root_url,'google_padrao_2') %>
-	        <%= twitter_share(root_url,'twitter_padrao_2') %>
+        	<%= link_to '', 'https://www.facebook.com/agenciaproiz', :target => "_blank", :class => 'facebook_padrao_2' %>
+			<%= link_to '', 'https://www.youtube.com/user/ProizAgencia', :target => "_blank", :class => 'youtube_padrao_2' %>
+			<%= link_to '', 'https://www.linkedin.com/company/proiz', :target => "_blank", :class => 'facebook_padrao_2 linkedin_padrao_2' %>
         </div>
 	</div>
     <style>

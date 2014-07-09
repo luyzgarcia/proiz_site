@@ -209,6 +209,9 @@ a {
 #redes .google:after {
 	content: '\e410';
 }
+#redes .linkedin:after {
+  content: '\e411';
+}
 /*
 #redes a:before {
 	position: absolute;
@@ -588,6 +591,9 @@ a {
 }
 .twitter_padrao_2:before{
   content: "\e416";
+}
+.youtube_padrao_2:before{
+  content: "\e414";
 }
 .google_padrao_2:before{
   content: "\e422";

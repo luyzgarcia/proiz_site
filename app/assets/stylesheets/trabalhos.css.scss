@@ -91,7 +91,7 @@
   height: 100%;
   width: 100%;
   text-align: center;
-  background: rgba(19,69,95,0.7);
+  background: rgba(0,0,0,0.7);
   cursor: pointer;
   opacity: 0;
   -webkit-transition: all 0.2s ease-in-out 0.2s;
@@ -102,7 +102,7 @@
 }
 #trabalhos .corpo_trabalhos .item .hover h4{
   color: #fff;
-  font: normal 16pt/1.5em "nexa_bold", Tahoma;
+  font: normal 14pt/1.5em "nexa_bold", Tahoma;
   margin: 25% auto;
   letter-spacing: 1px;
 }
@@ -360,7 +360,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  width: 50%;
+  width: 80%;
   height: 30%;
   margin: auto;
 }
@@ -375,11 +375,39 @@
   display: initial;
 }*/
 #trabalhos .tam1 .descricao_trabalho {
-  margin: 50px auto !important;
+  margin: 25% auto !important;
 }
 #trabalhos .tam2 .descricao_trabalho {
   /*margin: 200px auto !important;*/
  height: 100%;
+}
+.tam2 {
+  .hover h4:before, .hover h4:after {
+    -webkit-transition: all 0.4s linear;
+    -webkit-transition-delay: 0.1s;
+    transition: all 0.4s linear;
+    transition-delay: 0.2s;
+  }
+  .hover h4:before {
+     top: -160px;
+  }
+  .hover h4:after {
+     top: 160px;
+  }
+}
+.tam1 {
+  .hover h4:before, .hover h4:after {
+    -webkit-transition: all 0.2s linear;
+    -webkit-transition-delay: 0.1s;
+    transition: all 0.2s linear;
+    transition-delay: 0.2s;
+  }
+  .hover h4:before {
+    top: -63px;
+  }
+  .hover h4:after {
+     top: 63px;
+  }
 }
 #trabalhos .corpo_trabalhos .item:hover > .hover h4:before {
   content: '';
@@ -387,9 +415,7 @@
   height: 3px;
   width: 100%;
   background: #FFF;
-  -webkit-animation: bordadescertrabalhos 0.6s;
-  /* padding-top: 0; */
-  top: -20;
+  top: 0;
   position: relative; 
 }
 #trabalhos .corpo_trabalhos .item .hover h4:after, #trabalhos .corpo_trabalhos .item .hover h4:before  {
@@ -397,8 +423,9 @@
   display: block;
   height: 2px;
   width: 100%;
-  background: transparent;
+  background: #fff;
   position: relative;
+  
 }
 
 #trabalhos .corpo_trabalhos .item:hover > .hover h4:after {
@@ -408,10 +435,10 @@
   width: 100%;
   background: #FFF;
   /* padding-top: 0; */
-  bottom: -20;
+  top: 0;
   position: relative; 
-  -webkit-animation: bordasubirtrabalhos 0.6s;
 }
+
 #detalhe_modal {
   position: absolute;
   top: 0;
