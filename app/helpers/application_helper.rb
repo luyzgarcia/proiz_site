@@ -6,6 +6,24 @@ module ApplicationHelper
     end
   end
   
+  def corrige_acentos(texto)
+    #replacements.each {|replacement| str.gsub!(replacement[0], replacement[1])}    
+    texto.gsub('&Aacute;','Á').gsub('&aacute;','á').gsub('&Acirc;','Â').gsub('&acirc;','â')
+         .gsub('&Agrave;','À').gsub('&agrave;','à').gsub('&Aring;','Å').gsub('&aring;','å')
+         .gsub('&Atilde;','Ã').gsub('&atilde;','ã').gsub('&Auml;','Ä').gsub('&auml;','ä')
+         .gsub('&AElig;','Æ').gsub('&aelig;','æ').gsub('&Eacute;','É').gsub('acute;','é')
+         .gsub('&Ecirc;','Ê').gsub('&ecirc;','ê').gsub('&Egrave;','È').gsub('&egrave;','è')
+         .gsub('&Euml;','Ë').gsub('&euml;','ë').gsub('&ETH;','Ð').gsub('&eth;','ð').gsub('&Iacute;','Í')
+         .gsub('&iacute;','í').gsub('&Icirc;','Î').gsub('&icirc;','î').gsub('&Igrave;','Ì')
+         .gsub('&igrave;','ì').gsub('&Iuml;','Ï').gsub('&iuml;','ï').gsub('&Oacute;','Ó')
+         .gsub('&oacute;','ó').gsub('&Ocirc;','Ô').gsub('&ocirc;','ô').gsub('&Ograve;','Ò')
+         .gsub('&ograve;','ò').gsub('&Oslash;','Ø').gsub('&oslash;','ø').gsub('&Otilde;','Õ')
+         .gsub('&otilde;','õ').gsub('&Ouml;','Ö').gsub('&ouml;','ö').gsub('&Uacute;','Ú')
+         .gsub('&uacute;','ú').gsub('&Ucirc;','Û').gsub('&ucirc;','û').gsub('&Ugrave;','Ù')
+         .gsub('&ugrave;','ù').gsub('&Uuml;','Ü').gsub('&uuml;','ü').gsub('&Ccedil;','Ç').gsub('&ccedil;','ç')
+         .gsub('&Ntilde;','Ñ').gsub('&ntilde;','ñ')
+  end
+  
   def default_meta_tags
     {
       :title       => 'Proiz - Comunicação Integrada',

@@ -170,15 +170,18 @@ input:focus{
   //left: 45px;
   font-size: 25pt;
   color: #fdba31;
+  animation: 2.5s linear 0s normal none infinite rodando;
+  -webkit-animation: 2.5s linear 0s normal none infinite rodando;
+  -moz-animation: 2.5s linear 0s normal none infinite rodando;
 }
 #carregando p {
   height: 35px;
-width: 35px;
-position: absolute;
-top: 10px;
-left: 45px; 
-  -webkit-animation: rodando 2.5s linear 0s infinite;
-  animation: rodando 2.5s infinite linear;
+  width: 35px;
+  position: absolute;
+  top: 10px;
+  left: 45px; 
+  //-webkit-animation: rodando 2.5s linear 0s infinite;
+  //animation: rodando 2.5s infinite linear;
 }
 @-webkit-keyframes rodando {
     0%    { /*-webkit-transform: rotate(0deg);*/}
