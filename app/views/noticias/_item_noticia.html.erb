@@ -4,7 +4,7 @@
 	
 	<%= image_tag(noticia.imagem_miniatura.url) %>
 	<h5><%= noticia.titulo %></h5>
-	<p><%= truncate(noticia.conteudo, :length => 150)%></p>
+	<p><%= truncate(strip_tags(noticia.conteudo), :length => 150) %></p>
 	<div class="ultimas_leiamais">
 		<%= link_to '', noticia_path(noticia), :class => 'link_noticias', :remote => true %>
 	</div>

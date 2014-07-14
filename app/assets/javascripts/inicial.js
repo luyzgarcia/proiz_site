@@ -25,18 +25,7 @@
 	jQuery(document).on("ready", mostrarIntro);
 })();
 
-(function() {
-	function efeitoDivisores() {
-		var scrollorama = $.scrollorama({blocks: '.corpo'});
-		if(detectmob() == false) {
-			scrollorama
-					.animate('#header',{delay: 100,duration:250, property:'padding-top', end: '30px'})
-					.animate('#header',{duration:250, property:'padding-bottom', end: '30px'});
-		}
-	}
-	jQuery(document).on("ready", efeitoDivisores);
-	//jQuery(window).on("resize",efeitoDivisores);
-})();
+
 (function() {
 		function divisao_1() {
 			if($('#intervalo1').scrollable()) {

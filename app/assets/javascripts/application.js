@@ -232,7 +232,24 @@ $(document).ready(function(){
 			
 		}
 	});
+	
 });
+
+/*
+	 *
+	 * Efeito de diminuir o tamanho do header */ 
+	(function() {
+		function efeitoHeader() {
+			var scrollorama = $.scrollorama({blocks: '.corpo'});
+			if(detectmob() == false) {
+				scrollorama
+						.animate('#header',{delay: 100,duration:250, property:'padding-top', end: '22px'})
+						.animate('#header',{duration:250, property:'padding-bottom', end: '15px'});
+			}
+		}
+		jQuery(document).on("ready", efeitoHeader);
+		//jQuery(window).on("resize",efeitoDivisores);
+	})();
 
 
 /*Deixar o fundo do menu superior branco*/

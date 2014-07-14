@@ -1,113 +1,90 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   menu:
-    sobre: SOBRE
-    especialidades: Especialidades
-    trabalhos: Trabalhos
-    noticias: Notícias
-    contato: Contato
+    sobre: About    
+    especialidades: Our skills
+    trabalhos: Works
+    noticias: News
+    contato: Contact
   inicial:
     topo:
       criar: 'Create'
       evoluir: 'evolve'
       e: 'and'
       transformar: 'transform'
-      mensagem: 'We are a communications agency and we believe integrated Branding as a holistic transformation of brands.'
+      mensagem: We are a communication agency and we like to work in Branding as a holistic transformation process.
     trabalhos:
-      titulo: Trabalhos recentes
-      botao: trabalhos
+      titulo: Recent works
+      botao: Works
     servicos: 
-      titulo: Os serviços
-      subtitulo: Aliados aos objetivos de nossos clientes, unimos três grandes especialidades na realização de nossos serviços.
-      botao: Saiba mais
-      design_titulo: Design gráfico e digital
-      design_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+      titulo: Services
+      subtitulo: We offer our clients a full solution in branding using these three main specialties.
+      botao: Read more
+      design_titulo: Design
+      design_texto: Through design methods we generate creative, strategic and innovative ideas for Brands’ Communication problems.
       marketing_titulo: Marketing
-      marketing_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
-      publicidade_titulo: publicidade
-      publicidade_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+      marketing_texto: The knowledge in marketing management is what enables us to support our clients in strategic plannings and to point new market opportunities out.
+      publicidade_titulo: Advertising
+      publicidade_texto: We establish a deep relationship with our clients brands, which gives us the supplies we need to create action plans that will build the brand equity.
     noticias:
-      titulo: Fique por dentro do que temos feito
-      botao: Notícias
+      titulo: Inside of what we have been doing
+      botao: Updates
     newsletter:
-      titulo: Para quem não gosta de ficar sabendo das coisas por último
-      subtitulo: Conecte-se à Proiz através das mídias sociais
-      placeholder: Insira seu e-mail para receber atualizações
+      titulo: For those who don’t like to be the last one to know.
+      subtitulo: Stay tuned to Proiz through social media.
+      placeholder: Insert your e-mail address to get updates
     rodape:
-      mensagem: Agência de comunicação integrada. Publicidade e propaganda, design gráfico e marketing digital. Soluções completas para a construção de marcas fortes.
-      copyright: Proiz comunicação integrada - Todos os direitos reservados.
+      mensagem: An integrated communication agency. Advertising, graphic design and digital marketing. Full solutions in building strong brands.
+      copyright: © Copyright 2014 Proiz comunicação integrada, all rights reserved.
   sobre:
     topo:
-      titulo: Sobre a Proiz
+      titulo: About Proiz
     introducao:
-      titulo: Um organismo vivo feito para transformar
-      mensagem: Somos uma agência nova, moderna e que reconhece o potencial de cada cliente. Com o trabalho de comunicação integrada, os mecanismos e orgãos operam todos juntos. Manuseados por profissionais abastecidos de dedicação e inteligência que sempre trabalham para solucionar problemas de uma forma inovadora e criativa. Procuramos ser mecanicamente perfeitos para se ter como recompensa a satisfação de todos os envolvidos. Equipada de muita força de vontade e conhecimento, a Proiz procura navegar muito além do que a vista alcança. Trabalhamos com transformação de marcas. Um tipo de transformação que você procura.
+      titulo: An organism made to transform
+      mensagem: We are a young and modern agency that acknowledges each client’s potential. In an integrated communication work, all mechanisms operate together handled by dedicated professionals that generate innovative and creative ideas. We search for perfection having all people involved interests and satisfaction in mind. An enourmous will and a growing know-how give us the tools to go further and, if the path could be turned into one concept, it would be ‘brands transformation’. Maybe a kind of transformation you look for.
     sobre:
-      titulo: Comunicação integrada e eficiente do jeito que acreditamos
-      design_titulo: Design gráfico e digital
-      design_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
+      titulo: Integrated and efficient communication as we believe it must be.
+      design_titulo: Graphic design
+      design_texto: So that we can systematically organize visual elements in the development of projects that will have an impact on brands communication and therefore on sales.
       marketing_titulo: Marketing
-      marketing_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
-      publicidade_titulo: Publicidade e propaganda
-      publicidade_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
+      marketing_texto: We use it to comprehend each business characteristics making us able to prevent threats and acknowledge pioneering opportunities on the market.
+      publicidade_titulo: Advertising
+      publicidade_texto: The main purpose of this work is to manage all our clients’ brands online and offline action plans. The service is prepared for the agency to turn into an essential kind of department of our clients’ businesses.
     clientes:
-      titulo: Clientes
-      mensagem: Eles acreditaram em nosso potencial transformador
+      titulo: Clients
+      mensagem: They believed in our potential to transform.
   especialidades:
-    titulo: Especialidades
+    titulo: Specialties
   trabalhos:
-    trabalhos: Trabalhos
-    midias: Em mídias sociais
-    compartilhar: Gostou?
-    compartilhar_mensagem: Compartilhe essa página com seus amigos
+    trabalhos: Works
+    midias: In social media
+    compartilhar: Like it?
+    compartilhar_mensagem: Share this with your friends.
   noticias:
-    titulo: Notícias
-    encontre: Encontre facil
-    categorias: Categorias
-    ultimas: Últimas adicionadas
+    titulo: News
+    encontre: Find easily 
+    categorias: Categories
+    ultimas: Latest added
   contato:
-    titulo: Sinta-se à vontade para entrar em contato conosco.
-    subtitulo: Não importa onde está o seu negócio, nós queremos ajudar a construir sua marca.
-    form_titulo: Envie-nos sua mensagem
+    titulo: Feel free to contact us.
+    subtitulo: No matter where your business is. We want to help making your brand evolve.
+    form_titulo: Send us a message
     skype: Skype
-    email: Email
-    telefone: Telefone    
-    form_nome: Nome*
+    email: E-mail
+    telefone: Telephone
+    form_nome: Name*
     form_email: E-mail*
-    form_telefone: Telefone
-    form_mensagem: Mensagem*
-    form_botao: Enviar mensagem
-    
-    
+    form_telefone: Telephone
+    form_mensagem: Message*
+    form_botao: Send
     
   time:
-    am: ''
-    formats:
-      default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
-      long: ! '%d de %B de %Y, %H:%M'
-      short: ! '%d de %B, %H:%M'
-      padrao: ! '%d %b %Y'
-      longo: ! '%d de %b de %Y'
-      curto: ! '%d %b'
-    pm: ''
-  
+      am: ''
+      formats:
+        default: ! '%a, %d de %B de %Y, %H:%M:%S %z'
+        long: ! '%d de %B de %Y, %H:%M'
+        short: ! '%d de %B, %H:%M'
+        padrao: ! '%d %b %Y'
+        longo: ! '%d de %b de %Y'
+        curto: ! '%d %b'
+      pm: ''
+

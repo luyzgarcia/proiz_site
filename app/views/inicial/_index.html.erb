@@ -43,9 +43,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="bt_esconder">
+		<!--<div class="bt_esconder">
 			<a href="#">esconder</a>
 		</div>
+			-->
 	</div>
 	<div class="projetos_slider" id="projetos_slider">
 		<div class="slider_imagens">
@@ -218,15 +219,16 @@
 			</div>
 		<% end %>
 		
-		<div id="" class="bt_padrao1 botao_noticias">
-			<a href="#">
+		<div id="" class="bt_padrao1 botao_noticias" data-no-turbolink>
+			<%= link_to noticias_path, :title => '' do %>
 				<div class="circulo">
 					<span></span>
 				</div>
 				<div class="mensagem">
 					<p><%= t 'inicial.noticias.botao' %></p>
 				</div>
-			</a>
+			<% end %>
+			
 		</div>
 	</div>
 </div>

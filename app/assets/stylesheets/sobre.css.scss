@@ -39,7 +39,7 @@
   overflow: hidden;
 }
 #sobre .wrapper_sobre .sobre_info_2 h1{
-  font: normal 38pt/1.3em nexa_bold, Times;
+  font: normal 35pt/1.3em nexa_bold, Times;
   color: #004961;
   width: 25%;
   margin-right: 4%;
@@ -75,8 +75,17 @@
   text-align: center;
   
   img {
-    width: 175px;
+    width: 135px;
     height: 100px;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: 0.5s;
+  }
+  img:hover {
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
   }
   
 }
@@ -98,7 +107,8 @@
 }
 #sobre .wrapper_sobre .sobre_clientes .item {
   display: inline-block;
-  margin: 0 30px 50px 40px;
+  //margin: 0 30px 50px 40px;
+  margin: 0 50px 50px 60px;
   /* float: left; */
 }
 
@@ -219,7 +229,7 @@
     text-align: center;
   }
   #sobre .wrapper_sobre .sobre_clientes .wrapper_itens img{
-    width: 70%;
+    width: 135px;
   } 
   #sobre .wrapper_sobre .sobre_clientes .item {
     display: inline-block;
