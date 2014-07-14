@@ -81,7 +81,11 @@
   height: 100%;
   cursor: pointer;
 }
-#trabalhos .corpo_trabalhos .item:hover > .hover{
+#trabalhos .corpo_trabalhos .wrapper_item {
+  height: 100%;
+  width: 100%;
+}
+#trabalhos .corpo_trabalhos .wrapper_item:hover > .hover{
   opacity:1;  
   //display: table;
 }
@@ -409,7 +413,7 @@
      top: 63px;
   }
 }
-#trabalhos .corpo_trabalhos .item:hover > .hover h4:before {
+#trabalhos .corpo_trabalhos .wrapper_item:hover > .hover h4:before {
   content: '';
   display: block;
   height: 3px;
@@ -418,6 +422,7 @@
   top: 0;
   position: relative; 
 }
+
 #trabalhos .corpo_trabalhos .item .hover h4:after, #trabalhos .corpo_trabalhos .item .hover h4:before  {
   content: '';
   display: block;
@@ -428,13 +433,12 @@
   
 }
 
-#trabalhos .corpo_trabalhos .item:hover > .hover h4:after {
+#trabalhos .corpo_trabalhos .wrapper_item:hover > .hover h4:after {
   content: '';
   display: block;
   height: 3px;
   width: 100%;
   background: #FFF;
-  /* padding-top: 0; */
   top: 0;
   position: relative; 
 }

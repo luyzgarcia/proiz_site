@@ -29,7 +29,7 @@ $(function () {
 				</div>
 				<div id="info" class="info intro-info">
 					<p>
-						<%= trab.introducao.html_safe unless !trab.introducao.html_safe  %>
+						<%= sanitize(trab.introducao, :tags=>[]) unless !trab.introducao.html_safe  %>
 					</p>
 				</div>							
 			</div>

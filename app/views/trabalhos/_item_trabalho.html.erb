@@ -1,10 +1,12 @@
 
 <div class="item <%= trab.orientacao == '0' ? 'tam2' : 'tam1' %>">
-	<%= link_to "AAA", trabalho_path(trab), :title => "Detalhe trabalho", :remote => true %>	
-	<%= image_tag(trab.imagem_vitrine.url(:medium)) %>
-	<div class="hover">
-		<div class="descricao_trabalho">
-			<h4><%= trab.descricao_vitrine %></h4>
+	<div class="wrapper_item">
+		<%= link_to "AAA", trabalho_path(trab), :title => "Detalhe trabalho", :remote => true %>	
+		<%= image_tag(trab.imagem_vitrine.url(:medium)) %>
+		<div class="hover">
+			<div class="descricao_trabalho">
+				<h4><%= trab.descricao_vitrine %></h4>
+			</div>
 		</div>
 	</div>
 </div>
