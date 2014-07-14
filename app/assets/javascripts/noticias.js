@@ -6,13 +6,15 @@ function recarregarNoticias() {
 		$(this).parent().addClass('ativo');
 	});
 	$('#noticias_buscar input').keyup(function () {
-		console.log('digitando...');
-		if((this).value == ''){
-			$('.wrapper_noticia_destaque').slideDown();
-		}
-	    $.get($('#noticias_buscar').attr('action'),
-	    $('#noticias_buscar').serialize(), null, 'script');  
-	 	 return false;   
+		delay(function(){
+			console.log('enviando...');
+      		if((this).value == ''){
+				$('.wrapper_noticia_destaque').slideDown();
+			}
+		    $.get($('#noticias_buscar').attr('action'),
+		    $('#noticias_buscar').serialize(), null, 'script');  
+		 	 return false;   
+	 	 }, 1000 );
  	});
  	
  	$('.link_noticias').bind('ajax:beforeSend',function() {
@@ -23,6 +25,15 @@ function recarregarNoticias() {
 		stoploading();
 	});
 }
+
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
+
 
 $(document).ready(function(){
 	//Coloca no url o endereco da noticia	
