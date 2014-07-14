@@ -29,7 +29,8 @@
 //= require maskedinput
 //= require jquery.validate
 //= require jquery.validate.additional-methods
-//= require queryLoader
+// require queryLoader
+//= require jpreloader
 
 //= require noticias
 //= require trabalhos
@@ -38,7 +39,7 @@
 //= require grid/masonry.pkgd.min
 
 //Loader images
-//= require jquery.queryloader2
+// require jquery.queryloader2
 
 //Pinterest
 //= require pinterest/pinit
@@ -59,6 +60,9 @@ $(document).ready(function(){
 		// individual element tween examples
 		controller.addTween('#header', TweenMax.from( $('#header'), .5, {css:{opacity: 0}}));*/
 	//});
+	$(document).ready(function() {
+      $('body').jpreLoader();
+    });
 });
 
 
@@ -514,14 +518,19 @@ $(document).ready(function(){
 		//$.getScript('assets'+$(this).attr("href")+'.js');
 		history.pushState(null, document.title, this.href);
 		
-		$("body").queryLoader2({
+		
+		$('.wrapper_carregando > span').animate({
+			width: '100%' 
+		}, 2000);
+		
+		/*$("body").queryLoader2({
 	        barColor: "transparent",
 	        backgroundColor: "transparent",
 	        percentage: true,
 	        //barHeight: 30,
 	        //completeAnimation: "grow"
 	    });
-		
+		*/
 		
 	});
 	$('#logo a, #menu li a, .bt_padrao1 a').bind('ajax:success',function() {
