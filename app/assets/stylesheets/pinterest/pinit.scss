@@ -20,13 +20,14 @@
 /* button style, and center it */
 .pinit .pinit-overlay a {
 	position:relative;
-  left: 27px;
+  right: -6px;
 	margin:-10px 0 0 -21px;
 	display:block;
 	width:43px;
 	height:20px;
 	background:transparent image-url('pinit-button.png') no-repeat 0 0;
 	text-indent:-9999em;
+	float: right;
 }
 
 .pinit .pinit-overlay a:hover {

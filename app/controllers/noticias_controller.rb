@@ -60,6 +60,14 @@ class NoticiasController < ApplicationController
     @noticia = Noticia.friendly.find(params[:id])
     set_metatags_facebook(@noticia)
   end
+  
+  def mais_noticias
+    @ds = params[:num_noticias]
+    @noticias = Noticia.all.order(:created_at).where('status = 1').limit(6).offset(@ds)
+    respond_to do |format|
+      format.js
+    end
+  end
 
   private
   

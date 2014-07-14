@@ -193,6 +193,19 @@ input:focus{
   }
 
 
+
+.bt_carregando_2 {
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  text-align: center;
+  left: 45%;
+  background: image-url('icon_carregando_2.png') no-repeat center center;
+  animation: 2.5s linear 0s normal none infinite rodando;
+  -webkit-animation: 2.5s linear 0s normal none infinite rodando;
+  -moz-animation: 2.5s linear 0s normal none infinite rodando;
+}
+
 /*****************************************************************/
 /******************** GERAL - CARREGANDO *************************/
 /*****************************************************************/

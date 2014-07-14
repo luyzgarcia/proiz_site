@@ -21,7 +21,7 @@ module ApplicationHelper
          .gsub('&otilde;','õ').gsub('&Ouml;','Ö').gsub('&ouml;','ö').gsub('&Uacute;','Ú')
          .gsub('&uacute;','ú').gsub('&Ucirc;','Û').gsub('&ucirc;','û').gsub('&Ugrave;','Ù')
          .gsub('&ugrave;','ù').gsub('&Uuml;','Ü').gsub('&uuml;','ü').gsub('&Ccedil;','Ç').gsub('&ccedil;','ç')
-         .gsub('&Ntilde;','Ñ').gsub('&ntilde;','ñ').gsub('&nbsp;',' ')
+         .gsub('&Ntilde;','Ñ').gsub('&ntilde;','ñ').gsub('&nbsp;',' ').gsub('&ldquo;','"').gsub('&rdquo;', '"')
   end
   
   def default_meta_tags

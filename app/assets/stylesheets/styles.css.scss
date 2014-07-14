@@ -262,10 +262,16 @@ a {
 	display: inline-flex;
 	opacity: 1;
 }
+.bt_padrao1 button[type='submit'] {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
 .bt_padrao1 .circulo {
 	height: 70px;
 	width: 70px;
-	/*background: #004961;*/
+	background: #004961;
 	float: left;
 }
 .bt_padrao1 span {
@@ -279,7 +285,7 @@ a {
 	-webkit-transition: 0.5s all;
 }
 .bt_padrao1 .mensagem {
-	/*background: #004961;*/
+	background: #004961;
 	width: 0px;
 	height: 59px;
 	float: right;
@@ -301,7 +307,7 @@ a {
 	-webkit-transition: 0.5s all;
 	text-transform:uppercase;
 }
-.bt_padrao1 a:hover .circulo > span  {
+.bt_padrao1 a:hover .circulo > span, .bt_padrao1 button[type='submit']:hover .circulo > span  {
 		-webkit-transform: rotate(180deg);
 		-moz-transform: rotate(180deg);
 		-ms-transform: rotate(180deg);
@@ -309,15 +315,16 @@ a {
 		transform: rotate(180deg);
 }
 
-.bt_padrao1 a:hover > .mensagem {
+.bt_padrao1 a:hover > .mensagem, .bt_padrao1 button[type='submit']:hover .mensagem {
 	width: 127px;
 	-moz-transition:0.8s all;
 	-webkit-transition:0.8s all;
 }
-.bt_padrao1 a:hover > .mensagem p{
+.bt_padrao1 a:hover > .mensagem p, .bt_padrao1 button[type='submit']:hover > .mensagem p{
 	padding-left: 22px;
 	padding-right: 27px;
-	color: #fdba31;
+	//color: #fdba31;
+	color: #004961;
 	text-indent: 0px;
 	-moz-transition:0.6s all;
 	-webkit-transition:0.6s all;

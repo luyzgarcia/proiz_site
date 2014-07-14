@@ -152,6 +152,9 @@
 #home_trabalhos .bt_padrao1 .mensagem {
   background: #fdba31;
 }
+#home_trabalhos .bt_padrao1 a:hover > .mensagem p{
+ color: #fdba31; 
+}
 #home_trabalhos .bt_padrao1 p {
   background: #004961;
 }

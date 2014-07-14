@@ -2,10 +2,24 @@
 	<div class="wrapper_ultimas">
 		<h3>Últimas adicionadas</h3>
 		<div id="items_noticias">
-			
 			<% @noticias.each_with_index do |noticia, index| %>
 				<%= render 'item_noticia', :noticia => noticia %>
 			<% end %>
 		</div>
-	</div>
+		
+		<%= form_tag mais_noticias_path,:id => 'mais_noticias', :method => 'get', :remote => true do %>
+			
+			<%= hidden_field_tag 'num_noticias', '6' %>
+			<div id="" class="bt_padrao1 botao_noticias">
+				<%= button_tag(type: 'submit') do %>
+				<div class="circulo">
+					<span></span>
+				</div>
+				<div class="mensagem">
+					<p><%= t 'inicial.noticias.botao' %></p>
+				</div>
+			<% end %>
+			</div>			
+		<% end %>		
+	</div>	
 </div>

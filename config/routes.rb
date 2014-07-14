@@ -152,6 +152,7 @@ ProizAdmin::Application.routes.draw do
   
   get "buscar_noticia" => "noticias#buscar", :as => "buscar_noticia"
   get "/noticias/:id" => "noticias#detalhe_noticia"
+  get "mais_noticias" => 'noticias#mais_noticias'
   resources :noticias do
     
     member do

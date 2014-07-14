@@ -1,0 +1,11 @@
+
+var $conteudo = '';
+<% @noticias.each do |noticia| %>
+	$conteudo += "<%= escape_javascript(render 'item_noticia', :noticia => noticia) %>";	
+<% end %>
+
+$('#items_noticias').append($conteudo).hide().fadeIn(2000);
+
+var $noticias = <%= @ds %>
+$noticias += 6;
+$('#num_noticias').val($noticias);
