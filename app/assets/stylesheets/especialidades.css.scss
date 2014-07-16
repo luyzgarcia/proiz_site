@@ -93,7 +93,8 @@
   top: 50%;
 }
 #especialidades .especialidades_drag_items:before, #especialidades .especialidades_drag_items_min:before { 
-  content: 'Arraste até aqui as especialidades que você gostaria de conhecer melhor.';
+  //content: 'Arraste até aqui as especialidades que você gostaria de conhecer melhor.';
+  content: attr(data-texto);
   font: normal 18pt/1.5em nexa_bold, Times;
   color: #fff;
   margin: 40px 0 0 205px;

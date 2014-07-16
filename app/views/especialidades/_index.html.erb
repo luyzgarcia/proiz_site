@@ -36,40 +36,40 @@
 				</div>
 			</div>
 			
-			<div class="especialidades_drag_items_min">
+			<div class="especialidades_drag_items_min" data-texto="<%= t 'especialidades.mensagem_arrastar' %>">
 				<div class="wrapper_items"></div>
 			</div>
 			
-			<div id="drag_here" class="especialidades_drag_items">
+			<div id="drag_here" class="especialidades_drag_items" data-texto="<%= t 'especialidades.mensagem_arrastar' %>">
 				<div class="wrapper_items"></div>
 			</div>
 			
 			<div class="especialidades_formulario">
 				<div class="especialidades_selecionadas">
-					<h3>Especialidades selecionadas</h3>
+					<h3><%= t 'especialidades.especialidades_selecionadas' %></h3>
 					<ul>
 								
 					</ul>
 				</div>
 				
 				<div class="especialidades_formulario_envio">
-					<h3>Informações para contato</h3>
+					<h3><%= t 'especialidades.informacoes_contato' %></h3>
 					<%= form_tag({controller: 'especialidades', action: 'contato'}, 
 						method: "get", class: 'formulario_padrao_1', :remote => true) do %>
 						<div class="form_item">	
-							<%= text_field_tag :nome, params[:nome] , :placeholder => '*Nome' %>
+							<%= text_field_tag :nome, params[:nome] , :placeholder => t('contato.form_nome') %>
 						</div>
 						<div class="form_item">	
-							<%= text_field_tag :sobrenome, params[:sobrenome] , :placeholder => '*Sobrenome' %>
+							<%= text_field_tag :sobrenome, params[:sobrenome] , :placeholder => t('contato.form_sobrenome') %>
 						</div>
 						<div class="form_item">
-							<%= text_field_tag :email, params[:email] , :placeholder => '*Email' %>
+							<%= text_field_tag :email, params[:email] , :placeholder => t('contato.form_email') %>
 						</div>
 						<div class="form_item">
-							<%= text_field_tag :telefone, params[:telefone] , :placeholder => '*Telefone' %>
+							<%= text_field_tag :telefone, params[:telefone] , :placeholder => t('contato.form_telefone') %>
 						</div>						
-						<p>*Campos obrigatorios</p>
-						<%= submit_tag("Enviar", :class => 'botao_submit_2') %>
+						<p>*<%= t('contato.form_obrigatorios') %></p>
+						<%= submit_tag(t('contato.form_botao'), :class => 'botao_submit_2') %>
 					<% end %>
 				</div>
 				

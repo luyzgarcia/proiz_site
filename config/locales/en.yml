@@ -53,7 +53,10 @@ en:
       titulo: Clients
       mensagem: They believed in our potential to transform.
   especialidades:
-    titulo: Specialties
+    titulo: Our skills
+    mensagem_arrastar: Drag here the specialties you want to know better.
+    especialidades_selecionadas: Selected specialties
+    informacoes_contato: Fill your contact information
   trabalhos:
     trabalhos: Works
     midias: In social media
@@ -73,9 +76,11 @@ en:
     email: E-mail
     telefone: Telephone
     form_nome: Name*
+    form_sobrenome: Last Name*
     form_email: E-mail*
     form_telefone: Telephone
     form_mensagem: Message*
+    form_obrigatorios: Required fields
     form_botao: Send
     
   time:

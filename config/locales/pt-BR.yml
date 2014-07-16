@@ -54,6 +54,9 @@ pt-BR:
       mensagem: Eles acreditaram em nosso potencial transformador
   especialidades:
     titulo: Especialidades
+    mensagem_arrastar: Arraste até aqui as especialidades que você gostaria de conhecer melhor.
+    especialidades_selecionadas: Especialidades selecionadas
+    informacoes_contato: Informações para contato
   trabalhos:
     trabalhos: Trabalhos
     midias: Em mídias sociais
@@ -73,10 +76,12 @@ pt-BR:
     email: Email
     telefone: Telefone    
     form_nome: Nome*
+    form_sobrenome: Sobrenone*
     form_email: E-mail*
     form_telefone: Telefone
     form_mensagem: Mensagem*
-    form_botao: Enviar mensagem
+    form_obrigatorios: Campos obrigatorios
+    form_botao: Enviar
   
   date:
     abbr_day_names:

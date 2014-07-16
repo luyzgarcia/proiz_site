@@ -51,7 +51,7 @@ function recarregar() {
 		$('#grid').css('opacity','0');
 		$('#carregando_trabalho').show();
 	});
-	
+	divisao_4();
 	//stopfullloading();
 }
 
@@ -107,13 +107,41 @@ $(document).ready(function(){
 		    xfbml      : true
 		});
 		FB.XFBML.parse();
-		//$(document).trigger("facebook:ready");
 	};
-	//window.fbReady = function(func){
-   // 	alert('fbReady');
-   // };
-    //recarregar();
-    
-    
-	
+
 });
+
+function ocultarMostrar() {
+	var headerTop = $(".detalhe_trabalho .detalhe").offset().top - 100;
+	if ($(window).scrollTop() > headerTop) {
+        if(!$("#detalhe_modal .fechar_detalhetrabalho").hasClass("fixo")) {
+        	efeitoOcultarMostrar(true);
+        }        
+    } else if($("#detalhe_modal .fechar_detalhetrabalho").hasClass("fixo")) {
+        efeitoOcultarMostrar(false);        
+    }
+    $(window).scroll(function(){ocultarMostrar(); });
+}
+
+var efeito = false;
+function efeitoOcultarMostrar(mudar) {
+	if(!efeito) {
+		efeito = true;
+		$("#detalhe_modal .fechar_detalhetrabalho").animate({
+			opacity: 0
+		}, 200, function() {
+			if(mudar) {
+		 		$("#detalhe_modal .fechar_detalhetrabalho").addClass("fixo");
+		 	}else {
+		 		$("#detalhe_modal .fechar_detalhetrabalho").removeClass("fixo");
+		 	} 	 	
+		 	$("#detalhe_modal .fechar_detalhetrabalho").animate({
+				opacity: 1
+		 	}, 200, function() {
+		 		efeito = false;
+		 	});
+		});
+		
+	}
+    
+}

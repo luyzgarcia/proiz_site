@@ -66,7 +66,7 @@
   transition: 0.5s;
 }
 #trabalhos .titulo h1 a:hover {
-  font-size: 34pt;
+  color: #fdbf57;
 }
 #trabalhos .titulo .trab_ativo, #trabalhos .titulo .trab_ativo a {
   color: #8dc63f;
@@ -143,7 +143,7 @@
   display: inline-block;
 }
 #trabalhos .compartilhar .botoes_amarelos a {
-  font-family: 'icons';
+  font-family: 'fonts';
   font-size:24pt;
   height: 70px;
   width: 70px;
@@ -258,10 +258,9 @@
   display: block;
   width: 100%;  
   text-align: left;
-  margin-left: 65px;
 }
 #trabalhos .detalhe_trabalho .detalhe .descricao .info p {
-  font: normal 12pt/1.9em "droid_serif", Times;
+  font: normal 11pt/1.9em "droid_serif", Times;
   color: #4f4e4e;
   -webkit-column-count:2; /* Chrome, Safari, Opera */
   -moz-column-count:2; /* Firefox */
@@ -269,10 +268,9 @@
   column-gap: 50px;
   -webkit-column-gap: 50px;
   padding-left: 20px;
-  //min-height: 200px;
 }
 #trabalhos .detalhe_trabalho .detalhe .full-info {
-  margin: 80px auto;
+  margin: 50px auto;
   display: inline-block;
   .image-info {
     margin-bottom: 100px;
@@ -332,17 +330,20 @@
   }
   #carregando_trabalho::before {
     content: '\e406';
-    font-family: 'icons';
+    font-family: 'fonts';
     position: absolute;
     top: 10px;
     font-size: 25pt;
     color: #BDBDBD;
     -webkit-animation: rodando 2.5s infinite linear;
+    -moz-animation: rodando 2.5s infinite linear;
+    animation: rodando 2.5s infinite linear;
   }
 }
 #grid {
   position: absolute;
   /*min-height: 1300px;*/
+ padding-bottom: 100px;
 }
 #grid .item a {
   position: absolute;
@@ -362,7 +363,7 @@
   height: 100%;
 }
 #trabalhos .corpo_trabalhos .compartilhar {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 #trabalhos .corpo_trabalhos .item .hover h4 {
  display: table-cell;
@@ -439,22 +440,30 @@
   left: 0;
 }
 #detalhe_modal > div {
-  padding-top: 50px;
+  padding-top: 10px;
 } 
 #detalhe_modal .fechar_detalhetrabalho {
   position: absolute;
-  top: -100px;
-  right: 20px;
-  background: #fdba31;
-  width: 30px;
-  height: 30px;
-  border-top: 1px solid #f6dca5;
-  border-bottom: 1px solid #f6dca5;
+  top: 0px;
+  right: -100px;
+  //background: #fdba31;
+  //width: 30px;
+  //height: 30px;
+  //border-top: 1px solid #f6dca5;
+  //border-bottom: 1px solid #f6dca5;
   line-height: 1.5em;
-  font-family: nexa_light;
+  font-family: 'fonts';
   font-size: 16pt;
   color: #004961;
-
+}
+#detalhe_modal .fechar_detalhetrabalho:before {
+  //content: '\e430';
+  content: '\e428';
+}
+#detalhe_modal .fechar_detalhetrabalho.fixo {
+  position: fixed !important;
+  top: 150px !important;
+  right: 100px !important;
 }
 
 @-webkit-keyframes bordasubirtrabalhos {
@@ -774,7 +783,7 @@
 }
 #trabalhos .detalhe_trabalho .detalhe {
   min-height: 630px;
-margin: 100px auto 0;
+  margin: 0px auto 0;
 }
 
 

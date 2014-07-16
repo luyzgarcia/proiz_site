@@ -33,10 +33,12 @@ function mostraModal() {
 		alturacontainer = $('.corpo_trabalhos').height();
 		//alert(alturamodal);
 		if(alturamodal > alturacontainer) {
-			$('.corpo_trabalhos').css('height',alturamodal +10+'px');	
+			$('.corpo_trabalhos').css('height',alturamodal +70+'px');	
 		}
+		ocultarMostrar();
 		$('#grid').css('opacity','1');		
 	});
+	divisao_4();
 	stoploading();
 	adicionaEfeitoImagensTrabalho();
 }
