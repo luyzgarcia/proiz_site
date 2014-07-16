@@ -92,6 +92,7 @@ function adicionaEfeitoImagensTrabalho() {
 		});
 	} ,false);	
 	
+	$(window).scroll(function(){ocultarMostrar(); });
 }
 
 $(document).ready(function(){
@@ -120,7 +121,7 @@ function ocultarMostrar() {
     } else if($("#detalhe_modal .fechar_detalhetrabalho").hasClass("fixo")) {
         efeitoOcultarMostrar(false);        
     }
-    $(window).scroll(function(){ocultarMostrar(); });
+    
 }
 
 var efeito = false;
