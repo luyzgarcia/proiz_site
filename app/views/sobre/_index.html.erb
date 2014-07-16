@@ -3,61 +3,46 @@
 <% end %>
 <div id="sobre">
 	<div class="titulo_padrao_1">
-		<h1>Sobre a Proiz</h1>
+		<h1><%= t('sobre.topo.titulo') %></h1>
 	</div>
 	
 	
 	<div class="wrapper_sobre">
-		<div class="sobre_info">
-			<span id="sobre_titulo_mercury" data-mercury="full" >
-			<h2>Um organismo vivo feito para transformar</h2>
-			</span>
-			<p>
-				Somos uma agência nova, moderna e que reconhece o potencial de cada cliente. Com o trabalho de comunicação integrada, 
-				os mecanismos e orgãos operam todos juntos. Manuseados por profissionais abastecidos de dedicação e inteligência que sempre trabalham para solucionar 
-				problemas de uma forma inovadora e criativa. Procuramos ser mecanicamente perfeitos para se ter como recompensa a satisfação de todos os envolvidos. 
-				Equipada de muita força de vontade e conhecimento, a Proiz procura navegar muito além do que a vista alcança. Trabalhamos com transformação de marcas. 
-				Um tipo de transformação que você procura.
-			</p>
+		<div class="wrapper_sobre_info">
+			<div class="sobre_info">
+				<span id="sobre_titulo_mercury" data-mercury="full" >
+				<h2><%= t('sobre.introducao.titulo') %></h2>
+				</span>
+				<p>
+					<%= t('sobre.introducao.mensagem') %>
+				</p>
+			</div>
 		</div>
-		
 		<div class="sobre_info_2">
 			<div class="mensagem">
-				<h1>Comunicação integrada e eficiente do jeito que acreditamos</h1>
+				<h1><%= t('sobre.sobre.titulo') %></h1>
 			</div>
 			<div class="item">
-				<%= image_tag('sobre_item_1.png') %>
-				<h4>Design gráfico e digital</h4>
-				<p>Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. 
-					Com o trabalho de comunicação integrada, 
-				</p>
+				<h4><%= t('sobre.sobre.design_titulo') %></h4>
+				<p><%= t('sobre.sobre.design_texto') %></p>
 			</div>
 			<div class="item">
-				<%= image_tag('sobre_item_2.png') %>
-				<h4>Marketing</h4>
-				<p>Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. 
-					Com o trabalho de comunicação integrada, 
-				</p>
+				<h4><%= t('sobre.sobre.marketing_titulo') %></h4>
+				<p><%= t('sobre.sobre.marketing_texto') %></p>
 			</div>
 			<div class="item">
-				<%= image_tag('sobre_item_3.png') %>
-				<h4>Publicidade e prograganda</h4>
-				<p>Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. 
-					Com o trabalho de comunicação integrada, 
-				</p>
+				<h4><%= t('sobre.sobre.publicidade_titulo') %></h4>
+				<p><%= t('sobre.sobre.publicidade_texto') %></p>
 			</div>
 		</div>
 		
 		<div class="sobre_clientes">
-			<h4>Clientes</h4>
-			<h5>Eles acreditaram em nosso potencial transformador</h5>
+			<h4><%= t('sobre.clientes.titulo') %></h4>
+			<h5><%= t('sobre.clientes.mensagem') %></h5>
 			<div class="wrapper_itens">
 				<% @clientes.each do |cliente| %>
 					<div class="item">
-						<%= link_to "http://#{cliente.url_site}", :target => "_blank" do %>
-							<%= image_tag(cliente.logo)%>
-						<% end %>
-						
+						<%= image_tag(cliente.logo)%>
 					</div>							
 				<% end %>
 			</div>

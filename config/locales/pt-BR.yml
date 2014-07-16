@@ -19,12 +19,12 @@ pt-BR:
       titulo: Os serviços
       subtitulo: Aliados aos objetivos de nossos clientes, unimos três grandes especialidades na realização de nossos serviços.
       botao: Saiba mais
-      design_titulo: Design gráfico e digital
-      design_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+      design_titulo: Design
+      design_texto: Geramos soluções criativas, inovadoras e estratégicas para problemas de comunicação de marcas em suportes impressos e virtuais.
       marketing_titulo: Marketing
-      marketing_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+      marketing_texto: O conhecimento de marketing nos permite servir de base e auxílio nos planejamentos estratégicos dos clientes e apontar novas oportunidades de mercado.
       publicidade_titulo: publicidade
-      publicidade_texto: Utilizada para divulgar valores de um marca, a propaganda é capaz de mudar comportamentos e transformar culturas.
+      publicidade_texto: Estabelecemos com as empresas um vínculo de gestão da marca. Com isso, elaboramos planejamentos, ideias e ações que construirão os valores da marca.
     noticias:
       titulo: Fique por dentro do que temos feito
       botao: Notícias
@@ -34,21 +34,21 @@ pt-BR:
       placeholder: Insira seu e-mail para receber atualizações
     rodape:
       mensagem: Agência de comunicação integrada. Publicidade e propaganda, design gráfico e marketing digital. Soluções completas para a construção de marcas fortes.
-      copyright: Proiz comunicação integrada - Todos os direitos reservados.
+      copyright: © Copyright 2014 Proiz comunicação integrada, todos os direitos reservados.
   sobre:
     topo:
       titulo: Sobre a Proiz
     introducao:
-      titulo: Um organismo vivo feito para transformar
-      mensagem: Somos uma agência nova, moderna e que reconhece o potencial de cada cliente. Com o trabalho de comunicação integrada, os mecanismos e orgãos operam todos juntos. Manuseados por profissionais abastecidos de dedicação e inteligência que sempre trabalham para solucionar problemas de uma forma inovadora e criativa. Procuramos ser mecanicamente perfeitos para se ter como recompensa a satisfação de todos os envolvidos. Equipada de muita força de vontade e conhecimento, a Proiz procura navegar muito além do que a vista alcança. Trabalhamos com transformação de marcas. Um tipo de transformação que você procura.
+      titulo: Um organismo feito para transformar
+      mensagem: Somos uma agência nova, moderna e que reconhece o potencial de cada cliente. Com o trabalho de comunicação integrada, os mecanismos operam todos juntos manuseados por profissionais abastecidos de dedicação e inteligência,e que trabalham no desenvolvimento de ideias inovadoras e criativas. Procuramos ser mecanicamente perfeitos para que a recompensa seja a satisfação de todos os envolvidos. Equipada de muita força de vontade e conhecimento, a Proiz procura navegar muito além do que a vista alcança e, se todo o trajeto puder ser resumido em um conceito, podemos dizer que este é a transformação de marcas. Um tipo de transformação que você procura.
     sobre:
-      titulo: Comunicação integrada e eficiente do jeito que acreditamos
+      titulo: Comunicação integrada e eficiente do jeito que acreditamos.
       design_titulo: Design gráfico e digital
-      design_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
+      design_texto: Para que, através de elementos visuais organizados sistematicamente, possamos desenvolver projetos que causem impacto na comunicação das marcas e, consequentemente, nas vendas das empresas.
       marketing_titulo: Marketing
-      marketing_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
-      publicidade_titulo: Publicidade e propaganda
-      publicidade_texto: Uma agencia nova e moderna, que reconhece o potencial de cada cliente. Essa é a Proiz, suas engrenagens são o Design gráfico, a Publicidade, a Propaganda e o Marketing. Com o trabalho de comunicação integrada.
+      marketing_texto: Usamos para entender os ramos de atividade e suas especificidades. Conhecendo as características de cada negócio nos tornamos capazes de prever ameaças e oportunidades vanguardistas no mercado.
+      publicidade_titulo: Publicidade
+      publicidade_texto: Gerimos marcas e as conhecemos adequadamente a fim de criar mensagens e ideias que as destaquem nos veículos de comunicação. O serviço é preparado para que a agência seja um departamento fundamental nas empresas.
     clientes:
       titulo: Clientes
       mensagem: Eles acreditaram em nosso potencial transformador
@@ -60,6 +60,7 @@ pt-BR:
     compartilhar: Gostou?
     compartilhar_mensagem: Compartilhe essa página com seus amigos
   noticias:
+    todas: Todas
     titulo: Notícias
     encontre: Encontre facil
     categorias: Categorias

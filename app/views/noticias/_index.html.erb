@@ -1,10 +1,10 @@
 <div class="wrapper_noticia_destaque">
 	<div class="noticia_destaque">
 		<div class="categorias">
-			<h5>Categorias</h5>
+			<h5><%= t('noticias.categorias')%></h5>
 			<div class="wrapper_categorias">
 			<ul>
-				<li class=""><%= link_to 'Todas', filtrar_noticia_path(0), :remote => true %></li>
+				<li class=""><%= link_to t('noticias.todas'), filtrar_noticia_path(0), :remote => true %></li>
 				<% @categorias.each do |cat| %>					
 					<li><%= link_to cat.titulo, filtrar_noticia_path(cat),  :remote => true %></li>
 				<% end %>

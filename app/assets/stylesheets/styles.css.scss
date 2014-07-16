@@ -423,6 +423,8 @@ a {
 #home_rodape .newsletter form { 
 	display: none;
 	margin: 0;
+	position: relative;
+  margin: 0 70px;
 }
 #home_rodape .newsletter form input[type="text"] {
 	border: none;
@@ -431,15 +433,14 @@ a {
 	color: #fff;
 	outline: none;
 	margin: 6px 0;
+	left: 0;
+  position: absolute;
 }
 #home_rodape .newsletter form .bt_enviar {
 	display: inline-block;
-	/*background: #fdba31;
-	padding: 2px;*/ 
 	-webkit-appearance:none;
 	position: absolute;
-  /*right: 50px;*/
-  right: initial;
+  right: 400px;
 }
 #home_rodape .newsletter form input[type="submit"] {
 	/*border: none;
@@ -453,7 +454,7 @@ a {
   color: #fff;
   margin: -3px 0px 10px 0px;
   text-transform: uppercase;
-  padding: 18px 30px 13px;
+  padding: 18px 30px 16px;
   letter-spacing: 1px;
   cursor: pointer;
 	text-transform: uppercase;
@@ -656,8 +657,8 @@ a {
 /****************************************************************/
 .titulo_padrao_1 {
 	text-align: center;
-	margin-bottom: 65px;
-	padding-top: 240px;
+	margin-bottom: 100px;
+  padding-top: 120px;
 }
 .titulo_padrao_1 h1{
 	font: normal 48pt/1em "nexa_bold", Tahoma;

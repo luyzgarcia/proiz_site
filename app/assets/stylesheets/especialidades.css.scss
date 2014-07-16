@@ -6,7 +6,7 @@
   width: 100%;
   background: #8dc63f;
   min-height: 300px;
-  padding-bottom: 200px;
+  padding-bottom: 120px;
 }
 #especialidades .especialidades_items .wrapper_items {
   display: block;
@@ -20,7 +20,7 @@
   width: 80%;
   max-width: 1000px;
   text-align: center;
-  margin: 20px auto;
+  margin: 40px auto -20px;
 }
 #especialidades .especialidades_items .item {
   width: 280px;
@@ -139,14 +139,15 @@
 }
 #especialidades .especialidades_drag_items img {
   width: 90px;
+  
+  margin: 0 10px;
 }
 #especialidades .especialidades_drag_items_min img {
   width: 50px;
   margin: 1 10px;
+  margin: 0 15px;
 }
 #especialidades .especialidades_drag_items img , #especialidades .especialidades_drag_items_min img {
-  
-  margin: 0 10px; 
   -webkit-transition: 0.2s ease-in-out 0.2s;
   -moz-transition: all 0.2s ease-in-out 0.2s;
   -o-transition: all 0.2s ease-in-out 0.2s;
@@ -159,9 +160,10 @@
   height: 10px;
   position: absolute;
   cursor: pointer;
+  margin-left: -15px;
 }
 .especialidades_drag_items_min .wrapper_items span {
-  margin-left: -5px; 
+  margin-left: -15px; 
 }
 #especialidades .especialidades_drag_items .wrapper_items span:before, .especialidades_drag_items_min .wrapper_items span:before {
   content: '\e421';
@@ -216,17 +218,23 @@
   margin: 100px auto;
 }
 #especialidades .especialidades_items .item .wrapper-descricao .descricao .fechar {
-  color: #fdbb30;
+  //color: #fdbb30;
   position: absolute;
   margin: -50px 0 0 -80px;
-  background: #004a61;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  line-height: 1.5;
+  //background: #004a61;
+  //border-radius: 50%;
+  //width: 40px;
+  //height: 40px;
+  //line-height: 1.5;
   cursor: pointer;
-  font-family: 'Helvetica', 'Arial', sans-serif;
+  //font-family: 'Helvetica', 'Arial', sans-serif;
   font-size: 20pt;
+}
+#especialidades .especialidades_items .item .wrapper-descricao .descricao .fechar:before {
+  content: '\e428';
+  font-family: 'icons';
+  color: #004a61;
+  font-size: 20pt; 
 }
 #especialidades .especialidades_items .item .wrapper-descricao .descricao > img {
   position: relative;
@@ -245,7 +253,7 @@
   padding: 0 0 20px 0;  
 }
 #especialidades .especialidades_items .item .wrapper-descricao .descricao .descricao-texto p {
-  font: normal 16pt/1.5em droid_serif, Times;
+  font: normal 12pt/1.8em droid_serif, Times;
   color: #4f4e4e;
   margin-bottom: 50px;
 }
@@ -281,12 +289,12 @@
   cursor: pointer;
 }
 #especialidades .especialidades_formulario .especialidades_selecionadas ul li:before{ 
-  content: 'X';
+  content: '\e421';
   position: absolute;
-  left: 10px;
-  font: bold 10pt/1em "droid_serif";
-  color: #7fa73b;
-    
+  left: 6px;
+  font-family: icons;
+  color: #BDBDBD;
+  font-size: 13pt;    
 }
 #especialidades .especialidades_formulario .especialidades_formulario_envio {
   width: 55%;
@@ -294,7 +302,12 @@
   text-align: left;
   position: relative;
   min-height: 350px;
+  
+  .botao_submit_2 {
+    margin-right: -30px;
+  }
 }
+
 #especialidades .especialidades_formulario h3 {
   font: normal 16px/1em "nexa_bold", Times;
   color: #004961;

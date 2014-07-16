@@ -20,7 +20,7 @@
 }
 #trabalhos .menu_trabalhos ul li{
   display: inline-block;
-  margin: 10px 10px 40px;
+  margin: 10px 0px 40px;
   
 }
 #trabalhos .menu_trabalhos ul li:hover > a {
@@ -51,7 +51,7 @@
 /************ Página Trabalhos - TRABALHOS************************/
 /*****************************************************************/
 #trabalhos {
-  padding-top: 240px;
+  //padding-top: 240px;
 }
 #trabalhos .titulo {
   text-align: center;
@@ -61,6 +61,12 @@
   font: normal 48pt/1em "nexa_bold", Tahoma;
   color: #bdbdbd;
   display: inline;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+}
+#trabalhos .titulo h1 a:hover {
+  font-size: 34pt;
 }
 #trabalhos .titulo .trab_ativo, #trabalhos .titulo .trab_ativo a {
   color: #8dc63f;
@@ -106,7 +112,7 @@
 }
 #trabalhos .corpo_trabalhos .item .hover h4{
   color: #fff;
-  font: normal 14pt/1.5em "nexa_bold", Tahoma;
+  font: normal 12pt/1.5em "nexa_bold", Tahoma;
   margin: 25% auto;
   letter-spacing: 1px;
 }
@@ -311,7 +317,7 @@
 
 
 .corpo_trabalhos {
-  padding: 100px 30px 0;
+  padding: 20px 30px 0;
   margin: 0 auto;
   position: relative;
   #carregando_trabalho {
@@ -350,46 +356,27 @@
   /*margin: 25% auto;*/
   margin: 0 auto;
   -webkit-backface-visibility: hidden;
-  //display: table-cell;
-  //vertical-align: middle;
+  vertical-align: middle;
+  display: table;
+  width: 80%;
+  height: 100%;
 }
 #trabalhos .corpo_trabalhos .compartilhar {
-  margin-top: 250px;
+  margin-top: 150px;
 }
 #trabalhos .corpo_trabalhos .item .hover h4 {
-  /*width: 60%;
-  padding: 25% 20px;*/
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 80%;
-  height: 30%;
-  margin: auto;
+ display: table-cell;
+ vertical-align: middle;
 }
-/*#trabalhos .corpo_trabalhos .item:hover > .hover h4 {
-  border-bottom: 3px solid #fff;
-  border-top: 3px solid #fff;
-  -webkit-animation: bordasurgirtrabalhos 0.6s;
-  
-  display: inline-block;
-  padding: 15px 0;
-  margin: 0;
-  display: initial;
-}*/
-#trabalhos .tam1 .descricao_trabalho {
-  margin: 25% auto !important;
-}
+
 #trabalhos .tam2 .descricao_trabalho {
-  /*margin: 200px auto !important;*/
  height: 100%;
 }
 .tam2 {
   .hover h4:before, .hover h4:after {
-    -webkit-transition: all 0.4s linear;
+    -webkit-transition: all 0.6s linear;
     -webkit-transition-delay: 0.1s;
-    transition: all 0.4s linear;
+    transition: all 0.6s linear;
     transition-delay: 0.2s;
   }
   .hover h4:before {
@@ -419,7 +406,7 @@
   height: 3px;
   width: 100%;
   background: #FFF;
-  top: 0;
+  top: -20px;
   position: relative; 
 }
 
@@ -439,7 +426,7 @@
   height: 3px;
   width: 100%;
   background: #FFF;
-  top: 0;
+  top: 20px;
   position: relative; 
 }
 
@@ -536,20 +523,16 @@
   transform-style: preserve-3d; 
 }
 #trabalhos .corpo_trabalhos .tam1 {
-  /*height: auto;*/
-  height: 200px;
-  background: blue;
-  
+  height: auto;  
 }
 #trabalhos .corpo_trabalhos .tam2 {
-  height: 410px;
-  background: red;
+  height: auto;
 }
 #trabalhos .corpo_trabalhos .tam2 img{
-  height: 100% !important;  
+  height: auto;  
 }
 #trabalhos .corpo_trabalhos .item img{
-  height: 100%; 
+  height: auto; 
 }
 .corpo_trabalhos .item.animate {
   transform: translateZ(400px) translateY(300px) rotateX(0deg);

@@ -212,6 +212,9 @@ $(document).ready(function(){
 					},500,function() {
 						$("#home_rodape .newsletter form").show();
 						$("#home_rodape .newsletter form input[type='text']").focus();
+						$("#home_rodape .newsletter form .bt_enviar").animate({
+							right: '0'
+						}, 500);
 					});
 				}else {
 					$("#home_rodape .newsletter form").show();
@@ -225,6 +228,9 @@ $(document).ready(function(){
 						height : '22px'
 					},500,function() {
 						$('#home_rodape .newsletter h4').show();
+						$("#home_rodape .newsletter form .bt_enviar").animate({
+							right: '400px'
+						}, 500);
 					});
 				}else {
 					$('#home_rodape .newsletter h4').show();

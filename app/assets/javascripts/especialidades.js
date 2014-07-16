@@ -255,12 +255,14 @@ $(function() {
 			})
 			
 			.on('scrollout', function(e,ui) {
-				console.log('window Y: '+window.pageYOffset);
-				console.log($('#especialidades .especialidades_drag_items').offset().top);
+				//console.log('window Y: '+window.pageYOffset);
+				//console.log($('#especialidades .especialidades_drag_items').offset().top);
 				if( window.pageYOffset < $('#especialidades .especialidades_drag_items').offset().top) {
-					$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
+					//$('#especialidades .especialidades_drag_items_min').fadeIn('slow');
 				}
-			});		
+			});
+			
+		
 		//}
 		/*jQuery(window).scroll(function() {
 			console.log('window Y: '+window.pageYOffset);
@@ -271,10 +273,21 @@ $(function() {
 			}
 		});*/
 	}
-//	jQuery(document).on("ready", mostrarBoxEspecialidadesMin);
-//	jQuery(window).on("resize", mostrarBoxEspecialidadesMin);
+(function(){
+	function ocultarBarra() {
+		var topBarra = $('#especialidades .especialidades_drag_items').offset().top - 500;
+		console.log(window.pageYOffset + '>' + topBarra);
+		if(window.pageYOffset > topBarra){			
+			$('#especialidades .especialidades_drag_items_min').fadeOut('fast');
+		}else {
+			$('#especialidades .especialidades_drag_items_min').fadeIn('normal');
+		}
+	}
+
+	jQuery(document).on("ready", ocultarBarra);
+	jQuery(window).on("scroll", ocultarBarra);
 	
-//})();
+})();
 
 function adicionarClick() {
 	//Adiciona o click no item da caixa, este click ira remover o item;
