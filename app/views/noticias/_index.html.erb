@@ -12,8 +12,12 @@
 			</div>
 		</div>
 		<div class="noticia_destaque_info">
-			<%= image_tag(@destaque.imagem_miniatura.url)%>
-			<p><%= @destaque.titulo %></p>
+			<%= link_to noticia_path(@destaque), :remote => true do %>
+				<%= image_tag(@destaque.imagem_miniatura.url)%>
+			<% end %>
+			<p><%= link_to @destaque.titulo, noticia_path(@destaque), :remote => true %></p>
+			
+			<span><%= truncate(corrige_acentos(strip_tags(@destaque.conteudo)), :length => 150) %></span>
 			<div class="ultimas_leiamais">
 				<%= link_to '', noticia_path(@destaque), :class => 'link_noticias', :remote => true %>
 			</div>			

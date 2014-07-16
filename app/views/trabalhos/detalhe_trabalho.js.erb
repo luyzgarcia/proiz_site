@@ -35,8 +35,10 @@ function mostraModal() {
 		if(alturamodal > alturacontainer) {
 			$('.corpo_trabalhos').css('height',alturamodal +70+'px');	
 		}
-		ocultarMostrar();
-		$('#grid').css('opacity','1');		
+		setTimeout(function() {
+			$('#grid').css('opacity','1');	
+		},1000);
+				
 	});
 	divisao_4();
 	stoploading();

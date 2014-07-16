@@ -92,7 +92,7 @@ function adicionaEfeitoImagensTrabalho() {
 		});
 	} ,false);	
 	
-	$(window).scroll(function(){ocultarMostrar(); });
+	//$(window).scroll(function(){ocultarMostrar(); });
 }
 
 $(document).ready(function(){
@@ -112,7 +112,7 @@ $(document).ready(function(){
 
 });
 
-function ocultarMostrar() {
+/*function ocultarMostrar() {
 	var headerTop = $(".detalhe_trabalho .detalhe").offset().top - 100;
 	if ($(window).scrollTop() > headerTop) {
         if(!$("#detalhe_modal .fechar_detalhetrabalho").hasClass("fixo")) {
@@ -146,3 +146,4 @@ function efeitoOcultarMostrar(mudar) {
 	}
     
 }
+*/

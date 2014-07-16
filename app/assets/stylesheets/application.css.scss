@@ -226,6 +226,106 @@ input:focus{
 /*****************************************************************/
 
 
+/*****************************************************************/
+/******************** GERAL - Compartilhar 2***********************/
+/*****************************************************************/
+.compartilhar_trabalho .share_padrao_2 {
+  width: 100px;
+  position: absolute;
+  display: block;
+  left: -170px;
+  top: 30px;
+}
+.share_padrao_2 {
+  content: '\e413 ';
+  font-family: 'icons';
+  color: #fdba31;
+  line-height: 70px;
+  font-size: 28pt;
+  margin-left: 0px;
+  .continue_lendo:before {
+    content: '\e418';
+    font-family: 'icons';
+    color: #fdba31;
+    line-height: 70px;
+    font-size: 25pt;
+    margin-left: -5px;
+  }
+  
+  .compartilhar_face:before { 
+    content: '\e413 ';
+  }
+  .compartilhar_twitter:before { 
+    content: '\e416 ';
+  }
+  .compartilhar_google:before { 
+    content: '\e422 ';
+  }
+  
+}
+.share_padrao_2 .continue_lendo,
+.share_padrao_2  .compartilhar_noticia_integra a {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  /*border: 9px solid #004961;*/
+  box-shadow: 0px 0px 0px 9px #004961;
+  border-radius: 50%;
+  text-align: center;     
+  -webkit-transition: 0.3s; 
+  margin-left: 5%;
+}
+.share_padrao_2 .compartilhar_noticia_integra:hover .continue_lendo{
+  background: #004961;
+  box-shadow:none;
+}
+.share_padrao_2 .compartilhar_noticia_integra .compartilhar_face,
+.share_padrao_2 .compartilhar_noticia_integra .compartilhar_google,
+.share_padrao_2 .compartilhar_noticia_integra .compartilhar_twitter {
+  opacity: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: 0.3s;
+  -webkit-animation: 0.2s;
+  width: 50px;
+  height: 50px;
+  background: #fdba31;
+  color: #fff;
+  font-size: 15pt;
+  line-height: 52px;
+  border: none;
+  box-shadow: none;
+  left: 60px;
+}
+
+.share_padrao_2 .compartilhar_noticia_integra a:not(:first-of-type):hover {
+  color: #fdba31 !important;
+  background: #fff !important;
+}
+.share_padrao_2 .compartilhar_noticia_integra:hover {
+  height: 400px;
+}
+.share_padrao_2 .compartilhar_noticia_integra:hover .compartilhar_face {
+  opacity: 1;
+  top: 90px;
+}
+.share_padrao_2 .compartilhar_noticia_integra:hover .compartilhar_google {
+  opacity: 1;
+  top: 150px;
+}
+.share_padrao_2 .compartilhar_noticia_integra:hover .compartilhar_twitter {
+  opacity: 1;
+  top: 210px;
+} 
+.share_padrao_2 .share_mobile {
+  display:none;
+}
+
+/*****************************************************************/
+/****************FIM GERAL - Compartilhar 2***********************/
+/*****************************************************************/
+
+
 /**********************************************/
 /****************SCROLL EFFECT ****************/
 /**********************************************/

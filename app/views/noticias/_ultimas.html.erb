@@ -2,8 +2,14 @@
 	<div class="wrapper_ultimas">
 		<h3><%= t('noticias.ultimas') %></h3>
 		<div id="items_noticias">
+			<% num = 0 %>
 			<% @noticias.each_with_index do |noticia, index| %>
+				<% num += 1 %>
 				<%= render 'item_noticia', :noticia => noticia %>
+				<% if num == 3 %>
+					<hr />
+				<% num = 0
+					end %>
 			<% end %>
 		</div>
 		

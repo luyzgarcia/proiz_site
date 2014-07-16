@@ -229,7 +229,7 @@
 }
 #trabalhos .detalhe_trabalho .detalhe .descricao {
   margin: 0 auto;
-  min-height: 200px;
+  //min-height: 200px;
 }
 #trabalho_detalhe_menu {
   display:none;
@@ -284,8 +284,9 @@
   p {
     font: normal 12pt/1.9em "droid_serif", Times;
     padding-left: 50px;
+    padding-right: 50px;
     color: #4f4e4e;
-    text-align: justify;
+    text-align: left;
     display: block;
   }
   span {
@@ -296,6 +297,10 @@
     height: 25px;
     margin: 0 2px;
   }
+}
+
+#trabalhos .compartilhar, #trabalho .compartilhar {
+  display: none;
 }
 /*****************************************************************/
 /************ Página Trabalhos - FIM detalhes do trabalho ********/
@@ -435,7 +440,7 @@
   position: absolute;
   top: 0;
   height: 100%;
-  width: 100%;
+  width: 100% !important;
   background: #f1f2f2;
   left: 0;
 }
@@ -443,9 +448,9 @@
   padding-top: 10px;
 } 
 #detalhe_modal .fechar_detalhetrabalho {
-  position: absolute;
-  top: 0px;
-  right: -100px;
+  //position: absolute;
+  //top: 0px;
+  //right: -100px;
   //background: #fdba31;
   //width: 30px;
   //height: 30px;
@@ -455,6 +460,11 @@
   font-family: 'fonts';
   font-size: 16pt;
   color: #004961;
+  
+  position: absolute;
+  right: -30px;
+  top: 0;
+  bottom: 0;
 }
 #detalhe_modal .fechar_detalhetrabalho:before {
   //content: '\e430';

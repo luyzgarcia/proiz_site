@@ -9,6 +9,29 @@ $(function () {
 <div id="trabalho">
 	<div class="detalhe_trabalho">
 		<div class="detalhe">
+			<div class="compartilhar_trabalho">
+				<div class="share_padrao_2">
+						<div class="share_mobile">
+							<h3>Gostou?</h3>
+							<h4>Compartilhe essa página com seus amigos</h4>
+						</div>
+						<div class="compartilhar_noticia_integra">
+							<a href="#" class="continue_lendo"></a>
+								
+							<%= fb_share('1501616463400377', 
+									trabalho_url(trab),
+									'compartilhar_face',{}) %>
+                                  
+							<%= google_share(trabalho_url(trab),'compartilhar_google') %>
+							
+							<%= twitter_share(trabalho_url(trab),'compartilhar_twitter') %>
+						</div>
+					</div>				
+			</div>
+			
+			
+			
+			
 			<%= link_to_function '', 'esconder_detalhetrabalho(this)', :class => 'fechar_detalhetrabalho'%>
 			<div class="descricao">
 				<div class="intro">
@@ -51,13 +74,6 @@ $(function () {
 	<div class="compartilhar">
 		<h3>Gostou?</h3>
 		<h4>Compartilhe essa página com seus amigos</h4>
-		
-		
-              
-		
-		
-		
-		
 		<div class="botoes_amarelos">
 			<div class="bt_facebook">
 				<%= fb_share('1501616463400377', 
