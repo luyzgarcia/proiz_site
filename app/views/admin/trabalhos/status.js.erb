@@ -1,0 +1,8 @@
+$conteudo = $('#trabalho_<%= @trabalho.id %> .status a');
+if($conteudo.hasClass('status_ativo')) {
+	$conteudo.removeClass('status_ativo');
+	$conteudo.addClass('status_inativo');
+}else {
+	$conteudo.removeClass('status_inativo');
+	$conteudo.addClass('status_ativo');
+}

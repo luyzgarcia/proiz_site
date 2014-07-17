@@ -11,8 +11,9 @@
 		<tr>
 			<th>Titulo</th>
 			<th>Data de edição</th>
+			<th>Destaque</th>
 			<th>Estado</th>
-			<th>Ordem</th>
+			<th>Categoria</th>
 			<th>Ação</th>
 		</tr>
 		<% if @trabalhos %>
@@ -24,9 +25,17 @@
 					<td>
 						<%= trabalho.updated_at.to_s(:create) %>
 					</td>
-					<td>
+					<td class="destaque">
 						<%= link_to '', 
-						mudarstatus_admin_trabalho_path(trabalho),
+						destaque_admin_trabalho_path(trabalho), :remote => true,
+						:class => trabalho.vitrine_destaque == 1 ? 'destaque_ativo' : 'destaque_inativo', 
+						#:confirm => 'Alterar status',
+						:method => 'get',
+						:data => {:'message' => "Você está prestes a altear o destaque deste trabalho."} %>
+					</td>
+					<td class="status">
+						<%= link_to '', 
+						mudarstatus_admin_trabalho_path(trabalho), :remote => true,
 						:class => trabalho.status == 1 ? 'status_ativo' : 'status_inativo', 
 						:confirm => 'Alterar status',
 						:method => 'get',

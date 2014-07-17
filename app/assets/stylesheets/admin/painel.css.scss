@@ -326,6 +326,22 @@ body {
         font-size: 20pt;
         margin: 5px 0px 0px 10px;
       }
+      .destaque_ativo:before {
+        content: "\e431";
+        display: block;
+        font-family: 'icons';
+        color: #8dc63f;
+        font-size: 16pt;
+        margin: 5px 0px 0px 10px;
+      }
+      .destaque_inativo:before {
+        content: "\e431";
+        display: block;
+        font-family: 'icons';
+        color: #ff0000;
+        font-size: 16pt;
+        margin: 5px 0px 0px 10px;
+      }
     }
   }
 }

@@ -120,9 +120,29 @@ class Admin::TrabalhosController < Admin::AdminController
     @trabalho.save
     
     respond_to do |format|
-      if @trabalho.categoria_id != nil
+      if @trabalho.tipo != 'M'
         format.html { redirect_to admin_trabalhos_path}
-        format.js { redirect_to admin_trabalhos_path}
+        format.js { render 'status'}
+      else
+        format.html { redirect_to admin_trabalhos_midias_path}
+      end
+     end     
+  end
+  
+  def destaque
+    @trabalho = Trabalho.find(params[:id])
+    if(@trabalho.vitrine_destaque == 1)
+      @trabalho.update_attribute(:vitrine_destaque, 0)
+    else
+      @trabalho.update_attribute(:vitrine_destaque, 1)             
+    end
+    
+    @trabalho.save
+    
+    respond_to do |format|
+      if @trabalho.tipo != 'M'
+        format.html { redirect_to admin_trabalhos_path}
+        format.js { render 'destaque'}
       else
         format.html { redirect_to admin_trabalhos_midias_path}
       end

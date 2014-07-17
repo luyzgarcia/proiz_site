@@ -1,0 +1,8 @@
+$conteudo = $('#trabalho_<%= @trabalho.id %> .destaque a');
+if($conteudo.hasClass('destaque_ativo')) {
+	$conteudo.removeClass('destaque_ativo');
+	$conteudo.addClass('destaque_inativo');
+}else {
+	$conteudo.removeClass('destaque_inativo');
+	$conteudo.addClass('destaque_ativo');
+}

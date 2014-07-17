@@ -103,6 +103,7 @@ ProizAdmin::Application.routes.draw do
     resources :trabalhos do
       member do
         get :mudarstatus
+        get :destaque
       end
     end
     resources :categoriatrabalhos do
