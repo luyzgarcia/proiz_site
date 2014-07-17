@@ -3,7 +3,7 @@ class Admin::TrabalhosController < Admin::AdminController
   #layout "painel"
   
   def index
-    @trabalhos = getTrabalhos.order(:id).where("categoria_id IS NOT NULL")
+    @trabalhos = getTrabalhos.where("tipo != 'M'").order(:ordem)
   end
   
   def midias
@@ -148,6 +148,36 @@ class Admin::TrabalhosController < Admin::AdminController
       end
      end     
   end
+  
+  def subirordem
+    @trabalho = Trabalho.find(params[:id])
+    if @trabalho.ordem > 1
+      @anterior = Trabalho.find_by_ordem(@trabalho.ordem - 1)
+      @trabalho.update_attribute(:ordem, @trabalho.ordem - 1)
+      @anterior.update_attribute(:ordem, @anterior.ordem + 1)
+      respond_to do |format|
+         format.js {render 'subirordem' }
+      end
+    else
+      render nothing: true
+    end
+  end
+  
+  def descerordem
+    @trabalho = Trabalho.find(params[:id])
+    @maximo = Trabalho.where("tipo != 'M'").maximum(:ordem)
+    if @trabalho.ordem < @maximo
+      @proximo = Trabalho.find_by_ordem(@trabalho.ordem + 1)
+      @trabalho.update_attribute(:ordem, @trabalho.ordem + 1)
+      @proximo.update_attribute(:ordem, @proximo.ordem - 1)
+      respond_to do |format|
+         format.js {render 'descerordem'}
+      end
+    else
+      render nothing: true
+    end
+  end
+  
   
   def salvarimagem
     

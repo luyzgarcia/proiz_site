@@ -1,0 +1,4 @@
+e = $('#trabalho_<%= @trabalho.id %>');
+mover = $(e);
+anterior = $(e).prev();
+mover.insertBefore(anterior);

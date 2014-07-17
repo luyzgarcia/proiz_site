@@ -10,7 +10,7 @@
 }
 #sobre .wrapper_sobre_info {
   background: rgba(0, 0, 0, 0.5) image-url('bk_sobre.jpg') no-repeat 0 0;
-  background-size: 100%;
+  background-size: cover;
 }
 #sobre .wrapper_sobre .sobre_info {
   padding: 70px 0;
@@ -20,14 +20,14 @@
 #sobre .wrapper_sobre .sobre_info h2{
   margin: 30px auto;
   font: normal 28pt/1.5em nexa_bold, Times;
-  color: #fdba31;
+  color: #004961;
   letter-spacing: 1px;
 }
 #sobre .wrapper_sobre .sobre_info p{ 
   width: 800px;
   margin: 30px auto 0;
   font: normal 12pt/2.2em droid_serif, Times;
-  color: #4f4e4e;
+  color: #004961;
 }
 #sobre .wrapper_sobre .sobre_info_2 {
   margin: 0 auto;

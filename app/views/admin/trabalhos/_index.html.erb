@@ -13,13 +13,13 @@
 			<th>Data de edição</th>
 			<th>Destaque</th>
 			<th>Estado</th>
-			<th>Categoria</th>
+			<th>Ordem</th>
 			<th>Ação</th>
 		</tr>
 		<% if @trabalhos %>
 			<% @trabalhos.each do |trabalho| %>
 				<tr class="item" id="trabalho_<%= trabalho.id %>">
-					<td >
+					<td style="width: 40%;">
 						<%= trabalho.titulo %>
 					</td>
 					<td>
@@ -41,12 +41,20 @@
 						:method => 'get',
 						:data => {:'message' => "Você está prestes a altear o status deste trabalho."} %>
 					</td>
-					<td>
-						<% cat = Categoriatrabalho.find(trabalho.categoria_id)	%>						
+					<td  class="">
+						<!--<% cat = Categoriatrabalho.find(trabalho.categoria_id)	%>						
 						<%= cat.titulo%>
+						<%= link_to_function('','subir_ordem(this)', :class => 'up') %>
+						<%= link_to_function('','descer_ordem(this)', :class => 'down') %>-->
+						<%= link_to '', subirordem_admin_trabalho_path(trabalho), :remote => true,
+						:class => 'up' 
+						%>
+						<%= link_to '', descerordem_admin_trabalho_path(trabalho), :remote => true,
+						:class => 'down' 
+						%>
 					</td>
 					
-					<td>
+					<td style="width: 15%;">
 						<%= link_to "", edit_admin_trabalho_path(trabalho), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
 						<%= link_to "", [:admin,trabalho], :remote => true, 
 						:confirm => 'Excluir',
