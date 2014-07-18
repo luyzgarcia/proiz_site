@@ -6,14 +6,14 @@ $(document).ready(function(){
 	(function (){					
 		var ul_width = $('#home_trabalhos .projetos_slider .slider_imagens ul').width();
 		var ul_left=0;
-		var tam_tela=0;
-		var rail_width=0;//largura barra de rolagem px
-		var bar_width=0;//Largura da barra de rolagem para compensar a porcentagem em relação ao trilho
+		var tam_tela = $('#home_trabalhos .projetos_slider .slider_imagens').width();
+		var rail_width = $('#container_range span').width();//largura barra de rolagem px
+		var bar_width = $('.slider_menu .range').width();//Largura da barra de rolagem para compensar a porcentagem em relação ao trilho
+		var bar_max = rail_width-bar_width;	
 		var x_div=0;
 		var x_movel=0;
 		var w_tela=0;
 		var resultado=0;
-		var bar_max=0;
 				
 		//Arrasta as imagens (touch)
 		
@@ -21,13 +21,10 @@ $(document).ready(function(){
 			$( ".slider_imagens ul" ).draggable({					       		
 	        	axis: "x",
 	        	start: function(){
-	        		tam_tela = $('#home_trabalhos .projetos_slider .slider_imagens').width();	
-	        		rail_width = $('#container_range span').width();		           
-		            bar_width = $('.slider_menu .range').width();
-		            bar_max = rail_width-bar_width;	 	
-		            w_tela = $(window).width();     
+	        		tam_tela = $('#home_trabalhos .projetos_slider .slider_imagens').width();		        		 	
+		            w_tela = $(window).width();	             
 	        	},        	
-	        	drag: function(event, ui) {
+	        	drag: function(event, ui) {	        		
 	        		ul_left =$('#home_trabalhos .projetos_slider .slider_imagens ul').position().left;		            
 		            var perc_ul = ul_left / (ul_width-tam_tela);		                       
 		            var bar = -bar_max * perc_ul;	            
@@ -82,5 +79,34 @@ $(document).ready(function(){
 	      	});
 		}
 		jQuery(document).on("ready", rangeSlider);
+		
+		
+		// Função para MouseHover Slider
+		function hoverSlider(){				      	    
+		    var vel = ul_width * 8;// velocidade do animate, largura total da UL * x	
+		    	    
+		    //Move para esquerda
+		    $('#hover-slide-left').hover(function () { 
+		    	$('.slider_imagens ul').stop(true, false).animate({ left: -(ul_width-tam_tela) }, vel );	       		   		
+	    	}, function() {    		 
+			    $('.slider_imagens ul').stop();
+			});
+			
+			$('#hover-slide-left').hover(function () {
+				$('.slider_menu .range').stop(true, false).animate({ left: bar_max }, vel );	       		   		
+	    	}, function() {    		 
+			    $('.slider_menu .range').stop();
+			});			
+			
+			
+			//Move para direita
+			$('#hover-slide-right').hover(function () {
+				$('.slider_imagens ul, .slider_menu .range').stop(true, false).animate({ left: "0px"}, vel );         		   		
+	    	}, function() {    		
+			    $('.slider_imagens ul, .slider_menu .range').stop();
+			});  				  	    	
+		}
+		jQuery(document).on("ready", hoverSlider);
+		
 	})();
 });
