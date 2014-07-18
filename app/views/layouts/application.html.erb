@@ -108,18 +108,18 @@
 			</div>
 		</div>
 		<div class="endereco">
-			<h3>+55 (45) 3378-3676</h3>
-			<h5>Rua Guarani, 2216.</h5>
-			<h5>Jardim La Salle.</h5>
-			<h5>Toledo - Paraná</h5>
+			<h3><%= t 'inicial.rodape.telefone' %></h3>
+			<h5><%= t 'inicial.rodape.logradouro' %></h5>
+			<h5><%= t 'inicial.rodape.bairro' %></h5>
+			<h5><%= t 'inicial.rodape.cidade' %></h5>
 		</div>
 		
 	</div>
 	<footer>
 		<ul id="menu_inferior">
-			<li><a href="#contato">Contato</a></li>
-			<li><a href="#carreiras">Carreiras</a></li>
-			<li><a href="#Lab proiz">Lab</a></li>			
+			<li><%= link_to t('menu_rodape.contato'),contato_path %></li>
+			<li><%= link_to t('menu_rodape.oportunidades'),contato_path %></li>
+			<li><%= link_to t('menu_rodape.lab'),contato_path %></li>			
 		</ul>
 		<p><%= t 'inicial.rodape.copyright' %></p>
 	</footer>

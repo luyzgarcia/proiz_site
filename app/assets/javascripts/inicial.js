@@ -35,7 +35,7 @@
 			};			
 		}
 		jQuery(document).on("ready", divisao_1);
-		window.addEventListener('scroll', divisao_1 ,false);
+		//window.addEventListener('scroll', divisao_1 ,false);
 })();
 (function() {
 		function divisao_2() {
@@ -47,7 +47,7 @@
 			});	
 		}
 		jQuery(document).on("ready", divisao_2);
-		window.addEventListener('scroll', divisao_2 ,false);
+		//window.addEventListener('scroll', divisao_2 ,false);
 })();
 (function() {
 		function divisao_3() {
@@ -58,35 +58,47 @@
 			});			
 		}
 		jQuery(document).on("ready", divisao_3);
-		window.addEventListener('scroll', divisao_3 ,false);
+		//window.addEventListener('scroll', divisao_3 ,false);
 })();
 (function() {
 	jQuery(document).on("ready", divisao_4);
-	window.addEventListener('scroll', divisao_4 ,false);
+	//window.addEventListener('scroll', divisao_4 ,false);
 })();
 
 
 var mostroutrabalhos = false;
+var mostrandotrabalhos = false;
 (function() {
 		function mostrarComotrabalhamos() {
 			if(detectmob() == false) {
 				$('#home_comotrabalhamos').scrollable({ offset: { y: '70%' } })
 			      .on('scrollin', function (e,ui) {
 				      	//if(mostroutrabalhos) return false;
-						$('#home_comotrabalhamos .mostrar').each(function(i){
-							$(this).delay(400*i).animate({
-								opacity: 1
-							},700);
-						});	
+						if(!mostrandotrabalhos) {
+							mostrandotrabalhos = true;
+							$('#home_comotrabalhamos .mostrar').each(function(i){
+								$(this).delay(400*i).animate({
+									opacity: 1
+								},700);
+							});
+							setTimeout(function() {
+								mostrandotrabalhos = false;
+							}, 3500)
+						}
 			      })
 			      .on('scrollout', function (e, ui) { 
 						//if(mostroutrabalhos) return false;
-						
-						$($("#home_comotrabalhamos .mostrar").get().reverse()).each(function(i){
-							$(this).delay(200 * i).animate({
-								opacity: 0
-							},500);
-						});
+						if(!mostrandotrabalhos) {
+							mostrandotrabalhos = true;
+							$($("#home_comotrabalhamos .mostrar").get().reverse()).each(function(i){
+								$(this).delay(200 * i).animate({
+									opacity: 0
+								},500);
+							});
+							setTimeout(function() {
+								mostrandotrabalhos = false;
+							}, 2300)
+						}
 			      	}); 
 			}else {
 				$('#home_comotrabalhamos').scrollable({ offset: { y: '50%' } })

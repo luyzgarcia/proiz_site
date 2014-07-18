@@ -25,7 +25,7 @@ $(document).ready(function(){
 	        		rail_width = $('#container_range span').width();		           
 		            bar_width = $('.slider_menu .range').width();
 		            bar_max = rail_width-bar_width;	 	
-		            w_tela = $(window).width();	             
+		            w_tela = $(window).width();     
 	        	},        	
 	        	drag: function(event, ui) {
 	        		ul_left =$('#home_trabalhos .projetos_slider .slider_imagens ul').position().left;		            

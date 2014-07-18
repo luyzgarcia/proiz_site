@@ -5,6 +5,10 @@ pt-BR:
     trabalhos: Trabalhos
     noticias: Notícias
     contato: Contato
+  menu_rodape:
+    contato: Contato
+    lab: Lab
+    oportunidades: Oportunidades    
   inicial:
     topo:
       criar: Criar
@@ -35,6 +39,10 @@ pt-BR:
     rodape:
       mensagem: Agência de comunicação integrada. Publicidade e propaganda, design gráfico e marketing digital. Soluções completas para a construção de marcas fortes.
       copyright: © Copyright 2014 Proiz comunicação integrada, todos os direitos reservados.
+      telefone: +55 (45) 3378-3676
+      logradouro: Rua Guarani, 2216.
+      bairro: Jardim La Salle.
+      cidade: Toledo - Paraná
   sobre:
     topo:
       titulo: Sobre a Proiz

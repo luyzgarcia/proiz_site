@@ -9,6 +9,7 @@
   text-align: center;
   background: #f1f2f2;
   position: relative;
+  margin-bottom: 0px;
   //padding-top: 15%;
   /*padding-bottom: 250px;
    height: 99%;*/
@@ -16,7 +17,7 @@
   .home_wrapper {
     position: absolute;
     //left: 50%;
-    top: 40%;
+    top: 25%;
     width: 100%;
    }
 }
@@ -24,6 +25,7 @@
   /*padding-top: 250px;*/
   position: relative;
   //left: -50%;
+  
 }
 #home_intro h1 span {
   opacity: 0;
@@ -126,7 +128,7 @@
 #home_trabalhos {
   position: relative;
   background: #004961;
-  height: 750px;
+  height: 600px;
   width: 100%;
 }
 #home_trabalhos .trabalhos_recentes {
@@ -137,11 +139,11 @@
 }
 #home_trabalhos .trabalhos_recentes_content{
   float: left;
-  margin-top: 270px;
-  margin-left: 100px;
+  margin-top: 170px;
+  margin-left: 50px;
 }       
 #home_trabalhos .trabalhos_recentes h2 {
-  font: normal 42pt/1em "nexa_bold", tahoma;
+  font: normal 36pt/1em "nexa_bold", tahoma;
   color: #fff;
   text-align: left;
   margin-bottom: 40px;
@@ -176,7 +178,7 @@
 #home_trabalhos .projetos_slider {
   background: transparent;
   height: 100%;
-  margin-left: 450px;
+  margin-left: 350px;
   position:relative;
 }
 /*slider trabalhos */
@@ -326,9 +328,9 @@
 }
 #home_trabalhos .projetos_slider .slider_imagens ul li .descricao_item {
   position: absolute;
-  top: 250px;
+  top: 150px;
   right: 10%;
-  width: 330px;
+  width: 250px;
   text-align: left;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out 0.2s;
@@ -338,7 +340,7 @@
   transition: all 0.2s ease-in-out 0.2s;
 }
 #home_trabalhos .projetos_slider .slider_imagens ul li .descricao_item h2 {
-  font: normal 28pt/1.2em 'nexa_bold', Tahoma;
+  font: normal 24pt/1.2em 'nexa_bold', Tahoma;
   color: #fff;
   letter-spacing: 1.5px;
 }
@@ -347,7 +349,7 @@
   color: #fff
 }
 #home_trabalhos .projetos_slider .slider_imagens ul li > img{
-  width: 890px;
+  width: 700px;
   height: 100%; 
   -webkit-transition: all 1.5s ease-in-out 0.2s;
   -moz-transition: all 1.5s ease-in-out 0.2s;
@@ -525,7 +527,7 @@
   .tb-info {
     .tb-info-frente {
       .texto {
-        margin-top: 33px;
+        //margin-top: 33px;
       }
       h4{
        color: #004961;
@@ -554,7 +556,7 @@
   .tb-info {
     .tb-info-frente {
       .texto {
-        margin-top: 33px;
+        //margin-top: 33px;
       }
     }
   }

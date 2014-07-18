@@ -3,7 +3,7 @@ class InicialController < ApplicationController
   
   def index
     @trabalhos = Trabalho.where(:idioma => I18n.locale ).where("tipo != 'M' and vitrine_destaque = 1 and imagem_principal_file_name != ''").order(:ordem).last(5)
-    @noticias = Noticia.where(:idioma => I18n.locale ).last(3)
+    @noticias = Noticia.last(3)
   end
   
   def set_metatags_facebook

@@ -50,6 +50,8 @@
 	</div>
 	<div class="projetos_slider" id="projetos_slider">
 		<div class="slider_imagens">
+			<!--<div id="hover-slide-left" class="hover-slide"></div>
+			<div id="hover-slide-right" class="hover-slide"></div>-->	
 			<ul>
 				<% @trabalhos.each do |trab| %>
 					<% if trab.imagem_principal.file? %>
@@ -93,6 +95,22 @@
 	      	position: relative;
 			margin: 0 auto;
 	      }
+	      #hover-slide-left {
+				position: absolute;
+				left: 0;
+				width: 50px;
+				height: 100%;
+				background: #FF0000;
+				z-index: 1;
+			}
+			#hover-slide-right {
+				position: absolute;
+				right: 0;
+				width: 50px;
+				height: 100%;
+				background: #FF0000;
+				z-index: 1;				
+			}
      	</style>
 		<div class="slider_menu">
 			<div id="container_range">
