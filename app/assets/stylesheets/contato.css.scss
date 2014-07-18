@@ -12,7 +12,7 @@
 #contato .wrapper_topo .mensagem{
   width: 1024px;
   margin: 0 auto;
-  padding: 100px 0;
+  padding: 120px 0;
   /*position: relative;*/
   overflow: hidden;
   h2 {
@@ -30,7 +30,7 @@
   }
   .parallax {
     height: 100%;
-    width: 710px;
+    width: 100%;
     position: absolute;
     overflow: hidden;
     top: 0;
@@ -41,24 +41,24 @@
       
     .fundo_globo {
       position: relative;
-      /*top: -15% !important;
-      left: 15% !important;*/
+      top: -15% !important;
+      left: 50% !important;
       -webkit-transition: 0.5s linear;
       transition: 0.5s linear;
       -webkit-transform: scale(0.8);
     }
     .circulo_contato {
       position: relative;
-      top: 15% !important;
-      left: 14% !important;
+      top: -48% !important;
+      left: 36.5% !important;
       height: 30px;
       width: 30px;     
       margin: -15px 0 0 -14px; 
     }
     span{
       position: relative;
-      top: 14% !important;
-      left: 12% !important;
+      top: -61% !important;
+      left: 33% !important;
       height: 30px;
       width: 30px;     
       margin: -15px 0 0 -14px; 

@@ -86,21 +86,21 @@ $(document).ready(function(){
 		    var vel = ul_width * 8;// velocidade do animate, largura total da UL * x	
 		    	    
 		    //Move para esquerda
-		    $('#hover-slide-left').hover(function () { 
+		    $('#hover-slide-right').hover(function () { 
 		    	$('.slider_imagens ul').stop(true, false).animate({ left: -(ul_width-tam_tela) }, vel );	       		   		
 	    	}, function() {    		 
 			    $('.slider_imagens ul').stop();
 			});
 			
-			$('#hover-slide-left').hover(function () {
+			$('#hover-slide-right').hover(function () {
 				$('.slider_menu .range').stop(true, false).animate({ left: bar_max }, vel );	       		   		
 	    	}, function() {    		 
 			    $('.slider_menu .range').stop();
-			});			
+			});
 			
 			
 			//Move para direita
-			$('#hover-slide-right').hover(function () {
+			$('#hover-slide-left').hover(function () {
 				$('.slider_imagens ul, .slider_menu .range').stop(true, false).animate({ left: "0px"}, vel );         		   		
 	    	}, function() {    		
 			    $('.slider_imagens ul, .slider_menu .range').stop();

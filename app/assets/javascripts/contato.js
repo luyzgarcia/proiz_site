@@ -53,8 +53,8 @@ $(document).ready( function () {
 		$('.parallax').each(function(index) {
 		  $('img',this).parallax(
 		  	{mouseport: $(this)},
-			{xparallax: '60px', yparallax: '60px'},
-			{xparallax: '6px', yparallax: '6px'}
+			{xparallax: '100px', yparallax: '50px'},
+			{xparallax: '6px', yparallax: '6px'}			
 		  );	
 		});
 	
