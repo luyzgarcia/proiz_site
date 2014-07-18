@@ -348,7 +348,23 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-	//console.log('iniciando...');
+	console.log('iniciando...');
+	var img = $('#content img');
+	var length = img.length;
+	
+	carregando();
+	if(length > 0) {
+		img.load(function(){
+		    length--;
+			//loading();
+		    if(length == 0){
+				loadingComplete();     
+		    };
+		});
+	}else {
+		loadingComplete();
+		//alert('terminou');
+	}
 	
     /*
     $('#home_comotrabalhamos').scrollable({ offset: { y: '50%' } })

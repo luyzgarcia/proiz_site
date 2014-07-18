@@ -218,7 +218,7 @@
     content: '\e401';
     position: relative;
     top: -4px;
-    left: -3px;
+    left: -4px;
     color: #004961;
     font-weight: bold;
     font-size: 20pt;
@@ -228,7 +228,16 @@
     top: -12px !important;
     margin: 11px 7px !important;
   }
-  
+//Quando for na listagem de cadastrados 
+td {
+  .up:before {
+    top: 0px;
+  }
+  .down:before {
+    top: 0px;
+    left: -4px;
+  }
+}
 
 .item_many {
   margin: 10px 0px 30px 15px;
@@ -332,13 +341,13 @@
 .bt_editar_1:before { 
   font-family: "droid_serif";
   content: 'T';
-  top: -6px;
+  top: -11px;
   left: -3px;
   color: #004961;
   font-weight: bold;
   font-size: 12pt;
   display: -webkit-box;
-  margin: 5px 8px;
+  margin: 11px 8px;
   position: relative;
   line-height: 24px;
 }

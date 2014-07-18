@@ -272,7 +272,9 @@ input:focus{
   box-shadow: 0px 0px 0px 9px #004961;
   border-radius: 50%;
   text-align: center;     
-  -webkit-transition: 0.3s; 
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
   margin-left: 5%;
 }
 .share_padrao_2 .compartilhar_noticia_integra:hover .continue_lendo{
@@ -287,6 +289,10 @@ input:focus{
   z-index: 1;
   -webkit-transition: 0.3s;
   -webkit-animation: 0.2s;
+  -moz-transition: 0.3s;
+  -moz-animation: 0.2s;
+  transition: 0.3s;
+  animation: 0.2s;
   width: 50px;
   height: 50px;
   background: #fdba31;

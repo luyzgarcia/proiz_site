@@ -305,7 +305,7 @@
   #home_trabalhos .projetos_slider .slider_imagens ul {
     list-style: none;
     position:relative;
-    display:table;
+    //display:table;
     
     /*width: 3500px;*/
     /*width: 2500px;*/
@@ -313,31 +313,22 @@
     height: 100%;
     margin: 0 0 -60px 0;
     padding: 0 0 0px 0;
-    /*-webkit-transition: 0.5s left;
-      -moz-transition: 0.5s left;
-      -ms-transition: 0.5s left;
-      -o-transition: 0.5s left;*/
   }
-  #home_trabalhos .projetos_slider .slider_imagens ul li {
-    /*position: relative;
-display:block;
-width: 100%;
-height: 100%;
-float:left;
-text-align: center;*/
+#home_trabalhos .projetos_slider .slider_imagens ul li {
   position: relative;
-  display: table-cell;
-  /*width: 90%;*/
-  width: 450px;
+  //display: table-cell;
+  //width: 100%;
   height: 100%;
   text-align: center;
   overflow: hidden;
+  display: inline-block;
+  margin: 0 -5px 0 0;
 }
 #home_trabalhos .projetos_slider .slider_imagens ul li .descricao_item {
   position: absolute;
   top: 250px;
-  right: 15%;
-  width: 220px;
+  right: 10%;
+  width: 330px;
   text-align: left;
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out 0.2s;
@@ -347,7 +338,7 @@ text-align: center;*/
   transition: all 0.2s ease-in-out 0.2s;
 }
 #home_trabalhos .projetos_slider .slider_imagens ul li .descricao_item h2 {
-  font: normal 32pt/1.2em 'nexa_bold', Tahoma;
+  font: normal 28pt/1.2em 'nexa_bold', Tahoma;
   color: #fff;
   letter-spacing: 1.5px;
 }
@@ -400,7 +391,7 @@ text-align: center;*/
 }
 #home_trabalhos .projetos_slider .slider_imagens ul li span p {
   position: relative;
-  top: 45%;
+  top: 50%;
 }
 #home_trabalhos .projetos_slider .slider_imagens ul li:hover span {
   opacity: 1;
