@@ -40,11 +40,11 @@
 				<div class="form_item">	
 					<%= text_field_tag :email, params[:email] , placeholder: t('contato.form_email')%>					
 				</div>
-				<div class="form_item">					
-					<%= text_field_tag "telefone", nil, placeholder: t('contato.form_telefone') %>												
+				<div class="form_item">
+					<%= text_field_tag :telefone, params[:telefone] , placeholder: t('contato.form_telefone')%>												
 				</div>
 				<div class="form_item">					
-					<%= text_area_tag "mensagem", nil, placeholder: t('contato.form_mensagem') %>							
+					<%= text_area_tag :mensagem, params[:mensagem] , placeholder: t('contato.form_mensagem')%>							
 				</div>				
 				<%= submit_tag(t('contato.form_botao', :class => 'botao_submit')) %>
 			<% end %>

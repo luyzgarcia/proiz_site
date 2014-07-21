@@ -15,9 +15,9 @@ class ContatoController < ApplicationController
    
   def contato
     dados = {nome: params[:nome], 
-             sobrenome: params[:email],
+             email: params[:email],
              telefone: params[:telefone],
-             telefone: params[:mensagem]}
+             mensagem: params[:mensagem]} 
              
     ProizMailer.contato(dados).deliver
   end

@@ -27,9 +27,10 @@
 			<div class="part_2" >
 				<a href="#" class="orcamento">Solicite um orçamento</a>
 				<h3>Entre em contato e conheça nosso portifolio</h3>
-				<a href="#">lab@proiz.com.br</a>
+				<%= mail_to "lab@proiz.com.br", 'lab@proiz.com.br', subject: "Orçamento Lab Proiz" %>
 			</div>
-			<p class="profissional">Profissional, faça parte do LabProiz. Envie seu portfolio para <a href="#">lab@proiz.com.br</a></p>
+			<p class="profissional">Profissional, faça parte do LabProiz. Envie seu portfólio para
+				 <%= mail_to("lab@proiz.com.br", subject: "Portifólio Lab Proiz")  do %>lab@proiz.com.br <% end %> </p>
 		</div>
 	</div>			
 	
