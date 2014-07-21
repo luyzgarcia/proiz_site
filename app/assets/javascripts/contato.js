@@ -50,14 +50,14 @@ function configuraFormulario() {
 $(document).ready( function () {
 	
 		// Declare parallax on layers
-		$('.parallax').each(function(index) {
+		/*$('.parallax').each(function(index) {
 		  $('img',this).parallax(
 		  	{mouseport: $(this)},
 			{xparallax: '100px', yparallax: '50px'},
 			{xparallax: '6px', yparallax: '6px'}			
 		  );	
 		});
-	
+	*/
 	
 	/*$('#pa img').mousemove(function(e){
 		console.log(e.pageX);
