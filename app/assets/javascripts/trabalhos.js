@@ -2,10 +2,10 @@
 // require grid/imagesloaded.pkgd
 // require grid/masonry.pkgd.min
 function esconder_detalhetrabalho(link) {
-  $('.corpo_trabalhos').css('height','auto');
-  $('#detalhe_modal').fadeOut();
-  $('#detalhe_modal').html('');
-  $('html,body').animate({
+	$('.corpo_trabalhos').css('height','auto');
+  	$('#detalhe_modal').fadeOut();
+  	$('#detalhe_modal').html('');
+  	$('html,body').animate({
 	   scrollTop: $('#grid').offset().top-330},
 	800);
 }

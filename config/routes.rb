@@ -132,6 +132,8 @@ ProizAdmin::Application.routes.draw do
   
   resources :users
   #resources :sessions
+  #resources :labs
+  get '/lab' => 'lab#index'
   resources :painel
   resources :paginas
   resources :clientes do

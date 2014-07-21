@@ -1,0 +1,131 @@
+// Place all the styles related to the lab controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ * 
+ *= require skdslider
+ * 
+ */
+
+#lab .slider img {
+  width: 100%;
+  height: auto;
+}
+#lab .wrapper_conteudo {
+  background: #004961;
+  margin: 0 auto;
+  padding: 45px 0 25px;
+  .conteudo {
+    width: 960px;
+    margin: 0 auto;
+    .part_1 {
+      width: 65%;
+      margin-right: 5%;
+      display: inline-block;
+      h2 {
+        font: normal 22pt/1em "nexa_bold", Tahoma;
+        color: #fff;
+        margin: 50px 0 20px;
+      }
+      p {
+        font: normal 10pt/1.5em "droid_serif", Tahoma;
+        color: #fff;
+        margin-bottom: 35px;
+        b {
+          color: #fdba31;
+          font-weight: normal;
+        }
+      }
+    }
+    .part_2 {
+      width: 25%;
+      display: inline-block;
+      vertical-align: top;
+      .orcamento {
+        font: normal 12pt/1.3em "nexa_bold", Tahoma;
+        color: #fff;
+        border: 4px solid #fff;
+        padding: 25px 25px;
+        display: inline-block;
+        border-radius: 5px;
+      }
+      h3 { 
+        font: normal 12pt/1.3em "nexa_bold", Tahoma;
+        color: #fff;
+        margin: 30px 0 10px;
+      }
+      a {
+        font: normal 12pt/1.3em "nexa_bold", Tahoma;
+        color: #fdba31;
+      }
+    }
+    .profissional {
+      text-align: center;
+      font: normal 9pt "droid_serif", Tahoma;
+      color: #fff;  
+      margin-top: 35px;
+      a {
+        color: #fff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.skdslider ul.slide-navs {
+  background: #fdba31;
+  position: absolute;
+  bottom: 0px;
+  height: 100px;
+  width: 100%;
+  left: 0;
+  margin-left: 0 !important;
+  padding: 0 50%;
+}
+.skdslider ul.slides {
+  padding-bottom: 170px;
+}
+.skdslider ul.slide-navs li {
+  background: #cd9929;
+  border-radius: 50%;
+  margin: 42px 5px;
+}
+.skdslider ul.slide-navs li.current-slide {
+  background: #fff;
+  -webkit-transform: scale(1.5);
+}
+@media only screen and (min-width: 521px) and (max-width: 960px)  {
+  #lab .wrapper_conteudo .conteudo {
+    width: 90%;
+    margin: 0 5%;
+  }
+}  
+@media only screen and (max-width: 520px)  {  
+  .corpo {
+    background: #004961;
+  }
+  .skdslider ul.slides {
+    padding-bottom: 50px;
+  }
+  .skdslider ul.slide-navs {
+    height: 50px; 
+  }
+  .skdslider ul.slide-navs li {
+    margin: 22px 5px;
+  }
+  #lab .wrapper_conteudo .conteudo {
+    width: 100%;
+  }
+  #lab .wrapper_conteudo .conteudo .part_1{
+    width: 90%;
+    margin: 0 5%;
+  }
+  #lab .wrapper_conteudo .conteudo .part_2 {
+    width: 90%;
+    margin: 0 5%;
+  }
+  #lab .wrapper_conteudo .conteudo .profissional {
+    text-align: left;
+    margin: 35px 5%;
+  }
+}
