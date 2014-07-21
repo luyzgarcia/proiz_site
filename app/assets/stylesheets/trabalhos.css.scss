@@ -305,22 +305,30 @@
 #trabalhos .compartilhar, #trabalho .compartilhar {
   display: none;
 }
+#trabalho .trabalho_highlight {
+  position: fixed;
+  width: 100%;
+  background: #fdba31;
+  padding: 10px 0;
+  left: 0;
+  top: 80px;
+  opacity: 0;
+}
+#trabalho .trabalho_highlight p{
+  text-align: left;
+  margin-left: 25px;
+  font: normal 10pt/1em "droid_serif", Times;
+}
+#trabalho .trabalho_highlight a{
+  right: 10%;
+  top: 1px;
+}
+#trabalho .trabalho_highlight a:before {
+  content: '\e428';
+}
 /*****************************************************************/
 /************ Página Trabalhos - FIM detalhes do trabalho ********/
 /*****************************************************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .corpo_trabalhos {
   padding: 20px 30px 0;

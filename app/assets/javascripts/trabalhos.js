@@ -5,6 +5,9 @@ function esconder_detalhetrabalho(link) {
   $('.corpo_trabalhos').css('height','auto');
   $('#detalhe_modal').fadeOut();
   $('#detalhe_modal').html('');
+  $('html,body').animate({
+	   scrollTop: $('#grid').offset().top-330},
+	800);
 }
 
 
@@ -26,7 +29,7 @@ function recarregar() {
 		new AnimOnScroll(grid, {
 			minDuration :0.4,
 			maxDuration : 1,
-			viewportFactor : 0.5
+			viewportFactor : 0.2
 		});
 	}
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, .titulo a').bind('ajax:beforeSend',function() {
@@ -92,7 +95,7 @@ function adicionaEfeitoImagensTrabalho() {
 		});
 	} ,false);	
 	
-	//$(window).scroll(function(){ocultarMostrar(); });
+	$(window).scroll(function(){ocultarMostrar(); });
 }
 
 $(document).ready(function(){
@@ -112,14 +115,21 @@ $(document).ready(function(){
 
 });
 
-/*function ocultarMostrar() {
+function ocultarMostrar() {
 	var headerTop = $(".detalhe_trabalho .detalhe").offset().top - 100;
-	if ($(window).scrollTop() > headerTop) {
-        if(!$("#detalhe_modal .fechar_detalhetrabalho").hasClass("fixo")) {
-        	efeitoOcultarMostrar(true);
-        }        
-    } else if($("#detalhe_modal .fechar_detalhetrabalho").hasClass("fixo")) {
-        efeitoOcultarMostrar(false);        
+	var $obj = $("#trabalho .trabalho_highlight");
+	if ($(window).scrollTop() > headerTop && !$obj.hasClass('showing')) {
+		$obj.animate({
+			opacity: 1,
+			zIndex: '9999'
+		}, 200);
+		$obj.addClass('showing');
+    } else if($(window).scrollTop() <= headerTop && $obj.hasClass('showing')){
+        $("#trabalho .trabalho_highlight").animate({
+			opacity: 0,
+			zIndex: '-9999'
+		}, 200);
+		$obj.removeClass('showing');
     }
     
 }
@@ -146,4 +156,3 @@ function efeitoOcultarMostrar(mudar) {
 	}
     
 }
-*/

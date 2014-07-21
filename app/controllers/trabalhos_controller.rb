@@ -5,7 +5,7 @@ class TrabalhosController < ApplicationController
   #before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
   
   def index
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1')
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()")
     #@categorias = getCategorias
   end
   

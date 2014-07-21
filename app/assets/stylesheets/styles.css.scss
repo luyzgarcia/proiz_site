@@ -83,18 +83,19 @@ a {
 }
 #menu ul li a:hover {
 	ouline: none;
-	text-decoration: none;	
+	text-decoration: none;
+	color: #fdba31;	
 }
 #menu nav {
 	display: inline-block;	
 }
 #menu ul li a {
-	color: #fdba31;
+	color: #243942;
 }
 
 #menu ul li a::before {
 	color: #243942;
-	content: attr(data-hover);
+	//content: attr(data-hover);
 	position: absolute;
 	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
 	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
@@ -881,7 +882,7 @@ $desktop-large: 1824px;
   }
   #logo {
     display: block;
-    padding: 60px 0px;
+    padding: 40px 0px;
     border-top: 1px solid #e6e7e8;
     margin-top: 30px;
     border-bottom: 1px solid #e6e7e8;
@@ -1436,12 +1437,14 @@ $desktop-large: 1824px;
   #header.hide_header #pull {
     top: 87px;
   }
-  
+  #logo {
+    padding: 40px 0px;
+  }
   #pull {
      display: block;
      position: absolute;
      margin: 0;
-     top: 125px;
+     top: 105px;
      left: 20px;
      width: 30px;
      height: 20px;

@@ -6,7 +6,7 @@ $('#detalhe_modal').hide();
 
 <% @trabalhos.each do |trab| %>
 	$conteudo = "<%= escape_javascript(render 'item_trabalho', :trab => trab )%>";
-	$('#grid').append($conteudo);	
+	$('#grid').append($conteudo);
 <% end %>
 
 new AnimOnScroll(document.getElementById('grid'), {

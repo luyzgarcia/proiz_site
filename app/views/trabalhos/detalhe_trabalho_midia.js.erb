@@ -11,7 +11,18 @@ $('#detalhe_modal').fadeIn('slow',function(){
 	//alert(alturamodal);
 	if(alturamodal > alturacontainer) {
 		$('.corpo_trabalhos').css('height',alturamodal +10+'px');	
-	}	
+	}
+	
+	$('#carregando_trabalho').animate({
+		opacity: 0
+	}, 200, function() {
+		$(this).hide();
+		$(this).css('opacity','1');
+		setTimeout(function() {
+			$('#grid').css('opacity','1');	
+		},1000);
+	});
+		
 });
 
 stoploading();

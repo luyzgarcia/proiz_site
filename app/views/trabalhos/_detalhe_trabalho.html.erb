@@ -29,7 +29,9 @@ $(function () {
 					</div>				
 			</div>
 			
-			
+			<div class="trabalho_highlight">
+				<span><p><%= trab.titulo %></p> <%= link_to_function '', 'esconder_detalhetrabalho(this)', :class => 'fechar_detalhetrabalho'%></span>
+			</div>
 			
 			
 			<%= link_to_function '', 'esconder_detalhetrabalho(this)', :class => 'fechar_detalhetrabalho'%>
