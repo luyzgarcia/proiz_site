@@ -23,7 +23,7 @@ development:
   #password: admin
   #host: localhost
   database: d7ruohdp0rrc81
-  pool: 5
+  pool: 25
   username: kkasqjpsohryba
   password: oi8Ex3U5Rqpxy4xXr5JiL4TJaU
   host: ec2-54-225-124-205.compute-1.amazonaws.com
@@ -66,7 +66,7 @@ production:
   #username: postgres
   #password: admin
   database: d7ruohdp0rrc81
-  pool: 5
+  pool: 25
   username: kkasqjpsohryba
   password: oi8Ex3U5Rqpxy4xXr5JiL4TJaU
   host: ec2-54-225-124-205.compute-1.amazonaws.com

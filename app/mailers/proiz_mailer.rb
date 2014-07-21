@@ -3,12 +3,12 @@ class ProizMailer < ActionMailer::Base
   
   def contato_especialidades(dados)
     @dados = dados
-    mail(to: 'luyzgarcia@gmail.com', subject: 'Contato sobre Especialidades')
+    mail(to: 'atendimento@proiz.com', subject: 'Contato sobre Especialidades')
   end
   
   def contato(dados)
     @dados = dados
-    mail(to: 'luyzgarcia@gmail.com', subject: 'Proiz - Contato')
+    mail(to: 'atendimento@proiz.com', subject: 'Proiz - Contato')
   end
   
   
