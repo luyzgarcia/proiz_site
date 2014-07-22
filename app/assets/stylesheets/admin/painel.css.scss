@@ -385,7 +385,7 @@ body {
       position: relative;
       
       form {
-        input[type='text'] {
+        input[type='text'],input[type='password'] {
           border: 1px solid #e5e6e6;
           padding: 7px 10px;
           font: normal 10pt/1.5em droid_serif, Times;

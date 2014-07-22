@@ -26,5 +26,9 @@ SimpleNavigation::Configuration.run do |navigation|
       trabalho.item :especialidades, 'Listar especialidades', admin_especialidades_path, class: 'sub_menu'
       trabalho.item :novo, 'Nova especialidade', new_admin_especialidade_path, class: 'sub_menu'
     end
+    primary.item :users, 'Usuários', admin_users_path, highlights_on: %r(/users) do |user|
+      user.item :users, 'Listar usuários', admin_users_path, class: 'sub_menu'
+      user.item :novo, 'Nova usuário', new_admin_user_path, class: 'sub_menu'
+    end
   end
 end

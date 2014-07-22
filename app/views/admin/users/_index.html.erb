@@ -1,0 +1,46 @@
+<div class="lista_cadastrados">
+	<h4 class="titulo">
+		Usuários Cadastrados
+	</h4>
+	<table>
+		<tr>
+			<th>Nome</th>
+			<th>Email</th>
+			<th>Data de criacao</th>
+			<th>Estado</th>
+			<th>Ação</th>
+		</tr>
+		<% @users.each do |user| %>
+			<tr class="item" id="user_<%= user.id %>">
+				<td style="width: 30%;";>
+					<%= user.name %>
+				</td>
+				<td>
+					<%= user.email %>
+				</td>
+				<td>
+					<%= user.created_at.to_s(:create) %>
+				</td>
+				<td>
+					<!--<%= (user.status == 1 ? "Ativo" : "Inativo") %>-->
+					<%= link_to '', 
+					mudarstatus_admin_user_path(user), 
+					:class => user.status == 1 ? 'status_ativo' : 'status_inativo', 
+					:confirm => 'Alterar status',
+					:method => 'get',
+					:data => {:'message' => "Você está prestes a altear o status deste user."}  %>
+				</td>
+				
+				<td>					
+					<%= link_to "", edit_admin_user_path(user), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
+					<%= link_to "", [:admin,user], :remote => true, 
+					:confirm => 'Excluir',
+					:data => {:'message' => "Você está prestes a excluir este user?"},
+					:method => :delete,
+					:class => 'bt_excluir_1 tooltips',
+					:title => 'Excluir item'%>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>

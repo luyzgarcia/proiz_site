@@ -9,51 +9,7 @@ ProizAdmin::Application.routes.draw do
 
   get "define_idioma/portugues"
   get "define_idioma/ingles"
-  #get "teste/index"
-  #get "index/index"
-  #get "sobre/index"
-  #get "contato/index"
-  #get "trabalhos/index"
-  #get "trabalhos/new"
-  #get "trabalhos/edit"
-  #get "trabalhos/update"
-  #get "trabalhos/delete"
-  #get "artigos/index"
-  #get "artigos/new"
-  #get "artigos/edit"
-  #get "artigos/update"
-  #get "artigos/delete"
-  #get "artigos/destroy"
-  #get "noticias/update"
-  #get "noticias/delete"
-  #get "categoriatrabalhos/index"
-  #get "categoriatrabalhos/new"
-  #get "categoriatrabalhos/edit"
-  #get "categoriatrabalhos/update"
-  #get "categoriatrabalhos/delete"
-  #get "categoriatrabalhos/destroy"
-  #get "recursos/show"
-  #get "recursos/index"
-  #get "recursos/new"
-  #get "recursos/create"
-  #get "recursos/edit"
-  #get "recursos/destroy"
-  #get "recursos/update"
-    
-  #get "noticia/new"
-  #get "noticia/show"
-  #get "noticia/edit"
-  #get "noticia/destroy"
-  #get "noticia/index"  
-  #get "noticiacategs/new"
-  #get "noticiacategs/index"
-  #get "noticiacategs/show"
-  #get "noticiacategs/edit"
-  #get "noticiacategs/destroy"
-  #get "noticiacategs/update"
   
-  #get "clientes/show"
-  #get "clientes/index"
   get "clientes/edit"
   get "clientes/delete"
   get "clientes/update"
@@ -125,6 +81,11 @@ ProizAdmin::Application.routes.draw do
     end
     resources :especialidades do
       member do 
+        get :mudarstatus
+      end
+    end
+   resources :users do
+      member do
         get :mudarstatus
       end
     end
