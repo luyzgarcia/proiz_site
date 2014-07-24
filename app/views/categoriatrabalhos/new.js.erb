@@ -1,7 +1,0 @@
-$("#area_1").html("<%= escape_javascript(render partial: 'form') %>");
-
-$(".fechar").on("click",function(e){
-	e.preventDefault();
-	$("#erros").fadeOut(300, function() { $("#erros").remove(); });
-	return false;
-});

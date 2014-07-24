@@ -1,7 +1,0 @@
-<%= form_for(@imagem,remote:true, :html => { :multipart => true }, :url => 'trabalhos#salvarimagem', :multiple => true ) do |c| %>
-	<div class="item_info_detalhe">
-		<h5><%= c.label :descricao %></h5>
-		<h4><%= c.text_field :descricao %></h4>
-	</div>
-	<%= c.submit %>
-<%end %>
