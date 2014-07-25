@@ -11,7 +11,9 @@
 <div id="lab">
 	<div class="slider">
 		<ul id="demo1">
-			<li><%= image_tag('lab_proiz_1.png')%></li>
+			<%= @sliders.each do |slider| %>
+				<li><%= image_tag(slider.imagem.url)%></li>
+			<% end %>
 		</ul>
 	</div>
 	<div class="divisor">
@@ -32,6 +34,5 @@
 			<p class="profissional">Profissional, faça parte do LabProiz. Envie seu portfólio para
 				 <%= mail_to("lab@proiz.com.br", subject: "Portifólio Lab Proiz")  do %>lab@proiz.com.br <% end %> </p>
 		</div>
-	</div>			
-	
+	</div>	
 </div>
