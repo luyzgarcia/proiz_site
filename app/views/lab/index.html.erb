@@ -11,7 +11,7 @@
 <div id="lab">
 	<div class="slider">
 		<ul id="demo1">
-			<%= @sliders.each do |slider| %>
+			<% @sliders.each do |slider| %>
 				<li><%= image_tag(slider.imagem.url)%></li>
 			<% end %>
 		</ul>
