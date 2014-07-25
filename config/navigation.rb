@@ -30,5 +30,9 @@ SimpleNavigation::Configuration.run do |navigation|
       user.item :users, 'Listar usuários', admin_users_path, class: 'sub_menu'
       user.item :novo, 'Nova usuário', new_admin_user_path, class: 'sub_menu'
     end
+     primary.item :labs, 'Lab Slider', admin_lab_sliders_path, highlights_on: %r(/labs) do |lab|
+       lab.item :labs, 'Listar sliders', admin_lab_sliders_path, class: 'sub_menu'
+       lab.item :novo, 'Novo slider', new_admin_lab_slider_path, class: 'sub_menu'      
+    end
   end
 end

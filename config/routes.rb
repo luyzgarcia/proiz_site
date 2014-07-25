@@ -89,6 +89,18 @@ ProizAdmin::Application.routes.draw do
         get :mudarstatus
       end
     end
+    resources :lab_sliders do
+      member do
+        get :mudarstatus
+      end
+    end
+    
+    #resources :labs do
+      
+    #  member do
+    #    get :mudarstatus
+    #  end
+    #end
   end 
   
   resources :users

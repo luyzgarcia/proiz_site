@@ -1,0 +1,42 @@
+<div class="lista_cadastrados">
+	<h4 class="titulo">
+		Usuários Cadastrados
+	</h4>
+	<table>
+		<tr>
+			<th>Titulo</th>
+			<th>Data de criacao</th>
+			<th>Estado</th>
+			<th>Ação</th>
+		</tr>
+		<% @imagem.each do |imagem| %>
+			<tr class="item" id="imagem_<%= imagem.id %>">
+				<td style="width: 30%;";>
+					<%= imagem.titulo %>
+				</td>
+				<td>
+					<%= imagem.created_at.to_s(:create) %>
+				</td>
+				<td>
+					<!--<%= (imagem.status == 1 ? "Ativo" : "Inativo") %>-->
+					<%= link_to '', 
+					mudarstatus_admin_lab_slider_path(imagem), 
+					:class => imagem.status == 1 ? 'status_ativo' : 'status_inativo', 
+					:confirm => 'Alterar status',
+					:method => 'get',
+					:data => {:'message' => "Você está prestes a altear o status deste imagem."}  %>
+				</td>
+				
+				<td>					
+					<%= link_to "", edit_admin_lab_slider_path(imagem), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
+					<%= link_to "", [:admin,imagem], :remote => true, 
+					:confirm => 'Excluir',
+					:data => {:'message' => "Você está prestes a excluir este imagem?"},
+					:method => :delete,
+					:class => 'bt_excluir_1 tooltips',
+					:title => 'Excluir item'%>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>
