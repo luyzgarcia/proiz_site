@@ -5,5 +5,5 @@
 //= require skdslider
 
 $(document).ready(function() {
-	$('#demo1').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:false,showPlayButton:false,autoSlide:false,numericNav:false,animationType:'fading'});
+	$('#demo1').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:false,showPlayButton:false,autoSlide:true,numericNav:false,animationType:'fading'});
 });
