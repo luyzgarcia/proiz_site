@@ -28,6 +28,11 @@ module ApplicationHelper
     {
       :title       => 'Proiz - Comunicação Integrada',
       :separator   => "&mdash;".html_safe,
+      :description => 'Agência de comunicação integrada. Publicidade, design gráfico e marketing digital. Soluções completas para a construção de marcas fortes.',
+      :og => {
+                    :site_name => ["Proiz"],
+                    :description => 'Agência de comunicação integrada. Publicidade, design gráfico e marketing digital. Soluções completas para a construção de marcas fortes.'
+                  }
     }
   end
   

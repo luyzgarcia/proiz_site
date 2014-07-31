@@ -38,6 +38,7 @@ class Admin::LabSlidersController < Admin::AdminController
        format.js { render action: 'new'}
     end
   end
+  
   def update
     @imagem = LabSlider.find(params[:id])
     #begin
@@ -55,6 +56,21 @@ class Admin::LabSlidersController < Admin::AdminController
     respond_to do |format|
       format.js { render action: 'destroy'}
     end
+  end
+  
+  def mudarstatus
+    @imagem = LabSlider.find(params[:id])
+    if(@imagem.status == 1)
+      @imagem.update_attribute(:status, 0)
+    else
+      @imagem.update_attribute(:status, 1)             
+    end
+    
+    @imagem.save
+    
+    respond_to do |format|
+      format.html {redirect_to admin_lab_sliders_path }
+     end     
   end
   
   
