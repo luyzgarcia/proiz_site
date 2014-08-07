@@ -366,14 +366,17 @@ a {
 	background: image-url('intervalo_1.png');
 }
 #intervalo2 {
-	background: image-url('fundo_intervalo2.png');
+	/*background: image-url('fundo_intervalo2.png');*/
+	background: image-url('intervalo_1.png');
 }
 #intervalo3 {
-	background: image-url('intervalo_3.png');
+	/*background: image-url('intervalo_3.png');*/
+	background: image-url('intervalo_1.png');
 	display: inline-block;
 }
 #intervalo4 {
-	background-image: image-url('intervalo_4.png');
+	/*background-image: image-url('intervalo_4.png');*/
+	background: image-url('intervalo_1.png');
 }
 /*****************************************************************/
 /***************** FIM INTERVALOR ENTRE OS CAMPOS*****************/
