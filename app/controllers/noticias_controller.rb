@@ -3,7 +3,6 @@ class NoticiasController < ApplicationController
   before_action :getcategorias, :setmetaTags
   
   def setmetaTags
-    logger.info 'set metatags'
     set_meta_tags :title => 'Noticias'
                   #:description => "All text about keywords, other keywords" 
   end
