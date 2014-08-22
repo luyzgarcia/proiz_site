@@ -15,10 +15,10 @@ class DefineIdiomaController < ApplicationController
   
   def set_session_and_redirect
     session[:locale] = I18n.locale
-    redirect_to :back
-    #redirect_to root_path
+    #redirect_to :back
+    redirect_to root_path
     rescue ActionController::RedirectBackError
-      #redirect_to :root
-      redirect_to :back
+      redirect_to :root
+      #redirect_to :back
   end
 end

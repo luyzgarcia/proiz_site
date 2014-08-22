@@ -6,7 +6,10 @@ ProizAdmin::Application.routes.draw do
   get "/422", :to => "errors#routing"
   get "/500", :to => "errors#routing"
 
-
+  get "/pt", :to => "define_idioma#portugues"
+  get "/en", :to => "define_idioma#ingles"
+  #get "/" => "define_idioma/ingles"
+  
   get "define_idioma/portugues"
   get "define_idioma/ingles"
   
