@@ -1,6 +1,6 @@
 ProizAdmin::Application.routes.draw do
   
-  
+  get '/robots.txt' => 'application#robots'
   #match '*a', :to => 'errors#routing'
   get "/404", :to => "errors#routing"
   get "/422", :to => "errors#routing"
