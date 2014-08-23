@@ -223,7 +223,8 @@
 			<div class="item_noticia">
 				<hr class="linha_verde"/>
 				<h5><%= I18n.l item.created_at, :format => :curto %></h5>
-				<p><a href="" class="link_noticia"><%= item.titulo %></a></p>
+				<p data-no-turbolink>
+					<%= link_to item.titulo, noticia_path(item), :class => 'link_noticia' %>
 				<div class="wrapper_icon_noticias" data-no-turbolink>
 		            <%= link_to '', noticia_path(item), :class => 'continue_lendo'%>
 		            <div class="compartilhar_noticia">
