@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     robots = File.read(Rails.root + "config/robots.#{Rails.env}.txt")
     render :text => robots, :layout => false, :content_type => "text/plain"
   end
+  
+  def sitemap
+    sitemap = File.read(Rails.root + "config/sitemap.#{Rails.env}.xml")
+    render :text => sitemap, :layout => false, :content_type => "text/xml"
+  end
  
   
   private
