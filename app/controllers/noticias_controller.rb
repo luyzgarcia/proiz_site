@@ -79,7 +79,7 @@ class NoticiasController < ApplicationController
   end
   
   def ultimasnoticias
-    @noticias = Noticia.all.order(:created_at).limit(6).ativo
+    @noticias = Noticia.all.order(created_at: :desc).limit(6).ativo
   end
   
 end
