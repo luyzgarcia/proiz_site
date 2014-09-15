@@ -39,8 +39,6 @@ class Trabalho < ActiveRecord::Base
   
   #logger.info "Locale=>#{I18n.locale}\n"
   #default_scope self.where(:idioma => I18n.locale )
-
-
   private
   
   def define_idioma
