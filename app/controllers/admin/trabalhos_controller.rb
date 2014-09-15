@@ -59,7 +59,7 @@ class Admin::TrabalhosController < Admin::AdminController
   end
 
   def edit
-    @trabalho = Trabalho.find(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     @imagem = Imagem.new
     @editando = true
     respond_to do |format|
@@ -72,7 +72,7 @@ class Admin::TrabalhosController < Admin::AdminController
   end
 
   def update
-    @trabalho = Trabalho.find(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     
     @trabalho_id = @trabalho.id
     if(@trabalho.update(trabalho_params))
@@ -110,7 +110,7 @@ class Admin::TrabalhosController < Admin::AdminController
   end
   
   def mudarstatus
-    @trabalho = Trabalho.find(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     if(@trabalho.status == 1)
       @trabalho.update_attribute(:status, 0)
     else
@@ -130,7 +130,7 @@ class Admin::TrabalhosController < Admin::AdminController
   end
   
   def destaque
-    @trabalho = Trabalho.find(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     if(@trabalho.vitrine_destaque == 1)
       @trabalho.update_attribute(:vitrine_destaque, 0)
     else
@@ -150,7 +150,7 @@ class Admin::TrabalhosController < Admin::AdminController
   end
   
   def subirordem
-    @trabalho = Trabalho.find(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     if @trabalho.ordem > 1
       @anterior = Trabalho.find_by_ordem(@trabalho.ordem - 1)
       @trabalho.update_attribute(:ordem, @trabalho.ordem - 1)
@@ -164,7 +164,7 @@ class Admin::TrabalhosController < Admin::AdminController
   end
   
   def descerordem
-    @trabalho = Trabalho.find(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     @maximo = Trabalho.where("tipo != 'M'").maximum(:ordem)
     if @trabalho.ordem < @maximo
       @proximo = Trabalho.find_by_ordem(@trabalho.ordem + 1)

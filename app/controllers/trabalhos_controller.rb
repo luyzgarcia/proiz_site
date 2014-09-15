@@ -10,7 +10,7 @@ class TrabalhosController < ApplicationController
   end
   
   def detalhe
-    @trabalho = Trabalho.find(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     #response.headers.delete('X-Frame-Options')
     
     set_metatags_facebook(@trabalho)

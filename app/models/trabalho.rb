@@ -2,6 +2,9 @@ class Trabalho < ActiveRecord::Base
   before_create :define_idioma
   #validates_presence_of :introducao, :imagem_vitrine, :descricao_vitrine
   
+  extend FriendlyId
+  friendly_id :titulo, use: :slugged
+  
   validates_presence_of :introducao, :imagem_vitrine, :descricao_vitrine, :if => 'tipo == "M"'
   
   validates_presence_of :titulo, :categoria_id, :introducao, :imagem_vitrine, :descricao_vitrine, :if => 'tipo == "T"'
@@ -36,7 +39,8 @@ class Trabalho < ActiveRecord::Base
   
   #logger.info "Locale=>#{I18n.locale}\n"
   #default_scope self.where(:idioma => I18n.locale )
-  
+
+
   private
   
   def define_idioma
