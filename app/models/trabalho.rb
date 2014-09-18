@@ -1,5 +1,6 @@
 class Trabalho < ActiveRecord::Base
   before_create :define_idioma
+  
   #validates_presence_of :introducao, :imagem_vitrine, :descricao_vitrine
   
   extend FriendlyId
@@ -10,6 +11,8 @@ class Trabalho < ActiveRecord::Base
   validates_presence_of :titulo, :categoria_id, :introducao, :imagem_vitrine, :descricao_vitrine, :if => 'tipo == "T"'
 
   has_one :categoriatrabalho
+  belongs_to :metatag
+  accepts_nested_attributes_for :metatag
   has_many :imagems, :dependent => :destroy, :order => 'ordem ASC'
   has_many :fichatecnicas, :dependent => :destroy, :order => 'ordem ASC'
   
@@ -39,6 +42,10 @@ class Trabalho < ActiveRecord::Base
   
   #logger.info "Locale=>#{I18n.locale}\n"
   #default_scope self.where(:idioma => I18n.locale )
+  def should_generate_new_friendly_id?
+    slug.blank? || titulo_changed?
+  end
+  
   private
   
   def define_idioma

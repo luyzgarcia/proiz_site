@@ -12,13 +12,14 @@
 			<th>Titulo</th>
 			<th>Data de edição</th>
 			<th>Estado</th>
+			<th>Ordem</th>
 			<th>Ação</th>
 		</tr>
 		<% if @trabalhos %>
 			<% @trabalhos.each do |trabalho| %>
 				<tr class="item" id="trabalho_<%= trabalho.id %>">
 					<td style="width:30%;">
-						<%= truncate(trabalho.introducao, :length => 35) %>
+						<%= trabalho.descricao_principal != nil && trabalho.descricao_principal != '' ? truncate(trabalho.descricao_principal.html_safe, :length => 25, :ommision => "...") : 'Sem titulo' %>
 					</td>
 					<td>
 						<%= trabalho.updated_at.to_s(:create) %>
@@ -31,7 +32,14 @@
 						:method => 'get',
 						:data => {:'message' => "Você está prestes a altear o status deste cliente."} %>
 					</td>
-					
+					<td  class="">
+						<%= link_to '', subirordem_admin_trabalho_path(trabalho), :remote => true,
+						:class => 'up' 
+						%>
+						<%= link_to '', descerordem_admin_trabalho_path(trabalho), :remote => true,
+						:class => 'down' 
+						%>
+					</td>
 					<td>
 						<%= link_to "", edit_admin_trabalho_path(trabalho), :class => 'bt_editar_1 tooltips', :title => "Editar item"%>
 						<%= link_to "", [:admin,trabalho], :remote => true, 

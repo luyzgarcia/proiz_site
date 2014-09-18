@@ -1,5 +1,7 @@
 ProizAdmin::Application.routes.draw do
   
+  
+  
   get '/robots.txt' => 'application#robots'
   get '/sitemap.xml' => 'application#sitemap'
   #match '*a', :to => 'errors#routing'
@@ -41,6 +43,8 @@ ProizAdmin::Application.routes.draw do
  
   namespace :admin do
     root :to => "sessions#new"
+    
+    post '/tinymce_assets' => 'tinymce_assets#create'
     
     #get "define_idioma/portugues"
     #get "define_idioma/ingles"

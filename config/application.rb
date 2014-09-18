@@ -30,6 +30,7 @@ module ProizAdmin
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     
     config.assets.precompile += %w( inicial.js noticias.js especialidades.js trabalhos.js sobre.js admninistrativo.js contato.js lab.js)
+    config.assets.precompile += %w( tinymce/plugins/uploadimage/plugin.js tinymce/plugins/uploadimage/langs/en.js )
     #config.assets.enabled = true
     
     #config.assets.logger = false

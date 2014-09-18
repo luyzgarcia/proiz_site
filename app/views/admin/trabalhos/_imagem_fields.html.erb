@@ -1,32 +1,22 @@
 <div class="form_imagens item_many form_many">
 	<%= f.hidden_field :ordem, :class => 'ordem_imagem' %>
 	<%= f.hidden_field(:id) %>
+	<% if novo %>
 	<div class="imagem_upload">
+		<div id="tipo_arquivo_upload">
+			<input type="radio" name="tipo_arquivo" onchange="define_tipo_arquivo(this)" value="video">Video
+			<input type="radio" name="tipo_arquivo" onchange="define_tipo_arquivo(this)" value="imagem">Imagem
+		</div>
 		<div class="imagem">
 			<div class="img_selecionada"></div>
-				<%= #else
-					image_tag f.object.image.url if !novo
-				#end 
-				%>
-				<h4><%= 
-				if novo
-					f.file_field :image, :onchange => 'preview_imagem(this)'
-				else
-					f.file_field :image, :onchange => 'preview_imagem2(this)', disabled: 'disabled', :class => 'bloqueado'
-				end 
-				%>
-				</h4>
+				<h4><%= f.file_field :image, :onchange => 'preview_imagem(this)' %>	</h4>
 				<p class="caminho"></p>
-			
 		</div>
-		<div class="descricao <%= novo == false ? 'bloqueado' : '' %>">
-			<%=
-				if novo == true
-					f.text_area :descricao					
-				else
-			 		f.text_area :descricao, disabled: 'disabled'
-			 	end 
-			 %>
+		<div class="video">
+			<span><%= f.text_field :link_video %></span>
+		</div>
+		<div class="descricao">
+			<%=	f.text_area :descricao %>
 		</div>
 		<div class="ordem <%= 'escondido' if novo %> <%= 'bloqueado' if !novo %>">
 			<%= link_to_function('','subir_nivel(this)', :class => 'up') %>
@@ -35,10 +25,35 @@
 		</div>
 	</div>
 	<%= 
-	#if novo == true
-		link_to_adicionar_foto "Adicionar", f if novo 
-	#else
-		
-	#end
+		link_to_adicionar_foto "Adicionar", f
 	%>	
+	
+	<% else %>
+	<div class="imagem_upload">
+		<div class="imagem">
+			<div class="img_selecionada"></div>
+				<%=
+					image_tag f.object.image.url
+				%>
+				<h4>
+				<%=
+					f.file_field :image, :onchange => 'preview_imagem2(this)', disabled: 'disabled', :class => 'bloqueado'
+				%>
+				</h4>
+				<p class="caminho"></p>
+		</div>
+		<div class="descricao bloqueado%>">
+			<%=
+			 		f.text_area :descricao, disabled: 'disabled' 
+			 %>
+		</div>
+		<div class="ordem <%= 'escondido' if novo %> <%= 'bloqueado' if !novo %>">
+			<%= link_to_function('','subir_nivel(this)', :class => 'up') %>
+			<%= link_to_function('','descer_nivel(this)', :class => 'down') %>
+			<%= link_to_remove_fields '', f if !novo %>	
+		</div>
+	</div>
+		
+	
+	<% end %>
 </div>

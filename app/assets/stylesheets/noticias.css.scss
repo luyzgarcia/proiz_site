@@ -309,6 +309,20 @@ margin-left: -5px;
       color: #fdba31;
     }
   }
+  
+  .noticia_detalhe {
+    img {
+      float: none !important;
+      height: auto !important;
+    }
+    span {
+      color: #ff6600;
+      float: none;
+      width: auto;
+      margin: 0;
+      display: inline;
+    }
+  }
 }
 
 #noticias .wrapper_noticia_destaque .noticia_destaque .noticia_destaque_info .ultimas_leiamais {

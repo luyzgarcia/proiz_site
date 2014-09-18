@@ -1,4 +1,3 @@
-
 <div class="formulario lista_cadastrados">
 	<div class="item">
 		<%= form_for([:admin,@trabalho], :html => { :multipart => true }, :multiple => true ) do |c| %>
@@ -115,6 +114,33 @@
 					</div>
 					<p class="bt_adicionar_nova bt_adicionar_nova_foto"><%= link_to_add_fields "", c, :imagems %></p>	
 				</div>
+				<div class="item_info_detalhe">
+					<h5>Metatags</h5>
+					<br/>
+					<%= c.fields_for :metatag, @metatag do |meta| %>
+						<div class="item_info_detalhe">
+							<h5><%= meta.label :title %></h5>					
+							<h4 class='<%= 'bloqueado' if @editando %>'><%= meta.text_field :title, :disabled => @editando %></h4>
+							<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
+						</div>	
+						<div class="item_info_detalhe">
+							<h5><%= meta.label :keywords %></h5>					
+							<h4 class='<%= 'bloqueado' if @editando %>'><%= meta.text_field :keywords, :disabled => @editando %></h4>
+							<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
+						</div>	
+						<div class="item_info_detalhe">	
+							<h5><%= meta.label :og_description %></h5>					
+							<h4 class='<%= 'bloqueado' if @editando %>'><%= meta.text_field :og_description, :disabled => @editando %></h4>
+							<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
+						</div>	
+						<div class="item_info_detalhe">
+							<h5><%= meta.label :og_title %></h5>					
+							<h4 class='<%= 'bloqueado' if @editando %>'><%= meta.text_field :og_title, :disabled => @editando %></h4>
+							<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
+						</div>
+					<% end %>
+				</div>
+				
 				
 				<%= c.hidden_field :tipo %>
 				

@@ -6,7 +6,11 @@ class TrabalhosController < ApplicationController
   
   def index
     @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()")
-    #@categorias = getCategorias
+    
+  end
+  def midias_sociais
+    @trabalhosmidias = getTrabalhos.where("tipo = 'M'").order(:ordem)
+    
   end
   
   def detalhe
@@ -61,11 +65,7 @@ class TrabalhosController < ApplicationController
     end
   end
   
-  def midias_sociais
-    #@trabalhosmidias = Trabalho.all.where("introducao LIKE ?" , '%facebook.com%')
-    @trabalhosmidias = getTrabalhos.where("tipo = 'M'")
-    
-  end
+  
   
 
   private
@@ -81,29 +81,29 @@ class TrabalhosController < ApplicationController
                     :site_name => ["Proiz"],
                     :url => [trabalhos_url],
                     :title => 'Proiz - Trabalhos',
-                    #:image => [trabalho.imagem_vitrine(:original)],
                     :description => 'Trabalhos realizados pela agencia Proiz'
                   }
   end
   
   def set_metatags_facebook(trabalho)
-    set_meta_tags :title => trabalho.titulo,
+    set_meta_tags :title => trabalho.metatag != nil && trabalho.metatag.title != '' ? trabalho.metatag.title : trabalho.titulo,
+                  :keywords => trabalho.metatag != nil && trabalho.metatag.keywords != '' ? trabalho.metatag.keywords : '',
                   :og => {
                     :site_name => ["Proiz"],
                     :url => [trabalho_url(trabalho)],
-                    :title => [trabalho.titulo],
-                    :image => [trabalho.imagem_vitrine(:original)]
-                    #:description => [truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200)]
+                    :title => [trabalho.metatag != nil && trabalho.metatag.og_title != '' ? trabalho.metatag.og_title : trabalho.titulo],
+                    :image => [trabalho.imagem_vitrine(:original)],
+                    :description => [trabalho.metatag != nil && trabalho.metatag.og_description != '' ? trabalho.metatag.og_description : trabalho.tipo != 'M' ? truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200) : 'Trabalho realizada pela agência PROIZ.']
                   }
-    if trabalho.tipo != 'M'
-      set_meta_tags :og => {
-                      :description => [truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200)]
-                  }
-    else
-      set_meta_tags :og => {
-                      :description => ['Trabalho realizada pela agência PROIZ.']
-                  }
-    end
+   # if trabalho.tipo != 'M'
+   #   set_meta_tags :og => {
+   #                   :description => [truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200)]
+   #               }
+   # else
+   #   set_meta_tags :og => {
+   #                   :description => ['Trabalho realizada pela agência PROIZ.']
+   #               }
+   # end
               
   end
   def getCategorias 

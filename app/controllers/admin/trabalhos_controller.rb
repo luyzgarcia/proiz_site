@@ -7,12 +7,13 @@ class Admin::TrabalhosController < Admin::AdminController
   end
   
   def midias
-    @trabalhos = getTrabalhos.order(:id).where("categoria_id IS NULL")
+    @trabalhos = getTrabalhos.where("categoria_id IS NULL").order(:ordem)
   end
 
   def new
     @trabalho = Trabalho.new
     @trabalho.tipo = 'T'
+    @trabalho.build_metatag
     @imagem = Imagem.new
     
   end
@@ -21,7 +22,7 @@ class Admin::TrabalhosController < Admin::AdminController
     #logger.info 'nova midia'
     @trabalho = Trabalho.new
     @trabalho.tipo = 'M'
-    
+    @trabalho.build_metatag
     #logger.info @trabalho.tipo
     @imagem = Imagem.new    
   end
@@ -61,6 +62,7 @@ class Admin::TrabalhosController < Admin::AdminController
   def edit
     @trabalho = Trabalho.friendly.find(params[:id])
     @imagem = Imagem.new
+    @trabalho.build_metatag if @trabalho.metatag == nil
     @editando = true
     respond_to do |format|
       if @trabalho.tipo != 'M'
@@ -73,7 +75,6 @@ class Admin::TrabalhosController < Admin::AdminController
 
   def update
     @trabalho = Trabalho.friendly.find(params[:id])
-    
     @trabalho_id = @trabalho.id
     if(@trabalho.update(trabalho_params))
       respond_to do |format|
@@ -195,10 +196,11 @@ class Admin::TrabalhosController < Admin::AdminController
   
   def trabalho_params
     params.require(:trabalho).permit(:id, :titulo, :ficha, :introducao, :status, :tipo, :categoria_id, :imagem_principal, :imagem_vitrine,
-      :imagems,:orientacao, :descricao_principal, :descricao_vitrine,
+      :imagems,:orientacao, :descricao_principal, :descricao_vitrine, :metatag,
       {:imagems_attributes => [:id, :image, :descricao, :_destroy, :trabalho_id, :ordem]},
-      {:fichatecnicas_attributes => [:id, :chave, :valor, :_destroy, :trabalho_id, :ordem]}
+      {:fichatecnicas_attributes => [:id, :chave, :valor, :_destroy, :trabalho_id, :ordem]},
+      {:metatag_attributes => [:id, :title, :keywords, :og_title, :og_description]}
       )
-  end  
+  end
   
 end

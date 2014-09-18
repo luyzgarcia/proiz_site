@@ -3,6 +3,7 @@
 //= require turbolinks
 //= require_tree ./admin
 //= require tinymce
+//= require tinymce-jquery
 // require ckeditor/init
 
 function myNewDocumentHandler(ed) {
@@ -158,18 +159,12 @@ function preview_imagem(e) {
 }
 
 function add_fields(link, association, content) {
+	//alert(content);
 	$(link).parent().hide();
 	var new_id = new Date().getTime();
 	var regexp = new RegExp("new_" + association, "g");
-	//alert(association);
-	//alert(content);
-	//alert($(link).parents('.nova_imagem').html());
 	$(link).parents('.item_info_detalhe').find('.nova').html(content.replace(regexp, new_id));
-	//$('.adicionar_imagem').html(content.replace(regexp, new_id));
-	
-	//$(link).before(
-	//	content.replace(regexp, new_id)
-	//);
+
 }
 
 
