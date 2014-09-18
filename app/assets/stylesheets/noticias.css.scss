@@ -277,15 +277,7 @@ margin-left: -5px;
   .noticia_destaque_info {
     display: inline-block;
     width: 75%;
-    img {
-      float: left;
-      /*width: 60%;*/
-      width: 476px;
-      //max-height: 280px;
-      margin-left: 2.5%;
-      //height: auto;
-      //max-height: 270px;
-    }
+    
     span {
       display: block;
       float: right;
@@ -294,6 +286,15 @@ margin-left: -5px;
       font: normal 12pt/1.5em droid_serif, Times;
       color: #4f4e4e;
     }
+  }
+  .noticia_destaque_info > a > img {
+      float: left;
+      /*width: 60%;*/
+      width: 476px;
+      //max-height: 280px;
+      margin-left: 2.5%;
+      //height: auto;
+      //max-height: 270px;
   }
   .noticia_destaque_info > p{
     font: normal 18pt/1.2em nexa_bold, Times;
@@ -314,6 +315,7 @@ margin-left: -5px;
     img {
       float: none !important;
       height: auto !important;
+      margin: 0;
     }
     span {
       color: #ff6600;
