@@ -3,17 +3,10 @@
 	<%= f.hidden_field(:id) %>
 	<% if novo %>
 	<div class="imagem_upload">
-		<div id="tipo_arquivo_upload">
-			<input type="radio" name="tipo_arquivo" onchange="define_tipo_arquivo(this)" value="video">Video
-			<input type="radio" name="tipo_arquivo" onchange="define_tipo_arquivo(this)" value="imagem">Imagem
-		</div>
 		<div class="imagem">
 			<div class="img_selecionada"></div>
 				<h4><%= f.file_field :image, :onchange => 'preview_imagem(this)' %>	</h4>
 				<p class="caminho"></p>
-		</div>
-		<div class="video">
-			<span><%= f.text_field :link_video %></span>
 		</div>
 		<div class="descricao">
 			<%=	f.text_area :descricao %>

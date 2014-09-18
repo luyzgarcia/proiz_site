@@ -50,6 +50,9 @@ gem "remotipart", "~> 1.0"
 #tinymce - Rich text editor 
 gem 'tinymce-rails'
 
+#tynemce - Image uploader
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
+
 #alternativa
 #gem 'ckeditor'
 
