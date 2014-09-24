@@ -14,6 +14,21 @@
   <%= display_meta_tags(default_meta_tags) %>
   <link href="https://fontastic.s3.amazonaws.com/X3N5zzbxKwPXykeWmT2cdf/icons.css" rel="stylesheet">
   <meta name="google-site-verification" content="roKCarNumjLhJa2UDOaVIg87y-lFpIh4ao2AajtyvzI" />
+  
+  <!-- Adiciona o script do chat online, porem nao adiciona na tela do contato  -->
+  <% if params[:controller] != 'contato' %>
+  	<!--Start of Zopim Live Chat Script-->
+	<script type="text/javascript">
+	window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+	d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+	_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute('charset','utf-8');
+	$.src='//v2.zopim.com/?2RZyBmALqyqXlnXPXEw5r7pd525GUzFB';z.t=+new Date;$.
+	type='text/javascript';e.parentNode.insertBefore($,e)})(document,'script');
+	</script>
+	<!--End of Zopim Live Chat Script-->
+  <% end%>
+  <!-- Fim do script do chat online. -->
+  
 </head>
 <script>
 </script>
@@ -24,8 +39,6 @@
 	<a href="http://www.awwwards.com/best-websites/proiz-1?subsection=all" target="_blank">Awwwards</a>
 	</div>
   	<!-- FIM AWWWARDS -->
-	
-	
 <div id="container_carregando" class="wrapper_carregando">
 <span></span>
 	<div id="carregando">
