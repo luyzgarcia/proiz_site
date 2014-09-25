@@ -83,7 +83,7 @@ class Admin::NoticiasController < Admin::AdminController
   private
   
   def getNoticias
-    @noticias = Noticia.all.where(:idioma => I18n.locale )
+    @noticias = Noticia.all.where(:idioma => I18n.locale ).order(:created_at => :desc)
   end
   
   def noticia_params
