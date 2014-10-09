@@ -37,6 +37,13 @@
       display: inline-block;
       .imagem_upload {
         text-align: left;
+        
+        
+        .video {
+          display:none;
+        }
+        
+        
         .imagem {
           width: 100%;
           border: 1px solid #e5e6e6;

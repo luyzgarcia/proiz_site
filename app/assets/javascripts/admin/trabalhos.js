@@ -7,6 +7,12 @@ $(document).ready(function(){
 	});
 });
 
+function define_tipo_arquivo(e) {
+	var selecionado = $(e).val();
+	
+	$('.imagem_upload .'+selecionado).css('display','block');
+}
+
 function subir_ordem(e) {
 	mover = $(e).parents('tr');
 	anterior = $(e).parents('tr').prev();
