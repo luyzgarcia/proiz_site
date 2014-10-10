@@ -7,9 +7,9 @@ class InicialController < ApplicationController
   end
   
   def set_metatags_facebook
-    set_meta_tags :title => 'Proiz - Comunicação integrada',
+    set_meta_tags :title => 'Proiz - Design, marketing e publicidade.',
                   :og => {
-                    :site_name => ["Proiz - Comunicação integreda"],
+                    :site_name => ["Proiz - Design, marketing e publicidade."],
                     :url => [root_url],
                     :title => ['Proiz - Comunicação integreda'],
                     :image => [('/assets/logo_proiz.png')]

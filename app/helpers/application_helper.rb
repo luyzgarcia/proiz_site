@@ -26,7 +26,7 @@ module ApplicationHelper
   
   def default_meta_tags
     {
-      :title       => 'Proiz - Comunicação Integrada',
+      :title       => 'Proiz - Design, marketing e publicidade.',
       :separator   => "&mdash;".html_safe,
       :description => 'Agência de comunicação integrada. Publicidade, design gráfico e marketing digital. Soluções completas para a construção de marcas fortes.',
       :og => {
