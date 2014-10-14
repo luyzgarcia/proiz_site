@@ -6,7 +6,7 @@
 		<%= image_tag(noticia.imagem_miniatura.url) %>
 	<% end %> 
 	<h5><%= link_to noticia.titulo, noticia_path(noticia), :remote => true %></h5>
-	<p><%= strip_tags(noticia.conteudo.mb_chars.limit(150)).html_safe %></p>
+	<p><%= strip_tags(noticia.conteudo).mb_chars.limit(180).html_safe %></p>
 	
 	<div class="ultimas_leiamais">
 		<%= link_to '', noticia_path(noticia), :class => 'link_noticias', :remote => true %>

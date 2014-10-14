@@ -17,7 +17,7 @@
 			<% end %>
 			<p><%= link_to @destaque.titulo, noticia_path(@destaque), :remote => true %></p>
 			
-			<span><%= (strip_tags(@destaque.conteudo.mb_chars.limit(200).to_s)).html_safe %></span>
+			<span><%= (strip_tags(@destaque.conteudo).mb_chars.limit(180).to_s).html_safe %> ...</span>
 			<div class="ultimas_leiamais">
 				<%= link_to '', noticia_path(@destaque), :class => 'link_noticias', :remote => true %>
 			</div>			
