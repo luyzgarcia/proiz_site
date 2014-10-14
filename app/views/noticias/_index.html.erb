@@ -17,7 +17,7 @@
 			<% end %>
 			<p><%= link_to @destaque.titulo, noticia_path(@destaque), :remote => true %></p>
 			
-			<span><%= truncate(corrige_acentos(strip_tags(@destaque.conteudo)), :length => 150) %></span>
+			<span><%= (strip_tags(@destaque.conteudo.mb_chars.limit(200).to_s)).html_safe %></span>
 			<div class="ultimas_leiamais">
 				<%= link_to '', noticia_path(@destaque), :class => 'link_noticias', :remote => true %>
 			</div>			

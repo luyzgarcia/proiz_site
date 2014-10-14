@@ -6,7 +6,7 @@
 		<%= image_tag(noticia.imagem_miniatura.url) %>
 	<% end %>
 	<h5><%= link_to noticia.titulo, noticia_path(noticia), :remote => true %></h5>
-	<p><%= truncate(corrige_acentos(strip_tags(noticia.conteudo)), :length => 150) %></p>
+	<p><%= (strip_tags(noticia.conteudo.mb_chars.limit(200).to_s)).html_safe %></p>
 	
 	<div class="ultimas_leiamais">
 		<%= link_to '', noticia_path(noticia), :class => 'link_noticias', :remote => true %>
