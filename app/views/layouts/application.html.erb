@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <meta name="format-detection" content="telephone=no">
-<meta http-equiv="content-Type" content="text/html; charset=iso-8859-1" />
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:svg="http://www.w3.org/2000/svg" xml:lang="pt-br" lang="pt">
 <%= favicon_link_tag 'favicon.ico' %>
 <head>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
@@ -127,13 +127,20 @@
 				<p><%= t 'inicial.rodape.mensagem' %></p>
 			</div>
 		</div>
+		
 		<div class="endereco">
-			<h3><%= t 'inicial.rodape.telefone' %></h3>
+			<h3><%= t 'inicial.rodape.cidade' %></h3>
 			<h5><%= t 'inicial.rodape.logradouro' %></h5>
 			<h5><%= t 'inicial.rodape.bairro' %></h5>
-			<h5><%= t 'inicial.rodape.cidade' %></h5>
+			<h3><%= t 'inicial.rodape.telefone' %></h3>
 		</div>
-		
+		<div class="endereco">
+			<h3>Curitiba, PR</h3>
+			<h5>Rua Marechal Deodoro, 262</h5>
+			<h5>1º andar, Centro.</h5>
+			<h3>+55 (41) 3018-6003</h3>
+		</div>
+
 	</div>
 	<footer>
 		<ul id="menu_inferior">
