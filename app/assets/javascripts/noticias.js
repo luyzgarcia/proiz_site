@@ -20,7 +20,7 @@ function recarregarNoticias() {
  	$('.link_noticias').bind('ajax:beforeSend',function() {
  		loading();
 	});
-	$('.link_noticias').bind('ajax:complete ',function() {
+	$('.link_noticias, .ultima_adicionada a, .noticia_destaque_info a').bind('ajax:complete ',function() {
 		history.pushState(null, document.title, this.href);
 		stoploading();
 	});
