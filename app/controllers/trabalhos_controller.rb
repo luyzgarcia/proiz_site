@@ -5,12 +5,11 @@ class TrabalhosController < ApplicationController
   #before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
   
   def index
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()")
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()").limit('10')
     
   end
   def midias_sociais
-    @trabalhosmidias = getTrabalhos.where("tipo = 'M'").order(:ordem)
-    
+    @trabalhosmidias = getTrabalhos.where("tipo = 'M'").order(:ordem).limit('10')
   end
   
   def detalhe
@@ -18,6 +17,11 @@ class TrabalhosController < ApplicationController
     #response.headers.delete('X-Frame-Options')
     
     set_metatags_facebook(@trabalho)
+    
+    @trabalho_prev = Trabalho.trabalho_prev(@trabalho)
+    @trabalho_next = Trabalho.trabalho_next(@trabalho)
+    
+   
     
     respond_to do |format|
       if @trabalho.categoria_id != nil
@@ -65,7 +69,13 @@ class TrabalhosController < ApplicationController
     end
   end
   
-  
+  def mais_midias
+    @num_midias = params[:num_midias]
+    @trabalhos = getTrabalhos.where("tipo = 'M'").order(:ordem).limit(10).offset(@num_midias)
+    respond_to do |format|
+      format.js
+    end
+  end
   
 
   private

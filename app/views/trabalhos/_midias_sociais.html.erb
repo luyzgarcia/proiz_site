@@ -11,7 +11,24 @@
 		<% @trabalhosmidias.each do |trab| %>
 			<%= render 'item_trabalho', :trab =>trab %>
 		<% end %>
+		
 	</div>
+	<!--
+	<%= form_tag mais_midias_path,:id => 'mais_midias', :method => 'get', :remote => true do %>
+			
+			<%= hidden_field_tag 'num_midias', '10' %>
+			<div id="" class="bt_padrao1 botao_noticias">
+				<%= button_tag(type: 'submit') do %>
+				<div class="circulo">
+					<span></span>
+				</div>
+				<div class="mensagem">
+					<p><%= t 'inicial.noticias.botao' %></p>
+				</div>
+			<% end %>
+			</div>			
+		<% end %>
+	-->
 	<div id="detalhe_modal" style="display:none;"></div>
 	<div class="compartilhar">
 		<h3>Gostou?</h3>

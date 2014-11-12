@@ -134,7 +134,10 @@ ProizAdmin::Application.routes.draw do
       get :filtrarmidia
     end
   end
+  
   get "midias_sociais" => "trabalhos#midias_sociais", :as => "midias_sociais"
+  get "/proxima_midia/:id" => "trabalhos#proxima_midia", :as => "proxima_midia"
+  get "mais_midias" => "trabalhos#mais_midias"
   
   get "buscar_noticia" => "noticias#buscar", :as => "buscar_noticia"
   get "/noticias/:id" => "noticias#detalhe_noticia"

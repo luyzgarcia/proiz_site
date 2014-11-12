@@ -1,18 +1,39 @@
 
 <div id="trabalho">
 	<div class="detalhe_trabalho">
-		<div class="detalhe">
+		<div class="detalhe detalhe_midia">
+			<div class="botoes_nav" data-no-turbolink>
+				<%= link_to 'Anterior', trabalho_path(@trabalho_prev) %>
+				<%= link_to 'Próximo', trabalho_path(@trabalho_next) %>
+			</div>			
 			<%= link_to_function '', 'esconder_detalhetrabalho(this)', :class => 'fechar_detalhetrabalho'%>
-			<%= @trabalho.introducao.html_safe unless @trabalho.introducao.nil? %>
+			<%= 
+				#@trabalho.introducao.html_safe unless @trabalho.introducao.nil?
+				image_tag(@trabalho.imagem_principal) 
+			%>
+			<div class="titulo_midia">
+				<p><%= @trabalho.titulo %></p>	
+			</div>
+			<hr class="linha_verde" />
+			
+			<div class="ficha_midia">
+				<% @trabalho.fichatecnicas.each do |ficha| %>
+					<p><b><%= ficha.chave %></b> <%= ficha.valor %></p>	
+				<% end %>	
+			</div>
+			
+			<hr class="linha_verde" />
+			
+			<div class="descricao_principal">
+				<%= @trabalho.descricao_principal%>
+			</div>
+			
 			<!--<div class="fb-post" data-href="https://www.facebook.com/FacebookDevelopers/posts/10151471074398553" 
 			data-width="500"></div>-->
 		</div>
-	</div>
-	
-	<div class="compartilhar">
-		<h3>Gostou?</h3>
-		<h4>Compartilhe essa página com seus amigos</h4>
 		
+		<div class="compartilhar">
+		<h3>Compartilhe</h3>
 		<div class="botoes_amarelos">
 			<div class="bt_facebook">
 				<%= fb_share('1501616463400377', 
@@ -26,6 +47,8 @@
 				<%= twitter_share(trabalho_url(@trabalho), '') %>
 			</div>
 		</div>
+	</div>
+		
 	</div>
 </div>
 <div id="fb-root"></div>

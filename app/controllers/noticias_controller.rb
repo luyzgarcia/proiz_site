@@ -1,4 +1,6 @@
+
 class NoticiasController < ApplicationController
+  #encoding: utf-8
   include ActionView::Helpers::TextHelper
   before_action :getcategorias, :setmetaTags
   

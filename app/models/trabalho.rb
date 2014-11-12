@@ -16,7 +16,6 @@ class Trabalho < ActiveRecord::Base
   has_many :imagems, :dependent => :destroy, :order => 'ordem ASC'
   has_many :fichatecnicas, :dependent => :destroy, :order => 'ordem ASC'
   
-  
   #has_one :imagem
   accepts_nested_attributes_for :imagems, :allow_destroy => true
   accepts_nested_attributes_for :fichatecnicas, :allow_destroy => true
@@ -44,6 +43,24 @@ class Trabalho < ActiveRecord::Base
   #default_scope self.where(:idioma => I18n.locale )
   def should_generate_new_friendly_id?
     slug.blank? || titulo_changed?
+  end
+  
+  def self.trabalho_prev(trabalho)
+    #Fazer select para pegar
+    #SELECT CAMPO FROM TABELA WHERE ID = (SELECT MAX(ID) FROM TABELA WHERE ID < trabalho.id)
+    retorna = Trabalho.find_by_sql("select * from trabalhos where id = (select min(id) from trabalhos where tipo = 'M' and id > #{trabalho.id} )")
+     if (!retorna.present?)
+      retorna = trabalho
+     end
+    retorna
+  end
+  
+  def self.trabalho_next(trabalho)
+    retorna = Trabalho.find_by_sql("select * from trabalhos where id = (select max(id) from trabalhos where tipo = 'M' and id < #{trabalho.id} )")
+     if (!retorna.present?)
+      retorna = trabalho
+     end
+     retorna
   end
   
   private

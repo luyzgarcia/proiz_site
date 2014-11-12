@@ -303,7 +303,7 @@
 }
 
 #trabalhos .compartilhar, #trabalho .compartilhar {
-  display: none;
+  //display: none;
 }
 #trabalho .trabalho_highlight {
   position: fixed;
@@ -475,8 +475,8 @@
   color: #004961;
   
   position: absolute;
-  right: -30px;
-  top: 0;
+  right: -70px;
+  top: -20px;
   bottom: 0;
 }
 #detalhe_modal .fechar_detalhetrabalho:before {
@@ -807,6 +807,67 @@
 #trabalhos .detalhe_trabalho .detalhe {
   min-height: 630px;
   margin: 0px auto 0;
+}
+
+#trabalhos {
+  .detalhe_trabalho {
+    .detalhe_midia {
+      margin-top: 70px;
+      width: 470px;
+      text-align: left;
+      .botoes_nav {
+        float: right;
+        font: normal 9pt/1em "nexa_bold",Tahoma;
+        color: #9a9a9a;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        a {
+          margin: 10px 5px;
+          padding: 9px 13px 6px;
+          border: 2px solid transparent;
+        }
+        a:hover {
+          background: #fff;
+          border: 2px solid #8dc63f;
+          border-radius: 3px;
+        }
+      }
+      img {
+        width: 470px;
+        height: auto;
+      }
+      .titulo_midia {
+        margin: 35px 0px 15px;
+        p {
+          font: normal 16pt/1em "nexa_bold", Tahoma;
+          color: #004961;
+        }
+      }
+      .linha_verde {
+        border-top: 1px solid #dde9ce;
+        border-bottom: 1px solid #a1cf63;
+        border-right: none;
+        border-left: none;
+      }
+      .ficha_midia {
+        margin: 25px 0;
+        p {
+          font: normal 14px/1em 'droid_serif', Tahoma;
+          color: #4f4e4e;
+          b {
+            font-family: 'droidserif-bold';
+          }
+        }
+      }
+      .descricao_principal {
+        font: normal 12pt/1.9em "droid_serif", Times;
+        color: #4f4e4e;
+        text-align: left;
+      }
+      
+    }
+  }
 }
 
 

@@ -101,7 +101,7 @@ class Admin::TrabalhosController < Admin::AdminController
   end
 
   def destroy
-    @trabalho = Trabalho.find_by_id(params[:id])
+    @trabalho = Trabalho.friendly.find(params[:id])
     @trabalho.destroy
     
     @trabalho_id = @trabalho.id
