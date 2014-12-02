@@ -77,7 +77,7 @@ class NoticiasController < ApplicationController
   end
   
   def noticiadestaque
-    @destaque = Noticia.ativo.last
+    @destaque = Noticia.ativo.last.where('status = 1')
   end
   
   def ultimasnoticias
