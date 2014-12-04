@@ -65,7 +65,7 @@ $(document).ready(function(){
 		controller.addTween('#header', TweenMax.from( $('#header'), .5, {css:{opacity: 0}}));*/
 	//});
 	$(document).ready(function() {
-      $('body').jpreLoader();
+      //$('body').jpreLoader();
     });
 });
 

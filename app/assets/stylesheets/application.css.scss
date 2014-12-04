@@ -180,7 +180,8 @@ input:focus{
 
 #carregando p::before {
   content: '\e406';
-  font-family: 'fonts';
+  //font-family: 'fonts';
+  font-family: 'icons';
   position: absolute;
   //top: 10px;
   //left: 45px;
