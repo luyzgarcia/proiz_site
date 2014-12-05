@@ -266,7 +266,7 @@ $(document).ready(function(){
 	})();
 
 
-/*Deixar o fundo do menu superior branco*/
+/*Deixar o fundo do menu superior branco
 $(document).scroll(function(e){
 	var top = $(window).scrollTop();
 	//Verifica se esta no dispositivo movel
@@ -283,12 +283,6 @@ $(document).scroll(function(e){
 						$('#menu').addClass('menu_oculto');
 					});
 			}
-			/*$('#logo a').bind('click', function(e) { 
-				mostrarMenuOculto(e);
-			});
-			*/
-			//$('#idiomas a.idioma_ativo').css('color','#fdba31');
-			//$('#header span').css('opacity','1');
 		}else if(top < 300) {
 			$('#header span').fadeOut(500);
 			$('#idiomas').removeClass('fundo_branco');
@@ -304,17 +298,10 @@ $(document).scroll(function(e){
 						}, 300);
 				},450);
 			}
-			/*
-			$('#logo a').unbind('click', function(e) { 
-				mostrarMenuOculto(e);
-			});
-			*/
-			//$('#idiomas a.idioma_ativo').css('color','#bdbdbd');
-			//$('#header').css('background-color','f1f2f2');
 		}	
 	}
 	
-});
+});*/
 
 
 $(document).ready(function(){
