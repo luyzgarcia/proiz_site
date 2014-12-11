@@ -5,12 +5,16 @@ theme_advanced_buttons3_add:
   - tablecontrols
   - fullscreen
 toolbar: 
-  - undo redo | fullscreen | uploadimage | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link
-  - preview | forecolor backcolor | fontsizeselect 
+  - undo redo | fullscreen | uploadimage | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent 
+  - preview | forecolor backcolor | fontsizeselect | link | code 
 plugins:
   - table
   - fullscreen
   - uploadimage
   - textcolor 
   - colorpicker
+  - link
+  - autolink
+  - preview
+  - code
 uploadimage_form_url: '/admin/tinymce_assets'
