@@ -218,3 +218,5 @@ config/database.yml
 Gemfile.lock
 >>>>>>> bacf41e214e2b3569ce579d049a6ddc9314f9b54
 db/schema.rb
+
+Gemfile.lock
