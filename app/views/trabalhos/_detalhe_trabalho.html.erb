@@ -61,6 +61,7 @@ $(function () {
 			<div class="full-info">
 				<% trab.imagems.each do |imagem| %>
 					<% if imagem.image.file? %>
+					<%= image_tag imagem.image.url %>
 					<div class="image-info">
 						<p>
 							<%= imagem.descricao.html_safe if !imagem.descricao.nil? %>

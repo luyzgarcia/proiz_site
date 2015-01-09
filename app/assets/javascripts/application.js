@@ -97,8 +97,7 @@ function stopfullloading() {
 	img.load(function(){
 	    length--;
 	    if(length === 0){
-	    	console.log('*******todas imagens carregadas*******');
-			$('#esconde').animate({
+	    	$('#esconde').animate({
 				opacity: 0,
 				'z-index': -100
 			}, 100, function () {

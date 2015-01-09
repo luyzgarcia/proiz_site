@@ -15,9 +15,14 @@ class TrabalhosController < ApplicationController
   
   def mais_trabalhos
     @num_trabalhos = params[:nr_trabalhos]
+    categoria = params[:categoria]
     logger.info '---------------Mais_trabalhos-------------------'
-    logger.info @num_trabalhos
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('6').offset(@num_trabalhos)
+    if categoria > '0'
+      @trabalhos = getTrabalhos.where(categoria_id: categoria).where(status: '1').order(:ordem).limit('6').offset(@num_trabalhos)
+    else
+      @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('6').offset(@num_trabalhos)  
+    end
+    
     respond_to do |format|
       format.js
     end
@@ -25,7 +30,15 @@ class TrabalhosController < ApplicationController
   
   def mais_midias
     @num_midias = params[:nr_trabalhos]
-    @trabalhos = getTrabalhos.where("tipo = 'M'").order(:ordem).limit(10).offset(@num_midias)
+    categoria = params[:categoria]
+    if categoria == '0'
+      @trabalhos = getTrabalhos.where("tipo = 'M'").limit('6').offset(@num_midias)
+    elsif categoria == '1'
+      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%facebook.com%').limit('6').offset(@num_midias)
+    elsif categoria == '2'
+      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%instagram.com%').limit('6').offset(@num_midias)
+    end
+    
     respond_to do |format|
       format.js
     end
@@ -62,25 +75,22 @@ class TrabalhosController < ApplicationController
   end
   
   def filtrar
-    cat_id = params[:id]
-    if cat_id > '0'
-      @trabalhos = getTrabalhos.where(categoria_id: cat_id)
+    @cat_id = params[:id]
+    if @cat_id > '0'
+      @trabalhos = getTrabalhos.where(categoria_id: @cat_id).limit('6')
     else
       @trabalhos = getTrabalhos.where("tipo != 'M'")
     end
   end
   
   def filtrarmidia
-    cat_id = params[:id]
-    if cat_id == '0'
-      @trabalhos = getTrabalhos.where("tipo = 'M'")
-    elsif cat_id == '1'
-      #Pega titulos facebook
-      #@trabalhos = Trabalho.all.where("introducao LIKE?", /facebook.com(.*)/)
-      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%facebook.com%')
-    elsif cat_id == '2'
-      #Pega titulos instagram
-      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%instagram.com%')
+    @cat_id = params[:id]
+    if @cat_id == '0'
+      @trabalhos = getTrabalhos.where("tipo = 'M'").limit('6')
+    elsif @cat_id == '1'
+      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%facebook.com%').limit('6')
+    elsif @cat_id == '2'
+      @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%instagram.com%').limit('6')
     end
     
     respond_to do |format|

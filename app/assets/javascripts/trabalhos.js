@@ -1,6 +1,9 @@
 // require grid/efeito_grid
 // require grid/imagesloaded.pkgd
 // require grid/masonry.pkgd.min
+
+var flag_detalhetrabalho = false;
+
 function esconder_detalhetrabalho(link) {
 	$('.corpo_trabalhos').css('height','auto');
   	$('#detalhe_modal').fadeOut();
@@ -8,6 +11,7 @@ function esconder_detalhetrabalho(link) {
   	$('html,body').animate({
 	   scrollTop: $('#grid').offset().top-330},
 	800);
+	flag_detalhetrabalho = false;
 }
 
 
@@ -58,6 +62,7 @@ function adicionaClickItemsGrid() {
 	    //800);
 		$('#grid').css('opacity','0');
 		$('#carregando_trabalho').show();
+		flag_detalhetrabalho = true;
 		//loading();
 		history.pushState(null, document.title, this.href);
 	});
@@ -66,7 +71,7 @@ function adicionaClickItemsGrid() {
 function adicionaEfeitoImagensTrabalho() {
 
 	
-	$('#detalhe_modal img').css('opacity','0');
+	//$('#detalhe_modal img').css('opacity','0');
 	//$('#detalhe_modal img').each(function(index) {
 	/*  $('#detalhe_modal .image-info img').scrollable({ offset: { y: '70%'} })
 		.on('scrollin', function (e,ui) {
@@ -77,7 +82,7 @@ function adicionaEfeitoImagensTrabalho() {
     		console.log('saiu');
 		});
 	//});
-	*/
+	
 	window.addEventListener('scroll', function() {
 		$('#detalhe_modal img').each(function(index) {
 			if($(this).visible(true, false)) {
@@ -89,21 +94,21 @@ function adicionaEfeitoImagensTrabalho() {
 		});
 	} ,false);	
 	
-	$(window).scroll(function(){ocultarMostrar(); });
+	$(window).scroll(function(){ocultarMostrar(); });*/
 }
 
 var carregando_trabalhos = false;
 
 function invocaNovosTrabalhos() {
-    if(!carregando_trabalhos && $('#flag_trabalhos').visible(true, false) && $('#nr_trabalhos').val() > 0) {
+    if(!carregando_trabalhos && $('#flag_trabalhos').visible(true, false) 
+        && $('#nr_trabalhos').val() > 0 && !flag_detalhetrabalho) {
         $('.carregando_trabalho_novos_trabalhos').show();
         var url = $('#nr_trabalhos').data('url');
-        console.log(url);
         carregando_trabalhos = true;
         $.ajax({
             type: 'GET',
             url: '/'+url,
-            data: {nr_trabalhos : $('#nr_trabalhos').val()}
+            data: {nr_trabalhos : $('#nr_trabalhos').val(), categoria: $('#nr_trabalhos').data('categoria')}
         }).success(function (data) {
             //alert('deu certoo');
             //console.log(data);
