@@ -1,0 +1,15 @@
+
+var $conteudo = '';
+var grid = document.getElementById('grid');
+
+<% if @trabalhos.empty? %>
+	$('#nr_trabalhos').val(-1);
+<% else  %>
+	var nr_trabalhos = $('#nr_trabalhos').val();
+	$('#nr_trabalhos').val(parseInt(nr_trabalhos)+6);
+<% end %>
+
+<% @trabalhos.each do |trabalho| %>
+	$conteudo = "<%= escape_javascript(render 'item_trabalho', :trab => trabalho) %>";
+	$('#grid').append($conteudo).fadeIn(1000);
+<% end %>

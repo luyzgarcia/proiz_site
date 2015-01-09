@@ -13,6 +13,14 @@
 		<% end %>
 		
 	</div>
+	
+	<div style="clear:both" class="carregando">
+		<input type="hidden" name="nr_trabalhos" value="6" id="nr_trabalhos" data-url='mais_midias' />
+		<span id="carregando_trabalho" class="carregando_trabalho_novos_trabalhos"></span>
+		<p id="flag_trabalhos" style="clear:both; margin-top: 150px;
+display: inline-block;"></p>
+		
+	</div>
 	<!--
 	<%= form_tag mais_midias_path,:id => 'mais_midias', :method => 'get', :remote => true do %>
 			

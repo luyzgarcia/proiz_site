@@ -14,8 +14,18 @@
 	<div id="grid">
 		<% @trabalhos.each do |trab| %>
 			<%= render 'item_trabalho', :trab =>trab %>
-		<% end %>
+		<% end %>		
 	</div>
+	
+	<div style="clear:both" class="carregando">
+		<input type="hidden" name="nr_trabalhos" value="6" id="nr_trabalhos" data-url='mais_trabalhos' />
+		<span id="carregando_trabalho" class="carregando_trabalho_novos_trabalhos"></span>
+		<p id="flag_trabalhos" style="clear:both; margin-top: 150px;
+display: inline-block;"></p>
+		
+	</div>
+	
+	
 	<div id="detalhe_modal" style="display:none;"></div>
 	<div class="compartilhar">
 		<h3>Gostou?</h3>

@@ -124,6 +124,8 @@
   text-align: center;
   margin: 0 auto;
   width: 415px;
+  clear: both;
+  padding-top: 55px;
   margin-bottom: 150px;
 }
 #trabalhos .compartilhar h3 { 
@@ -143,7 +145,7 @@
   display: inline-block;
 }
 #trabalhos .compartilhar .botoes_amarelos a {
-  font-family: 'fonts';
+  font-family: 'icons';
   font-size:24pt;
   height: 70px;
   width: 70px;
@@ -359,9 +361,10 @@
   }
 }
 #grid {
-  position: absolute;
+  //position: absolute;
   /*min-height: 1300px;*/
  padding-bottom: 100px;
+ margin: 0 15% 0;
 }
 #grid .item a {
   position: absolute;
@@ -470,7 +473,7 @@
   //border-top: 1px solid #f6dca5;
   //border-bottom: 1px solid #f6dca5;
   line-height: 1.5em;
-  font-family: 'fonts';
+  font-family: 'icons';
   font-size: 16pt;
   color: #004961;
   
@@ -533,15 +536,19 @@
 
 #trabalhos .corpo_trabalhos .item {
   /*height: 260px;*/
-  width: 19%;
-  /*float: left;*/
+  //width: 19%;
+  float: left;
+  /*width: 32%;
   margin: 5px;
+  */
+  width: 30%;
+  margin: 5px 2px;
 
   -webkit-perspective: 1300px;
   -moz-perspective: 1300px;
   -o-perspective: 1300px;
   -ms-perspective: 1300px;
-  opacity: 0;
+  //opacity: 0;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.4s linear;
   -o-transition: all 0.4s linear;
@@ -597,7 +604,7 @@
     padding: 100px 10px;
   }
   #trabalhos .corpo_trabalhos .item {
-    width: 24%;
+    width: 49%;
     margin: 2px;
   }
   #trabalhos .corpo_trabalhos .tam2 {

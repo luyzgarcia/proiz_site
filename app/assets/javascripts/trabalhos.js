@@ -24,14 +24,7 @@ function recarregar() {
 		$('#trabalhos .titulo h1').removeClass('trab_ativo');
 		$(this).closest('h1').addClass('trab_ativo');
 	});
-	var grid = document.getElementById('grid');
-	if(grid != null) {
-		new AnimOnScroll(grid, {
-			minDuration :0.4,
-			maxDuration : 1,
-			viewportFactor : 0.2
-		});
-	}
+	
 	$('#trabalhos .menu_trabalhos a, .titulo h1 a, .titulo a').bind('ajax:beforeSend',function() {
 		loading();
 		$('.wrapper_carregando > span').css('width', '0');
@@ -71,6 +64,7 @@ function adicionaClickItemsGrid() {
 }
 
 function adicionaEfeitoImagensTrabalho() {
+
 	
 	$('#detalhe_modal img').css('opacity','0');
 	//$('#detalhe_modal img').each(function(index) {
@@ -98,8 +92,39 @@ function adicionaEfeitoImagensTrabalho() {
 	$(window).scroll(function(){ocultarMostrar(); });
 }
 
+var carregando_trabalhos = false;
+
+function invocaNovosTrabalhos() {
+    if(!carregando_trabalhos && $('#flag_trabalhos').visible(true, false) && $('#nr_trabalhos').val() > 0) {
+        $('.carregando_trabalho_novos_trabalhos').show();
+        var url = $('#nr_trabalhos').data('url');
+        console.log(url);
+        carregando_trabalhos = true;
+        $.ajax({
+            type: 'GET',
+            url: '/'+url,
+            data: {nr_trabalhos : $('#nr_trabalhos').val()}
+        }).success(function (data) {
+            //alert('deu certoo');
+            //console.log(data);
+        }).fail(function(data ) {
+            //console.log('deu erro');
+        }).always(function() {
+            //console.log( "complete" );   
+            carregando_trabalhos = false;
+            $('.carregando_trabalho_novos_trabalhos').hide();
+        });
+    };
+}
+
 $(document).ready(function(){
 	recarregar();
+	
+	//Evento quando o usuario rola a pagina e chega no final dos trabalhos
+	//Ele ira trazer mais trabalhos
+	$(window).scroll(function() {
+        invocaNovosTrabalhos();   
+    });
 	
 	window.fbAsyncInit = function() {
 		// Wait until FB object is loaded and initialized to refresh the embeds.

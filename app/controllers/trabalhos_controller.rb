@@ -5,11 +5,30 @@ class TrabalhosController < ApplicationController
   #before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
   
   def index
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()").limit('10')
+    #@trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()").limit('10')
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('6')
     
   end
   def midias_sociais
-    @trabalhosmidias = getTrabalhos.where("tipo = 'M'").order(:ordem).limit('10')
+    @trabalhosmidias = getTrabalhos.where("tipo = 'M'").order(:ordem).limit('6')
+  end
+  
+  def mais_trabalhos
+    @num_trabalhos = params[:nr_trabalhos]
+    logger.info '---------------Mais_trabalhos-------------------'
+    logger.info @num_trabalhos
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('6').offset(@num_trabalhos)
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  def mais_midias
+    @num_midias = params[:nr_trabalhos]
+    @trabalhos = getTrabalhos.where("tipo = 'M'").order(:ordem).limit(10).offset(@num_midias)
+    respond_to do |format|
+      format.js
+    end
   end
   
   def detalhe
@@ -69,13 +88,7 @@ class TrabalhosController < ApplicationController
     end
   end
   
-  def mais_midias
-    @num_midias = params[:num_midias]
-    @trabalhos = getTrabalhos.where("tipo = 'M'").order(:ordem).limit(10).offset(@num_midias)
-    respond_to do |format|
-      format.js
-    end
-  end
+  
   
 
   private
@@ -103,7 +116,7 @@ class TrabalhosController < ApplicationController
                     :url => [trabalho_url(trabalho)],
                     :title => [trabalho.metatag != nil && trabalho.metatag.og_title != '' ? trabalho.metatag.og_title : trabalho.titulo],
                     :image => [trabalho.imagem_vitrine(:original)],
-                    :description => [trabalho.metatag != nil && trabalho.metatag.og_description != '' ? trabalho.metatag.og_description : trabalho.tipo != 'M' ? truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200) : 'Trabalho realizada pela agência PROIZ.']
+                    :description => [trabalho.metatag != nil && trabalho.metatag.og_description != '' ? trabalho.metatag.og_description : trabalho.tipo != 'M' ? truncate(trabalho.introducao.html_safe,:ommision => "... Leia mais", :length => 200) : 'Trabalho realizado pela agência PROIZ.']
                   }
    # if trabalho.tipo != 'M'
    #   set_meta_tags :og => {
