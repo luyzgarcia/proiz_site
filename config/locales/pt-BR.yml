@@ -296,4 +296,5 @@ pt-BR:
       padrao: ! '%d %b %Y'
       longo: ! '%d de %b de %Y'
       curto: ! '%d %b'
+      curto2: ! '%d/%m/%Y'
     pm: ''

@@ -35,6 +35,10 @@ class Noticia < ActiveRecord::Base
     imagem_miniatura.url(:medium)
   end
   
+  def publicado
+    I18n.l self.created_at, :format => :curto2
+  end
+  
   
   private
   

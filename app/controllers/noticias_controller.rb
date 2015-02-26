@@ -30,7 +30,7 @@ class NoticiasController < ApplicationController
       format.html
       @retorna = Noticia.all.order(created_at: :desc).limit(3).ativo
       format.xml {render :xml => @retorna, :methods => [:imagem_url] }
-      format.json {render :json => @retorna, :methods => [:imagem_url]}
+      format.json {render :json => @retorna, :methods => [:imagem_url, :publicado]}
       format.js {render 'index_remote'}
     end
   end
