@@ -31,6 +31,11 @@ class Noticia < ActiveRecord::Base
     end  
   end
   
+  def imagem_url
+    imagem_miniatura.url(:medium)
+  end
+  
+  
   private
   
   def define_idioma

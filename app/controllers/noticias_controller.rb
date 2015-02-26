@@ -28,7 +28,9 @@ class NoticiasController < ApplicationController
     getcategorias
     respond_to do |format|
       format.html
-      format.json {render :json => Noticia.all.order(created_at: :desc).limit(3).ativo.as_json}
+      @retorna = Noticia.all.order(created_at: :desc).limit(3).ativo
+      format.xml {render :xml => @retorna, :methods => [:imagem_url] }
+      format.json {render :json => @retorna, :methods => [:imagem_url]}
       format.js {render 'index_remote'}
     end
   end
