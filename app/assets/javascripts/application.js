@@ -33,7 +33,7 @@
 //= require jpreloader
 
 //= require noticias
-//= require trabalhos
+// require trabalhos
 //= require grid/efeito_grid
 //= require grid/imagesloaded.pkgd
 //= require grid/masonry.pkgd.min
