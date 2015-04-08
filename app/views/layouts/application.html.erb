@@ -48,19 +48,19 @@
 	</div>
 	<div id="menu">
 		<ul>
-			<li><%= link_to t('menu.sobre'), sobre_path, :data => { :'hover' => t('menu.sobre') }, :remote => true  %></li>
-			<li><%= link_to t('menu.especialidades'), especialidades_path, :data => { :'hover' => t('menu.especialidades') },:remote => true  %></li>
-			<li><%= link_to t('menu.trabalhos'), trabalhos_path, :data => { :'hover' => t('menu.trabalhos') } ,:remote => true %></li>
-			<li><%= link_to t('menu.noticias'), noticias_path, :data => { :'hover' => t('menu.noticias') } ,:remote => true %></li>
-			<li><%= link_to t('menu.contato'), contato_path, :data => { :'hover' => t('menu.contato') },:remote => true %></li>
+			<li><%= link_to t('menu.sobre'), sobre_path, :data => { :'hover' => t('menu.sobre') }, :remote => true, :class => params[:controller] == 'sobre' ? 'ativo' : '' %></li>
+			<li><%= link_to t('menu.especialidades'), especialidades_path, :data => { :'hover' => t('menu.especialidades') },:remote => true, :class => params[:controller] == 'especialidades' ? 'ativo' : ''  %></li>
+			<li><%= link_to t('menu.trabalhos'), trabalhos_path, :data => { :'hover' => t('menu.trabalhos') } ,:remote => true, :class => params[:controller] == 'trabalhos' ? 'ativo' : '' %></li>
+			<li><%= link_to t('menu.noticias'), noticias_path, :data => { :'hover' => t('menu.noticias') } ,:remote => true, :class => params[:controller] == 'noticias' ? 'ativo' : '' %></li>
+			<li><%= link_to t('menu.contato'), contato_path, :data => { :'hover' => t('menu.contato') },:remote => true, :class => params[:controller] == 'contato' ? 'ativo' : '' %></li>
 		</ul>
 		
 	</div>
 	<a href="#" id="pull"></a>
 	<div id="redes">
 		<%= link_to '', 'https://www.facebook.com/agenciaproiz', :target => "_blank", :class => 'facebook' %>
+		<%= link_to '', 'https://instagram.com/agenciaproiz', :target => "_blank", :class => 'instagram' %>
 		<%= link_to '', 'https://www.youtube.com/user/ProizAgencia', :target => "_blank", :class => 'twitter' %>
-		<%= link_to '', 'https://www.linkedin.com/company/proiz', :target => "_blank", :class => 'linkedin' %>
 	</div>
 	<div id="idiomas" data-no-turbolink>
 		<%= link_to 'PT', define_idioma_portugues_path, :class => I18n.locale == :'pt-BR' ? 'idioma_ativo' : '' %>
@@ -131,7 +131,7 @@
 			<h3>Curitiba, PR</h3>
 			<h5>Rua Marechal Deodoro, 262</h5>
 			<h5>1º andar, Centro.</h5>
-			<h3>+55 (41) 3018-6003</h3>
+			<h3>+55 (41) 3205-4220</h3>
 		</div>
 
 	</div>

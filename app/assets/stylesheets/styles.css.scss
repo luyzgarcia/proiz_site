@@ -18,7 +18,8 @@ a {
 }
 #content {
 	min-height: 200px;
-	padding-top: 140px;
+	//padding-top: 140px;
+	padding-top: 158px;
 }
 .wrapper {
 	height: 95%;
@@ -53,7 +54,7 @@ a {
 	display: inline-block;
 }
 #logo img {
-	height: 22px;
+	height: 20px;
 	width: 88px;
 	margin: 0px 0px -6px 0px;
 }
@@ -82,15 +83,18 @@ a {
 	text-transform: uppercase;
 }
 #menu ul li a:hover {
-	ouline: none;
-	text-decoration: none;
+	//ouline: none;
+	//text-decoration: none;
 	color: #fdba31;	
 }
 #menu nav {
 	display: inline-block;	
 }
 #menu ul li a {
-	color: #243942;
+	color: #004A61;
+}
+#menu ul li a.ativo {
+  color: #0084A9;
 }
 
 #menu ul li a::before {
@@ -120,6 +124,7 @@ a {
 	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
 	transition: transform 0.3s, opacity 0.3s;
 }
+/*
 #menu ul li a:hover {
 	border-bottom: 3px solid #fdba31;
 	border-top: 3px solid #fdba31;
@@ -149,7 +154,7 @@ a {
 		border-color: rgba(253,186,48,1);
 	}
 }
-
+*/
 #menu {
   transition: all 0.4s;
   -webkit-transition: all 0.6s;
@@ -179,9 +184,12 @@ a {
 #redes {
 	display: inline-block;	
 }
+#redes a:first-child {
+  border: none; 
+}
 #redes a {
 	border-left: 1px solid #dedfdf;
-	padding: 0px 15px 0px 15px;
+	padding: 0px 5px 0px 10px;
 	position: relative;
   display: inline-block;
   top: 5px;
@@ -206,7 +214,9 @@ a {
 }
 #redes .twitter:after {
 	content: '\e411';
-	
+}
+#redes .instagram:after {
+  content: '\e412';
 }
 #redes .google:after {
 	content: '\e410';
@@ -272,7 +282,7 @@ a {
 .bt_padrao1 .circulo {
 	height: 70px;
 	width: 70px;
-	background: #004961;
+	background: #004A61;
 	float: left;
 }
 .bt_padrao1 span {
@@ -286,7 +296,7 @@ a {
 	-webkit-transition: 0.5s all;
 }
 .bt_padrao1 .mensagem {
-	background: #004961;
+	background: #004A61;
 	width: 0px;
 	height: 59px;
 	float: right;
@@ -325,7 +335,7 @@ a {
 	padding-left: 22px;
 	padding-right: 27px;
 	//color: #fdba31;
-	color: #004961;
+	color: #004A61;
 	text-indent: 0px;
 	-moz-transition:0.6s all;
 	-webkit-transition:0.6s all;
@@ -403,12 +413,12 @@ a {
 }
 #home_rodape .midias_sociais .mensagem h4{
 	font: normal 22pt/1.2em "nexa_bold", Tahoma;
-	color: #004961;
+	color: #004A61;
 	width: 80%
 }
 #home_rodape .midias_sociais .mensagem p{
 	font: normal 9pt/1.5em "droid_serif", Times;
-	color: #004961;
+	color: #004A61;
 	margin-top: 15px;
 }
 
@@ -470,7 +480,7 @@ a {
   transition: all 0.2s ease-in-out 0.2s;
 }
 #home_rodape .newsletter form input[type="submit"]:hover {
-   background: #004961;
+   background: #004A61;
 }
 
 #home_rodape .newsletter form ::-webkit-input-placeholder {
@@ -569,7 +579,7 @@ a {
 }
 
 .midias_sociais a{
-	box-shadow: 0 0 0 5px #004961;
+	box-shadow: 0 0 0 5px #004A61;
 	-webkit-transition: color 0.3s;
 	-moz-transition: color 0.3s;
 	transition: color 0.3s;
@@ -631,7 +641,7 @@ a {
 	left: -2px;
 	padding: 2px;
 	z-index: -1;
-	background: #004961;
+	background: #004A61;
 	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
 	-moz-transition: -moz-transform 0.2s, opacity 0.2s;
 	transition: transform 0.2s, opacity 0.2s;
@@ -675,7 +685,7 @@ a {
 
 .formulario_padrao_1 p {
 	font: normal 10px/1em "droid_serif", Times;
-	color: #004961;
+	color: #004A61;
 	margin: 10px 0px
 }
 .formulario_padrao_1 input[type="text"] {
@@ -708,7 +718,7 @@ a {
   padding-top: 10px;
 }
 .formulario_padrao_1 input[type="text"]:focus, .formulario_padrao_1 textarea:focus {
-	background: #004961;
+	background: #004A61;
 }
 .formulario_padrao_1 input[type="text"]::-webkit-input-placeholder,
 .formulario_padrao_1 textarea::-webkit-input-placeholder { /* WebKit browsers */
@@ -747,11 +757,11 @@ a {
    	-webkit-border-radius:0px;
 }
 .formulario_padrao_1 input[type="submit"]:hover {
-	background: #004961;
+	background: #004A61;
 }
 .formulario_padrao_1 .botao_submit_2 {
-	border: 3px solid #004961 !important;
-	color: #004961 !important;
+	border: 3px solid #004A61 !important;
+	color: #004A61 !important;
 }
 .formulario_padrao_1 .botao_submit_2:hover {
 	background: #fdba31 !important;
@@ -765,11 +775,11 @@ a {
 #especialidades {
  .formulario_padrao_1 {
   .form_item label {
-    background: #004961;
+    background: #004A61;
     color: #fff;
   }
   .form_item label:after {
-    border-color: #004961 transparent;  
+    border-color: #004A61 transparent;  
   }
  }
  
@@ -777,7 +787,7 @@ a {
 .formulario_padrao_1 .form_item label {
   background:#8dc63f;
   border-radius: 4px;
-  color: #004961;
+  color: #004A61;
   font: normal 12pt/1.5em nexa_bold, Times;
   padding-right: 15px;
   padding-left: 15px;  
@@ -800,12 +810,12 @@ a {
 
 .input_preenchido {
   background: #fdba31 !important;
-  color: #004961 !important;
+  color: #004A61 !important;
 }
 
 .mensagem_envio {
     font: normal 16px/1em "nexa_bold", Times;
-    color: #004961;
+    color: #004A61;
 } 
 /****************************************************************/
 /************** FIM Mensagem erro formulário contato ************/
@@ -954,15 +964,17 @@ $desktop-large: 1824px;
   #redes {
     position: absolute;
     top: 0;
-    right: 90px;
+    //right: 90px;
+    //text-align: right;
+    text-align: center;
+    right: 0;
     width: 100%;
-    text-align: right;
     margin: 20px 0;
   }
   #idiomas {
     position: absolute;
     top: 5px;
-    right: 20px;
+    right: 40px;
     text-align: right;
     margin: 20px 0;
   }
@@ -1038,7 +1050,7 @@ $desktop-large: 1824px;
   #home_trabalhos .projetos_slider {
     height: 700px;
     margin-left: 0;
-    background: #004961;
+    background: #004A61;
   }
   #home_comotrabalhamos {
     height: auto;
@@ -1308,7 +1320,7 @@ $desktop-large: 1824px;
     width: 107px;
   }
   #home_noticias .bt_padrao1 .mensagem p {
-    color: #004961;
+    color: #004A61;
     text-indent: 0px;
   }
   
@@ -1451,9 +1463,9 @@ $desktop-large: 1824px;
      margin: 0;
      top: 105px;
      left: 20px;
-     width: 30px;
-     height: 20px;
-     
+     width: 25px;
+     height: 24px;
+     border: 1px solid #D0D2D3;
   }
   #menu {
     display: none;
@@ -1577,7 +1589,7 @@ $desktop-large: 1824px;
     border: 5px solid #FDBA31;
   }
   #home_noticias .bt_padrao1 .circulo, #home_noticias .bt_padrao1 .mensagem {
-    border: 5px solid #004961;
+    border: 5px solid #004A61;
   }
   .bt_padrao1 span {
     background: transparent image-url('mais_noticias.png') no-repeat center center;
@@ -1593,7 +1605,7 @@ $desktop-large: 1824px;
   .bt_padrao1 p {
     padding: 19px 0px 16px 0px;
     text-indent: 0;
-    color: #004961;
+    color: #004A61;
     width: 70px;
   }
   #home_trabalhos .bt_padrao1 {
@@ -1644,7 +1656,7 @@ $desktop-large: 1824px;
   }
   .bt_padrao1 .circulo {
     background: #f1f2f2;
-    border: 5px solid #004961;
+    border: 5px solid #004A61;
     height: 60px;
     width: 60px;
   }
@@ -1674,7 +1686,7 @@ $desktop-large: 1824px;
   }
   .bt_padrao1 p {
     text-indent: 0;
-    color: #004961;
+    color: #004A61;
     margin-left: -20;
   }
   
@@ -2215,7 +2227,7 @@ $desktop-large: 1824px;
   }
   #especialidades .especialidades_items .item .wrapper-descricao .descricao .descricao-texto h4 {
     font-size: 16px;
-    color: #004961;
+    color: #004A61;
   }
   #especialidades .especialidades_items .item .wrapper-descricao .descricao .fechar, 
   #especialidades .especialidades_items .item .wrapper-descricao .descricao > img,
