@@ -196,7 +196,7 @@ class Admin::TrabalhosController < Admin::AdminController
   
   def trabalho_params
     params.require(:trabalho).permit(:id, :titulo, :ficha, :introducao, :status, :tipo, :categoria_id, :imagem_principal, :imagem_vitrine,
-      :imagems,:orientacao, :descricao_principal, :descricao_vitrine, :metatag,
+      :imagems,:orientacao, :descricao_principal, :descricao_vitrine, :metatag, :color, 
       {:imagems_attributes => [:id, :image, :descricao, :_destroy, :trabalho_id, :ordem]},
       {:fichatecnicas_attributes => [:id, :chave, :valor, :_destroy, :trabalho_id, :ordem]},
       {:metatag_attributes => [:id, :title, :keywords, :og_title, :og_description]}

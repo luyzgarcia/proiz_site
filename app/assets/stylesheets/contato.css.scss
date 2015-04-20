@@ -5,7 +5,7 @@
   width: 100%;
   /*height: 379px;*/
   height: auto;
-  //background: #004961 image-url("contato_back.png") 90% 10% no-repeat;
+  //background: #004A61 image-url("contato_back.png") 90% 10% no-repeat;
   background: #243942;
   position: relative;
 }
@@ -111,7 +111,7 @@
 #contato .wrapper_contato .contato_informacoes {
   h3, a {
     font: normal 14pt/1.5em nexa_bold, Times;
-    color: #004961;
+    color: #004A61;
   }
 }#contato .wrapper_contato .contato_informacoes .telefone {
   font-size: 16pt;
@@ -133,7 +133,7 @@
   #contato .wrapper_topo {
     width: 100%;
     height: 232px;
-    background: #004961 url("images/sobre_fundo.png") no-repeat 100% 100%;
+    background: #004A61 url("images/sobre_fundo.png") no-repeat 100% 100%;
     background-size: contain;
   }
   #contato .wrapper_contato .contato_informacoes {
@@ -178,7 +178,7 @@
     font-size: 13px;
   }#contato .wrapper_contato .contato_informacoes .telefone {
     font-size: 15px;
-    color: #004961;
+    color: #004A61;
   }
   #contato .wrapper_contato .contato_formulario h1 {
     font-size: 24pt;
@@ -187,7 +187,7 @@
 
 @media screen and (max-width:480px),(max-device-width: 480px){
   #contato .wrapper_topo {
-    background: #004961;
+    background: #004A61;
     height: auto;
   }
   #contato .wrapper_topo .mensagem {

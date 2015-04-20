@@ -1,0 +1,25 @@
+<% categoria.titulo %>
+<% trab.inspect %>
+
+<div class='item_trabalho_modelo_2'>
+	<div class="detalhe_item" style="background-color: <%= trab.color %>">
+		<span class="categoria"><%= link_to categoria.titulo, filtrar_trabalho_path(categoria), :title => categoria.titulo, :remote => true %></span>
+		<span class="diminuir" onclick="diminuir_trabalho(this); return false;"><a href="#"></a></span>
+		
+			<div class="imagem_vitrine">
+				<div class="imagem">
+				<%= image_tag(trab.imagem_vitrine.url(:medium)) %>
+				</div>
+			</div>
+			<div class="descricao">
+				<div class="wrapper_descricao">
+					<h2><%= trab.titulo %></h2>
+					<p><%= trab.descricao_vitrine.html_safe %></p>
+				</div>
+			</div>
+		<%= link_to trabalho_path(trab), :remote => true, :class => 'detalhe_trabalho_link' do %>
+		<% end %>
+		<span class="tap"></span>
+		<span class="seta_direita"><%= link_to "X", trabalho_path(trab), :remote => true %></span>
+	</div>
+</div>

@@ -33,6 +33,11 @@
 					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.text_field :titulo, :disabled => @editando %></h4>
 					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
 				</div>
+				<div class="item_info_detalhe" id="1">
+					<h5><%= c.label :color %></h5>					
+					<h4 class='<%= 'bloqueado' if @editando %>'><%= c.color_field :color, :disabled => @editando %></h4>
+					<%= link_to_function("", "enable_field(this)",:class => 'bt_libera_editar') if @editando %>
+				</div>
 				<div class="item_info_detalhe" id="2">
 					<h5><%= c.label :categoria %></h5>															
 					<h4 style="width: 150px"><%= c.select(:categoria_id, Categoriatrabalho.all.where(:idioma => I18n.locale ).collect {|n| [ n.titulo, n.id]}, {prompt: "Selecione:"}) %></h4>

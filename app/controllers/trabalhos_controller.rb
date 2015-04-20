@@ -6,7 +6,7 @@ class TrabalhosController < ApplicationController
   
   def index
     #@trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()").limit('10')
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('6')
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('3')
     
   end
   def midias_sociais

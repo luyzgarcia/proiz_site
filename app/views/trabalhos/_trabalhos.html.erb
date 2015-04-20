@@ -1,48 +1,36 @@
 <script>
 
 </script>
-<div class="menu_trabalhos">
+<!--<div class="menu_trabalhos">
 	<ul>
 		<li><%= link_to 'Todos', filtrar_trabalho_path(0), :title => 'Todos', :remote => true %></li></li>
 		<% @categorias.each do |cat| %>
 			<li><%= link_to cat.titulo, filtrar_trabalho_path(cat), :title => cat.titulo, :remote => true %></li>
 		<% end %>					
 	</ul>
-</div>
-<div class="corpo_trabalhos">
-	<span id="carregando_trabalho" ></span>
-	<div id="grid">
-		<% @trabalhos.each do |trab| %>
-			<%= render 'item_trabalho', :trab =>trab %>
-		<% end %>		
+</div>-->
+	<div class="menu_trabalhos_modelo_2 area_trabalhos">
+		<ul>
+			<li><%= link_to 'Todos', filtrar_trabalho_path(0), :title => 'Todos', :remote => true %></li></li>
+			<% @categorias.each do |cat| %>
+				<li><%= link_to cat.titulo, filtrar_trabalho_path(cat), :title => cat.titulo, :remote => true %></li>
+			<% end %>					
+		</ul>
 	</div>
-	
-	<div style="clear:both" class="carregando">
-		<input type="hidden" name="nr_trabalhos" value="6" id="nr_trabalhos" data-url='mais_trabalhos' data-categoria='0' />
-		<span id="carregando_trabalho" class="carregando_trabalho_novos_trabalhos"></span>
-		<p id="flag_trabalhos" style="clear:both; margin-top: 150px;
-display: inline-block;"></p>
-		
-	</div>
-	
-	
-	<div id="detalhe_modal" style="display:none;"></div>
-	<div class="compartilhar">
-		<h3>Gostou?</h3>
-		<h4>Compartilhe essa página com seus amigos</h4>
-		
-		<div class="botoes_amarelos">
-			<div class="bt_facebook">
-				<%= fb_share('1501616463400377', 
-				trabalhos_url,
-				'',{}) %>
-			</div>
-            <div class="bt_google">
-				<%= google_share(trabalhos_url,'') %>
-			</div>
-             <div class="bt_twitter"> 
-				<%= twitter_share(trabalhos_url, '') %>
-			</div>
+	<div class="corpo_trabalhos">
+		<span id="carregando_trabalho" ></span>
+		<div class="trabalhos_modelo_2 area_trabalhos">
+			<% @trabalhos.each do |trab| %>
+				<%= render 'item_trabalho_modelo_2', :trab =>trab, :categoria => Categoriatrabalho.all.where(:id => trab.categoria_id).first %>
+			<% end %>		
 		</div>
-	</div>
-</div>
+		
+		<div style="clear:both" class="carregando">
+			<input type="hidden" name="nr_trabalhos" value="6" id="nr_trabalhos" data-url='mais_trabalhos' data-categoria='0' />
+			<span id="carregando_trabalho" class="carregando_trabalho_novos_trabalhos"></span>
+			<p id="flag_trabalhos" style="clear:both; margin-top: 150px; display: inline-block;"></p>
+		</div>
+		
+	
+	</div>	
+	<div id="detalhe_modal" style="display:none;"></div>

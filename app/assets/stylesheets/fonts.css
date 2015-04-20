@@ -16,6 +16,26 @@
 }
 
 @font-face {
+  font-family: 'droid_sans';
+  src: url('DroidSans.eot?#iefix') format('embedded-opentype'),
+       url('DroidSans.ttf') format('truetype'),
+       url('DroidSans.woff') format('woff'),
+       url('DroidSans.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'droid_sans';
+  src: url('DroidSans-Bold.eot?#iefix') format('embedded-opentype'),
+       url('DroidSans-Bold.ttf') format('truetype'),
+       url('DroidSans-Bold.woff') format('woff'),
+       url('DroidSans-Bold.svg') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
     font-family: 'nexa_bold';
     src: url('nexa_bold.eot?#iefix');
     src: url('nexa_bold.eot?#iefix') format('embedded-opentype'), 

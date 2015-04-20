@@ -44,6 +44,14 @@
 //Pinterest
 //= require pinterest/pinit
 
+//JSColor
+// require color.all.min
+
+//Hammer JS
+// require hammer.min.map
+//= require hammer
+//= require jquery.hammer
+
 
 
 
@@ -513,7 +521,13 @@ $(document).ready(function(){
 		fullloading();
 		//$.getScript('assets'+$(this).attr("href")+'.js');
 		history.pushState(null, document.title, this.href);
-		
+		$('#menu ul li a').removeClass('ativo');
+		url_ativa = $(this).attr('href');
+		$.each($('#menu ul li a'), function(index, value) {
+			if(url_ativa == $(this).attr('href')) {
+				$(this).addClass('ativo');
+			}
+		});
 		
 		$('.wrapper_carregando > span').animate({
 			width: '100%' 

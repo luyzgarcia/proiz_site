@@ -1,0 +1,22 @@
+
+
+$('#grid').html('');
+
+$('#detalhe_modal').hide();
+
+$('#nr_trabalhos').data('categoria',<%= @cat_id %>);
+
+<% @trabalhos.each do |trab| %>
+	$conteudo = "<%= escape_javascript(render 'item_trabalho', :trab => trab )%>";
+	$('#grid').append($conteudo);
+<% end %>
+
+adicionaClickItemsGrid();
+
+$('#carregando_trabalho').animate({
+	opacity: 0
+}, 200, function() {
+	$(this).hide();
+	$(this).css('opacity','1');
+	$('#grid').css('opacity','1');
+});

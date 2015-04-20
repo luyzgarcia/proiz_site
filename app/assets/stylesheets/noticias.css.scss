@@ -66,7 +66,7 @@
 #noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia h2 {
   width: 62%/*500px*/;
   font: normal 24pt/1.5em nexa_bold, Times;
-  color: #004961;
+  color: #004A61;
   float: left;
 }
 #noticia .noticia-info .wrapper_noticia .noticia .titulo_noticia .recursos_download {
@@ -153,7 +153,7 @@
   
   h3 {
     font: normal 22pt/1.5em nexa_bold, Times;
-    color: #004961;
+    color: #004A61;
     margin: 40px 0 50px;
   }
   .ultima_adicionada {
@@ -176,7 +176,7 @@
     }
     h5, a{
       font: normal 14pt/1.5em nexa_bold, Times;
-      color: #004961;
+      color: #004A61;
       margin: 20px 0 20px;    
     }
     a:hover {
@@ -224,8 +224,8 @@
   position: absolute;
   width: 70px;
   height: 70px;
-  /*border: 9px solid #004961;*/
-  box-shadow: 0px 0px 0px 9px #004961;
+  /*border: 9px solid #004A61;*/
+  box-shadow: 0px 0px 0px 9px #004A61;
   border-radius: 50%;
   text-align: center;     
   -webkit-transition: 0.3s; 
@@ -298,13 +298,13 @@ margin-left: -5px;
   }
   .noticia_destaque_info > p{
     font: normal 18pt/1.2em nexa_bold, Times;
-    color: #004961;
+    color: #004A61;
     //width: 35%;
     width: 350px;
     float: right;
     margin-right: 30px; 
     a {
-      color: #004961;
+      color: #004A61;
     }
     a:hover {
       color: #fdba31;

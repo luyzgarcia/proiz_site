@@ -1,5 +1,10 @@
 <%= render partial: 'index' %>
 <script>
+	$('#carregando_trabalho').show();
+	$('.area_trabalhos').css('opacity','0');
+	$('.area_trabalhos').css('zIndex', -9999);
+	flag_detalhetrabalho = true;
+	
 	$('#detalhe_modal').html("<%= escape_javascript(render 'detalhe_trabalho', :trab => @trabalho) %>");
 	//loading();
 	var img = $('#detalhe_modal img');
@@ -19,7 +24,9 @@
 	
 	function mostraTrabalho() {
 		$('#detalhe_modal').show(100, function() {
-		
+			$('#carregando_trabalho').hide();
+			stoploading();
+			
 			alturamodal = $('#trabalho').height();
 			alturaimagens = 0;
 			alturacontainer = $('.corpo_trabalhos').height();

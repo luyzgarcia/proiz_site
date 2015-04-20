@@ -1,14 +1,12 @@
-
-
-$('#grid').html('');
+$('.trabalhos_modelo_2').html('');
 
 $('#detalhe_modal').hide();
 
 $('#nr_trabalhos').data('categoria',<%= @cat_id %>);
 
 <% @trabalhos.each do |trab| %>
-	$conteudo = "<%= escape_javascript(render 'item_trabalho', :trab => trab )%>";
-	$('#grid').append($conteudo);
+	$conteudo = "<%= escape_javascript(render 'item_trabalho_modelo_2', :trab => trab, :categoria => Categoriatrabalho.all.where(:id => trab.categoria_id).first )%>";
+	$('.trabalhos_modelo_2').append($conteudo);
 <% end %>
 
 adicionaClickItemsGrid();
@@ -20,3 +18,8 @@ $('#carregando_trabalho').animate({
 	$(this).css('opacity','1');
 	$('#grid').css('opacity','1');
 });
+
+
+$('html,body').animate({
+   scrollTop: $('.trabalhos_modelo_2').offset().top-330},
+800);

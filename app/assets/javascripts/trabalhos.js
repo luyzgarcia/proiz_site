@@ -5,13 +5,29 @@
 var flag_detalhetrabalho = false;
 
 function esconder_detalhetrabalho(link) {
+	/*
+	 * $('.area_trabalhos').css('opacity','0');
+		$('.area_trabalhos').css('zIndex', -9999);
+		$('#carregando_trabalho').show();
+		flag_detalhetrabalho = true;
+		//loading();
+		history.pushState(null, document.title, this.href);
+	 * */
 	$('.corpo_trabalhos').css('height','auto');
   	$('#detalhe_modal').fadeOut();
   	$('#detalhe_modal').html('');
-  	$('html,body').animate({
+  	
+  	$('.area_trabalhos').css('opacity','1');
+  	$('.area_trabalhos').css('zIndex', 0);
+  	$('.menu_trabalhos_modelo_2').css('zIndex','9');	
+	
+	history.pushState(null, document.title, '/trabalhos');
+  	
+  	/*$('html,body').animate({
 	   scrollTop: $('#grid').offset().top-330},
-	800);
+	800);*/
 	flag_detalhetrabalho = false;
+	
 }
 
 
@@ -56,20 +72,22 @@ function recarregar() {
 }
 
 function adicionaClickItemsGrid() {
-	$('#grid .item a').bind('click',function() {
-		//$('html,body').animate({
-	    //    scrollTop: $('#grid').offset().top-330},
-	    //800);
-		$('#grid').css('opacity','0');
+	$('.seta_direita a, .detalhe_trabalho_link').click(function() {
+		$('.area_trabalhos').css('opacity','0');
+		$('.area_trabalhos').css('zIndex', -9999);
 		$('#carregando_trabalho').show();
 		flag_detalhetrabalho = true;
 		//loading();
 		history.pushState(null, document.title, this.href);
+		
+		$('html,body').animate({
+		   scrollTop: $('#carregando_trabalho').offset().top-330},
+		800);
+		//return false;
 	});
 }
 
 function adicionaEfeitoImagensTrabalho() {
-
 	
 	//$('#detalhe_modal img').css('opacity','0');
 	//$('#detalhe_modal img').each(function(index) {
@@ -100,6 +118,7 @@ function adicionaEfeitoImagensTrabalho() {
 var carregando_trabalhos = false;
 
 function invocaNovosTrabalhos() {
+	
     if(!carregando_trabalhos && $('#flag_trabalhos').visible(true, false) 
         && $('#nr_trabalhos').val() > 0 && !flag_detalhetrabalho) {
         $('.carregando_trabalho_novos_trabalhos').show();
@@ -111,7 +130,7 @@ function invocaNovosTrabalhos() {
             data: {nr_trabalhos : $('#nr_trabalhos').val(), categoria: $('#nr_trabalhos').data('categoria')}
         }).success(function (data) {
             //alert('deu certoo');
-            //console.log(data);
+        	adicionaClickItemsGrid();
         }).fail(function(data ) {
             //console.log('deu erro');
         }).always(function() {
@@ -120,6 +139,7 @@ function invocaNovosTrabalhos() {
             $('.carregando_trabalho_novos_trabalhos').hide();
         });
     };
+    
 }
 
 $(document).ready(function(){
@@ -186,3 +206,44 @@ function efeitoOcultarMostrar(mudar) {
 	}
     
 }
+
+function diminuir_trabalho(e) {
+	var pai = $(e).parent('.detalhe_item');
+	
+	if(pai.hasClass('diminuido')) {
+		pai.removeClass('diminuido');
+	}else{
+		
+		pai.addClass('diminuido');
+	}
+	
+}
+
+
+function detalhe_trabalho(e) {
+	
+}
+
+$(document).ready(function (){
+	var scrollorama = $.scrollorama({blocks: '.corpo'});
+		scrollorama.animate('.menu_trabalhos_modelo_2',{delay: 100,duration:250, property:'top', start: '150px', end: '70px'});
+	
+	adicionaClickItemsGrid();
+	
+	
+	
+	
+	var item = $('.detalhe_item');
+	var hammertime = $(".tap").hammer({});
+	hammertime.on('tap', function(ev) {
+		//console.log(ev);
+		$(this).parent('.detalhe_item').addClass('clicado');
+		$(this).parent('.detalhe_item').find('.detalhe_trabalho_link').show();
+		console.log(ev);
+	    //console.log($(ev).attr('class'));
+	    //return false;
+	});
+	
+	
+	
+})

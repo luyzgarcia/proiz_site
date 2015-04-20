@@ -1,6 +1,9 @@
 <script type="text/javascript">
 $(function () {
 	$('.full-info img').pinit();
+	//Carregando
+	
+
 });
 </script>
 <style>
@@ -73,7 +76,7 @@ $(function () {
 			</div>
 		</div>
 	</div>
-	<div class="compartilhar">
+	<!--<div class="compartilhar">
 		<h3>Gostou?</h3>
 		<h4>Compartilhe essa página com seus amigos</h4>
 		<div class="botoes_amarelos">
@@ -89,5 +92,23 @@ $(function () {
 				<%= twitter_share(trabalho_url(trab), '') %>
 			</div>
 		</div>
-	</div>
+	</div>-->
 </div>
+
+<script>
+	$(document).ready(function () {
+		$('#trabalho_detalhe_menu a').click(function() {
+			var abrir = $(this).attr('href');
+			if(!$(abrir).is(":visible")) {
+				$('#intro, #info').hide();
+				$(abrir).show();	
+			}else {
+				$('#intro, #info').hide();
+			}
+			
+			return false;
+		});
+
+	});
+	
+</script>
