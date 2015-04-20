@@ -1,8 +1,9 @@
 @font-face {
   font-family: 'droid_serif';
-  src: url('droidserif.eot?#iefix') format('embedded-opentype'),
-       url('droidserif.ttf') format('truetype'),
-       url('droidserif.svg') format('svg');
+  src: url('DroidSans.eot?#iefix') format('embedded-opentype'),
+       url('DroidSans.ttf') format('truetype'),
+       url('DroidSans.woff') format('woff'),
+       url('DroidSans.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
