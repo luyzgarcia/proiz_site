@@ -100,24 +100,28 @@ function stopfullloading() {
 
 	var img = $('#content img');
 	var length = img.length;
-	//alert(length);
+	console.log(length);
 	//console.log(img);
-	//img.load(function(){
-	 //   length--;
-	 //   if(length === 0){
-	    	$('#esconde').animate({
-				opacity: 0,
-				'z-index': -100
-			}, 100, function () {
-				//descomentar depois
-				$('.wrapper_carregando').removeClass('la-animate');
-				//$('.wrapper_carregando > span').css('width', '0');
-				$('#header').animate({
-					top: '0px'
-				}, 300);
-			});
-//		}
-//	});
+	img.each(function(){
+        $('<img/>')[0].src = this;
+        // Alternatively you could use:
+        // (new Image()).src = this;
+				length--;
+			    if(length === 0){
+			    	$('#esconde').animate({
+						opacity: 0,
+						'z-index': -100
+					}, 100, function () {
+						//descomentar depois
+						$('.wrapper_carregando').removeClass('la-animate');
+						//$('.wrapper_carregando > span').css('width', '0');
+						$('#header').animate({
+							top: '0px'
+						}, 300);
+					});
+				}
+    });
+
 
 
 }
