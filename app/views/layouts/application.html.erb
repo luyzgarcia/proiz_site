@@ -7,13 +7,13 @@
 <head>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
-  
+
   <%= csrf_meta_tags %>
   <%= content_for :header %>
-  
+
   <%= display_meta_tags(default_meta_tags) %>
   <meta name="google-site-verification" content="roKCarNumjLhJa2UDOaVIg87y-lFpIh4ao2AajtyvzI" />
-  
+
   <!-- Adiciona o script do chat online, porem nao adiciona na tela do contato  -->
   <% if params[:controller] != 'contato' %>
   	<!--Start of Zopim Live Chat Script-->
@@ -27,7 +27,7 @@
 	<!--End of Zopim Live Chat Script-->
   <% end%>
   <!-- Fim do script do chat online. -->
-  
+
 </head>
 <script>
 </script>
@@ -39,7 +39,7 @@
 	</div>
 </div>
 <div id="esconde">
-			
+
 </div>
 <div id="header">
 	<span></span>
@@ -54,7 +54,7 @@
 			<li><%= link_to t('menu.noticias'), noticias_path, :data => { :'hover' => t('menu.noticias') } ,:remote => true, :class => params[:controller] == 'noticias' ? 'ativo' : '' %></li>
 			<li><%= link_to t('menu.contato'), contato_path, :data => { :'hover' => t('menu.contato') },:remote => true, :class => params[:controller] == 'contato' ? 'ativo' : '' %></li>
 		</ul>
-		
+
 	</div>
 	<a href="#" id="pull"></a>
 	<div id="redes">
@@ -64,12 +64,12 @@
 	</div>
 	<div id="idiomas" data-no-turbolink>
 		<%= link_to 'PT', define_idioma_portugues_path, :class => I18n.locale == :'pt-BR' ? 'idioma_ativo' : '' %>
-		<%= link_to 'EN', define_idioma_ingles_path, :class => I18n.locale == :en ? 'idioma_ativo' : '' %>		
+		<%= link_to 'EN', define_idioma_ingles_path, :class => I18n.locale == :en ? 'idioma_ativo' : '' %>
 	</div>
 </div>
 
 
-	
+
 <% flash.each do |name, msg| %>
   <%= content_tag :div, msg, :id => "flash_#{name}" %>
 <% end %>
@@ -83,7 +83,7 @@
             <h4><%= t 'inicial.newsletter.titulo' %></h4>
             <p><%= t 'inicial.newsletter.subtitulo' %></p>
         </div>
-        
+
         <div class="midias_sociais_botoes">
         	<%= link_to '', 'https://www.facebook.com/agenciaproiz', :target => "_blank", :class => 'facebook_padrao_2' %>
 			<%= link_to '', 'https://www.youtube.com/user/ProizAgencia', :target => "_blank", :class => 'youtube_padrao_2' %>
@@ -92,12 +92,12 @@
 	</div>
     <style>
 		.newsletter form {
-			height: 39px;	
+			height: 39px;
 		}
 	</style>
 	<div class="newsletter" id="newsletter">
 		<h4><%= t 'inicial.newsletter.placeholder' %></h4>
-		
+
 		<%= form_tag({controller: 'newsletter', action: 'subscribe'}, :id => 'form_newsletter',
 			method: "get", :remote => true) do %>
 			<%= text_field(:newsletter,:email)%>
@@ -120,7 +120,7 @@
 				<p><%= t 'inicial.rodape.mensagem' %></p>
 			</div>
 		</div>
-		
+
 		<div class="endereco">
 			<h3><%= t 'inicial.rodape.cidade' %></h3>
 			<h5><%= t 'inicial.rodape.logradouro' %></h5>
@@ -139,7 +139,8 @@
 		<ul id="menu_inferior">
 			<li><%= link_to t('menu_rodape.contato'),contato_path %></li>
 			<li><%= link_to t('menu_rodape.oportunidades'),contato_path %></li>
-			<li><%= link_to t('menu_rodape.lab'),lab_path %></li>			
+			<li><%= link_to t('menu_rodape.lab'),lab_path %></li>
+      <li><%= link_to 'Acom','http://www.acom.proiz.com.br', :target => '_blank' %></li>
 		</ul>
 		<p><%= t 'inicial.rodape.copyright' %></p>
 	</footer>
@@ -154,12 +155,12 @@
 	        percentage: true
 	    });*/
 	});
-	//window.load = function(){ 
+	//window.load = function(){
 	//	console.log('novo método de loading');
 	//    var loader = document.getElementById('container_carregando');
 	//    loader.style.display = 'none';
 	//}
-	
+
 </script>
 <div id="fb-root"></div>
 <script>
@@ -183,7 +184,7 @@ lang: 'pt-BR'
 po.src = 'https://apis.google.com/js/plusone.js';
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
-  
+
 //Twitter
 !function(d,s,id){
 	var js,fjs=d.getElementsByTagName(s)[0];
@@ -192,8 +193,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
 		fjs.parentNode.insertBefore(js,fjs);
 	}
 }(document,"script","twitter-wjs");
-  
-  
+
+
 //Gooogle analytics
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -204,7 +205,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po
   ga('create', 'UA-53040348-1', 'auto');
   ga('send', 'pageview');
 
-// Código do Google para tag de remarketing 
+// Código do Google para tag de remarketing
 
 /* <![CDATA[ */
 var google_conversion_id = 998264969;

@@ -3,16 +3,16 @@ class TrabalhosController < ApplicationController
   respond_to :json, :html
   before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
   #before_action :getCategorias, only: [:index, :detalhe, :midias_sociais]
-  
+
   def index
     #@trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()").limit('10')
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('3')
-    
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('5')
+
   end
   def midias_sociais
     @trabalhosmidias = getTrabalhos.where("tipo = 'M'").order(:ordem).limit('6')
   end
-  
+
   def mais_trabalhos
     @num_trabalhos = params[:nr_trabalhos]
     categoria = params[:categoria]
@@ -20,14 +20,14 @@ class TrabalhosController < ApplicationController
     if categoria > '0'
       @trabalhos = getTrabalhos.where(categoria_id: categoria).where(status: '1').order(:ordem).limit('6').offset(@num_trabalhos)
     else
-      @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('6').offset(@num_trabalhos)  
+      @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('6').offset(@num_trabalhos)
     end
-    
+
     respond_to do |format|
       format.js
     end
   end
-  
+
   def mais_midias
     @num_midias = params[:nr_trabalhos]
     categoria = params[:categoria]
@@ -38,29 +38,29 @@ class TrabalhosController < ApplicationController
     elsif categoria == '2'
       @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%instagram.com%').limit('6').offset(@num_midias)
     end
-    
+
     respond_to do |format|
       format.js
     end
   end
-  
+
   def detalhe
     @trabalho = Trabalho.friendly.find(params[:id])
     #response.headers.delete('X-Frame-Options')
-    
+
     set_metatags_facebook(@trabalho)
-    
+
     @trabalho_prev = Trabalho.trabalho_prev(@trabalho)
     @trabalho_next = Trabalho.trabalho_next(@trabalho)
-    
-   
+
+
     
     respond_to do |format|
       if @trabalho.categoria_id != nil
-        format.html { 
+        format.html {
           #@categorias = getCategorias
           @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1')
-          render 'detalhe_trabalho' 
+          render 'detalhe_trabalho'
           }
         format.js { render 'detalhe_trabalho' }
       else
@@ -69,11 +69,11 @@ class TrabalhosController < ApplicationController
           render 'detalhe_trabalho_midia'
         }
         format.js { render 'detalhe_trabalho_midia' }
-      end         
+      end
     end
-    
+
   end
-  
+
   def filtrar
     @cat_id = params[:id]
     if @cat_id > '0'
@@ -82,7 +82,7 @@ class TrabalhosController < ApplicationController
       @trabalhos = getTrabalhos.where("tipo != 'M'")
     end
   end
-  
+
   def filtrarmidia
     @cat_id = params[:id]
     if @cat_id == '0'
@@ -92,14 +92,14 @@ class TrabalhosController < ApplicationController
     elsif @cat_id == '2'
       @trabalhos = getTrabalhos.where("introducao LIKE ?" , '%instagram.com%').limit('6')
     end
-    
+
     respond_to do |format|
       format.js { render 'filtrar' }
     end
   end
-  
-  
-  
+
+
+
 
   private
 
@@ -107,7 +107,7 @@ class TrabalhosController < ApplicationController
     #logger.info 'entoru'
     #response.headers.except! 'X-Frame-Options'
   end
-  
+
   def set_metatags_trabalhos
     set_meta_tags :title => 'Proiz - Trabalhos',
                   :og => {
@@ -117,7 +117,7 @@ class TrabalhosController < ApplicationController
                     :description => 'Trabalhos realizados pela agencia Proiz'
                   }
   end
-  
+
   def set_metatags_facebook(trabalho)
     set_meta_tags :title => trabalho.metatag != nil && trabalho.metatag.title != '' ? trabalho.metatag.title : trabalho.titulo,
                   :keywords => trabalho.metatag != nil && trabalho.metatag.keywords != '' ? trabalho.metatag.keywords : '',
@@ -137,9 +137,9 @@ class TrabalhosController < ApplicationController
    #                   :description => ['Trabalho realizada pela agência PROIZ.']
    #               }
    # end
-              
+
   end
-  def getCategorias 
+  def getCategorias
     @categorias = Categoriatrabalho.all.where(:idioma => I18n.locale )
   end
   def getTrabalhos
