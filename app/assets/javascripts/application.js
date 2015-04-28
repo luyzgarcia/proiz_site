@@ -102,11 +102,12 @@ function stopfullloading() {
 	var length = img.length;
 	console.log(length);
 	//console.log(img);
-	img.load(function(){
+	//img.load(function(){
 			//console.log(this);
 		//	console.log('entrou');
 	  //  length--;
 	 //   if(length === 0){
+
 	    	$('#esconde').animate({
 				opacity: 0,
 				'z-index': -100
@@ -119,9 +120,9 @@ function stopfullloading() {
 				}, 300);
 			});
 //		}
-	}, function() {
+	//}, function() {
 		//alert(length);
-	});
+//	});
 
 
 }
