@@ -7,6 +7,12 @@ class TrabalhosController < ApplicationController
   def index
     #@trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()").limit('10')
     @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('5')
+    respond_to do |format|
+      format.html
+      format.xml {render :xml => @trabalhos, :methods => [:imagem_url] }
+      format.json {render :json => @trabalhos, :methods => [:imagem_url, :publicado]}
+      format.js {render 'index'}
+    end
 
   end
   def midias_sociais
@@ -54,7 +60,7 @@ class TrabalhosController < ApplicationController
     @trabalho_next = Trabalho.trabalho_next(@trabalho)
 
 
-    
+
     respond_to do |format|
       if @trabalho.categoria_id != nil
         format.html {
