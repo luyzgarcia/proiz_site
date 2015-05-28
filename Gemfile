@@ -71,7 +71,7 @@ gem 'maskedinput-rails'
 
 #para usar assets na amazon
 gem 'aws-s3'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 
 
 #url amigaveis
