@@ -1,7 +1,7 @@
 ProizAdmin::Application.routes.draw do
   
   
-  
+  get '/manifesto' => 'pages#manifesto'
   get '/robots.txt' => 'application#robots'
   get '/sitemap.xml' => 'application#sitemap'
   #match '*a', :to => 'errors#routing'
