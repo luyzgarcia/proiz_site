@@ -6,7 +6,7 @@ class TrabalhosController < ApplicationController
 
   def index
     #@trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order("RANDOM()").limit('10')
-    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('5')
+    @trabalhos = getTrabalhos.where("categoria_id IS NOT NULL and tipo != 'M'").where(status: '1').order(:ordem).limit('10')
     respond_to do |format|
       format.html
       format.xml {render :xml => @trabalhos, :methods => [:imagem_url] }
@@ -146,7 +146,7 @@ class TrabalhosController < ApplicationController
 
   end
   def getCategorias
-    @categorias = Categoriatrabalho.all.where(:idioma => I18n.locale )
+    @categorias = Categoriatrabalho.all.where(:idioma => I18n.locale, :status => 1)
   end
   def getTrabalhos
     @trabalhos = Trabalho.all.where(:idioma => I18n.locale )
